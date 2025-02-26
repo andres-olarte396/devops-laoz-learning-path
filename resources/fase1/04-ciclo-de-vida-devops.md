@@ -106,6 +106,82 @@ El ciclo de vida de DevOps es un proceso continuo que integra desarrollo, operac
 8. **Operaciones y Mantenimiento**: Garantizar la estabilidad del software.
 9. **Retroalimentación y Mejora Continua**: Optimizar procesos y productos.
 
+
+A continuación te muestro un diagrama de secuencia en Mermaid que ilustra cómo se integran las prácticas de DevOps con las fases del ciclo de vida del software. Este diagrama muestra la interacción entre los equipos de desarrollo, operaciones y las herramientas automatizadas en cada fase.
+
+```mermaid
+sequenceDiagram
+    participant Planificación
+    participant Desarrollo
+    participant IntegraciónContinua
+    participant Pruebas
+    participant Despliegue
+    participant Monitoreo
+    participant Retroalimentación
+    
+    Planificación->>Desarrollo: Define requisitos y objetivos
+
+    activate Planificación
+
+    activate Desarrollo
+    Desarrollo->>IntegraciónContinua: Sube código al repositorio
+    deactivate Desarrollo
+
+    activate IntegraciónContinua
+    IntegraciónContinua->>Pruebas: Ejecuta pruebas automatizadas
+    deactivate IntegraciónContinua
+
+    activate Pruebas
+    Pruebas->>Despliegue: Aprueba el código para despliegue
+    deactivate Pruebas
+    
+    activate Despliegue
+    Despliegue->>Monitoreo: Despliega en producción
+    deactivate Despliegue
+  
+    activate Monitoreo
+    Monitoreo->>Retroalimentación: Recopila métricas y feedback
+    deactivate Monitoreo
+ 
+    activate Retroalimentación
+    Retroalimentación->>Planificación: Ajusta requisitos y prioridades
+    deactivate Retroalimentación
+
+    deactivate Planificación
+```
+
+---
+
+### **Explicación del Diagrama**
+
+1. **Planificación**:
+   - Los equipos definen los requisitos y objetivos del software.
+   - Esta fase alimenta el inicio del ciclo de desarrollo.
+
+2. **Desarrollo**:
+   - Los desarrolladores escriben el código y lo suben a un repositorio compartido (por ejemplo, GitHub o GitLab).
+
+3. **Integración Continua (CI)**:
+   - El código se integra automáticamente en un repositorio central.
+   - Se ejecutan pruebas automatizadas (unitarias, de integración) para detectar errores tempranamente.
+
+4. **Pruebas**:
+   - Las pruebas automatizadas validan la funcionalidad, rendimiento y seguridad del software.
+   - Si las pruebas son exitosas, el código se aprueba para el despliegue.
+
+5. **Despliegue**:
+   - El código se despliega automáticamente en entornos de prueba o producción.
+   - Se utilizan estrategias como blue-green deployment o canary releases para minimizar riesgos.
+
+6. **Monitoreo**:
+   - Se supervisa el rendimiento del software en producción.
+   - Herramientas como Prometheus o Grafana recopilan métricas en tiempo real.
+
+7. **Retroalimentación**:
+   - Los datos de monitoreo y el feedback de los usuarios se utilizan para identificar áreas de mejora.
+   - Esta información se retroalimenta a la fase de planificación para ajustar requisitos y prioridades.
+
+
 ---
 
 ## **Herramientas Comunes en el Ciclo de Vida de DevOps**

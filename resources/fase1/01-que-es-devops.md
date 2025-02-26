@@ -37,11 +37,21 @@ Las prácticas de DevOps son metodologías y técnicas que ayudan a implementar 
 
 DevOps se integra en todas las fases del ciclo de vida del desarrollo de software (SDLC), desde la planificación hasta el monitoreo en producción:
 
-1. **Planificación**: Los equipos colaboran para definir requisitos y objetivos.
-2. **Desarrollo**: Los desarrolladores escriben código y lo integran continuamente.
-3. **Pruebas**: Las pruebas automatizadas garantizan la calidad del software.
-4. **Despliegue**: El código se despliega automáticamente en entornos de prueba y producción.
-5. **Operaciones**: Se supervisa el rendimiento y se gestiona la infraestructura.
-6. **Retroalimentación**: Los comentarios de los usuarios y los datos de monitoreo se utilizan para mejorar el producto.
+   1. **Planificación**: Los equipos colaboran para definir requisitos y objetivos.
+   2. **Desarrollo**: Los desarrolladores escriben código y lo integran continuamente.
+   3. **Pruebas**: Las pruebas automatizadas garantizan la calidad del software.
+   4. **Despliegue**: El código se despliega automáticamente en entornos de prueba y producción.
+   5. **Operaciones**: Se supervisa el rendimiento y se gestiona la infraestructura.
+   6. **Retroalimentación**: Los comentarios de los usuarios y los datos de monitoreo se utilizan para mejorar el producto.
 
-En resumen, DevOps no es solo una herramienta o un proceso, sino una cultura que transforma la forma en que los equipos colaboran y entregan valor a los usuarios finales.
+---
+
+### **Cómo se integran las prácticas de DevOps**
+
+- **Automatización**: Las prácticas de CI/CD automatizan la integración, pruebas y despliegue.
+- **Colaboración**: Desarrollo y operaciones trabajan juntos en todas las fases.
+- **Mejora continua**: El feedback y el monitoreo permiten optimizar el software y los procesos.
+
+---
+
+> En resumen, DevOps no es solo una herramienta o un proceso, sino una cultura que transforma la forma en que los equipos colaboran y entregan valor a los usuarios finales.

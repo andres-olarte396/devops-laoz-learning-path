@@ -13,6 +13,7 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
    - [Beneficios de DevOps](./resources/fase1/02-beneficios-debops.md)
    - [Diferencia entre DevOps, Agile y Waterfall](./resources/fase1/03-devops-agile-waterfall.md)
    - [Ciclo de vida de DevOps: CI/CD, monitoreo, infraestructura como código, etc.](./resources/fase1/04-ciclo-de-vida-devops.md)
+   - [Test de la unidad](./resources/fase1/test.md)
 
 2. **Herramientas y tecnologías clave**
    - Visión general de las herramientas populares: Git, Jenkins, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, etc.
