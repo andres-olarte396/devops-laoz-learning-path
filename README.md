@@ -25,7 +25,7 @@ El objetivo de este repositorio es:
 
 ## Cómo contribuir
 
-Si encuentras errores o tienes sugerencias, ¡siéntete libre de abrir un issue o enviar un pull request!
+Si encuentras errores o tienes sugerencias o tienes algo que aportar, ¡siéntete libre de abrir un issue o enviar un pull request!
 
 ## Licencia
 

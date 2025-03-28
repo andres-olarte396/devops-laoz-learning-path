@@ -125,27 +125,27 @@
 
 1. **¿Qué es DevOps?** Preguntas 1, 2, 3.
 
-   - 1.1. Respuesta correcta: b)
-   - 1.2. Respuesta correcta: b)
-   - 1.3. Respuesta correcta: b)
+   - 1.1. b)
+   - 1.2. b)
+   - 1.3. b)
 
 2. **Beneficios de DevOps** Preguntas 4, 5, 6.
 
-   - 2.1. Respuesta correcta: c)
-   - 2.2. Respuesta correcta: b)
-   - 2.3. Respuesta correcta: b)
+   - 2.1. c)
+   - 2.2. b)
+   - 2.3. b)
 
 3. **Diferencia entre DevOps, Agile y Waterfall** Preguntas 7, 8, 9.
 
-   - 3.1. Respuesta correcta: c)
-   - 3.2. Respuesta correcta: b)
-   - 3.3. Respuesta correcta: c)
+   - 3.1. c)
+   - 3.2. b)
+   - 3.3. c)
 
 4. **Ciclo de vida de DevOps** Preguntas 10, 11, 12, 13, 14, 15.
 
-   - 4.1. Respuesta correcta: b)
-   - 4.2. Respuesta correcta: b)
-   - 4.3. Respuesta correcta: a)
-   - 4.4. Respuesta correcta: b)
-   - 4.5. Respuesta correcta: b)
-   - 4.6. Respuesta correcta: b)
+   - 4.1. b)
+   - 4.2. b)
+   - 4.3. a)
+   - 4.4. b)
+   - 4.5. b)
+   - 4.6. b)

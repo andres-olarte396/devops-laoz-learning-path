@@ -106,7 +106,6 @@ El ciclo de vida de DevOps es un proceso continuo que integra desarrollo, operac
 8. **Operaciones y Mantenimiento**: Garantizar la estabilidad del software.
 9. **Retroalimentación y Mejora Continua**: Optimizar procesos y productos.
 
-
 A continuación te muestro un diagrama de secuencia en Mermaid que ilustra cómo se integran las prácticas de DevOps con las fases del ciclo de vida del software. Este diagrama muestra la interacción entre los equipos de desarrollo, operaciones y las herramientas automatizadas en cada fase.
 
 ```mermaid
