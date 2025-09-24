@@ -74,6 +74,4 @@ La adopción de DevOps ofrece una amplia gama de beneficios que impactan positiv
 
 ---
 
-## Resumen
-
-DevOps no solo mejora la eficiencia técnica, sino que también transforma la cultura organizacional, fomentando la colaboración, la innovación y la entrega de valor al cliente. Estos beneficios hacen que DevOps sea una estrategia clave para cualquier organización que busque mantenerse competitiva en el mundo del desarrollo de software moderno.
+> En resumen, la adopción deDevOps no solo mejora la eficiencia técnica, sino que también transforma la cultura organizacional, fomentando la colaboración, la innovación y la entrega de valor al cliente. Estos beneficios hacen que DevOps sea una estrategia clave para cualquier organización que busque mantenerse competitiva en el mundo del desarrollo de software moderno.

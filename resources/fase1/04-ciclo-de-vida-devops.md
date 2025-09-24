@@ -194,4 +194,4 @@ sequenceDiagram
 
 ---
 
-El ciclo de vida de DevOps es un proceso iterativo y colaborativo que permite a las organizaciones entregar software de alta calidad de manera rápida y eficiente, adaptándose a las necesidades cambiantes del mercado y los usuarios.
+> El ciclo de vida de DevOps es un proceso iterativo y colaborativo que permite a las organizaciones entregar software de alta calidad de manera rápida y eficiente, adaptándose a las necesidades cambiantes del mercado y los usuarios.

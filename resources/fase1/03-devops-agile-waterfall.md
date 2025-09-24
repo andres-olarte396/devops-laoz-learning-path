@@ -83,4 +83,4 @@ DevOps, Agile y Waterfall son metodologías y enfoques utilizados en el desarrol
 - **Agile** es perfecto para proyectos dinámicos con requisitos cambiantes, pero se centra principalmente en el desarrollo.
 - **DevOps** complementa Agile al integrar operaciones, automatizando y optimizando todo el ciclo de vida del software para una entrega rápida y confiable.
 
-Cada enfoque tiene su lugar dependiendo del tipo de proyecto, los requisitos y la cultura organizacional. En muchos casos, Agile y DevOps se utilizan juntos para maximizar la eficiencia y la calidad del software.
+> Cada enfoque tiene su lugar dependiendo del tipo de proyecto, los requisitos y la cultura organizacional. En muchos casos, Agile y DevOps se utilizan juntos para maximizar la eficiencia y la calidad del software.

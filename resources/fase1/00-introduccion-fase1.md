@@ -47,25 +47,28 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 - **[4 Lecciones Contraintuitivas que la Nube nos Enseñó sobre Administrar Servidores](../blog/4-lecciones-contraintuitivas-nube-administrar-servidores.md)**
 
-    Este artículo complementa los conceptos de DevOps al explorar cómo el uso de servicios por internet (lo que llamamos **computación en la nube**) ha transformado la forma en que se administran los sistemas. Descubrirás conceptos clave como:
-   - La filosofía "**Cattle vs Pets**" para servidores: una forma de pensar en los servidores como ganado (intercambiables y desechables) en lugar de como mascotas (únicos y cuidados individualmente).
-   - **Infraestructura inmutable y autoconfigurable**: sistemas que, una vez creados, no se modifican, sino que se reemplazan por versiones nuevas. Esto hace que todo el proceso sea más predecible y automatizado.
-   - El impacto de las **herramientas orientadas a objetos**: herramientas que permiten modelar y gestionar la infraestructura de la misma forma en que se manejan los objetos en la programación.
-   - La evolución del rol del administrador hacia DevOps
+Este artículo complementa los conceptos de DevOps al explorar cómo el uso de servicios por internet (lo que llamamos **computación en la nube**) ha transformado la forma en que se administran los sistemas. Descubrirás conceptos clave como:
+
+- La filosofía "**Cattle vs Pets**" para servidores: una forma de pensar en los servidores como ganado (intercambiables y desechables) en lugar de como mascotas (únicos y cuidados individualmente).
+- **Infraestructura inmutable y autoconfigurable**: sistemas que, una vez creados, no se modifican, sino que se reemplazan por versiones nuevas. Esto hace que todo el proceso sea más predecible y automatizado.
+- El impacto de las **herramientas orientadas a objetos**: herramientas que permiten modelar y gestionar la infraestructura de la misma forma en que se manejan los objetos en la programación.
+- La evolución del rol del administrador hacia DevOps
 
 #### Contenido Multimedia
 
-- **[Mascotas, Ganado y Veneno (Audio)](./assets/Mascotas,_Ganado_y_Veneno.mp4)**
-    
+- **[Mascotas, Ganado y Veneno (Audio)](../../assets/Mascotas,_Ganado_y_Veneno.mp4)**
+
     Este contenido de audio profundiza en el concepto fundamental de "Mascotas vs Ganado" en la administración de sistemas, un paradigma clave para entender la filosofía DevOps moderna.
 
-- **[Mascotas, Ganado y Veneno (Video)](./assets/Mascotas,_Ganado_y_Veneno.mp4)**
-    
-    Este video profundiza en el concepto fundamental de "Mascotas vs Ganado" en la administración de sistemas, un paradigma clave para entender la filosofía DevOps moderna.
+- **[DevOPS y Nube - Automatización Bash, PowerShell y Shell (Audio)](../../assets/DevOps_y_Nube__Automatización_Bash,_PowerShell_y_Shell.m4a)**
+
+    Este audio profundiza en las técnicas de automatización utilizando Bash, PowerShell y Shell en el contexto de DevOps y la nube.
 
 #### Recursos Visuales
 
 - **[Diagrama de Fases DevOps](../../images/devops-fases.avif)**
+
+    ![Diagrama de Fases DevOps](../../images/devops-fases.avif)
 
     Representación visual del ciclo completo de DevOps que te ayudará a comprender la interconexión entre las diferentes fases y cómo fluye el proceso de desarrollo continuo.
 
@@ -73,12 +76,12 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 Al completar esta fase, serás capaz de:
 
-- ✅ **Explicar qué es DevOps** y por qué representa un cambio en el desarrollo de software
-- ✅ **Identificar los beneficios clave** que DevOps aporta a equipos y organizaciones
-- ✅ **Diferenciar DevOps** de otras metodologías como Agile y Waterfall
-- ✅ **Describir el ciclo de vida DevOps** y sus componentes principales
-- ✅ **Contextualizar la evolución** de la administración de sistemas en la era de la nube
-- ✅ **Reconocer las herramientas fundamentales** en cada fase del proceso
+- [x] **Explicar qué es DevOps** y por qué representa un cambio en el desarrollo de software
+- [x] **Identificar los beneficios clave** que DevOps aporta a equipos y organizaciones
+- [x] **Diferenciar DevOps** de otras metodologías como Agile y Waterfall
+- [x] **Describir el ciclo de vida DevOps** y sus componentes principales
+- [x] **Contextualizar la evolución** de la administración de sistemas en la era de la nube
+- [x] **Reconocer las herramientas fundamentales** en cada fase del proceso
 
 ## Cómo Navegar Esta Fase
 
