@@ -10,7 +10,7 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
 
 1. **Introducción a DevOps**
    - [¿Qué es DevOps? (Cultura, herramientas y prácticas)](./resources/fase1/01-que-es-devops.md)
-   - [Beneficios de DevOps](./resources/fase1/02-beneficios-debops.md)
+   - [Beneficios de DevOps](./resources/fase1/02-beneficios-devops.md)
    - [Diferencia entre DevOps, Agile y Waterfall](./resources/fase1/03-devops-agile-waterfall.md)
    - [Ciclo de vida de DevOps: CI/CD, monitoreo, infraestructura como código, etc.](./resources/fase1/04-ciclo-de-vida-devops.md)
    - [Test de la unidad](./resources/fase1/test.md)

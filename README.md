@@ -4,7 +4,7 @@ Este repositorio documenta un viaje de aprendizaje en DevOps, desde los concepto
 
 ## Diagrama de Aprendizaje
 
-![DevOps Learning Path](images/devops-fases.avif)
+![DevOps Learning Path](images/devops-fases.png)
 
 _Este diagrama muestra las fases clave de mi viaje de aprendizaje en DevOps._
 

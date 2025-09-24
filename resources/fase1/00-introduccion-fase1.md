@@ -66,9 +66,9 @@ Este artículo complementa los conceptos de DevOps al explorar cómo el uso de s
 
 #### Recursos Visuales
 
-- **[Diagrama de Fases DevOps](../../images/devops-fases.avif)**
+- **[Diagrama de Fases DevOps](../../images/devops-fases.png)**
 
-    ![Diagrama de Fases DevOps](../../images/devops-fases.avif)
+    ![Diagrama de Fases DevOps](../../images/devops-fases.png)
 
     Representación visual del ciclo completo de DevOps que te ayudará a comprender la interconexión entre las diferentes fases y cómo fluye el proceso de desarrollo continuo.
 
