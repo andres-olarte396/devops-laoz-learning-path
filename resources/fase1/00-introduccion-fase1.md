@@ -55,22 +55,11 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 #### Contenido Multimedia
 
-- **Audio: Mascotas, Ganado y Veneno**
-
-    <audio controls style="width: 100%;">
-        <source src="../../assets/Mascotas,_Ganado_y_Veneno.mp4" type="audio/mp4">
-        Tu navegador no soporta el elemento de audio HTML5.
-    </audio>
+- **[Mascotas, Ganado y Veneno (Audio)](./assets/Mascotas,_Ganado_y_Veneno.mp4)**
     
     Este contenido de audio profundiza en el concepto fundamental de "Mascotas vs Ganado" en la administración de sistemas, un paradigma clave para entender la filosofía DevOps moderna.
 
-    
-- **Video: Mascotas, Ganado y Veneno**
-
-    <video width="100%" controls>
-        <source src="../../assets/Mascotas,_Ganado_y_Veneno.mp4" type="video/mp4">
-        Tu navegador no soporta el elemento de video HTML5.
-    </video>
+- **[Mascotas, Ganado y Veneno (Video)](./assets/Mascotas,_Ganado_y_Veneno.mp4)**
     
     Este video profundiza en el concepto fundamental de "Mascotas vs Ganado" en la administración de sistemas, un paradigma clave para entender la filosofía DevOps moderna.
 
