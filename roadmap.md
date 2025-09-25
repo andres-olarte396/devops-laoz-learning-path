@@ -11,9 +11,9 @@ Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea d
 1. **Fundamentos de la Shell**
 
    - [Introducción a la Fase 0](./resources/fase0/00-introduccion-fase0.md)
-   - [Navegación y manipulación de archivos (ls, cd, pwd, cp, mv, rm, mkdir)](./resources/fase0/01-fundamentos-shell.md)
+   - [Navegación y manipulación de archivos {ls, cd, pwd, cp, mv, rm, mkdir}](./resources/fase0/01-fundamentos-shell.md)
    - [Permisos de archivos (chmod, chown)](./resources/fase0/01-fundamentos-shell.md#permisos)
-   - [Redirección de entradas/salidas (>, >>, <, |)](./resources/fase0/01-fundamentos-shell.md#redireccion)
+   - [Redirección de entradas/salidas {>, >>, <, |}](./resources/fase0/01-fundamentos-shell.md#redireccion)
 
 2. **Herramientas de Línea de Comandos**
 
