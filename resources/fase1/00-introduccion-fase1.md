@@ -34,8 +34,8 @@ Esta fase incluye los siguientes módulos de aprendizaje:
    - Cuándo aplicar cada enfoque
    - Puntos de convergencia y diferenciación
 
-4. **[Ciclo de Vida DevOps](./04-ciclo-de-vida-devops.md)**
-   - Fases del ciclo DevOps
+4. **[Modelo Operativo DevOps](./04-modelo-operativo-devops.md)**
+   - Fases del modelo operativo DevOps
    - Herramientas por fase
    - Flujo de trabajo continuo
 
@@ -90,7 +90,7 @@ Al completar esta fase, serás capaz de:
 1. **Comienza con los fundamentos**: Lee el módulo "¿Qué es DevOps?" para establecer la base conceptual
 2. **Explora los beneficios**: Comprende el valor que aporta DevOps en el segundo módulo
 3. **Contextualiza las diferencias**: Analiza cómo DevOps se diferencia de otras metodologías
-4. **Profundiza en el ciclo**: Estudia el ciclo de vida completo de DevOps
+4. **Profundiza en el modelo operativo**: Estudia el modelo operativo completo de DevOps
 5. **Enriquece tu perspectiva**: Lee el artículo de blog para entender la evolución hacia DevOps
 6. **Visualiza el proceso**: Consulta el diagrama de fases para consolidar tu comprensión
 
