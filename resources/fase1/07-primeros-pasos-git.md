@@ -18,7 +18,13 @@ En DevOps, Git actúa como el punto de entrada para la mayoría de automatizacio
 
 ### **Recurso complementario**
 
-- **[Video: Fundamentos de DevOps](../../assets/Fundamentos_de_DevOps.mp4)**
+<details>
+  <summary><strong>Ver Video: Fundamentos de DevOps</strong></summary>
+  <video controls width="100%">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/Fundamentos_de_DevOps.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+</details>
 
     Este video profundiza en los fundamentos conceptuales de DevOps y cómo Git se integra como pieza fundamental en el ecosistema DevOps completo.
 
@@ -589,7 +595,13 @@ certificates/
 
 ### **Recurso complementario**
 
-- **[Audio: DevOps Desvelado - Cultura, El Ciclo Infinito y las Herramientas](../../assets/DevOps_Desvelado__Cultura,_El_Ciclo_Infinito_y_las_Herramientas - 1758768483444.m4a)**
+<details>
+  <summary><strong>Escuchar Audio: DevOps Desvelado</strong></summary>
+  <audio controls style="width: 100%;">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/DevOps_Desvelado__Cultura,_El_Ciclo_Infinito_y_las_Herramientas%20-%201758768483444.m4a" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+</details>
 
     Este audio profundiza en los aspectos culturales de DevOps, el concepto del ciclo infinito de mejora continua, y cómo Git se integra como herramienta fundamental en este ecosistema.
 
@@ -861,7 +873,10 @@ git commit -m "resolve: merge database optimization and Redis cache"
 
 - **[Mapa Mental: Fundamentos de Git](../../assets/mind-map-fundamentals.png)**
 
-    ![Mapa Mental de Fundamentos](../../assets/mind-map-fundamentals.png)
+    <details>
+  <summary><strong>Ver Mapa Mental: Fundamentos de Git</strong></summary>
+  <img src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/mind-map-fundamentals.png" alt="Mapa Mental de Fundamentos" style="width: 100%;">
+</details>
 
     Mapa mental visual que sintetiza todos los conceptos fundamentales de Git cubiertos en este módulo, ideal para revisión rápida y estudio.
 

@@ -82,19 +82,43 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 #### Contenido Multimedia
 
-- **[Fundamentos de DevOps (Video)](../../assets/Fundamentos_de_DevOps.mp4)**
+<details>
+  <summary><strong>Ver Video: Fundamentos de DevOps</strong></summary>
+  <video controls width="100%">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/Fundamentos_de_DevOps.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+</details>
 
     Video educativo que explica los conceptos fundamentales de DevOps, su importancia en el desarrollo moderno de software y cómo se integran las diferentes herramientas y prácticas en el ecosistema DevOps.
 
-- **[DevOps Desvelado - Cultura, El Ciclo Infinito y las Herramientas (Audio)](../../assets/DevOps_Desvelado__Cultura_El_Ciclo_Infinito_y_las_Herramientas.m4a)**
+<details>
+  <summary><strong>Escuchar Audio: DevOps Desvelado</strong></summary>
+  <audio controls style="width: 100%;">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/DevOps_Desvelado__Cultura_El_Ciclo_Infinito_y_las_Herramientas.m4a" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+</details>
 
     Este audio profundiza en los aspectos culturales de DevOps, el concepto del ciclo infinito de mejora continua, y cómo las herramientas se integran en esta filosofía de trabajo.
 
-- **[Mascotas, Ganado y Veneno (Audio)](../../assets/Mascotas,_Ganado_y_Veneno.mp4)**
+<details>
+  <summary><strong>Escuchar: Mascotas, Ganado y Veneno</strong></summary>
+  <video controls width="100%">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/Mascotas,_Ganado_y_Veneno.mp4" type="video/mp4">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+</details>
 
     Este contenido de audio profundiza en el concepto fundamental de "Mascotas vs Ganado" en la administración de sistemas, un paradigma clave para entender la filosofía DevOps moderna.
 
-- **[DevOPS y Nube - Automatización Bash, PowerShell y Shell (Audio)](../../assets/DevOps_y_Nube__Automatización_Bash,_PowerShell_y_Shell.m4a)**
+<details>
+  <summary><strong>Escuchar Audio: DevOps y Nube - Automatización</strong></summary>
+  <audio controls style="width: 100%;">
+    <source src="https://andres-olarte396.github.io/devops-laoz-learning-path/assets/DevOps_y_Nube__Automatizaci%C3%B3n_Bash,_PowerShell_y_Shell.m4a" type="audio/mpeg">
+    Tu navegador no soporta la etiqueta de audio.
+  </audio>
+</details>
 
     Este audio profundiza en las técnicas de automatización utilizando Bash, PowerShell y Shell en el contexto de DevOps y la nube.
 
