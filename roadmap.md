@@ -8,19 +8,23 @@ Este plan de estudio estructurado te guiará desde los fundamentos hasta un nive
 
 Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea de comandos. Esta fase te preparará con las habilidades esenciales para navegar y automatizar tareas en cualquier sistema operativo.
 
-1.  **Fundamentos de la Shell**
-    -   [Navegación y manipulación de archivos (ls, cd, pwd, cp, mv, rm, mkdir)](./resources/fase0/01-fundamentos-shell.md)
-    -   [Permisos de archivos (chmod, chown)](./resources/fase0/01-fundamentos-shell.md#permisos)
-    -   [Redirección de entradas/salidas (>, >>, <, |)](./resources/fase0/01-fundamentos-shell.md#redireccion)
+1. **Fundamentos de la Shell**
 
-2.  **Herramientas de Línea de Comandos**
-    -   [Búsqueda y filtrado de texto (grep, find, awk, sed)](./resources/fase0/02-herramientas-cli.md)
-    -   [Archivado y compresión (tar, gzip, zip)](./resources/fase0/02-herramientas-cli.md#archivado)
-    -   [Editores de texto en terminal (Vim/Neovim, Nano)](./resources/fase0/02-herramientas-cli.md#editores)
+   - [Introducción a la Fase 0](./resources/fase0/00-introduccion-fase0.md)
+   - [Navegación y manipulación de archivos (ls, cd, pwd, cp, mv, rm, mkdir)](./resources/fase0/01-fundamentos-shell.md)
+   - [Permisos de archivos (chmod, chown)](./resources/fase0/01-fundamentos-shell.md#permisos)
+   - [Redirección de entradas/salidas (>, >>, <, |)](./resources/fase0/01-fundamentos-shell.md#redireccion)
 
-3.  **Scripting Básico**
-    -   [Introducción a Bash Scripting (variables, bucles, condicionales)](./resources/fase0/03-scripting-basico.md)
-    -   [Introducción a PowerShell para Windows](./resources/fase0/03-scripting-basico.md#powershell)
+2. **Herramientas de Línea de Comandos**
+
+   - [Búsqueda y filtrado de texto (grep, find, awk, sed)](./resources/fase0/02-herramientas-cli.md)
+   - [Archivado y compresión (tar, gzip, zip)](./resources/fase0/02-herramientas-cli.md#archivado)
+   - [Editores de texto en terminal (Vim/Neovim, Nano)](./resources/fase0/02-herramientas-cli.md#editores)
+
+3. **Scripting Básico**
+
+   - [Introducción a Bash Scripting (variables, bucles, condicionales)](./resources/fase0/03-scripting-basico.md)
+   - [Introducción a PowerShell para Windows](./resources/fase0/03-scripting-basico.md#powershell)
 
 ---
 
@@ -29,6 +33,8 @@ Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea d
 En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía y cómo se integra en el ciclo de vida del software.
 
 1. **Introducción a DevOps**
+
+   - [Introducción a la Fase 1](./resources/fase1/00-introduccion-fase1.md)
    - [¿Qué es DevOps? (Cultura, herramientas y prácticas)](./resources/fase1/01-que-es-devops.md)
    - [Beneficios de DevOps](./resources/fase1/02-beneficios-devops.md)
    - [Diferencia entre DevOps, Agile y Waterfall](./resources/fase1/03-devops-agile-waterfall.md)
@@ -50,6 +56,7 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
    - [Control de versiones con Git](./resources/fase1/07-primeros-pasos-git.md#2-comandos-esenciales-de-git)
    - [GitHub/GitLab: Colaboración y flujos de trabajo](./resources/fase1/07-primeros-pasos-git.md#3-github-y-gitlab-plataformas-de-colaboración)
    - [Ramas, merges, pull requests y conflictos](./resources/fase1/07-primeros-pasos-git.md#4-trabajo-con-ramas-branching)
+   - [Notas personales sobre Git](./notes/git-notes.md)
 
 ---
 
@@ -92,6 +99,7 @@ Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás 
    - Crear y gestionar imágenes con Dockerfile
    - Docker Compose para múltiples contenedores
    - Optimización de imágenes
+   - [Notas personales sobre Docker](./notes/docker-notes.md)
 
 3. **Kubernetes**
    - Arquitectura de Kubernetes: Pods, Nodes, Clusters, Services
@@ -99,6 +107,7 @@ Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás 
    - Gestión de configuraciones y secretos
    - Escalado y balanceo de carga
    - Helm: Gestión de charts para Kubernetes
+   - [Notas personales sobre Kubernetes](./notes/kubernetes-notes.md)
 
 4. **Práctica**
    - Desplegar una aplicación multi-contenedor en Kubernetes
@@ -188,11 +197,11 @@ Finalmente, pondrás en práctica todo lo aprendido y obtendrás certificaciones
 
 ## **Recursos Recomendados**
 
-- **Libros**:
-  - "The Phoenix Project" de Gene Kim
-  - "Continuous Delivery" de Jez Humble y David Farley
-- **Cursos en línea**:
-  - Pluralsight, Udemy, Coursera, edX
+Aquí encontrarás una colección de recursos adicionales para complementar tu aprendizaje.
+
+- **[Libros](./resources/books.md)**: Una lista curada de libros fundamentales sobre DevOps, cultura y tecnología.
+- **[Cursos en Línea](./resources/courses.md)**: Enlaces a cursos recomendados en plataformas como Pluralsight, Udemy, etc.
+- **[Herramientas](./resources/tools.md)**: Un listado de las herramientas más populares en el ecosistema DevOps.
 - **Documentación oficial**:
   - Docker, Kubernetes, Terraform, AWS, Azure, etc.
 
