@@ -16,19 +16,19 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
    - [Test de la unidad](./resources/fase1/test.md)
 
 2. **Herramientas y tecnologías clave**
-   - Visión general de las herramientas populares: Git, Jenkins, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, etc.
-   - Introducción a la nube (AWS, Azure, Google Cloud)
+   - [Visión general de las herramientas populares: Git, Jenkins, Docker, Kubernetes, Terraform, Ansible, Prometheus, Grafana, etc.](./resources/fase1/05-herramientas-tecnologias-clave.md)
+   - [Introducción a la nube (AWS, Azure, Google Cloud)](./resources/fase1/05-herramientas-tecnologias-clave.md#plataformas-de-nube)
 
 3. **Conceptos clave**
-   - Integración Continua (CI) y Entrega/Despliegue Continuo (CD)
-   - Infraestructura como Código (IaC)
-   - Automatización
-   - Monitoreo y observabilidad
+   - [Integración Continua (CI) y Entrega/Despliegue Continuo (CD)](./resources/fase1/06-conceptos-clave-devops.md#1-integración-continua-ci-y-entregadespliegue-continuo-cd)
+   - [Infraestructura como Código (IaC)](./resources/fase1/06-conceptos-clave-devops.md#2-infraestructura-como-código-iac)
+   - [Automatización](./resources/fase1/06-conceptos-clave-devops.md#3-automatización)
+   - [Monitoreo y observabilidad](./resources/fase1/06-conceptos-clave-devops.md#4-monitoreo-y-observabilidad)
 
 4. **Primeros pasos con Git**
-   - Control de versiones con Git
-   - GitHub/GitLab: Colaboración y flujos de trabajo
-   - Ramas, merges, pull requests y conflictos
+   - [Control de versiones con Git](./resources/fase1/07-primeros-pasos-git.md#2-comandos-esenciales-de-git)
+   - [GitHub/GitLab: Colaboración y flujos de trabajo](./resources/fase1/07-primeros-pasos-git.md#3-github-y-gitlab-plataformas-de-colaboración)
+   - [Ramas, merges, pull requests y conflictos](./resources/fase1/07-primeros-pasos-git.md#4-trabajo-con-ramas-branching)
 
 ---
 
