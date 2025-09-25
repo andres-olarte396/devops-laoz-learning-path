@@ -86,7 +86,7 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
     Video educativo que explica los conceptos fundamentales de DevOps, su importancia en el desarrollo moderno de software y cómo se integran las diferentes herramientas y prácticas en el ecosistema DevOps.
 
-- **[DevOps Desvelado - Cultura, El Ciclo Infinito y las Herramientas (Audio)](../../assets/DevOps_Desvelado__Cultura,_El_Ciclo_Infinito_y_las_Herramientas - 1758768483444.m4a)**
+- **[DevOps Desvelado - Cultura, El Ciclo Infinito y las Herramientas (Audio)](../../assets/DevOps_Desvelado__Cultura_El_Ciclo_Infinito_y_las_Herramientas.m4a)**
 
     Este audio profundiza en los aspectos culturales de DevOps, el concepto del ciclo infinito de mejora continua, y cómo las herramientas se integran en esta filosofía de trabajo.
 
@@ -100,9 +100,9 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 #### Recursos Visuales
 
-- **[Mapa Mental: Fundamentos de DevOps](../../assets/mind-map-fundamentals.png)**
+- **[Mapa Mental: Fundamentos de DevOps](../../images/mind-map-fundamentals.png)**
 
-    ![Mapa Mental de Fundamentos](../../assets/mind-map-fundamentals.png)
+    ![Mapa Mental de Fundamentos](../../images/mind-map-fundamentals.png)
 
     Mapa mental visual que sintetiza los conceptos fundamentales de DevOps cubiertos en esta fase, ideal para revisión rápida y consolidación de conocimientos.
 
