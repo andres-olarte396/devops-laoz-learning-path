@@ -4,6 +4,26 @@ Este plan de estudio estructurado te guiará desde los fundamentos hasta un nive
 
 ---
 
+## **Fase 0: Dominio de la Terminal**
+
+Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea de comandos. Esta fase te preparará con las habilidades esenciales para navegar y automatizar tareas en cualquier sistema operativo.
+
+1.  **Fundamentos de la Shell**
+    -   [Navegación y manipulación de archivos (ls, cd, pwd, cp, mv, rm, mkdir)](./resources/fase0/01-fundamentos-shell.md)
+    -   [Permisos de archivos (chmod, chown)](./resources/fase0/01-fundamentos-shell.md#permisos)
+    -   [Redirección de entradas/salidas (>, >>, <, |)](./resources/fase0/01-fundamentos-shell.md#redireccion)
+
+2.  **Herramientas de Línea de Comandos**
+    -   [Búsqueda y filtrado de texto (grep, find, awk, sed)](./resources/fase0/02-herramientas-cli.md)
+    -   [Archivado y compresión (tar, gzip, zip)](./resources/fase0/02-herramientas-cli.md#archivado)
+    -   [Editores de texto en terminal (Vim/Neovim, Nano)](./resources/fase0/02-herramientas-cli.md#editores)
+
+3.  **Scripting Básico**
+    -   [Introducción a Bash Scripting (variables, bucles, condicionales)](./resources/fase0/03-scripting-basico.md)
+    -   [Introducción a PowerShell para Windows](./resources/fase0/03-scripting-basico.md#powershell)
+
+---
+
 ## **Fase 1: Fundamentos de DevOps**
 
 En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía y cómo se integra en el ciclo de vida del software.
@@ -24,6 +44,7 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
    - [Infraestructura como Código (IaC)](./resources/fase1/06-conceptos-clave-devops.md#2-infraestructura-como-código-iac)
    - [Automatización](./resources/fase1/06-conceptos-clave-devops.md#3-automatización)
    - [Monitoreo y observabilidad](./resources/fase1/06-conceptos-clave-devops.md#4-monitoreo-y-observabilidad)
+   - [Midiendo el Éxito: Introducción a las Métricas DORA](./resources/fase1/06-conceptos-clave-devops.md#5-metricas-dora)
 
 4. **Primeros pasos con Git**
    - [Control de versiones con Git](./resources/fase1/07-primeros-pasos-git.md#2-comandos-esenciales-de-git)
@@ -56,24 +77,30 @@ Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo y d
 
 ---
 
-## **Fase 3: Contenedores y Orquestación**
+## **Fase 3: Contenedores, Redes y Orquestación**
 
-Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás sobre Docker y Kubernetes.
+Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás sobre redes, Docker y Kubernetes.
 
-1. **Docker**
+1. **Fundamentos de Redes**
+   - [Modelo OSI y TCP/IP](./resources/fase3/01-fundamentos-redes.md#modelo-osi)
+   - [Direcciones IP, Subredes y DNS](./resources/fase3/01-fundamentos-redes.md#ip-dns)
+   - [Puertos, Protocolos (HTTP/S, TCP, UDP) y Firewalls](./resources/fase3/01-fundamentos-redes.md#protocolos)
+   - [Redes en la Nube (VPC, Subnets, Security Groups)](./resources/fase3/01-fundamentos-redes.md#redes-nube)
+
+2. **Docker**
    - Conceptos básicos: imágenes, contenedores, volúmenes, redes
    - Crear y gestionar imágenes con Dockerfile
    - Docker Compose para múltiples contenedores
    - Optimización de imágenes
 
-2. **Kubernetes**
+3. **Kubernetes**
    - Arquitectura de Kubernetes: Pods, Nodes, Clusters, Services
    - Despliegue de aplicaciones en Kubernetes
    - Gestión de configuraciones y secretos
    - Escalado y balanceo de carga
    - Helm: Gestión de charts para Kubernetes
 
-3. **Práctica**
+4. **Práctica**
    - Desplegar una aplicación multi-contenedor en Kubernetes
    - Configurar CI/CD para aplicaciones en contenedores
 

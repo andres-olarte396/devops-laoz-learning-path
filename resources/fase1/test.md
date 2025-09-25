@@ -1,151 +1,104 @@
-# Test de la unidad "1. Introducción a DevOps"
+# Test de Autoevaluación: Fundamentos de DevOps (Fase 0 y 1)
 
-## 1. ¿Qué es DevOps? (Cultura, herramientas y prácticas)
-
-1. **¿Cuál es el objetivo principal de DevOps?**
-
-   - [ ] a) Reducir costos de hardware.
-   - [ ] b) Unificar desarrollo y operaciones para entregar software más rápido y confiable.
-   - [ ] c) Eliminar la necesidad de pruebas de software.
-   - [ ] d) Aumentar la duración de los proyectos.
-
-2. **¿Cuál de las siguientes es una herramienta comúnmente utilizada en DevOps para la integración continua?**
-
-   - [ ] a) Docker.
-   - [ ] b) Jenkins.
-   - [ ] c) Terraform.
-   - [ ] d) Splunk.
-
-3. **¿Qué práctica de DevOps se enfoca en automatizar el proceso de construcción y pruebas de código?**
-
-   - [ ] a) Infraestructura como Código (IaC).
-   - [ ] b) Integración Continua (CI).
-   - [ ] c) Monitoreo continuo.
-   - [ ] d) Despliegue manual.
+Este test está diseñado para ayudarte a evaluar tu comprensión de los conceptos fundamentales introducidos en las Fases 0 y 1. Cada pregunta incluye un enlace a la sección relevante del material de estudio para que puedas repasar.
 
 ---
 
-## 2. Beneficios de DevOps
+## Sección 1: Fase 0 - Dominio de la Terminal
 
-1. **¿Cuál de los siguientes es un beneficio clave de DevOps?**
+**Pregunta 1:** ¿Cuál es el comando para crear un nuevo directorio llamado `proyecto` y luego mover un archivo `plan.txt` dentro de él?
 
-   - [ ] a) Mayor tiempo de entrega de software.
-   - [ ] b) Reducción de la colaboración entre equipos.
-   - [ ] c) Entrega más rápida de software.
-   - [ ] d) Aumento de errores en producción.
+- [ ] a) `mkdir proyecto` y luego `cp plan.txt proyecto/`
+- [ ] b) `newdir proyecto` y luego `move plan.txt proyecto/`
+- [ ] c) `mkdir proyecto` y luego `mv plan.txt proyecto/`
+- [ ] d) `create proyecto` y luego `cp plan.txt proyecto/`
 
-2. **¿Cómo mejora DevOps la calidad del software?**
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./../fase0/01-fundamentos-shell.md#2-navegación-y-manipulación-de-archivos">Fuente: Fase 0 - Fundamentos de la Shell</a></p>
+</details>
 
-   - [ ] a) Eliminando la necesidad de pruebas.
-   - [ ] b) Detectando errores tempranamente mediante pruebas automatizadas.
-   - [ ] c) Reduciendo la comunicación entre equipos.
-   - [ ] d) Aumentando el tiempo de desarrollo.
+**Pregunta 2:** Quieres que un script llamado `deploy.sh` sea ejecutable por su propietario, pero solo de lectura para todos los demás. ¿Qué comando `chmod` usarías?
 
-3. **¿Qué aspecto cultural es fundamental en DevOps?**
+- [ ] a) `chmod 644 deploy.sh`
+- [ ] b) `chmod 755 deploy.sh`
+- [ ] c) `chmod 744 deploy.sh`
+- [ ] d) `chmod 655 deploy.sh`
 
-   - [ ] a) Silos organizacionales.
-   - [ ] b) Responsabilidad compartida entre equipos.
-   - [ ] c) Menos automatización.
-   - [ ] d) Desarrollo sin retroalimentación.
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./../fase0/01-fundamentos-shell.md#permisos">Fuente: Fase 0 - Permisos de Archivos</a></p>
+</details>
 
----
+**Pregunta 3:** ¿Qué cadena de comandos usarías para buscar la palabra "ERROR" (ignorando mayúsculas/minúsculas) en un archivo `app.log` y guardar el resultado en un nuevo archivo llamado `errores.log`?
 
-## 3. Diferencia entre DevOps, Agile y Waterfall
+- [ ] a) `grep -i "ERROR" app.log > errores.log`
+- [ ] b) `find "ERROR" in app.log > errores.log`
+- [ ] c) `cat app.log | find "ERROR" >> errores.log`
+- [ ] d) `grep "ERROR" app.log >> errores.log`
 
-1. **¿Cuál de los siguientes modelos es lineal y secuencial?**
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./../fase0/02-herramientas-cli.md#1-búsqueda-y-filtrado-de-texto">Fuente: Fase 0 - Herramientas de Línea de Comandos</a></p>
+</details>
 
-   - [ ] a) Agile.
-   - [ ] b) DevOps.
-   - [ ] c) Waterfall.
-   - [ ] d) Scrum.
+**Pregunta 4:** ¿Cuál es la diferencia fundamental entre un bucle `for` y un bucle `while` en Bash scripting?
 
-2. **¿Qué metodología se enfoca en iteraciones cortas y entregas incrementales?**
-
-   - [ ] a) Waterfall.
-   - [ ] b) Agile.
-   - [ ] c) DevOps.
-   - [ ] d) Ninguna de las anteriores.
-
-3. **¿Qué enfoque integra desarrollo y operaciones para automatizar el ciclo de vida del software?**
-
-    - [ ] a) Waterfall.
-    - [ ] b) Agile.
-    - [ ] c) DevOps.
-    - [ ] d) Kanban.
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./../fase0/03-scripting-basico.md#bucles-for-y-while">Fuente: Fase 0 - Scripting Básico</a></p>
+</details>
 
 ---
 
-## 4. Ciclo de vida de DevOps: CI/CD, monitoreo, infraestructura como código, etc.**
+## Sección 2: Fase 1 - Fundamentos de DevOps
 
-1. **¿Qué significa CI en el contexto de DevOps?**
+**Pregunta 5:** Según la sección de cultura, ¿qué es un "Post-Mortem Sin Culpa" y por qué es crucial para la seguridad psicológica de un equipo?
 
-    - [ ] a) Control de Infraestructura.
-    - [ ] b) Integración Continua.
-    - [ ] c) Configuración Inicial.
-    - [ ] d) Código Iterativo.
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./01-que-es-devops.md#el-mindset-devops-más-allá-de-las-prácticas">Fuente: Fase 1 - Cultura de DevOps</a></p>
+</details>
 
-2. **¿Cuál de las siguientes herramientas se utiliza para la Infraestructura como Código (IaC)?**
+**Pregunta 6:** ¿Cuál de las siguientes NO es una de las 4 métricas clave de DORA?
 
-    - [ ] a) Jenkins.
-    - [ ] b) Terraform.
-    - [ ] c) Prometheus.
-    - [ ] d) Selenium.
+- [ ] a) Deployment Frequency
+- [ ] b) Lead Time for Changes
+- [ ] c) Number of Lines of Code
+- [ ] d) Time to Restore Service
 
-3. **¿Qué estrategia de despliegue permite lanzar una nueva versión de software junto a la versión anterior para comparar su funcionamiento?**
+<details>
+  <summary>Ver Fuente</summary>
+  <p>Aunque el contenido detallado sobre DORA aún no se ha escrito, el <a href="../../roadmap.md">Roadmap</a> las introduce como un concepto clave. La respuesta se puede inferir de los nombres de las métricas, que se centran en el proceso de entrega, no en la cantidad de código.</p>
+</details>
 
-    - [ ] a) Blue-Green Deployment.
-    - [ ] b) Canary Release.
-    - [ ] c) Rolling Update.
-    - [ ] d) Despliegue manual.
+**Pregunta 7:** Estás trabajando en una nueva funcionalidad en una rama llamada `feature/login`. Has hecho varios commits pequeños. Antes de fusionarla a `main`, quieres combinar todos esos commits en uno solo para mantener el historial limpio. ¿Qué estrategia de merge usarías?
 
-4. **¿Cuál es el objetivo del monitoreo continuo en DevOps?**
+- [ ] a) Three-Way Merge
+- [ ] b) Fast-Forward Merge
+- [ ] c) Rebase y Merge
+- [ ] d) Squash Merge
 
-    - [ ] a) Reducir la necesidad de pruebas.
-    - [ ] b) Supervisar el rendimiento y detectar problemas en tiempo real.
-    - [ ] c) Eliminar la automatización.
-    - [ ] d) Aumentar el tiempo de entrega.
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./07-primeros-pasos-git.md#5-merges-y-resolución-de-conflictos">Fuente: Fase 1 - Merges y Resolución de Conflictos</a></p>
+</details>
 
-5. **¿Qué herramienta se utiliza comúnmente para el monitoreo y visualización de métricas en DevOps?**
+**Pregunta 8:** ¿Para qué sirve el comando `git stash`?
 
-    - [ ] a) Jenkins.
-    - [ ] b) Grafana.
-    - [ ] c) Terraform.
-    - [ ] d) Docker.
+- [ ] a) Para eliminar commits antiguos.
+- [ ] b) Para guardar temporalmente cambios que no están listos para ser commitidos.
+- [ ] c) Para fusionar dos ramas.
+- [ ] d) Para crear un nuevo repositorio.
 
-6. **¿Qué práctica de DevOps permite gestionar la infraestructura mediante archivos de configuración?**
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./07-primeros-pasos-git.md#7-flujos-de-trabajo-avanzados">Fuente: Fase 1 - Flujos de Trabajo Avanzados (Stash)</a></p>
+</details>
 
-    - [ ] a) Integración Continua (CI).
-    - [ ] b) Infraestructura como Código (IaC).
-    - [ ] c) Despliegue Continuo (CD).
-    - [ ] d) Monitoreo continuo.
+**Pregunta 9:** ¿Qué es la "Infraestructura como Código" (IaC) y qué herramienta mencionada en la Fase 1 se utiliza para este propósito?
 
----
-
-## Resumen de Preguntas por Tema
-
-1. **¿Qué es DevOps?** Preguntas 1, 2, 3.
-
-   - 1.1. b)
-   - 1.2. b)
-   - 1.3. b)
-
-2. **Beneficios de DevOps** Preguntas 4, 5, 6.
-
-   - 2.1. c)
-   - 2.2. b)
-   - 2.3. b)
-
-3. **Diferencia entre DevOps, Agile y Waterfall** Preguntas 7, 8, 9.
-
-   - 3.1. c)
-   - 3.2. b)
-   - 3.3. c)
-
-4. **Ciclo de vida de DevOps** Preguntas 10, 11, 12, 13, 14, 15.
-
-   - 4.1. b)
-   - 4.2. b)
-   - 4.3. a)
-   - 4.4. b)
-   - 4.5. b)
-   - 4.6. b)
+<details>
+  <summary>Ver Fuente</summary>
+  <p><a href="./06-conceptos-clave-devops.md#2-infraestructura-como-código-iac">Fuente: Fase 1 - Conceptos Clave (IaC)</a></p>
+</details>
