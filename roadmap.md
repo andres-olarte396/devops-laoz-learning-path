@@ -60,27 +60,40 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
 
 ---
 
-## **Fase 2: Automatización y CI/CD**
+## **Fase 2: Automatización, CI/CD y Artefactos**
 
-Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo y despliegue.
+Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo, la creación de artefactos y su despliegue.
 
-1. **Automatización de tareas**
-   - Scripts de shell/bash
-   - Herramientas de automatización: Make, Ansible, Puppet, Chef
+- [Introducción a la Fase 2](./resources/fase2/00-introduccion-fase2.md)
 
-2. **Integración Continua (CI)**
-   - Configuración de pipelines con Jenkins
-   - Alternativas: GitHub Actions, GitLab CI/CD, CircleCI
-   - Pruebas automatizadas (unitarias, integración, regresión)
+1.  **Principios de Automatización y Estrategias de CI/CD**
+    *   [Estrategias de Ramificación para CI/CD (GitFlow vs. Trunk-Based)](./resources/fase2/01-principios-automatizacion-cicd.md)
+    *   [Automatización de Tareas con Scripts (Bash/Shell)](./resources/fase2/01-principios-automatizacion-cicd.md#automatizacion-con-scripts)
 
-3. **Entrega/Despliegue Continuo (CD)**
-   - Estrategias de despliegue: Blue-Green, Canary, Rolling Updates
-   - Despliegue en entornos de prueba y producción
-   - Rollbacks automáticos
+2.  **Integración Continua (CI)**
+    *   [Fundamentos y Anatomía de un Pipeline de CI](./resources/fase2/02-integracion-continua.md)
+    *   **Herramientas de CI:**
+        *   [Configuración de Pipelines con Jenkins](./resources/fase2/02-integracion-continua.md#jenkins)
+        *   [Alternativas Modernas: GitHub Actions, GitLab CI](./resources/fase2/02-integracion-continua.md#alternativas)
+    *   **Calidad y Seguridad en el Pipeline:**
+        *   [Pruebas Automatizadas (Unitarias, Integración)](./resources/fase2/02-integracion-continua.md#pruebas-automatizadas)
+        *   [Seguridad "Shift-Left": Escaneo de Dependencias y SAST](./resources/fase2/02-integracion-continua.md#seguridad-shift-left)
 
-4. **Práctica**
-   - Configurar un pipeline completo de CI/CD para una aplicación simple
-   - Implementar pruebas automatizadas en el pipeline
+3.  **Gestión de Artefactos**
+    *   [¿Qué son los Artefactos? Versionado y Almacenamiento](./resources/fase2/03-gestion-artefactos.md)
+    *   [Repositorios de Artefactos: Nexus, Artifactory, Registros en la Nube (ECR, GCR)](./resources/fase2/03-gestion-artefactos.md#repositorios-de-artefactos)
+
+4.  **Entrega y Despliegue Continuo (CD)**
+    *   [Diferencia entre Entrega Continua y Despliegue Continuo](./resources/fase2/04-entrega-continua.md)
+    *   **Estrategias de Despliegue:**
+        *   [Blue-Green, Canary, Rolling Updates](./resources/fase2/04-entrega-continua.md#estrategias-de-despliegue)
+    *   [Despliegue en Entornos (Desarrollo, Pruebas, Producción)](./resources/fase2/04-entrega-continua.md#despliegue-en-entornos)
+    *   [Rollbacks y Mitigación de Fallos](./resources/fase2/04-entrega-continua.md#rollbacks)
+
+5.  **Práctica**
+    *   [Configurar un pipeline completo de CI/CD para una aplicación web simple (Build, Test, Scan, Package & Push)](./resources/fase2/05-practica-cicd.md)
+    *   [Implementar pruebas automatizadas en el pipeline](./resources/fase2/05-practica-cicd.md#implementar-pruebas)
+    *   [Test de la unidad](./resources/fase2/test.md)
 
 ---
 
