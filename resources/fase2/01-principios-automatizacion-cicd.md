@@ -1469,6 +1469,41 @@ La automatización es el **fundamento** sobre el cual se construyen todas las pr
 
 ## **Recursos y Referencias**
 
+### **📺 Recursos Multimedia**
+
+Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión de configuración, hemos incluido recursos multimedia especializados:
+
+#### **🎥 Video: Infrastructure as Code - Puppet vs Chef vs Ansible**
+
+<video width="100%" controls>
+  <source src="../../assets/IaC__Puppet_vs_Chef_vs_Ansible.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video HTML5.
+</video>
+
+**Duración**: Aproximadamente 15-20 minutos  
+**Contenido**: Comparación detallada entre las tres herramientas principales de gestión de configuración, incluyendo:
+- Arquitectura y filosofía de cada herramienta
+- Casos de uso recomendados
+- Ventajas y desventajas
+- Ejemplos prácticos de configuración
+- Criterios para elegir la herramienta adecuada
+
+#### **🎧 Audio: Puppet vs Chef vs Ansible - Análisis Profundo**
+
+<audio controls style="width: 100%;">
+  <source src="../../assets/Puppet_vs._Chef_vs - 1758859501151.m4a" type="audio/mp4">
+  Tu navegador no soporta la reproducción de audio HTML5.
+</audio>
+
+**Formato**: Podcast/Conferencia  
+**Enfoque**: Análisis técnico comparativo que complementa el video con:
+- Experiencias reales de implementación
+- Consideraciones de adopción empresarial
+- Mejores prácticas específicas por herramienta
+- Tendencias del mercado y futuro de IaC
+
+> **💡 Tip de aprendizaje**: Te recomendamos ver el video primero para obtener una comprensión visual de las herramientas, y luego escuchar el audio para profundizar en los aspectos técnicos y estratégicos.
+
 ### **Documentación oficial**
 - [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
 - [GNU Make Documentation](https://www.gnu.org/software/make/manual/)

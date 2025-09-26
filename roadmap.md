@@ -60,40 +60,31 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
 
 ---
 
-## **Fase 2: Automatización, CI/CD y Artefactos**
+## **Fase 2: Automatización y CI/CD**
 
-Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo, la creación de artefactos y su despliegue.
+Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo y despliegue.
 
-- [Introducción a la Fase 2](./resources/fase2/00-introduccion-fase2.md)
 
-1.  **Principios de Automatización y Estrategias de CI/CD**
-    *   [Estrategias de Ramificación para CI/CD (GitFlow vs. Trunk-Based)](./resources/fase2/01-principios-automatizacion-cicd.md)
-    *   [Automatización de Tareas con Scripts (Bash/Shell)](./resources/fase2/01-principios-automatizacion-cicd.md#automatizacion-con-scripts)
 
-2.  **Integración Continua (CI)**
-    *   [Fundamentos y Anatomía de un Pipeline de CI](./resources/fase2/02-integracion-continua.md)
-    *   **Herramientas de CI:**
-        *   [Configuración de Pipelines con Jenkins](./resources/fase2/02-integracion-continua.md#jenkins)
-        *   [Alternativas Modernas: GitHub Actions, GitLab CI](./resources/fase2/02-integracion-continua.md#alternativas)
-    *   **Calidad y Seguridad en el Pipeline:**
-        *   [Pruebas Automatizadas (Unitarias, Integración)](./resources/fase2/02-integracion-continua.md#pruebas-automatizadas)
-        *   [Seguridad "Shift-Left": Escaneo de Dependencias y SAST](./resources/fase2/02-integracion-continua.md#seguridad-shift-left)
 
-3.  **Gestión de Artefactos**
-    *   [¿Qué son los Artefactos? Versionado y Almacenamiento](./resources/fase2/03-gestion-artefactos.md)
-    *   [Repositorios de Artefactos: Nexus, Artifactory, Registros en la Nube (ECR, GCR)](./resources/fase2/03-gestion-artefactos.md#repositorios-de-artefactos)
+1. **Automatización de tareas**
+   - [Scripts de shell/bash](./resources/fase2/01-automatizacion-de-tareas.md)
+   - [Herramientas de automatización: Make, Ansible, Puppet, Chef](./resources/fase2/01-automatizacion-de-tareas.md#herramientas-de-automatizacion)
 
-4.  **Entrega y Despliegue Continuo (CD)**
-    *   [Diferencia entre Entrega Continua y Despliegue Continuo](./resources/fase2/04-entrega-continua.md)
-    *   **Estrategias de Despliegue:**
-        *   [Blue-Green, Canary, Rolling Updates](./resources/fase2/04-entrega-continua.md#estrategias-de-despliegue)
-    *   [Despliegue en Entornos (Desarrollo, Pruebas, Producción)](./resources/fase2/04-entrega-continua.md#despliegue-en-entornos)
-    *   [Rollbacks y Mitigación de Fallos](./resources/fase2/04-entrega-continua.md#rollbacks)
+2. **Integración Continua (CI)**
+   - [Configuración de pipelines con Jenkins](./resources/fase2/02-integracion-continua.md)
+   - [Alternativas: GitHub Actions, GitLab CI/CD, CircleCI](./resources/fase2/02-integracion-continua.md#alternativas)
+   - [Pruebas automatizadas (unitarias, integración, regresión)](./resources/fase2/02-integracion-continua.md#pruebas-automatizadas)
 
-5.  **Práctica**
-    *   [Configurar un pipeline completo de CI/CD para una aplicación web simple (Build, Test, Scan, Package & Push)](./resources/fase2/05-practica-cicd.md)
-    *   [Implementar pruebas automatizadas en el pipeline](./resources/fase2/05-practica-cicd.md#implementar-pruebas)
-    *   [Test de la unidad](./resources/fase2/test.md)
+3. **Entrega/Despliegue Continuo (CD)**
+   - [Estrategias de despliegue: Blue-Green, Canary, Rolling Updates](./resources/fase2/03-entrega-continua.md)
+   - [Despliegue en entornos de prueba y producción](./resources/fase2/03-entrega-continua.md#despliegue-en-entornos)
+   - [Rollbacks automáticos](./resources/fase2/03-entrega-continua.md#rollbacks)
+
+4. **Práctica**
+   - [Configurar un pipeline completo de CI/CD para una aplicación simple](./resources/fase2/04-practica-cicd.md)
+   - [Implementar pruebas automatizadas en el pipeline](./resources/fase2/04-practica-cicd.md#implementar-pruebas)
+   - [Test de la unidad](./resources/fase2/test.md)
 
 ---
 
