@@ -1,6 +1,6 @@
-# 03. Configuración de Jenkins 
+# 03. Configuración de Jenkins
 
-**¡Domina Jenkins para CI/CD profesional!** Este módulo te enseñará a configurar y gestionar Jenkins desde cero hasta implementaciones empresariales avanzadas.
+**Domina Jenkins para CI/CD profesional!** Este módulo te enseñará a configurar y gestionar Jenkins desde cero hasta implementaciones empresariales avanzadas.
 
 ##  Objetivos de Aprendizaje
 
@@ -18,7 +18,7 @@ Al completar este módulo serás capaz de:
 
 ### 1. Instalación y Configuración Inicial
 
-#### � **Instalación con Docker (Recomendado)**
+####  **Instalación con Docker (Recomendado)**
 
 ```yaml
 # docker-compose.yml
@@ -93,7 +93,7 @@ docker-compose logs -f jenkins
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-#### � **Instalación en Ubuntu/Debian**
+####  **Instalación en Ubuntu/Debian**
 
 ```bash
 #!/bin/bash
@@ -173,28 +173,28 @@ instance.save()
 // Jenkinsfile
 pipeline {
     agent any
-    
+
     environment {
         APP_NAME = 'mi-aplicacion'
         VERSION = '1.0.0'
         DOCKER_REGISTRY = 'registry.company.com'
     }
-    
+
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timeout(time: 30, unit: 'MINUTES')
         timestamps()
     }
-    
+
     triggers {
         cron('H 2 * * *')  // Build nocturno
         pollSCM('H/5 * * * *')  // Poll SCM cada 5 minutos
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
-                echo '� Descargando código fuente...'
+                echo ' Descargando código fuente...'
                 checkout scm
                 script {
                     env.GIT_COMMIT_HASH = sh(
@@ -204,7 +204,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Build') {
             steps {
                 echo ' Construyendo aplicación...'
@@ -217,7 +217,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Test') {
             parallel {
                 stage('Unit Tests') {
@@ -237,14 +237,14 @@ pipeline {
                         }
                     }
                 }
-                
+
                 stage('Integration Tests') {
                     steps {
                         echo ' Ejecutando tests de integración...'
                         sh 'npm run test:integration'
                     }
                 }
-                
+
                 stage('Security Scan') {
                     steps {
                         echo ' Ejecutando análisis de seguridad...'
@@ -254,10 +254,10 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Quality Gate') {
             steps {
-                echo '� Verificando quality gate...'
+                echo ' Verificando quality gate...'
                 script {
                     def qualityGate = waitForQualityGate()
                     if (qualityGate.status != 'OK') {
@@ -266,7 +266,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Docker Build') {
             when {
                 anyOf {
@@ -276,7 +276,7 @@ pipeline {
                 }
             }
             steps {
-                echo '� Construyendo imagen Docker...'
+                echo ' Construyendo imagen Docker...'
                 script {
                     def image = docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${env.GIT_COMMIT_HASH}")
                     docker.withRegistry("https://${DOCKER_REGISTRY}", 'docker-registry-credentials') {
@@ -286,7 +286,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Deploy to Staging') {
             when {
                 branch 'develop'
@@ -301,7 +301,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Deploy to Production') {
             when {
                 branch 'main'
@@ -310,7 +310,7 @@ pipeline {
                 echo ' Desplegando a producción...'
                 input message: '¿Desplegar a producción?', ok: 'Deploy!',
                       submitterParameter: 'DEPLOYER'
-                
+
                 script {
                     echo "Desplegado por: ${env.DEPLOYER}"
                     build job: 'deploy-to-production', parameters: [
@@ -322,10 +322,10 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
-            echo '� Limpieza...'
+            echo ' Limpieza...'
             cleanWs()
         }
         success {
@@ -335,10 +335,10 @@ pipeline {
                      message: " ${APP_NAME} ${VERSION} desplegado exitosamente\nCommit: ${env.GIT_COMMIT_HASH}\nPor: ${env.CHANGE_AUTHOR ?: env.BUILD_USER}"
         }
         failure {
-            echo '❌ Pipeline falló!'
+            echo ' Pipeline falló!'
             slackSend channel: '#deployments',
                      color: 'danger',
-                     message: "❌ ${APP_NAME} ${VERSION} falló en el pipeline\nCommit: ${env.GIT_COMMIT_HASH}\nStage: ${env.STAGE_NAME}"
+                     message: " ${APP_NAME} ${VERSION} falló en el pipeline\nCommit: ${env.GIT_COMMIT_HASH}\nStage: ${env.STAGE_NAME}"
         }
         unstable {
             echo ' Pipeline inestable!'
@@ -356,13 +356,13 @@ pipeline {
 // Jenkinsfile.multibranch
 pipeline {
     agent none
-    
+
     environment {
         APP_NAME = 'mi-aplicacion'
         DOCKER_REGISTRY = 'registry.company.com'
         SLACK_CHANNEL = '#ci-cd'
     }
-    
+
     stages {
         stage('Branch Strategy') {
             steps {
@@ -394,14 +394,14 @@ pipeline {
                             env.DEPLOY_APPROVAL = 'false'
                             env.RUN_PERFORMANCE_TESTS = 'false'
                     }
-                    
+
                     echo "Rama: ${env.BRANCH_NAME}"
                     echo "Entorno: ${env.ENVIRONMENT}"
                     echo "Requiere aprobación: ${env.DEPLOY_APPROVAL}"
                 }
             }
         }
-        
+
         stage('Build & Test') {
             agent {
                 docker {
@@ -415,7 +415,7 @@ pipeline {
                         sh 'npm ci'
                     }
                 }
-                
+
                 stage('Code Quality') {
                     parallel {
                         stage('Lint') {
@@ -435,7 +435,7 @@ pipeline {
                         }
                     }
                 }
-                
+
                 stage('Tests') {
                     parallel {
                         stage('Unit Tests') {
@@ -454,7 +454,7 @@ pipeline {
                                 }
                             }
                         }
-                        
+
                         stage('Integration Tests') {
                             when {
                                 not { changeRequest() }
@@ -463,7 +463,7 @@ pipeline {
                                 sh 'npm run test:integration'
                             }
                         }
-                        
+
                         stage('E2E Tests') {
                             when {
                                 anyOf {
@@ -489,7 +489,7 @@ pipeline {
                         }
                     }
                 }
-                
+
                 stage('Build Application') {
                     steps {
                         sh 'npm run build'
@@ -502,7 +502,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Performance Tests') {
             when {
                 expression { env.RUN_PERFORMANCE_TESTS == 'true' }
@@ -530,7 +530,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Docker Build & Push') {
             agent any
             when {
@@ -539,14 +539,14 @@ pipeline {
             steps {
                 script {
                     def imageTag = "${env.BRANCH_NAME}-${env.BUILD_NUMBER}-${env.GIT_COMMIT[0..6]}"
-                    
-                    echo "� Construyendo imagen: ${DOCKER_REGISTRY}/${APP_NAME}:${imageTag}"
-                    
+
+                    echo " Construyendo imagen: ${DOCKER_REGISTRY}/${APP_NAME}:${imageTag}"
+
                     def image = docker.build("${DOCKER_REGISTRY}/${APP_NAME}:${imageTag}")
-                    
+
                     docker.withRegistry("https://${DOCKER_REGISTRY}", 'docker-registry-credentials') {
                         image.push()
-                        
+
                         // Taggear según la rama
                         if (env.BRANCH_NAME == 'main') {
                             image.push('latest')
@@ -555,12 +555,12 @@ pipeline {
                             image.push('develop')
                         }
                     }
-                    
+
                     env.DOCKER_IMAGE_TAG = imageTag
                 }
             }
         }
-        
+
         stage('Security Scanning') {
             agent any
             when {
@@ -582,7 +582,7 @@ pipeline {
                         }
                     }
                 }
-                
+
                 stage('SAST Scan') {
                     steps {
                         echo ' Análisis estático de seguridad...'
@@ -591,7 +591,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Deploy') {
             when {
                 not { changeRequest() }
@@ -605,9 +605,9 @@ pipeline {
                                   submitterParameter: 'DEPLOYER'
                         }
                     }
-                    
+
                     echo " Desplegando a ${env.ENVIRONMENT}..."
-                    
+
                     // Deployment usando Helm
                     sh """
                         helm upgrade --install ${APP_NAME}-${env.ENVIRONMENT} ./helm/${APP_NAME} \\
@@ -616,7 +616,7 @@ pipeline {
                             --set environment=${env.ENVIRONMENT} \\
                             --wait --timeout=5m
                     """
-                    
+
                     // Health check
                     sh """
                         kubectl wait --for=condition=ready pod \\
@@ -637,14 +637,14 @@ pipeline {
                     }
                 }
                 failure {
-                    echo '❌ Deployment falló!'
+                    echo ' Deployment falló!'
                     slackSend channel: env.SLACK_CHANNEL,
                              color: 'danger',
-                             message: "❌ Falló deployment de ${APP_NAME} a ${env.ENVIRONMENT}\nTag: ${env.DOCKER_IMAGE_TAG}"
+                             message: " Falló deployment de ${APP_NAME} a ${env.ENVIRONMENT}\nTag: ${env.DOCKER_IMAGE_TAG}"
                 }
             }
         }
-        
+
         stage('Post-Deploy Tests') {
             when {
                 anyOf {
@@ -655,17 +655,17 @@ pipeline {
             parallel {
                 stage('Smoke Tests') {
                     steps {
-                        echo '� Ejecutando smoke tests...'
+                        echo ' Ejecutando smoke tests...'
                         script {
                             def deployUrl = getDeploymentUrl(env.ENVIRONMENT)
                             sh "newman run tests/postman/smoke-tests.json --env-var base_url=${deployUrl}"
                         }
                     }
                 }
-                
+
                 stage('Health Check') {
                     steps {
-                        echo '� Verificando health check...'
+                        echo ' Verificando health check...'
                         script {
                             def deployUrl = getDeploymentUrl(env.ENVIRONMENT)
                             timeout(time: 5, unit: 'MINUTES') {
@@ -682,7 +682,7 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             cleanWs()
@@ -705,10 +705,10 @@ pipeline {
                     [$class: 'CulpritsRecipientProvider'],
                     [$class: 'DevelopersRecipientProvider']
                 ])
-                
+
                 if (culprits) {
                     emailext (
-                        subject: "❌ Pipeline falló: ${APP_NAME} - ${env.BRANCH_NAME}",
+                        subject: " Pipeline falló: ${APP_NAME} - ${env.BRANCH_NAME}",
                         body: """
                             <h2>Pipeline Falló</h2>
                             <p><strong>Proyecto:</strong> ${APP_NAME}</p>
@@ -739,13 +739,13 @@ def getDeploymentUrl(environment) {
 
 ### 3. Configuración de Agentes
 
-#### � **Agente Docker**
+####  **Agente Docker**
 
 ```groovy
 // Configuración de agente Docker en Jenkinsfile
 pipeline {
     agent none
-    
+
     stages {
         stage('Build with Node') {
             agent {
@@ -759,7 +759,7 @@ pipeline {
                 sh 'npm run build'
             }
         }
-        
+
         stage('Test with Different Versions') {
             parallel {
                 stage('Node 16') {
@@ -792,7 +792,7 @@ pipeline {
 }
 ```
 
-#### ☸ **Agente Kubernetes**
+####  **Agente Kubernetes**
 
 ```yaml
 # jenkins-agent-pod.yaml
@@ -843,7 +843,7 @@ pipeline {
             yaml readTrusted('jenkins-agent-pod.yaml')
         }
     }
-    
+
     stages {
         stage('Build') {
             steps {
@@ -852,7 +852,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Deploy') {
             steps {
                 container('kubectl') {
@@ -869,7 +869,7 @@ pipeline {
 
 ### 4. Plugins Esenciales y Configuración
 
-#### � **Configuración de Plugins Críticos**
+####  **Configuración de Plugins Críticos**
 
 ```groovy
 // plugins.groovy - Configuración automatizada de plugins
@@ -905,7 +905,7 @@ if (k8sPlugin) {
 instance.save()
 ```
 
-#### � **Configuración de Notificaciones**
+####  **Configuración de Notificaciones**
 
 ```groovy
 // email-config.groovy
@@ -1132,4 +1132,4 @@ curl http://localhost:8080/metrics
 
 ---
 
-**¡Excelente!** Ahora dominas Jenkins para CI/CD profesional. Continúa con el siguiente módulo para explorar plataformas CI/CD modernas como GitHub Actions y GitLab CI/CD.
+**Excelente!** Ahora dominas Jenkins para CI/CD profesional. Continúa con el siguiente módulo para explorar plataformas CI/CD modernas como GitHub Actions y GitLab CI/CD.

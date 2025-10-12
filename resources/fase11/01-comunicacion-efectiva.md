@@ -35,7 +35,7 @@ Al completar este módulo serás capaz de:
 Aceptado
 
 ## Contexto
-Nuestro monolito actual tiene 500K líneas de código y 15 desarrolladores trabajando en él. 
+Nuestro monolito actual tiene 500K líneas de código y 15 desarrolladores trabajando en él.
 Los deploys toman 2 horas y los conflictos de merge son frecuentes.
 
 ## Decisión
@@ -90,7 +90,7 @@ curl http://localhost:5000/api/users
 - [ ] Migration scripts validados
 
 ## Contexto Adicional
-Este cambio es parte de la epic de seguridad #1234. 
+Este cambio es parte de la epic de seguridad #1234.
 Relacionado con issues #456 y #789.
 
 ## Reviewers
@@ -104,10 +104,10 @@ Relacionado con issues #456 y #789.
 # Incident Report: [Título]
 
 ## Resumen Ejecutivo
-- **Fecha/Hora**: 
-- **Duración**: 
-- **Impacto**: 
-- **Causa Raíz**: 
+- **Fecha/Hora**:
+- **Duración**:
+- **Impacto**:
+- **Causa Raíz**:
 
 ## Timeline
 - HH:MM - Detección inicial
@@ -117,10 +117,10 @@ Relacionado con issues #456 y #789.
 - HH:MM - Verificación de resolución
 
 ## Impacto
-- **Usuarios afectados**: 
-- **Servicios afectados**: 
-- **Pérdida de ingresos**: 
-- **SLA breach**: 
+- **Usuarios afectados**:
+- **Servicios afectados**:
+- **Pérdida de ingresos**:
+- **SLA breach**:
 
 ## Causa Raíz
 [Descripción detallada]
@@ -162,7 +162,7 @@ Relacionado con issues #456 y #789.
 
 ## Attendees
 - @architect-team (required)
-- @senior-devs (required)  
+- @senior-devs (required)
 - @devops-team (optional)
 - @product-owner (for context)
 ```
@@ -214,7 +214,7 @@ Tenemos dos propuestas para la nueva feature:
 - Equipo B propone MongoDB por flexibilidad de schema
 
 ## Express
-Me preocupa que sin una decisión clara, ambos equipos 
+Me preocupa que sin una decisión clara, ambos equipos
 desarrollen prototipos incompatibles, perdiendo tiempo
 y creando deuda técnica.
 
@@ -241,7 +241,7 @@ public class TechnicalDebtNegotiation
 {
     // Position: "No podemos entregar features hasta resolver tech debt"
     // Interest: Mantener velocidad de desarrollo sostenible
-    
+
     public NegotiationProposal CreateWinWinProposal()
     {
         return new NegotiationProposal
@@ -254,7 +254,7 @@ public class TechnicalDebtNegotiation
                 Timeline = "Ongoing",
                 Benefits = new[] { "Sustainable velocity", "Regular improvement" }
             },
-            
+
             // Opción 2: Sprint completo de tech debt cada 4 sprints
             Option2 = new TechnicalDebtSprint
             {
@@ -262,7 +262,7 @@ public class TechnicalDebtNegotiation
                 Dedication = 1.0,
                 Benefits = new[] { "Focused improvement", "Big impact changes" }
             },
-            
+
             // Opción 3: Tech debt como definition of done
             Option3 = new TechnicalDebtCriteria
             {
@@ -292,7 +292,7 @@ public class TechnicalDebtNegotiation
 
 ## Public Channels
 - #team-backend (daily discussions)
-- #architecture-decisions (ADRs and proposals)  
+- #architecture-decisions (ADRs and proposals)
 - #incident-response (P0/P1 incidents only)
 - #releases (deployment notifications)
 - #tech-talks (knowledge sharing)
@@ -302,14 +302,14 @@ public class TechnicalDebtNegotiation
 -  Technical questions and discussions
 -  Code review requests
 -  Quick status updates
-- ❌ Long design discussions (use #architecture-decisions)
-- ❌ Non-urgent notifications
+-  Long design discussions (use #architecture-decisions)
+-  Non-urgent notifications
 
-### #architecture-decisions  
+### #architecture-decisions
 -  ADR proposals and reviews
 -  Design document discussions
 -  Technology evaluation
-- ❌ Implementation details (use #team-backend)
+-  Implementation details (use #team-backend)
 
 ## Communication SLAs
 - **Urgent issues**: @here mention, expect 15min response
@@ -386,7 +386,7 @@ public class TechnicalDebtNegotiation
 # Database Migration Impact Assessment
 
 ## Executive Summary
-Migraremos nuestra base de datos principal para mejorar performance 
+Migraremos nuestra base de datos principal para mejorar performance
 y reducir costos operativos en un 30%.
 
 ## Business Impact
@@ -435,13 +435,13 @@ jobs:
       run: |
         # Obtener commits de la semana
         git log --since="1 week ago" --pretty=format:"%h %s %an" > commits.txt
-        
+
         # Obtener PRs merged
         gh pr list --state merged --search "merged:>=$(date -d '7 days ago' +%Y-%m-%d)" > prs.txt
-        
+
         # Obtener issues cerrados
         gh issue list --state closed --search "closed:>=$(date -d '7 days ago' +%Y-%m-%d)" > issues.txt
-        
+
     - name: Send to Slack
       uses: 8398a7/action-slack@v3
       with:
@@ -454,7 +454,7 @@ jobs:
                 "type": "section",
                 "text": {
                   "type": "mrkdwn",
-                  "text": "*Sprint Week Summary*\n\n� *Completed*: ${{ env.ISSUES_COUNT }} issues\n� *Merged*: ${{ env.PRS_COUNT }} PRs\n *Commits*: ${{ env.COMMITS_COUNT }}"
+                  "text": "*Sprint Week Summary*\n\n *Completed*: ${{ env.ISSUES_COUNT }} issues\n *Merged*: ${{ env.PRS_COUNT }} PRs\n *Commits*: ${{ env.COMMITS_COUNT }}"
                 }
               }
             ]
@@ -472,7 +472,7 @@ public class CommunicationAutomationService
         var metrics = await _metricsService.GetWeeklyMetrics();
         var achievements = await _projectService.GetCompletedWork();
         var blockers = await _issueService.GetBlockers();
-        
+
         var update = new TeamUpdate
         {
             Period = "Week of " + DateTime.Now.AddDays(-7).ToString("MMM dd"),
@@ -487,7 +487,7 @@ public class CommunicationAutomationService
             Blockers = blockers.Where(b => b.Priority == "High").ToList(),
             NextWeekFocus = await _planningService.GetNextWeekPriorities()
         };
-        
+
         await _slackService.SendToChannel("#team-updates", FormatUpdate(update));
         await _emailService.SendToStakeholders(update);
     }
@@ -508,7 +508,7 @@ public class CommunicationMetrics
         public double ApprovalRate { get; set; }
         public int CommentQuality { get; set; }  // Basado en sentiment analysis
     }
-    
+
     // Efectividad de reuniones
     public class MeetingEffectiveness
     {
@@ -517,7 +517,7 @@ public class CommunicationMetrics
         public int DecisionsMadePerMeeting { get; set; }
         public double AttendeeEngagement { get; set; }  // Basado en participation
     }
-    
+
     // Claridad en comunicación
     public class CommunicationClarity
     {
@@ -550,21 +550,21 @@ Simula un conflicto técnico común:
 
 ## Checklist de Comunicación Efectiva
 
-### Comunicación Escrita ✓
+### Comunicación Escrita
 - [ ] Mensajes tienen contexto suficiente
 - [ ] Propósito claro desde el primer párrafo
 - [ ] Action items específicos y con owners
 - [ ] Información técnica adaptada a la audiencia
 - [ ] Links a información adicional
 
-### Reuniones ✓
+### Reuniones
 - [ ] Agenda enviada 24h antes
 - [ ] Objetivos y decisiones esperadas claras
 - [ ] Timekeeper asignado
 - [ ] Notas tomadas en tiempo real
 - [ ] Follow-up enviado dentro de 2h
 
-### Colaboración ✓
+### Colaboración
 - [ ] Code reviews constructivos y específicos
 - [ ] Pull requests con contexto completo
 - [ ] Documentación actualizada con cambios

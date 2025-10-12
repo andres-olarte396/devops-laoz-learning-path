@@ -1,4 +1,4 @@
-# Fase 14: Certificaciones y Carrera 
+# Fase 14: Certificaciones y Carrera
 
 Validación profesional y desarrollo de carrera en DevOps.
 

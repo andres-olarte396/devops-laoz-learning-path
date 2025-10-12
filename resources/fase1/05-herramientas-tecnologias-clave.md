@@ -22,34 +22,34 @@ graph TB
         AZURE_BOARDS[Azure Boards]
         GITHUB_PROJECTS[GitHub Projects]
     end
-    
+
     subgraph "Source Control"
         GIT[Git]
         GITHUB[GitHub]
         GITLAB[GitLab]
         BITBUCKET[Bitbucket]
     end
-    
+
     subgraph "CI/CD"
         JENKINS[Jenkins]
         GITHUB_ACTIONS[GitHub Actions]
         AZURE_PIPELINES[Azure Pipelines]
         GITLAB_CI[GitLab CI]
     end
-    
+
     subgraph "Containers"
         DOCKER[Docker]
         KUBERNETES[Kubernetes]
         OPENSHIFT[OpenShift]
     end
-    
+
     subgraph "Infrastructure"
         TERRAFORM[Terraform]
         ANSIBLE[Ansible]
         PUPPET[Puppet]
         CHEF[Chef]
     end
-    
+
     subgraph "Monitoring"
         PROMETHEUS[Prometheus]
         GRAFANA[Grafana]
@@ -97,21 +97,21 @@ git merge feature/nueva-funcionalidad
 -  Más popular, gran comunidad
 -  GitHub Actions integrado
 -  Excelente para open source
-- ❌ Limitaciones en planes gratuitos
+-  Limitaciones en planes gratuitos
 
 **GitLab**
 
 -  CI/CD integrado poderoso
 -  Self-hosted disponible
 -  DevOps completo en una plataforma
-- ❌ Interfaz menos intuitiva
+-  Interfaz menos intuitiva
 
 **Azure DevOps**
 
 -  Integración perfecta con Microsoft
 -  Azure Boards para gestión de proyectos
 -  Escalabilidad empresarial
-- ❌ Menos adoption en comunidad open source
+-  Menos adoption en comunidad open source
 
 ## Integración y Entrega Continua (CI/CD)
 
@@ -131,20 +131,20 @@ git merge feature/nueva-funcionalidad
 ```groovy
 pipeline {
     agent any
-    
+
     stages {
         stage('Build') {
             steps {
                 sh 'dotnet build'
             }
         }
-        
+
         stage('Test') {
             steps {
                 sh 'dotnet test --collect:"XPlat Code Coverage"'
             }
         }
-        
+
         stage('Deploy') {
             when {
                 branch 'main'
@@ -183,21 +183,21 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
-    
+
     - name: Restore dependencies
       run: dotnet restore
-    
+
     - name: Build
       run: dotnet build --no-restore
-    
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
 ```
@@ -430,25 +430,25 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 - name: Deploy aplicación web
   hosts: webservers
   become: yes
-  
+
   tasks:
     - name: Instalar Docker
       apt:
         name: docker.io
         state: present
         update_cache: yes
-    
+
     - name: Iniciar servicio Docker
       service:
         name: docker
         state: started
         enabled: yes
-    
+
     - name: Pull imagen de aplicación
       docker_image:
         name: mi-registro/mi-app:latest
         source: pull
-    
+
     - name: Ejecutar container
       docker_container:
         name: mi-app
@@ -501,21 +501,21 @@ public class MetricsController : ControllerBase
 {
     private static readonly Counter RequestCount = Metrics
         .CreateCounter("http_requests_total", "Total HTTP requests", new[] { "method", "endpoint" });
-    
+
     private static readonly Histogram RequestDuration = Metrics
         .CreateHistogram("http_request_duration_seconds", "HTTP request duration");
-    
+
     [HttpGet("metrics")]
     public async Task<IActionResult> GetMetrics()
     {
         RequestCount.WithLabels(HttpContext.Request.Method, HttpContext.Request.Path).Inc();
-        
+
         using (RequestDuration.NewTimer())
         {
             // Simular procesamiento
             await Task.Delay(100);
         }
-        
+
         return Ok();
     }
 }
@@ -542,7 +542,7 @@ filter {
   grok {
     match => { "message" => "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{GREEDYDATA:message}" }
   }
-  
+
   date {
     match => [ "timestamp", "ISO8601" ]
   }
@@ -612,7 +612,7 @@ output {
 - Heroku/Vercel para hosting
 - Basic monitoring (UptimeRobot)
 
-❌ Evitar por ahora:
+ Evitar por ahora:
 - Kubernetes (overkill)
 - Enterprise tools (Jenkins, Splunk)
 - Multi-cloud complexity
@@ -704,14 +704,14 @@ services:
     build: .
     ports:
       - "8080:80"
-  
+
   prometheus:
     image: prom/prometheus
     ports:
       - "9090:9090"
     volumes:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
-  
+
   grafana:
     image: grafana/grafana
     ports:
@@ -732,21 +732,21 @@ on: [push, pull_request]
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
-    
+
     - name: Build
       run: dotnet build
-    
+
     - name: Test
       run: dotnet test
-    
+
     - name: Build Docker image
       run: docker build -t mi-app .
 ```

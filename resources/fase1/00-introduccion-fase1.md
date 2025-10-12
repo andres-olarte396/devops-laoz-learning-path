@@ -75,7 +75,7 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
     Este artículo profundiza en los cambios de mentalidad fundamentales que representa DevOps, más allá de las herramientas específicas. Explora conceptos transformadores como:
    - **Servidores como ganado vs. mascotas**: El cambio paradigmático en la gestión de infraestructura
-   - **Principio de inmutabilidad**: Por qué la infraestructura se reemplaza en lugar de repararse  
+   - **Principio de inmutabilidad**: Por qué la infraestructura se reemplaza en lugar de repararse
    - **Ciclo infinito de mejora**: El modelo operativo continuo de DevOps
    - **Cultura antes que herramientas**: Por qué los procesos deben guiar la selección de tecnología
    - **Evolución del rol de operaciones**: Hacia Platform Engineering y habilitación de equipos

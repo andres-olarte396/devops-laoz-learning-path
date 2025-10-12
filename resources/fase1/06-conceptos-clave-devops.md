@@ -148,7 +148,7 @@ IaC es la práctica de **gestionar y provisionar infraestructura** mediante cód
 resource "aws_instance" "web_server" {
   ami           = "ami-0c55b159cbfafe1d0"
   instance_type = "t3.micro"
-  
+
   tags = {
     Name = "WebServer"
     Environment = "Production"
@@ -157,7 +157,7 @@ resource "aws_instance" "web_server" {
 
 resource "aws_security_group" "web_sg" {
   name = "web-security-group"
-  
+
   ingress {
     from_port   = 80
     to_port     = 80

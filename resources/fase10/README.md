@@ -1,4 +1,4 @@
-# Fase 10: DevOps y Automatización Avanzada 
+# Fase 10: DevOps y Automatización Avanzada
 
 Técnicas avanzadas de automatización y optimización de procesos DevOps.
 

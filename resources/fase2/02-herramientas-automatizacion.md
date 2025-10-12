@@ -1,6 +1,6 @@
-# 02. Herramientas de Automatización 
+# 02. Herramientas de Automatización
 
-**¡Potencia tu automatización con herramientas especializadas!** Este módulo te enseñará a usar herramientas profesionales de automatización que van más allá de scripts simples.
+**Potencia tu automatización con herramientas especializadas!** Este módulo te enseñará a usar herramientas profesionales de automatización que van más allá de scripts simples.
 
 ##  Objetivos de Aprendizaje
 
@@ -17,7 +17,7 @@ Al completar este módulo serás capaz de:
 
 ### 1. Make - Automatización de Builds
 
-#### � **Fundamentos de Make**
+####  **Fundamentos de Make**
 
 Make es una herramienta de automatización de build que utiliza un archivo `Makefile` para definir tareas y sus dependencias.
 
@@ -38,7 +38,7 @@ help: ## Mostrar ayuda
   awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 install: ## Instalar dependencias
- @echo "� Instalando dependencias..."
+ @echo " Instalando dependencias..."
  npm ci
  @echo " Dependencias instaladas"
 
@@ -64,7 +64,7 @@ quality: lint test ## Ejecutar verificaciones de calidad
  @echo " Verificaciones de calidad completadas"
 
 package: build ## Crear paquete de distribución
- @echo "� Creando paquete..."
+ @echo " Creando paquete..."
  mkdir -p packages
  tar -czf packages/$(APP_NAME)-$(VERSION).tar.gz -C $(BUILD_DIR) .
  @echo " Paquete creado: packages/$(APP_NAME)-$(VERSION).tar.gz"
@@ -81,11 +81,11 @@ deploy-prod: package ## Desplegar a producción
   ./scripts/deploy.sh production packages/$(APP_NAME)-$(VERSION).tar.gz; \
   echo " Desplegado a producción"; \
  else \
-  echo "❌ Deployment cancelado"; \
+  echo " Deployment cancelado"; \
  fi
 
 clean: ## Limpiar archivos generados
- @echo "� Limpiando archivos..."
+ @echo " Limpiando archivos..."
  rm -rf $(BUILD_DIR)
  rm -rf node_modules
  rm -rf packages
@@ -97,12 +97,12 @@ dev: install ## Iniciar servidor de desarrollo
  npm run dev
 
 watch: install ## Iniciar build en modo watch
- @echo "� Iniciando build en modo watch..."
+ @echo " Iniciando build en modo watch..."
  npm run build:watch
 
 # Docker targets
 docker-build: ## Construir imagen Docker
- @echo "� Construyendo imagen Docker..."
+ @echo " Construyendo imagen Docker..."
  docker build -t $(APP_NAME):$(VERSION) .
  docker tag $(APP_NAME):$(VERSION) $(APP_NAME):latest
  @echo " Imagen Docker construida"
@@ -112,7 +112,7 @@ docker-run: docker-build ## Ejecutar contenedor
  docker run -p 8080:8080 --name $(APP_NAME) $(APP_NAME):latest
 
 docker-clean: ## Limpiar recursos Docker
- @echo "� Limpiando recursos Docker..."
+ @echo " Limpiando recursos Docker..."
  -docker stop $(APP_NAME)
  -docker rm $(APP_NAME)
  -docker rmi $(APP_NAME):$(VERSION) $(APP_NAME):latest
@@ -121,9 +121,9 @@ docker-clean: ## Limpiar recursos Docker
 # Verificar prerequisites
 check-prereqs: ## Verificar prerrequisitos
  @echo " Verificando prerrequisitos..."
- @command -v node >/dev/null 2>&1 || { echo "❌ Node.js no está instalado"; exit 1; }
+ @command -v node >/dev/null 2>&1 || { echo " Node.js no está instalado"; exit 1; }
  @node -v | grep -q "v$(NODE_VERSION)" || { echo " Se requiere Node.js v$(NODE_VERSION)"; }
- @command -v npm >/dev/null 2>&1 || { echo "❌ npm no está instalado"; exit 1; }
+ @command -v npm >/dev/null 2>&1 || { echo " npm no está instalado"; exit 1; }
  @echo " Prerrequisitos verificados"
 
 # CI/CD pipeline completo
@@ -212,12 +212,12 @@ deploy-all: $(addprefix deploy-,$(SERVICES)) ## Desplegar todos los servicios
 
 # Gestión de base de datos
 db-migrate: ## Ejecutar migraciones de base de datos
- @echo "� Ejecutando migraciones..."
+ @echo " Ejecutando migraciones..."
  kubectl exec -it deployment/auth -n $(NAMESPACE) -- npm run migrate
  @echo " Migraciones completadas"
 
 db-seed: ## Poblar base de datos con datos de prueba
- @echo "� Poblando base de datos..."
+ @echo " Poblando base de datos..."
  kubectl exec -it deployment/auth -n $(NAMESPACE) -- npm run seed
  @echo " Base de datos poblada"
 
@@ -231,15 +231,15 @@ status: ## Verificar estado de todos los servicios
  done
 
 health-check: ## Verificar health de todos los servicios
- @echo "� Health check de servicios:"
+ @echo " Health check de servicios:"
  @for service in $(SERVICES); do \
   echo "Checking $$service..."; \
-  kubectl exec deployment/$$service -n $(NAMESPACE) -- curl -f http://localhost:8080/health || echo "❌ $$service no responde"; \
+  kubectl exec deployment/$$service -n $(NAMESPACE) -- curl -f http://localhost:8080/health || echo " $$service no responde"; \
  done
 
 # Limpieza
 clean: ## Limpiar recursos
- @echo "� Limpiando recursos..."
+ @echo " Limpiando recursos..."
  docker system prune -f
  @echo " Limpieza completada"
 
@@ -248,9 +248,9 @@ nuke: ##  PELIGRO: Eliminar todos los servicios
  @read -p "¿Estás seguro? Esto eliminará todo en el namespace $(NAMESPACE) [y/N] " confirm && \
  if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
   kubectl delete namespace $(NAMESPACE); \
-  echo "� Namespace $(NAMESPACE) eliminado"; \
+  echo " Namespace $(NAMESPACE) eliminado"; \
  else \
-  echo "❌ Operación cancelada"; \
+  echo " Operación cancelada"; \
  fi
 ```
 
@@ -302,14 +302,14 @@ mysql_datadir=/var/lib/mysql
     app_name: "mi-aplicacion"
     app_version: "1.0.0"
     app_port: 8080
-    
+
   tasks:
     - name: Actualizar caché de paquetes
       apt:
         update_cache: yes
         cache_valid_time: 3600
       when: ansible_os_family == "Debian"
-    
+
     - name: Instalar paquetes necesarios
       package:
         name:
@@ -319,7 +319,7 @@ mysql_datadir=/var/lib/mysql
           - git
           - htop
         state: present
-    
+
     - name: Crear usuario de aplicación
       user:
         name: "{{ app_name }}"
@@ -327,7 +327,7 @@ mysql_datadir=/var/lib/mysql
         shell: /bin/bash
         home: "/opt/{{ app_name }}"
         create_home: yes
-    
+
     - name: Crear directorios de aplicación
       file:
         path: "{{ item }}"
@@ -339,7 +339,7 @@ mysql_datadir=/var/lib/mysql
         - "/opt/{{ app_name }}/app"
         - "/opt/{{ app_name }}/logs"
         - "/opt/{{ app_name }}/backups"
-    
+
     - name: Clonar repositorio de aplicación
       git:
         repo: "https://github.com/company/{{ app_name }}.git"
@@ -348,13 +348,13 @@ mysql_datadir=/var/lib/mysql
         force: yes
       become_user: "{{ app_name }}"
       notify: restart application
-    
+
     - name: Instalar dependencias de Node.js
       npm:
         path: "/opt/{{ app_name }}/app"
         production: yes
       become_user: "{{ app_name }}"
-    
+
     - name: Configurar archivo de entorno
       template:
         src: env.j2
@@ -363,7 +363,7 @@ mysql_datadir=/var/lib/mysql
         group: "{{ app_name }}"
         mode: '0600'
       notify: restart application
-    
+
     - name: Configurar servicio systemd
       template:
         src: systemd-service.j2
@@ -372,27 +372,27 @@ mysql_datadir=/var/lib/mysql
       notify:
         - reload systemd
         - restart application
-    
+
     - name: Configurar nginx
       template:
         src: nginx-site.j2
         dest: "/etc/nginx/sites-available/{{ app_name }}"
         mode: '0644'
       notify: restart nginx
-    
+
     - name: Habilitar sitio nginx
       file:
         src: "/etc/nginx/sites-available/{{ app_name }}"
         dest: "/etc/nginx/sites-enabled/{{ app_name }}"
         state: link
       notify: restart nginx
-    
+
     - name: Eliminar sitio default de nginx
       file:
         path: /etc/nginx/sites-enabled/default
         state: absent
       notify: restart nginx
-    
+
     - name: Configurar firewall
       ufw:
         rule: allow
@@ -402,13 +402,13 @@ mysql_datadir=/var/lib/mysql
         - "22"    # SSH
         - "80"    # HTTP
         - "443"   # HTTPS
-    
+
     - name: Habilitar firewall
       ufw:
         state: enabled
         policy: deny
         direction: incoming
-    
+
     - name: Iniciar y habilitar servicios
       systemd:
         name: "{{ item }}"
@@ -417,7 +417,7 @@ mysql_datadir=/var/lib/mysql
       loop:
         - nginx
         - "{{ app_name }}"
-    
+
     - name: Verificar que la aplicación responde
       uri:
         url: "http://{{ ansible_host }}:{{ http_port }}/health"
@@ -425,17 +425,17 @@ mysql_datadir=/var/lib/mysql
         status_code: 200
       retries: 5
       delay: 10
-      
+
   handlers:
     - name: reload systemd
       systemd:
         daemon_reload: yes
-    
+
     - name: restart application
       systemd:
         name: "{{ app_name }}"
         state: restarted
-    
+
     - name: restart nginx
       systemd:
         name: nginx
@@ -513,23 +513,23 @@ upstream {{ app_name }}_backend {
 server {
     listen {{ http_port }};
     server_name {{ ansible_host }} {{ inventory_hostname }};
-    
+
     # Security headers
     add_header X-Frame-Options DENY;
     add_header X-Content-Type-Options nosniff;
     add_header X-XSS-Protection "1; mode=block";
-    
+
     # Gzip compression
     gzip on;
     gzip_types text/plain text/css application/json application/javascript text/xml application/xml;
-    
+
     # Static files
     location /static/ {
         alias /opt/{{ app_name }}/app/public/;
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
-    
+
     # Main application
     location / {
         proxy_pass http://{{ app_name }}_backend;
@@ -541,13 +541,13 @@ server {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_cache_bypass $http_upgrade;
-        
+
         # Timeouts
         proxy_connect_timeout 60s;
         proxy_send_timeout 60s;
         proxy_read_timeout 60s;
     }
-    
+
     # Health check
     location /health {
         proxy_pass http://{{ app_name }}_backend;
@@ -556,7 +556,7 @@ server {
 }
 ```
 
-#### � **Ansible Vault para Secretos**
+####  **Ansible Vault para Secretos**
 
 ```bash
 # Crear archivo de secretos
@@ -587,7 +587,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
     app_name: "mi-aplicacion"
     deploy_version: "{{ version | default('latest') }}"
     backup_dir: "/opt/{{ app_name }}/backups"
-    
+
   tasks:
     - name: Verificar que la nueva versión existe
       uri:
@@ -596,19 +596,19 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
         status_code: 200
       delegate_to: localhost
       run_once: true
-    
+
     - name: Crear backup de la versión actual
       archive:
         path: "/opt/{{ app_name }}/app"
         dest: "{{ backup_dir }}/{{ app_name }}-{{ ansible_date_time.epoch }}.tar.gz"
         owner: "{{ app_name }}"
         group: "{{ app_name }}"
-    
+
     - name: Parar aplicación
       systemd:
         name: "{{ app_name }}"
         state: stopped
-    
+
     - name: Actualizar código
       git:
         repo: "https://github.com/company/{{ app_name }}.git"
@@ -616,31 +616,31 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
         version: "v{{ deploy_version }}"
         force: yes
       become_user: "{{ app_name }}"
-    
+
     - name: Instalar/actualizar dependencias
       npm:
         path: "/opt/{{ app_name }}/app"
         production: yes
       become_user: "{{ app_name }}"
-    
+
     - name: Ejecutar migraciones de base de datos
       command: npm run migrate
       args:
         chdir: "/opt/{{ app_name }}/app"
       become_user: "{{ app_name }}"
       run_once: true
-    
+
     - name: Iniciar aplicación
       systemd:
         name: "{{ app_name }}"
         state: started
-    
+
     - name: Esperar que la aplicación esté lista
       wait_for:
         port: "{{ app_port }}"
         delay: 5
         timeout: 30
-    
+
     - name: Verificar health check
       uri:
         url: "http://{{ ansible_host }}:{{ http_port }}/health"
@@ -648,7 +648,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
         status_code: 200
       retries: 5
       delay: 10
-    
+
     - name: Limpiar backups antiguos (mantener últimos 5)
       shell: |
         cd {{ backup_dir }}
@@ -658,7 +658,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
 
 ### 3. Puppet - Configuration Management Declarativo
 
-#### � **Introducción a Puppet**
+####  **Introducción a Puppet**
 
 Puppet es una herramienta de configuration management que utiliza un lenguaje declarativo para definir el estado deseado de los sistemas.
 
@@ -670,12 +670,12 @@ class webserver {
   $app_user = $app_name
   $app_port = 8080
   $app_dir = "/opt/${app_name}"
-  
+
   # Paquetes necesarios
   package { ['nginx', 'nodejs', 'npm', 'git']:
     ensure => installed,
   }
-  
+
   # Usuario de la aplicación
   user { $app_user:
     ensure     => present,
@@ -684,7 +684,7 @@ class webserver {
     home       => $app_dir,
     managehome => true,
   }
-  
+
   # Directorios de la aplicación
   file { [$app_dir, "${app_dir}/app", "${app_dir}/logs", "${app_dir}/backups"]:
     ensure  => directory,
@@ -693,7 +693,7 @@ class webserver {
     mode    => '0755',
     require => User[$app_user],
   }
-  
+
   # Clonar repositorio
   vcsrepo { "${app_dir}/app":
     ensure   => present,
@@ -705,7 +705,7 @@ class webserver {
     require  => [Package['git'], File["${app_dir}/app"]],
     notify   => Exec['npm-install'],
   }
-  
+
   # Instalar dependencias npm
   exec { 'npm-install':
     command     => '/usr/bin/npm install --production',
@@ -715,7 +715,7 @@ class webserver {
     require     => Package['npm'],
     notify      => Service[$app_name],
   }
-  
+
   # Configuración de la aplicación
   file { "${app_dir}/app/.env":
     ensure  => file,
@@ -726,7 +726,7 @@ class webserver {
     require => File["${app_dir}/app"],
     notify  => Service[$app_name],
   }
-  
+
   # Servicio systemd
   file { "/etc/systemd/system/${app_name}.service":
     ensure  => file,
@@ -734,12 +734,12 @@ class webserver {
     mode    => '0644',
     notify  => [Exec['systemd-reload'], Service[$app_name]],
   }
-  
+
   exec { 'systemd-reload':
     command     => '/bin/systemctl daemon-reload',
     refreshonly => true,
   }
-  
+
   # Configuración nginx
   file { "/etc/nginx/sites-available/${app_name}":
     ensure  => file,
@@ -748,46 +748,46 @@ class webserver {
     require => Package['nginx'],
     notify  => Service['nginx'],
   }
-  
+
   file { "/etc/nginx/sites-enabled/${app_name}":
     ensure  => link,
     target  => "/etc/nginx/sites-available/${app_name}",
     require => File["/etc/nginx/sites-available/${app_name}"],
     notify  => Service['nginx'],
   }
-  
+
   # Eliminar sitio default
   file { '/etc/nginx/sites-enabled/default':
     ensure => absent,
     notify => Service['nginx'],
   }
-  
+
   # Servicios
   service { $app_name:
     ensure  => running,
     enable  => true,
     require => [File["/etc/systemd/system/${app_name}.service"], Exec['npm-install']],
   }
-  
+
   service { 'nginx':
     ensure  => running,
     enable  => true,
     require => Package['nginx'],
   }
-  
+
   # Firewall
   firewall { '100 allow ssh':
     dport  => 22,
     proto  => tcp,
     action => accept,
   }
-  
+
   firewall { '200 allow http':
     dport  => 80,
     proto  => tcp,
     action => accept,
   }
-  
+
   firewall { '300 allow https':
     dport  => 443,
     proto  => tcp,
@@ -803,7 +803,7 @@ node 'webserver.example.com' {
 
 ### 4. Chef - Infrastructure as Code
 
-#### �‍� **Introducción a Chef**
+####  **Introducción a Chef**
 
 Chef utiliza "recetas" (recipes) escritas en Ruby para definir configuraciones de sistema.
 
@@ -1007,7 +1007,7 @@ localhost ansible_connection=local
       package:
         name: nginx
         state: present
-    
+
     - name: Iniciar nginx
       service:
         name: nginx
@@ -1124,4 +1124,4 @@ user ALL=(ALL) NOPASSWD:ALL
 
 ---
 
-**¡Excelente!** Ahora dominas las herramientas fundamentales de automatización DevOps. Continúa con el siguiente módulo para aprender sobre CI/CD con Jenkins y plataformas modernas.
+**Excelente!** Ahora dominas las herramientas fundamentales de automatización DevOps. Continúa con el siguiente módulo para aprender sobre CI/CD con Jenkins y plataformas modernas.

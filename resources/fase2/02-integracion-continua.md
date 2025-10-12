@@ -9,7 +9,7 @@ La Integración Continua es el **corazón del desarrollo moderno de software**. 
 La **Integración Continua (CI)** es una práctica de desarrollo donde los desarrolladores integran código en un repositorio compartido frecuentemente, idealmente varias veces al día. Cada integración se verifica automáticamente mediante:
 
 - **Build automatizado** del código
-- **Ejecución de tests** automatizados  
+- **Ejecución de tests** automatizados
 - **Análisis de calidad** de código
 - **Validaciones de seguridad**
 - **Generación de artefactos** desplegables
@@ -18,18 +18,18 @@ La **Integración Continua (CI)** es una práctica de desarrollo donde los desar
 
 **Antes de CI (Integration Hell):**
 ```
-Developer A: "Funciona en mi máquina" 😅
-Developer B: "Mi código no compila con los cambios de A" 😰
-Developer C: "Los tests fallan cuando integro todo" 😵
-Team Lead: "El release se retrasa 2 semanas" 😱
+Developer A: "Funciona en mi máquina"
+Developer B: "Mi código no compila con los cambios de A"
+Developer C: "Los tests fallan cuando integro todo"
+Team Lead: "El release se retrasa 2 semanas"
 ```
 
 **Con CI:**
 ```
-✅ Cada commit se valida automáticamente
-✅ Los problemas se detectan en minutos, no semanas
-✅ El código en el repositorio principal siempre está en estado desplegable
-✅ Los desarrolladores reciben feedback inmediato
+ Cada commit se valida automáticamente
+ Los problemas se detectan en minutos, no semanas
+ El código en el repositorio principal siempre está en estado desplegable
+ Los desarrolladores reciben feedback inmediato
 ```
 
 ### **Beneficios de la Integración Continua**
@@ -100,10 +100,10 @@ graph LR
     H --> I[Security Scan]
     I --> J[Generate Artifacts]
     J --> K[Notify Results]
-    
+
     K --> L{Success?}
-    L -->|Yes| M[✅ Ready for CD]
-    L -->|No| N[❌ Notify Developer]
+    L -->|Yes| M[ Ready for CD]
+    L -->|No| N[ Notify Developer]
 ```
 
 ---
@@ -165,12 +165,12 @@ sudo systemctl status jenkins
 // Jenkinsfile
 pipeline {
     agent any
-    
+
     environment {
         NODE_VERSION = '18'
         APP_NAME = 'my-web-app'
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
@@ -178,14 +178,14 @@ pipeline {
                 checkout scm
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
                 echo 'Installing Node.js dependencies...'
                 sh 'npm ci'
             }
         }
-        
+
         stage('Code Quality') {
             parallel {
                 stage('Linting') {
@@ -194,7 +194,7 @@ pipeline {
                         sh 'npm run lint'
                     }
                 }
-                
+
                 stage('Security Scan') {
                     steps {
                         echo 'Running security audit...'
@@ -203,7 +203,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Unit Tests') {
             steps {
                 echo 'Running unit tests...'
@@ -223,21 +223,21 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Build') {
             steps {
                 echo 'Building application...'
                 sh 'npm run build'
             }
         }
-        
+
         stage('Integration Tests') {
             steps {
                 echo 'Running integration tests...'
                 sh 'npm run test:integration'
             }
         }
-        
+
         stage('Docker Build') {
             steps {
                 script {
@@ -250,28 +250,28 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
             echo 'Pipeline completed'
             cleanWs()
         }
-        
+
         success {
-            echo '✅ Pipeline succeeded!'
+            echo ' Pipeline succeeded!'
             slackSend(
                 channel: '#deployments',
                 color: 'good',
-                message: "✅ Build #${BUILD_NUMBER} succeeded for ${APP_NAME}"
+                message: " Build #${BUILD_NUMBER} succeeded for ${APP_NAME}"
             )
         }
-        
+
         failure {
-            echo '❌ Pipeline failed!'
+            echo ' Pipeline failed!'
             slackSend(
                 channel: '#deployments',
                 color: 'danger',
-                message: "❌ Build #${BUILD_NUMBER} failed for ${APP_NAME}"
+                message: " Build #${BUILD_NUMBER} failed for ${APP_NAME}"
             )
         }
     }
@@ -284,47 +284,47 @@ pipeline {
 // Jenkinsfile-advanced
 pipeline {
     agent any
-    
+
     parameters {
         choice(
             name: 'ENVIRONMENT',
             choices: ['development', 'staging', 'production'],
             description: 'Target deployment environment'
         )
-        
+
         booleanParam(
             name: 'SKIP_TESTS',
             defaultValue: false,
             description: 'Skip test execution (not recommended for production)'
         )
-        
+
         string(
             name: 'DOCKER_TAG',
             defaultValue: 'latest',
             description: 'Docker image tag'
         )
     }
-    
+
     environment {
         APP_NAME = 'my-web-app'
         DOCKER_REGISTRY = 'your-registry.com'
         SONAR_PROJECT_KEY = 'my-web-app'
     }
-    
+
     tools {
         nodejs 'NodeJS-18'
     }
-    
+
     stages {
         stage('Pre-flight Checks') {
             steps {
                 script {
-                    echo "🚀 Starting pipeline for ${APP_NAME}"
-                    echo "📋 Parameters:"
+                    echo " Starting pipeline for ${APP_NAME}"
+                    echo " Parameters:"
                     echo "   Environment: ${params.ENVIRONMENT}"
                     echo "   Skip Tests: ${params.SKIP_TESTS}"
                     echo "   Docker Tag: ${params.DOCKER_TAG}"
-                    
+
                     // Verificar que la rama sea correcta para producción
                     if (params.ENVIRONMENT == 'production' && env.BRANCH_NAME != 'main') {
                         error("Production deployments only allowed from main branch")
@@ -332,7 +332,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Code Checkout') {
             steps {
                 checkout scm
@@ -345,23 +345,23 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Install Dependencies') {
             steps {
                 sh '''
-                    echo "📦 Installing dependencies..."
+                    echo " Installing dependencies..."
                     npm ci --only=production
                     npm ci --only=development
                 '''
             }
         }
-        
+
         stage('Code Analysis') {
             parallel {
                 stage('Linting') {
                     steps {
                         sh '''
-                            echo "🔍 Running linter..."
+                            echo " Running linter..."
                             npm run lint -- --format=checkstyle --output-file=lint-results.xml
                         '''
                     }
@@ -375,20 +375,20 @@ pipeline {
                         }
                     }
                 }
-                
+
                 stage('Security Audit') {
                     steps {
                         sh '''
-                            echo "🔒 Running security audit..."
+                            echo " Running security audit..."
                             npm audit --audit-level=moderate --json > audit-results.json || true
                         '''
                     }
                 }
-                
+
                 stage('Dependency Check') {
                     steps {
                         sh '''
-                            echo "📋 Checking dependencies..."
+                            echo " Checking dependencies..."
                             npm outdated > outdated-dependencies.txt || true
                             npm ls --depth=0 > dependency-tree.txt
                         '''
@@ -396,7 +396,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('SonarQube Analysis') {
             when {
                 anyOf {
@@ -420,14 +420,14 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Unit Tests') {
             when {
                 not { params.SKIP_TESTS }
             }
             steps {
                 sh '''
-                    echo "🧪 Running unit tests..."
+                    echo " Running unit tests..."
                     npm run test:unit -- --reporter=xunit --outputFile=test-results.xml
                 '''
             }
@@ -445,14 +445,14 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Build Application') {
             steps {
                 sh '''
-                    echo "🔨 Building application..."
+                    echo " Building application..."
                     npm run build:${ENVIRONMENT}
-                    
-                    echo "📦 Creating build artifact..."
+
+                    echo " Creating build artifact..."
                     tar -czf ${APP_NAME}-${BUILD_VERSION}.tar.gz dist/
                 '''
             }
@@ -462,20 +462,20 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Integration Tests') {
             when {
                 not { params.SKIP_TESTS }
             }
             steps {
                 sh '''
-                    echo "🔗 Starting test environment..."
+                    echo " Starting test environment..."
                     docker-compose -f docker-compose.test.yml up -d
-                    
+
                     echo "⏳ Waiting for services to be ready..."
                     sleep 30
-                    
-                    echo "🧪 Running integration tests..."
+
+                    echo " Running integration tests..."
                     npm run test:integration
                 '''
             }
@@ -485,7 +485,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Build Docker Image') {
             steps {
                 script {
@@ -493,7 +493,7 @@ pipeline {
                         "${DOCKER_REGISTRY}/${APP_NAME}:${params.DOCKER_TAG}",
                         "--build-arg BUILD_VERSION=${BUILD_VERSION} ."
                     )
-                    
+
                     docker.withRegistry("https://${DOCKER_REGISTRY}", 'docker-registry-credentials') {
                         image.push()
                         image.push("${BUILD_VERSION}")
@@ -501,11 +501,11 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Security Scan - Docker Image') {
             steps {
                 sh """
-                    echo "🔒 Scanning Docker image for vulnerabilities..."
+                    echo " Scanning Docker image for vulnerabilities..."
                     docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
                         aquasec/trivy image --format json --output image-security-report.json \
                         ${DOCKER_REGISTRY}/${APP_NAME}:${params.DOCKER_TAG}
@@ -518,30 +518,30 @@ pipeline {
             }
         }
     }
-    
+
     post {
         always {
-            echo '🧹 Cleaning up workspace...'
+            echo ' Cleaning up workspace...'
             cleanWs()
         }
-        
+
         success {
-            echo '✅ Pipeline completed successfully!'
+            echo ' Pipeline completed successfully!'
             script {
                 def message = """
-                    ✅ *Build Successful*
-                    
+                     *Build Successful*
+
                     *Project:* ${APP_NAME}
                     *Build:* #${BUILD_NUMBER}
                     *Version:* ${BUILD_VERSION}
                     *Environment:* ${params.ENVIRONMENT}
                     *Branch:* ${env.BRANCH_NAME}
                     *Commit:* ${env.GIT_COMMIT_SHORT}
-                    
+
                     *Artifacts:* Available in Jenkins
                     *Docker Image:* ${DOCKER_REGISTRY}/${APP_NAME}:${params.DOCKER_TAG}
                 """
-                
+
                 slackSend(
                     channel: '#ci-cd',
                     color: 'good',
@@ -549,21 +549,21 @@ pipeline {
                 )
             }
         }
-        
+
         failure {
-            echo '❌ Pipeline failed!'
+            echo ' Pipeline failed!'
             script {
                 def message = """
-                    ❌ *Build Failed*
-                    
+                     *Build Failed*
+
                     *Project:* ${APP_NAME}
                     *Build:* #${BUILD_NUMBER}
                     *Branch:* ${env.BRANCH_NAME}
                     *Stage:* ${env.STAGE_NAME}
-                    
+
                     *View Logs:* ${BUILD_URL}console
                 """
-                
+
                 slackSend(
                     channel: '#ci-cd',
                     color: 'danger',
@@ -571,9 +571,9 @@ pipeline {
                 )
             }
         }
-        
+
         unstable {
-            echo '⚠️ Pipeline unstable (tests failed but build succeeded)'
+            echo ' Pipeline unstable (tests failed but build succeeded)'
         }
     }
 }
@@ -604,7 +604,7 @@ env:
 jobs:
   ci:
     runs-on: ubuntu-latest
-    
+
     services:
       postgres:
         image: postgres:13
@@ -618,71 +618,71 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
         fetch-depth: 0  # Necesario para SonarCloud
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: |
         npm ci
-        echo "📦 Dependencies installed successfully"
-    
+        echo " Dependencies installed successfully"
+
     - name: Run linter
       run: |
         npm run lint
-        echo "✅ Linting passed"
-    
+        echo " Linting passed"
+
     - name: Run unit tests
       run: |
         npm run test:unit -- --coverage
-        echo "✅ Unit tests passed"
-    
+        echo " Unit tests passed"
+
     - name: Run integration tests
       env:
         DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testdb
       run: |
         npm run test:integration
-        echo "✅ Integration tests passed"
-    
+        echo " Integration tests passed"
+
     - name: Build application
       run: |
         npm run build
-        echo "✅ Build completed successfully"
-    
+        echo " Build completed successfully"
+
     - name: Upload test coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         file: ./coverage/lcov.info
         flags: unittests
         name: codecov-umbrella
-    
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    
+
     - name: Build Docker image
       run: |
         docker build -t ${{ env.APP_NAME }}:${{ github.sha }} .
         docker tag ${{ env.APP_NAME }}:${{ github.sha }} ${{ env.APP_NAME }}:latest
-        echo "✅ Docker image built successfully"
-    
+        echo " Docker image built successfully"
+
     - name: Run security scan
       run: |
         docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
           aquasec/trivy image --exit-code 1 --severity HIGH,CRITICAL \
           ${{ env.APP_NAME }}:${{ github.sha }}
-    
+
     - name: Upload build artifacts
       uses: actions/upload-artifact@v3
       with:
@@ -709,7 +709,7 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
-    
+
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
@@ -721,22 +721,22 @@ jobs:
         exclude:
           - os: windows-latest
             node-version: 16
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Run tests
       run: npm test
-    
+
     - name: Upload coverage (Ubuntu + Node 18 only)
       if: matrix.coverage
       uses: codecov/codecov-action@v3
@@ -786,7 +786,7 @@ jobs:
     needs: changes
     if: needs.changes.outputs.backend == 'true'
     runs-on: ubuntu-latest
-    
+
     services:
       postgres:
         image: postgres:13
@@ -795,33 +795,33 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         ports:
           - 5432:5432
-      
+
       redis:
         image: redis:6
         options: --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
         ports:
           - 6379:6379
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
         cache: 'npm'
         cache-dependency-path: server/package-lock.json
-    
+
     - name: Install backend dependencies
       run: |
         cd server
         npm ci
-    
+
     - name: Run backend linting
       run: |
         cd server
         npm run lint
-    
+
     - name: Run backend unit tests
       run: |
         cd server
@@ -830,7 +830,7 @@ jobs:
         NODE_ENV: test
         DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
         REDIS_URL: redis://localhost:6379
-    
+
     - name: Run backend integration tests
       run: |
         cd server
@@ -844,37 +844,37 @@ jobs:
     needs: changes
     if: needs.changes.outputs.frontend == 'true'
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
         cache: 'npm'
         cache-dependency-path: client/package-lock.json
-    
+
     - name: Install frontend dependencies
       run: |
         cd client
         npm ci
-    
+
     - name: Run frontend linting
       run: |
         cd client
         npm run lint
-    
+
     - name: Run frontend unit tests
       run: |
         cd client
         npm run test:unit -- --coverage
-    
+
     - name: Build frontend
       run: |
         cd client
         npm run build
-    
+
     - name: Run E2E tests
       run: |
         cd client
@@ -886,7 +886,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:
@@ -894,7 +894,7 @@ jobs:
         scan-ref: '.'
         format: 'sarif'
         output: 'trivy-results.sarif'
-    
+
     - name: Upload Trivy scan results
       uses: github/codeql-action/upload-sarif@v2
       with:
@@ -904,26 +904,26 @@ jobs:
     needs: [backend-tests, frontend-tests, security-scan]
     if: always() && (needs.backend-tests.result == 'success' || needs.backend-tests.result == 'skipped') && (needs.frontend-tests.result == 'success' || needs.frontend-tests.result == 'skipped')
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: read
       packages: write
-    
+
     outputs:
       image-tag: ${{ steps.meta.outputs.tags }}
       image-digest: ${{ steps.build.outputs.digest }}
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
+
     - name: Login to Container Registry
       uses: docker/login-action@v2
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Extract metadata
       id: meta
       uses: docker/metadata-action@v4
@@ -935,7 +935,7 @@ jobs:
           type=semver,pattern={{version}}
           type=semver,pattern={{major}}.{{minor}}
           type=sha,prefix={{branch}}-
-    
+
     - name: Build and push
       id: build
       uses: docker/build-push-action@v4
@@ -953,24 +953,24 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     environment: staging
-    
+
     steps:
     - name: Deploy to staging
       run: |
-        echo "🚀 Deploying to staging environment"
+        echo " Deploying to staging environment"
         echo "Image: ${{ needs.build-and-push.outputs.image-tag }}"
         # Aquí iría la lógica real de deployment
-        
+
   deploy-production:
     needs: build-and-push
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     environment: production
-    
+
     steps:
     - name: Deploy to production
       run: |
-        echo "🚀 Deploying to production environment"
+        echo " Deploying to production environment"
         echo "Image: ${{ needs.build-and-push.outputs.image-tag }}"
         # Aquí iría la lógica real de deployment
 ```
@@ -997,7 +997,7 @@ variables:
   NODE_VERSION: "18"
   DOCKER_REGISTRY: $CI_REGISTRY
   APP_NAME: "my-web-app"
-  
+
 # Cache para optimizar builds
 .node_cache: &node_cache
   cache:
@@ -1009,10 +1009,10 @@ variables:
     policy: pull
 
 before_script:
-  - echo "🚀 Starting CI pipeline for $APP_NAME"
-  - echo "📋 Job: $CI_JOB_NAME"
-  - echo "🌿 Branch: $CI_COMMIT_REF_NAME"
-  - echo "📝 Commit: $CI_COMMIT_SHORT_SHA"
+  - echo " Starting CI pipeline for $APP_NAME"
+  - echo " Job: $CI_JOB_NAME"
+  - echo " Branch: $CI_COMMIT_REF_NAME"
+  - echo " Commit: $CI_COMMIT_SHORT_SHA"
 
 # Validación de código
 validate:lint:
@@ -1022,7 +1022,7 @@ validate:lint:
   before_script:
     - npm ci --cache .npm --prefer-offline
   script:
-    - echo "🔍 Running linter..."
+    - echo " Running linter..."
     - npm run lint -- --format=junit --output-file=lint-report.xml
   artifacts:
     when: always
@@ -1039,7 +1039,7 @@ validate:format:
   image: node:$NODE_VERSION-alpine
   <<: *node_cache
   script:
-    - echo "📐 Checking code formatting..."
+    - echo " Checking code formatting..."
     - npm run format:check
   allow_failure: true
 
@@ -1055,11 +1055,11 @@ build:app:
       - node_modules/
     policy: pull-push
   script:
-    - echo "📦 Installing dependencies..."
+    - echo " Installing dependencies..."
     - npm ci --cache .npm --prefer-offline
-    - echo "🔨 Building application..."
+    - echo " Building application..."
     - npm run build
-    - echo "✅ Build completed"
+    - echo " Build completed"
   artifacts:
     paths:
       - dist/
@@ -1077,7 +1077,7 @@ test:unit:
   dependencies:
     - build:app
   script:
-    - echo "🧪 Running unit tests..."
+    - echo " Running unit tests..."
     - npm run test:unit -- --coverage --reporters=default,junit
   coverage: '/Lines\s*:\s*(\d+\.\d+)%/'
   artifacts:
@@ -1108,7 +1108,7 @@ test:integration:
   dependencies:
     - build:app
   script:
-    - echo "🔗 Running integration tests..."
+    - echo " Running integration tests..."
     - npm run test:integration
   artifacts:
     when: always
@@ -1121,7 +1121,7 @@ security:sast:
   stage: security
   image: returntocorp/semgrep:latest
   script:
-    - echo "🔒 Running SAST scan..."
+    - echo " Running SAST scan..."
     - semgrep --config=auto --json --output=sast-report.json .
   artifacts:
     reports:
@@ -1135,7 +1135,7 @@ security:dependency:
   dependencies:
     - build:app
   script:
-    - echo "🔍 Scanning dependencies for vulnerabilities..."
+    - echo " Scanning dependencies for vulnerabilities..."
     - npm audit --audit-level=moderate --json > dependency-scan.json || true
   artifacts:
     paths:
@@ -1157,7 +1157,7 @@ package:docker:
   before_script:
     - echo $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
   script:
-    - echo "🐳 Building Docker image..."
+    - echo " Building Docker image..."
     - |
       docker build \
         --build-arg BUILD_VERSION=$CI_COMMIT_SHORT_SHA \
@@ -1165,7 +1165,7 @@ package:docker:
         --tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA \
         --tag $CI_REGISTRY_IMAGE:latest \
         .
-    - echo "📤 Pushing Docker image..."
+    - echo " Pushing Docker image..."
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
     - docker push $CI_REGISTRY_IMAGE:latest
   rules:
@@ -1185,7 +1185,7 @@ deploy:staging:
   before_script:
     - apk add --no-cache curl
   script:
-    - echo "🚀 Deploying to staging..."
+    - echo " Deploying to staging..."
     - |
       curl -X POST \
         -H "Authorization: Bearer $DEPLOY_TOKEN" \
@@ -1196,7 +1196,7 @@ deploy:staging:
           \"version\": \"$CI_COMMIT_SHORT_SHA\"
         }" \
         $DEPLOYMENT_WEBHOOK_URL
-    - echo "✅ Deployment to staging completed"
+    - echo " Deployment to staging completed"
   rules:
     - if: $CI_COMMIT_BRANCH == "develop"
   when: manual
@@ -1212,7 +1212,7 @@ deploy:production:
   before_script:
     - apk add --no-cache curl
   script:
-    - echo "🚀 Deploying to production..."
+    - echo " Deploying to production..."
     - |
       curl -X POST \
         -H "Authorization: Bearer $DEPLOY_TOKEN" \
@@ -1223,7 +1223,7 @@ deploy:production:
           \"version\": \"$CI_COMMIT_SHORT_SHA\"
         }" \
         $DEPLOYMENT_WEBHOOK_URL
-    - echo "✅ Deployment to production completed"
+    - echo " Deployment to production completed"
   rules:
     - if: $CI_COMMIT_TAG
   when: manual
@@ -1405,29 +1405,29 @@ workflows:
   ci-cd:
     jobs:
       - checkout-and-install
-      
+
       - lint-and-format:
           requires:
             - checkout-and-install
-      
+
       - unit-tests:
           requires:
             - checkout-and-install
-      
+
       - integration-tests:
           requires:
             - checkout-and-install
-      
+
       - security-scan:
           requires:
             - checkout-and-install
-      
+
       - build-app:
           requires:
             - lint-and-format
             - unit-tests
             - integration-tests
-      
+
       - build-docker:
           requires:
             - build-app
@@ -1437,7 +1437,7 @@ workflows:
               only:
                 - main
                 - develop
-      
+
       - deploy-staging:
           requires:
             - build-docker
@@ -1469,11 +1469,11 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps: [...]
-    
+
   unit-tests:
     runs-on: ubuntu-latest
     steps: [...]
-    
+
   integration-tests:
     runs-on: ubuntu-latest
     needs: [lint, unit-tests]  # Solo después de que pasen lint y unit tests
@@ -1517,7 +1517,7 @@ jobs:
 ```bash
 # Script para medir tiempos de build
 #!/bin/bash
-echo "📊 Build Metrics Report"
+echo " Build Metrics Report"
 echo "======================="
 
 start_time=$(date +%s)
@@ -1549,16 +1549,16 @@ build_time=$((build_end - build_start))
 end_time=$(date +%s)
 total_time=$((end_time - start_time))
 
-echo "⏱️  Timing Results:"
+echo "  Timing Results:"
 echo "   Install: ${install_time}s"
-echo "   Linting: ${lint_time}s"  
+echo "   Linting: ${lint_time}s"
 echo "   Testing: ${test_time}s"
 echo "   Building: ${build_time}s"
 echo "   Total: ${total_time}s"
 
 # Alertar si el build es muy lento
 if [ $total_time -gt 600 ]; then
-    echo "⚠️  Build time exceeds 10 minutes - optimization needed"
+    echo "  Build time exceeds 10 minutes - optimization needed"
 fi
 ```
 
@@ -1585,14 +1585,14 @@ fi
 
 #### **1. Tests flaky (intermitentes)**
 ```javascript
-// ❌ Test flaky - depende de timing
+//  Test flaky - depende de timing
 test('async operation', async () => {
   startAsyncOperation();
   await new Promise(resolve => setTimeout(resolve, 100)); // Tiempo fijo
   expect(getResult()).toBe('expected');
 });
 
-// ✅ Test estable - espera condición
+//  Test estable - espera condición
 test('async operation', async () => {
   startAsyncOperation();
   await waitFor(() => expect(getResult()).toBe('expected'), {
@@ -1603,11 +1603,11 @@ test('async operation', async () => {
 
 #### **2. Dependencias de red**
 ```yaml
-# ❌ Tests que dependen de servicios externos
+#  Tests que dependen de servicios externos
 - name: Test external API
   run: curl https://api.external-service.com/health
 
-# ✅ Mock de servicios externos
+#  Mock de servicios externos
 - name: Start mock server
   run: docker run -d --name mock-api wiremock/wiremock
 - name: Test with mocked API
@@ -1618,7 +1618,7 @@ test('async operation', async () => {
 
 #### **3. Problemas de recursos**
 ```yaml
-# ✅ Configurar límites de memoria
+#  Configurar límites de memoria
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -1776,4 +1776,4 @@ La CI es el **fundamento** de DevOps moderno. Un pipeline de CI bien diseñado e
 - [GitLab CI/CD Templates](https://gitlab.com/gitlab-org/gitlab-foss/-/tree/master/lib/gitlab/ci/templates)
 - [CircleCI Orbs Registry](https://circleci.com/developer/orbs)
 
-¡Felicidades! Has completado el módulo de Integración Continua. Ahora tienes las habilidades para implementar pipelines automatizados que validarán tu código consistentemente y te permitirán detectar problemas temprano en el ciclo de desarrollo.
+Felicidades! Has completado el módulo de Integración Continua. Ahora tienes las habilidades para implementar pipelines automatizados que validarán tu código consistentemente y te permitirán detectar problemas temprano en el ciclo de desarrollo.

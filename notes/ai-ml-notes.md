@@ -1,4 +1,4 @@
-# Notas de Inteligencia Artificial para Desarrolladores 
+# Notas de Inteligencia Artificial para Desarrolladores
 
 ## Fundamentos de Machine Learning
 
@@ -188,13 +188,13 @@ public class TextProcessor
     {
         // Remover caracteres especiales
         string cleaned = Regex.Replace(input, @"[^\w\s]", "");
-        
+
         // Convertir a minúsculas
         cleaned = cleaned.ToLower();
-        
+
         // Remover espacios extra
         cleaned = Regex.Replace(cleaned, @"\s+", " ").Trim();
-        
+
         return cleaned;
     }
 
@@ -231,14 +231,14 @@ public class PythonMLService
         {
             dynamic sklearn = Py.Import("sklearn.linear_model");
             dynamic np = Py.Import("numpy");
-            
+
             var model = sklearn.LinearRegression();
             var X = np.array(features);
-            
+
             // Entrenar modelo (ejemplo simplificado)
             var y = np.array(new double[] { 1, 2, 3, 4 });
             model.fit(X, y);
-            
+
             // Predicción
             var predictions = model.predict(X);
             return predictions.As<double[]>();
@@ -266,7 +266,7 @@ def predict():
         data = request.json
         features = pd.DataFrame(data['features'])
         predictions = model.predict(features)
-        
+
         return jsonify({
             'predictions': predictions.tolist(),
             'status': 'success'
@@ -291,7 +291,7 @@ public class IntelligentTestingService
     {
         // Usar IA para analizar cambios de código y recomendar tests
         var analysisResult = await AnalyzeCodeChanges(codeChanges);
-        
+
         return analysisResult.RiskyAreas
             .Select(area => new TestRecommendation
             {
@@ -339,7 +339,7 @@ public class BiasDetector
     public BiasAnalysis AnalyzeModelBias(IDataView testData, ITransformer model)
     {
         var predictions = model.Transform(testData);
-        
+
         // Analizar predicciones por grupos demográficos
         var results = _mlContext.Data.CreateEnumerable<ModelOutput>(predictions, false)
             .GroupBy(p => p.DemographicGroup)
@@ -369,7 +369,7 @@ public class PrivacyPreservingMLService
     {
         // Implementar differential privacy
         var noisyData = AddLaplaceNoise(data, epsilon);
-        
+
         var pipeline = _mlContext.Transforms
             .DropColumns("PersonalIdentifier", "SensitiveAttribute")
             .Append(_mlContext.Transforms.NormalizeMinMax("Features"))
@@ -435,7 +435,7 @@ stages:
     - task: PythonScript@0
       inputs:
         scriptPath: 'scripts/train_model.py'
-    
+
     - task: PublishTestResults@2
       inputs:
         testResultsFiles: '**/model_metrics.xml'

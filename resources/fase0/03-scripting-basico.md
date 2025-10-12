@@ -18,7 +18,7 @@ Bash (Bourne Again SHell) es la shell por defecto en la mayoría de sistemas Lin
 3.  Añade algunos comandos:
     ```bash
     #!/bin/bash
-    echo "¡Hola, Mundo!"
+    echo "Hola, Mundo!"
     echo "La fecha actual es: $(date)"
     ```
 4.  Dale permisos de ejecución al archivo:
@@ -125,7 +125,7 @@ PowerShell es la shell moderna y el lenguaje de scripting de Microsoft. Es el es
 1.  Crea un archivo con la extensión `.ps1`, por ejemplo, `mi_script.ps1`.
 2.  Añade comandos (llamados "cmdlets"):
     ```powershell
-    Write-Host "¡Hola, Mundo desde PowerShell!"
+    Write-Host "Hola, Mundo desde PowerShell!"
     Get-Date
     ```
 3.  Por defecto, la ejecución de scripts está deshabilitada. Para permitirla en tu sesión actual, abre PowerShell y ejecuta:

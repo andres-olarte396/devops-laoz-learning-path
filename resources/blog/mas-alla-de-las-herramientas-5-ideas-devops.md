@@ -10,7 +10,7 @@ Este artículo explora las 5 ideas más impactantes y, a veces, contraintuitivas
 
 En el modelo tradicional de TI, los servidores eran tratados como mascotas. Cada uno tenía un nombre (como zeus o apollo), se cuidaba individualmente, se actualizaba a mano y, si fallaba, era una catástrofe que requería una intervención heroica para "curarlo". Este enfoque era frágil y no escalaba.
 
-La nube y DevOps introdujeron la metáfora "Cattle vs. Pets" (Ganado vs. Mascotas). En este nuevo paradigma, los servidores son como el ganado: son idénticos, se gestionan en masa y se les asigna un número de serie, no un nombre. Si uno de ellos falla, no se intenta repararlo; simplemente se reemplaza por uno nuevo de forma automática. La pérdida de una unidad individual no es crítica porque el sistema está diseñado para ser resiliente y el rebaño sigue funcionando. 
+La nube y DevOps introdujeron la metáfora "Cattle vs. Pets" (Ganado vs. Mascotas). En este nuevo paradigma, los servidores son como el ganado: son idénticos, se gestionan en masa y se les asigna un número de serie, no un nombre. Si uno de ellos falla, no se intenta repararlo; simplemente se reemplaza por uno nuevo de forma automática. La pérdida de una unidad individual no es crítica porque el sistema está diseñado para ser resiliente y el rebaño sigue funcionando.
 
 Esta mentalidad es lo que permite que un servicio gestione un pico de tráfico repentino en Black Friday no actualizando frenéticamente un único servidor "mascota", sino añadiendo automáticamente 100 nuevos servidores "ganado" idénticos en minutos, y eliminándolos con la misma facilidad cuando el pico ha pasado. Esta filosofía de lo desechable conduce de forma natural a un principio aún más poderoso: si un servidor es reemplazable, nunca debería ser modificado.
 
@@ -18,7 +18,7 @@ Esta mentalidad es lo que permite que un servicio gestione un pico de tráfico r
 
 Esta idea es la evolución natural del concepto de "ganado". Si los servidores son desechables, ¿por qué deberíamos modificarlos una vez que están en producción? La práctica de la infraestructura inmutable dicta que, una vez que un sistema (un servidor, un contenedor) se despliega, nunca se modifica. Si se necesita una actualización, un parche de seguridad o un cambio de configuración, no se altera el sistema existente. En su lugar, se destruye y se reemplaza por una nueva instancia creada a partir de una plantilla actualizada.
 
-Este enfoque se logra mediante la Infraestructura como Código (IaC), utilizando herramientas como Terraform para definir y versionar la infraestructura de la misma manera que el código de una aplicación. Esto elimina por completo el temido problema de "en mi máquina funciona". No existe la deriva de configuración entre entornos porque los entornos nunca se alteran, se reemplazan. 
+Este enfoque se logra mediante la Infraestructura como Código (IaC), utilizando herramientas como Terraform para definir y versionar la infraestructura de la misma manera que el código de una aplicación. Esto elimina por completo el temido problema de "en mi máquina funciona". No existe la deriva de configuración entre entornos porque los entornos nunca se alteran, se reemplazan.
 
 Esto convierte los despliegues, antes un arte impredecible y de alto riesgo, en una ciencia repetible y de bajo riesgo. Esta misma previsibilidad es lo que hace posible ejecutar el ciclo de vida del desarrollo no solo una vez, sino en un bucle infinito e implacable de mejora.
 
@@ -44,7 +44,7 @@ La elección de una herramienta es una consecuencia de la forma en que un equipo
 
 El tradicional administrador de sistemas, que pasaba sus días provisionando servidores manualmente y respondiendo a tickets, está en vías de extinción. La filosofía DevOps ha transformado este rol en algo mucho más estratégico y poderoso, una tendencia que hoy se conoce como **Platform Engineering**.
 
-El enfoque ya no es gestionar máquinas individuales, sino construir plataformas internas automatizadas que proporcionen a los equipos de desarrollo las herramientas y la infraestructura que necesitan para ser autónomos y eficientes. El nuevo rol del profesional de operaciones es ser un habilitador para otros equipos, no un guardián de la infraestructura. 
+El enfoque ya no es gestionar máquinas individuales, sino construir plataformas internas automatizadas que proporcionen a los equipos de desarrollo las herramientas y la infraestructura que necesitan para ser autónomos y eficientes. El nuevo rol del profesional de operaciones es ser un habilitador para otros equipos, no un guardián de la infraestructura.
 
 Se enfoca en crear "caminos pavimentados" (plataformas estandarizadas) que abstraen la complejidad subyacente. Esto significa que los desarrolladores están empoderados con plataformas de autoservicio, plantillas preconfiguradas y barreras de seguridad automatizadas. Pueden lanzar código y provisionar infraestructura de forma segura y rápida sin necesidad de convertirse en expertos en seguridad en la nube o esperar semanas por un ticket de operaciones, aumentando drásticamente la velocidad de innovación de la organización.
 

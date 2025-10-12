@@ -1,6 +1,6 @@
-# 01. Scripts de Automatización 
+# 01. Scripts de Automatización
 
-**¡Automatiza tareas repetitivas y mejora tu productividad!** Este módulo te enseñará a crear scripts poderosos para automatizar procesos comunes en DevOps.
+**Automatiza tareas repetitivas y mejora tu productividad!** Este módulo te enseñará a crear scripts poderosos para automatizar procesos comunes en DevOps.
 
 ##  Objetivos de Aprendizaje
 
@@ -17,7 +17,7 @@ Al completar este módulo serás capaz de:
 
 ### 1. Scripts Bash/Shell para Unix/Linux
 
-#### � **Fundamentos de Bash**
+####  **Fundamentos de Bash**
 
 ```bash
 #!/bin/bash
@@ -40,19 +40,19 @@ log_message() {
 # Función principal de backup
 perform_backup() {
     local backup_name="website_backup_${DATE}.tar.gz"
-    
+
     log_message "Iniciando backup de $SOURCE_DIR"
-    
+
     # Crear directorio de backup si no existe
     mkdir -p "$BACKUP_DIR"
-    
+
     # Realizar backup con compresión
     if tar -czf "${BACKUP_DIR}/${backup_name}" -C "$SOURCE_DIR" .; then
         log_message "Backup completado exitosamente: $backup_name"
         echo " Backup creado: ${BACKUP_DIR}/${backup_name}"
     else
         log_message "ERROR: Falló el backup"
-        echo "❌ Error en el backup"
+        echo " Error en el backup"
         exit 1
     fi
 }
@@ -67,16 +67,16 @@ cleanup_old_backups() {
 # Función principal
 main() {
     echo " Iniciando script de backup automatizado"
-    
+
     # Verificar que el directorio fuente existe
     if [ ! -d "$SOURCE_DIR" ]; then
-        echo "❌ Error: Directorio fuente no existe: $SOURCE_DIR"
+        echo " Error: Directorio fuente no existe: $SOURCE_DIR"
         exit 1
     fi
-    
+
     perform_backup
     cleanup_old_backups
-    
+
     echo " Script completado exitosamente"
 }
 
@@ -123,25 +123,25 @@ print_error() {
 # Función para verificar prerrequisitos
 check_prerequisites() {
     print_status "Verificando prerrequisitos..."
-    
+
     # Verificar que somos root o tenemos sudo
     if [[ $EUID -ne 0 ]]; then
         print_error "Este script debe ejecutarse como root o con sudo"
         exit 1
     fi
-    
+
     # Verificar que git está instalado
     if ! command -v git &> /dev/null; then
         print_error "Git no está instalado"
         exit 1
     fi
-    
+
     # Verificar que systemctl está disponible
     if ! command -v systemctl &> /dev/null; then
         print_error "systemctl no está disponible"
         exit 1
     fi
-    
+
     print_status " Prerrequisitos verificados"
 }
 
@@ -170,40 +170,40 @@ stop_service() {
 # Función para descargar nueva versión
 download_new_version() {
     print_status "Descargando nueva versión desde $GIT_REPO..."
-    
+
     # Crear directorio temporal
     local temp_dir=$(mktemp -d)
-    
+
     # Clonar repositorio
     git clone "$GIT_REPO" "$temp_dir"
-    
+
     # Remover directorio anterior si existe
     if [ -d "$DEPLOY_DIR" ]; then
         rm -rf "$DEPLOY_DIR"
     fi
-    
+
     # Mover nueva versión al directorio de deployment
     mv "$temp_dir" "$DEPLOY_DIR"
-    
+
     print_status " Nueva versión descargada"
 }
 
 # Función para instalar dependencias
 install_dependencies() {
     print_status "Instalando dependencias..."
-    
+
     cd "$DEPLOY_DIR"
-    
+
     # Si es una aplicación Node.js
     if [ -f "package.json" ]; then
         npm install --production
     fi
-    
+
     # Si es una aplicación Python
     if [ -f "requirements.txt" ]; then
         pip3 install -r requirements.txt
     fi
-    
+
     print_status " Dependencias instaladas"
 }
 
@@ -219,13 +219,13 @@ set_permissions() {
 start_service() {
     print_status "Iniciando servicio $SERVICE_NAME..."
     systemctl start "$SERVICE_NAME"
-    
+
     # Verificar que el servicio se inició correctamente
     sleep 5
     if systemctl is-active --quiet "$SERVICE_NAME"; then
         print_status " Servicio iniciado exitosamente"
     else
-        print_error "❌ Falló al iniciar el servicio"
+        print_error " Falló al iniciar el servicio"
         rollback
         exit 1
     fi
@@ -236,19 +236,19 @@ health_check() {
     print_status "Verificando health check..."
     local max_attempts=10
     local attempt=1
-    
+
     while [ $attempt -le $max_attempts ]; do
         if curl -f http://localhost:8080/health &> /dev/null; then
             print_status " Aplicación respondiendo correctamente"
             return 0
         fi
-        
+
         print_warning "Intento $attempt/$max_attempts fallido, reintentando en 5 segundos..."
         sleep 5
         ((attempt++))
     done
-    
-    print_error "❌ Health check falló después de $max_attempts intentos"
+
+    print_error " Health check falló después de $max_attempts intentos"
     rollback
     exit 1
 }
@@ -256,23 +256,23 @@ health_check() {
 # Función de rollback
 rollback() {
     print_warning "Iniciando rollback..."
-    
+
     # Encontrar el backup más reciente
     local latest_backup=$(ls -t "${BACKUP_DIR}/${APP_NAME}_backup_"* 2>/dev/null | head -n1)
-    
+
     if [ -n "$latest_backup" ]; then
         print_status "Restaurando desde: $latest_backup"
-        
+
         # Parar servicio
         systemctl stop "$SERVICE_NAME"
-        
+
         # Restaurar backup
         rm -rf "$DEPLOY_DIR"
         cp -r "$latest_backup" "$DEPLOY_DIR"
-        
+
         # Reiniciar servicio
         systemctl start "$SERVICE_NAME"
-        
+
         print_status " Rollback completado"
     else
         print_error "No se encontró backup para rollback"
@@ -283,7 +283,7 @@ rollback() {
 main() {
     echo " Iniciando deployment automatizado de $APP_NAME"
     echo "================================================"
-    
+
     check_prerequisites
     create_backup
     stop_service
@@ -292,7 +292,7 @@ main() {
     set_permissions
     start_service
     health_check
-    
+
     echo "================================================"
     echo " Deployment completado exitosamente"
     echo " $APP_NAME está ahora ejecutándose con la nueva versión"
@@ -309,7 +309,7 @@ fi
 
 ### 2. Scripts PowerShell para Windows
 
-#### � **Script PowerShell Básico**
+####  **Script PowerShell Básico**
 
 ```powershell
 # Script de automatización para Windows
@@ -318,13 +318,13 @@ fi
 param(
     [Parameter(Mandatory=$true)]
     [string]$SourcePath,
-    
+
     [Parameter(Mandatory=$false)]
     [string]$BackupPath = "C:\Backups",
-    
+
     [Parameter(Mandatory=$false)]
     [int]$RetentionDays = 7,
-    
+
     [switch]$Compress
 )
 
@@ -335,10 +335,10 @@ $DateStamp = Get-Date -Format "yyyyMMdd_HHmmss"
 # Función para logging
 function Write-Log {
     param([string]$Message, [string]$Level = "INFO")
-    
+
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     $logEntry = "[$timestamp] [$Level] $Message"
-    
+
     Write-Host $logEntry
     Add-Content -Path $LogPath -Value $logEntry
 }
@@ -346,29 +346,29 @@ function Write-Log {
 # Función para verificar prerrequisitos
 function Test-Prerequisites {
     Write-Log "Verificando prerrequisitos..."
-    
+
     # Verificar que el path fuente existe
     if (-not (Test-Path $SourcePath)) {
         Write-Log "Error: El path fuente no existe: $SourcePath" "ERROR"
         exit 1
     }
-    
+
     # Crear directorio de backup si no existe
     if (-not (Test-Path $BackupPath)) {
         New-Item -ItemType Directory -Path $BackupPath -Force
         Write-Log "Directorio de backup creado: $BackupPath"
     }
-    
+
     Write-Log " Prerrequisitos verificados"
 }
 
 # Función principal de backup
 function Start-Backup {
     Write-Log "Iniciando backup de $SourcePath"
-    
+
     $backupName = "backup_$DateStamp"
     $destinationPath = Join-Path $BackupPath $backupName
-    
+
     try {
         if ($Compress) {
             # Crear backup comprimido
@@ -382,7 +382,7 @@ function Start-Backup {
         }
     }
     catch {
-        Write-Log "❌ Error durante el backup: $($_.Exception.Message)" "ERROR"
+        Write-Log " Error durante el backup: $($_.Exception.Message)" "ERROR"
         exit 1
     }
 }
@@ -390,16 +390,16 @@ function Start-Backup {
 # Función para limpiar backups antiguos
 function Remove-OldBackups {
     Write-Log "Limpiando backups antiguos (>$RetentionDays días)"
-    
+
     $cutoffDate = (Get-Date).AddDays(-$RetentionDays)
-    
-    Get-ChildItem -Path $BackupPath -Filter "backup_*" | 
+
+    Get-ChildItem -Path $BackupPath -Filter "backup_*" |
         Where-Object { $_.CreationTime -lt $cutoffDate } |
         ForEach-Object {
             Remove-Item -Path $_.FullName -Recurse -Force
             Write-Log "Eliminado backup antiguo: $($_.Name)"
         }
-    
+
     Write-Log " Limpieza completada"
 }
 
@@ -410,11 +410,11 @@ function Main {
     Write-Host "Backup: $BackupPath" -ForegroundColor Yellow
     Write-Host "Compress: $Compress" -ForegroundColor Yellow
     Write-Host "=" * 50
-    
+
     Test-Prerequisites
     Start-Backup
     Remove-OldBackups
-    
+
     Write-Host "=" * 50
     Write-Host " Script completado exitosamente" -ForegroundColor Green
 }
@@ -432,13 +432,13 @@ param(
     [Parameter(Mandatory=$true)]
     [ValidateSet("build", "test", "deploy", "rollback")]
     [string]$Action,
-    
+
     [Parameter(Mandatory=$false)]
     [string]$Environment = "staging",
-    
+
     [Parameter(Mandatory=$false)]
     [string]$Version = "latest",
-    
+
     [Parameter(Mandatory=$false)]
     [string]$ConfigFile = "deploy.json"
 )
@@ -460,15 +460,15 @@ function Invoke-LoggedCommand {
         [string]$Command,
         [string]$Description
     )
-    
+
     Write-Host " $Description..." -ForegroundColor Yellow
-    
+
     try {
         Invoke-Expression $Command
         Write-Host " $Description completado" -ForegroundColor Green
     }
     catch {
-        Write-Host "❌ Error en $Description`: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host " Error en $Description`: $($_.Exception.Message)" -ForegroundColor Red
         throw
     }
 }
@@ -476,18 +476,18 @@ function Invoke-LoggedCommand {
 # Función para build
 function Start-Build {
     Write-Host " Iniciando build para $Environment" -ForegroundColor Cyan
-    
+
     # Restaurar dependencias NuGet
     Invoke-LoggedCommand "dotnet restore" "Restaurando dependencias"
-    
+
     # Build de la aplicación
     $buildCmd = "dotnet build --configuration Release --no-restore"
     Invoke-LoggedCommand $buildCmd "Building aplicación"
-    
+
     # Ejecutar tests unitarios
     $testCmd = "dotnet test --configuration Release --no-build --verbosity minimal"
     Invoke-LoggedCommand $testCmd "Ejecutando tests unitarios"
-    
+
     # Publicar aplicación
     $publishCmd = "dotnet publish --configuration Release --output ./publish"
     Invoke-LoggedCommand $publishCmd "Publicando aplicación"
@@ -496,22 +496,22 @@ function Start-Build {
 # Función para testing
 function Start-Testing {
     Write-Host " Iniciando tests para $Environment" -ForegroundColor Cyan
-    
+
     # Tests unitarios
     Invoke-LoggedCommand "dotnet test --logger trx --results-directory ./TestResults" "Tests unitarios"
-    
+
     # Tests de integración (si existen)
     if (Test-Path "tests/Integration") {
         Invoke-LoggedCommand "dotnet test tests/Integration --logger trx" "Tests de integración"
     }
-    
+
     # Análisis de código con SonarQube (si está configurado)
     if ($Config.SonarQube.Enabled) {
         $sonarCmd = "dotnet sonarscanner begin /k:`"$($Config.SonarQube.ProjectKey)`""
         Invoke-LoggedCommand $sonarCmd "Iniciando análisis SonarQube"
-        
+
         Invoke-LoggedCommand "dotnet build" "Build para SonarQube"
-        
+
         Invoke-LoggedCommand "dotnet sonarscanner end" "Finalizando análisis SonarQube"
     }
 }
@@ -519,9 +519,9 @@ function Start-Testing {
 # Función para deployment
 function Start-Deployment {
     Write-Host " Iniciando deployment a $Environment" -ForegroundColor Cyan
-    
+
     $envConfig = $Config.Environments.$Environment
-    
+
     # Parar servicio si está corriendo
     if ($envConfig.ServiceName) {
         try {
@@ -532,42 +532,42 @@ function Start-Deployment {
             Write-Host " Servicio no estaba corriendo o no existe" -ForegroundColor Yellow
         }
     }
-    
+
     # Crear backup de la versión actual
     if (Test-Path $envConfig.DeployPath) {
         $backupPath = "$($envConfig.DeployPath)_backup_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
         Copy-Item -Path $envConfig.DeployPath -Destination $backupPath -Recurse
         Write-Host " Backup creado: $backupPath" -ForegroundColor Green
     }
-    
+
     # Copiar nueva versión
     if (Test-Path "./publish") {
         Remove-Item -Path $envConfig.DeployPath -Recurse -Force -ErrorAction SilentlyContinue
         Copy-Item -Path "./publish" -Destination $envConfig.DeployPath -Recurse
         Write-Host " Nueva versión desplegada" -ForegroundColor Green
     }
-    
+
     # Actualizar configuración específica del entorno
     $configSource = "./config/$Environment.appsettings.json"
     if (Test-Path $configSource) {
         Copy-Item -Path $configSource -Destination "$($envConfig.DeployPath)/appsettings.json" -Force
         Write-Host " Configuración de $Environment aplicada" -ForegroundColor Green
     }
-    
+
     # Iniciar servicio
     if ($envConfig.ServiceName) {
         Start-Service -Name $envConfig.ServiceName
         Start-Sleep -Seconds 5
-        
+
         # Verificar que el servicio está corriendo
         $service = Get-Service -Name $envConfig.ServiceName
         if ($service.Status -eq "Running") {
             Write-Host " Servicio $($envConfig.ServiceName) iniciado correctamente" -ForegroundColor Green
         } else {
-            throw "❌ Error: El servicio no se pudo iniciar"
+            throw " Error: El servicio no se pudo iniciar"
         }
     }
-    
+
     # Health check
     if ($envConfig.HealthCheckUrl) {
         Start-HealthCheck -Url $envConfig.HealthCheckUrl
@@ -577,12 +577,12 @@ function Start-Deployment {
 # Función para health check
 function Start-HealthCheck {
     param([string]$Url)
-    
+
     Write-Host " Verificando health check: $Url" -ForegroundColor Yellow
-    
+
     $maxAttempts = 10
     $attempt = 1
-    
+
     do {
         try {
             $response = Invoke-WebRequest -Uri $Url -TimeoutSec 10
@@ -597,40 +597,40 @@ function Start-HealthCheck {
         }
         $attempt++
     } while ($attempt -le $maxAttempts)
-    
-    throw "❌ Health check falló después de $maxAttempts intentos"
+
+    throw " Health check falló después de $maxAttempts intentos"
 }
 
 # Función para rollback
 function Start-Rollback {
     Write-Host " Iniciando rollback en $Environment" -ForegroundColor Magenta
-    
+
     $envConfig = $Config.Environments.$Environment
-    
+
     # Encontrar el backup más reciente
     $backupPattern = "$($envConfig.DeployPath)_backup_*"
     $latestBackup = Get-ChildItem -Path (Split-Path $envConfig.DeployPath) -Filter (Split-Path $backupPattern -Leaf) |
                    Sort-Object CreationTime -Descending |
                    Select-Object -First 1
-    
+
     if ($latestBackup) {
         # Parar servicio
         if ($envConfig.ServiceName) {
             Stop-Service -Name $envConfig.ServiceName -Force
         }
-        
+
         # Restaurar backup
         Remove-Item -Path $envConfig.DeployPath -Recurse -Force
         Copy-Item -Path $latestBackup.FullName -Destination $envConfig.DeployPath -Recurse
-        
+
         # Iniciar servicio
         if ($envConfig.ServiceName) {
             Start-Service -Name $envConfig.ServiceName
         }
-        
+
         Write-Host " Rollback completado desde: $($latestBackup.Name)" -ForegroundColor Green
     } else {
-        throw "❌ No se encontró backup para rollback"
+        throw " No se encontró backup para rollback"
     }
 }
 
@@ -640,21 +640,21 @@ try {
     Write-Host " DevOps Automation Script" -ForegroundColor Cyan
     Write-Host "Action: $Action | Environment: $Environment | Version: $Version" -ForegroundColor Yellow
     Write-Host "=" * 60 -ForegroundColor Cyan
-    
+
     switch ($Action) {
         "build" { Start-Build }
         "test" { Start-Testing }
         "deploy" { Start-Deployment }
         "rollback" { Start-Rollback }
     }
-    
+
     Write-Host "=" * 60 -ForegroundColor Green
     Write-Host " $Action completado exitosamente" -ForegroundColor Green
     Write-Host "=" * 60 -ForegroundColor Green
 }
 catch {
     Write-Host "=" * 60 -ForegroundColor Red
-    Write-Host "❌ Error en $Action`: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host " Error en $Action`: $($_.Exception.Message)" -ForegroundColor Red
     Write-Host "=" * 60 -ForegroundColor Red
     exit 1
 }
@@ -662,7 +662,7 @@ catch {
 
 ### 3. Python para Automatización Multiplataforma
 
-#### � **Script Python Básico**
+####  **Script Python Básico**
 
 ```python
 #!/usr/bin/env python3
@@ -696,11 +696,11 @@ logger = logging.getLogger(__name__)
 
 class AutomationHelper:
     """Clase principal para automatización DevOps"""
-    
+
     def __init__(self, config_file: str = "config.json"):
         self.config_file = config_file
         self.config = self.load_config()
-        
+
     def load_config(self) -> Dict:
         """Cargar configuración desde archivo JSON"""
         try:
@@ -712,11 +712,11 @@ class AutomationHelper:
         except json.JSONDecodeError as e:
             logger.error(f"Error al parsear configuración JSON: {e}")
             sys.exit(1)
-    
+
     def run_command(self, command: str, check: bool = True) -> subprocess.CompletedProcess:
         """Ejecutar comando shell con logging"""
         logger.info(f"Ejecutando: {command}")
-        
+
         try:
             result = subprocess.run(
                 command,
@@ -725,89 +725,89 @@ class AutomationHelper:
                 text=True,
                 check=check
             )
-            
+
             if result.stdout:
                 logger.info(f"STDOUT: {result.stdout.strip()}")
             if result.stderr:
                 logger.warning(f"STDERR: {result.stderr.strip()}")
-                
+
             return result
-            
+
         except subprocess.CalledProcessError as e:
             logger.error(f"Comando falló: {e}")
             logger.error(f"STDOUT: {e.stdout}")
             logger.error(f"STDERR: {e.stderr}")
             raise
-    
+
     def create_backup(self, source_path: str, backup_dir: str) -> str:
         """Crear backup de directorio"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         backup_name = f"backup_{timestamp}"
         backup_path = os.path.join(backup_dir, backup_name)
-        
+
         logger.info(f"Creando backup: {source_path} -> {backup_path}")
-        
+
         # Crear directorio de backup si no existe
         Path(backup_dir).mkdir(parents=True, exist_ok=True)
-        
+
         # Crear backup
         shutil.copytree(source_path, backup_path)
-        
+
         logger.info(f" Backup creado: {backup_path}")
         return backup_path
-    
+
     def cleanup_old_backups(self, backup_dir: str, retention_days: int = 7):
         """Limpiar backups antiguos"""
         logger.info(f"Limpiando backups antiguos en {backup_dir}")
-        
+
         backup_path = Path(backup_dir)
         if not backup_path.exists():
             return
-        
+
         cutoff_time = datetime.now().timestamp() - (retention_days * 24 * 3600)
-        
+
         for backup in backup_path.glob("backup_*"):
             if backup.stat().st_mtime < cutoff_time:
                 logger.info(f"Eliminando backup antiguo: {backup}")
                 shutil.rmtree(backup)
-        
+
         logger.info(" Limpieza de backups completada")
-    
+
     def build_application(self) -> bool:
         """Build de la aplicación"""
         logger.info(" Iniciando build de la aplicación")
-        
+
         build_config = self.config.get('build', {})
-        
+
         try:
             # Instalar dependencias
             if 'install_command' in build_config:
                 self.run_command(build_config['install_command'])
-            
+
             # Ejecutar build
             if 'build_command' in build_config:
                 self.run_command(build_config['build_command'])
-            
+
             # Ejecutar tests
             if 'test_command' in build_config:
                 self.run_command(build_config['test_command'])
-            
+
             logger.info(" Build completado exitosamente")
             return True
-            
+
         except subprocess.CalledProcessError:
-            logger.error("❌ Build falló")
+            logger.error(" Build falló")
             return False
-    
+
     def deploy_application(self, environment: str) -> bool:
         """Deploy de la aplicación"""
         logger.info(f" Iniciando deployment a {environment}")
-        
+
         env_config = self.config['environments'].get(environment)
         if not env_config:
             logger.error(f"Configuración no encontrada para entorno: {environment}")
             return False
-        
+
         try:
             # Crear backup si existe versión anterior
             if os.path.exists(env_config['deploy_path']):
@@ -815,86 +815,86 @@ class AutomationHelper:
                     env_config['deploy_path'],
                     env_config['backup_path']
                 )
-            
+
             # Parar servicio si está configurado
             if 'service_name' in env_config:
                 self.stop_service(env_config['service_name'])
-            
+
             # Copiar nueva versión
             self.deploy_files(env_config)
-            
+
             # Aplicar configuración específica del entorno
             self.apply_environment_config(environment, env_config)
-            
+
             # Iniciar servicio
             if 'service_name' in env_config:
                 self.start_service(env_config['service_name'])
-            
+
             # Health check
             if 'health_check_url' in env_config:
                 if not self.health_check(env_config['health_check_url']):
                     logger.error("Health check falló")
                     return False
-            
+
             logger.info(" Deployment completado exitosamente")
             return True
-            
+
         except Exception as e:
-            logger.error(f"❌ Deployment falló: {e}")
+            logger.error(f" Deployment falló: {e}")
             return False
-    
+
     def deploy_files(self, env_config: Dict):
         """Copiar archivos de deployment"""
         source_path = env_config['source_path']
         deploy_path = env_config['deploy_path']
-        
+
         logger.info(f"Copiando archivos: {source_path} -> {deploy_path}")
-        
+
         # Remover versión anterior
         if os.path.exists(deploy_path):
             shutil.rmtree(deploy_path)
-        
+
         # Copiar nueva versión
         shutil.copytree(source_path, deploy_path)
-        
+
         logger.info(" Archivos copiados")
-    
+
     def apply_environment_config(self, environment: str, env_config: Dict):
         """Aplicar configuración específica del entorno"""
         config_source = f"config/{environment}.json"
         config_target = os.path.join(env_config['deploy_path'], 'config.json')
-        
+
         if os.path.exists(config_source):
             shutil.copy2(config_source, config_target)
             logger.info(f" Configuración de {environment} aplicada")
-    
+
     def stop_service(self, service_name: str):
         """Parar servicio del sistema"""
         logger.info(f"Parando servicio: {service_name}")
-        
+
         if sys.platform.startswith('linux'):
             self.run_command(f"sudo systemctl stop {service_name}", check=False)
         elif sys.platform.startswith('win'):
             self.run_command(f"net stop {service_name}", check=False)
-    
+
     def start_service(self, service_name: str):
         """Iniciar servicio del sistema"""
         logger.info(f"Iniciando servicio: {service_name}")
-        
+
         if sys.platform.startswith('linux'):
             self.run_command(f"sudo systemctl start {service_name}")
         elif sys.platform.startswith('win'):
             self.run_command(f"net start {service_name}")
-        
+
         logger.info(" Servicio iniciado")
-    
+
     def health_check(self, url: str, max_attempts: int = 10) -> bool:
         """Verificar health check de la aplicación"""
         import requests
         import time
-        
+
         logger.info(f"Verificando health check: {url}")
-        
+
         for attempt in range(1, max_attempts + 1):
             try:
                 response = requests.get(url, timeout=10)
@@ -903,11 +903,11 @@ class AutomationHelper:
                     return True
             except requests.RequestException:
                 pass
-            
+
             logger.warning(f"Intento {attempt}/{max_attempts} fallido, reintentando...")
             time.sleep(5)
-        
-        logger.error("❌ Health check falló")
+
+        logger.error(" Health check falló")
         return False
 
 def main():
@@ -919,12 +919,12 @@ def main():
                        help='Entorno de deployment')
     parser.add_argument('--config', '-c', default='config.json',
                        help='Archivo de configuración')
-    
+
     args = parser.parse_args()
-    
+
     # Crear instancia del helper
     automation = AutomationHelper(args.config)
-    
+
     try:
         if args.action == 'build':
             success = automation.build_application()
@@ -941,14 +941,14 @@ def main():
             env_config = automation.config['environments'][args.environment]
             automation.cleanup_old_backups(env_config['backup_path'])
             success = True
-        
+
         if success:
             logger.info(" Operación completada exitosamente")
             sys.exit(0)
         else:
-            logger.error("❌ Operación falló")
+            logger.error(" Operación falló")
             sys.exit(1)
-            
+
     except KeyboardInterrupt:
         logger.warning("Operación cancelada por el usuario")
         sys.exit(1)
@@ -1040,7 +1040,7 @@ def check_service(url, service_name):
         response = requests.get(url, timeout=5)
         status = "UP" if response.status_code == 200 else "DOWN"
         response_time = response.elapsed.total_seconds()
-        
+
         log_entry = {
             "timestamp": datetime.now().isoformat(),
             "service": service_name,
@@ -1048,10 +1048,10 @@ def check_service(url, service_name):
             "response_time": response_time,
             "status_code": response.status_code
         }
-        
+
         print(json.dumps(log_entry))
         return status == "UP"
-        
+
     except Exception as e:
         log_entry = {
             "timestamp": datetime.now().isoformat(),
@@ -1073,7 +1073,7 @@ services = [
 while True:
     for service in services:
         check_service(service["url"], service["name"])
-    
+
     time.sleep(30)  # Check cada 30 segundos
 ```
 
@@ -1157,4 +1157,4 @@ set -euo pipefail  # Fail fast
 
 ---
 
-**¡Felicitaciones!** Has dominado los fundamentos de scripting para automatización DevOps. Continúa con el siguiente módulo para aprender sobre herramientas de automatización más avanzadas.
+**Felicitaciones!** Has dominado los fundamentos de scripting para automatización DevOps. Continúa con el siguiente módulo para aprender sobre herramientas de automatización más avanzadas.

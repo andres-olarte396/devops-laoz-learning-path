@@ -1,4 +1,4 @@
-# Fase 3: Contenedores y Orquestación �
+# Fase 3: Contenedores y Orquestación
 
 Esta fase te introducirá al mundo de los contenedores y la orquestación, tecnologías fundamentales en DevOps moderno.
 
@@ -46,7 +46,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Estimada
 
-⏱ **4-6 semanas** (dependiendo de experiencia previa)
+ **4-6 semanas** (dependiendo de experiencia previa)
 
 ## Prerrequisitos
 

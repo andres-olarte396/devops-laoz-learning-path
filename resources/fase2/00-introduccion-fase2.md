@@ -1,6 +1,6 @@
 # Introducción a la Fase 2: Automatización y CI/CD
 
-¡Bienvenido a la segunda fase del camino de aprendizaje de **DevOps**! Después de haber establecido los fundamentos en la Fase 1, ahora te enfocarás en la **automatización del flujo de trabajo** de desarrollo y despliegue, el corazón operativo de DevOps.
+Bienvenido a la segunda fase del camino de aprendizaje de **DevOps**! Después de haber establecido los fundamentos en la Fase 1, ahora te enfocarás en la **automatización del flujo de trabajo** de desarrollo y despliegue, el corazón operativo de DevOps.
 
 En esta fase, transformarás procesos manuales en workflows automatizados que permiten a los equipos entregar software de forma rápida, confiable y repetible.
 
@@ -144,7 +144,7 @@ Esta fase te preparará para fases más avanzadas donde exploraremos:
 
 Al final de esta fase, habrás construido:
 
-🎯 **Un pipeline CI/CD completo** que incluya:
+ **Un pipeline CI/CD completo** que incluya:
 - [x] Automatización de build y testing
 - [x] Múltiples etapas de deployment
 - [x] Rollback automático en caso de fallas
@@ -161,4 +161,4 @@ La automatización es el **multiplicador de fuerza** en DevOps. Cada proceso que
 
 Recuerda: **"Automatiza lo que puedas, mejora lo que debes, y elimina lo que no agregue valor."**
 
-¡Comienza tu viaje hacia la maestría en CI/CD explorando el primer módulo de automatización de tareas!
+Comienza tu viaje hacia la maestría en CI/CD explorando el primer módulo de automatización de tareas!

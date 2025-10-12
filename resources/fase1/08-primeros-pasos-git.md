@@ -232,7 +232,7 @@ git commit -m "chore: actualizar dependencias"
 # Con breaking change:
 git commit -m "feat!: cambiar API de autenticación
 
-BREAKING CHANGE: el endpoint /auth/login ahora requiere 
+BREAKING CHANGE: el endpoint /auth/login ahora requiere
 header Content-Type: application/json"
 ```
 
@@ -626,16 +626,16 @@ git push origin update-app-image
 ```bash
 # Estructura de monorepo
 project/
-├── services/
-│   ├── api/
-│   ├── web/
-│   └── mobile/
-├── shared/
-│   ├── models/
-│   └── utils/
-└── tools/
-    ├── build/
-    └── deploy/
+ services/
+    api/
+    web/
+    mobile/
+ shared/
+    models/
+    utils/
+ tools/
+     build/
+     deploy/
 
 # Comandos específicos de path
 git log -- services/api/          # Log solo de API
@@ -717,7 +717,7 @@ commit_msg_file=".git/COMMIT_EDITMSG"
 if [ -f "$commit_msg_file" ]; then
     commit_msg=$(head -n1 "$commit_msg_file")
     if ! echo "$commit_msg" | grep -qE "$commit_regex"; then
-        echo "❌ Commit message no sigue Conventional Commits format"
+        echo " Commit message no sigue Conventional Commits format"
         echo "Formato esperado: tipo(scope): descripción"
         echo "Ejemplo: feat(auth): agregar login con OAuth2"
         exit 1
@@ -728,7 +728,7 @@ fi
 echo "Ejecutando tests..."
 npm test
 if [ $? -ne 0 ]; then
-    echo "❌ Tests fallaron"
+    echo " Tests fallaron"
     exit 1
 fi
 
@@ -736,7 +736,7 @@ fi
 echo "Verificando code style..."
 npm run lint
 if [ $? -ne 0 ]; then
-    echo "❌ Lint check falló"
+    echo " Lint check falló"
     exit 1
 fi
 
@@ -754,7 +754,7 @@ echo " Configurando Git para proyecto DevOps..."
 
 # Verificar si Git está instalado
 if ! command -v git &> /dev/null; then
-    echo "❌ Git no está instalado. Por favor instálalo primero."
+    echo " Git no está instalado. Por favor instálalo primero."
     exit 1
 fi
 
@@ -907,7 +907,7 @@ Después de dominar Git básico:
 - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf) - Comandos esenciales
 - [Interactive Git Cheat Sheet](https://ndpsoftware.com/git-cheatsheet.html) - Visual e interactivo
 
-¡Felicidades! Has completado los fundamentos de DevOps. Ahora tienes una base sólida para continuar con la automatización y CI/CD en la siguiente fase.
+Felicidades! Has completado los fundamentos de DevOps. Ahora tienes una base sólida para continuar con la automatización y CI/CD en la siguiente fase.
 
 ## Siguiente Paso
 

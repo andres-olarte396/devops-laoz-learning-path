@@ -1,4 +1,4 @@
-# Fase 12: Habilidades Blandas y Liderazgo Técnico �
+# Fase 12: Habilidades Blandas y Liderazgo Técnico
 
 Desarrollo de competencias interpersonales y liderazgo para roles senior.
 

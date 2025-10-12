@@ -1,4 +1,4 @@
-# Fase 5: Monitoreo, Observabilidad y Seguridad 
+# Fase 5: Monitoreo, Observabilidad y Seguridad
 
 Esta fase cubre aspectos críticos para mantener sistemas productivos: monitoreo, observabilidad y seguridad.
 
@@ -51,7 +51,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Estimada
 
-⏱ **4-5 semanas**
+ **4-5 semanas**
 
 ## Prerrequisitos
 

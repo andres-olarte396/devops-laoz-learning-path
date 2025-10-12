@@ -44,7 +44,7 @@ public class HouseData
 {
     [LoadColumn(0)]
     public float Size { get; set; }
-    
+
     [LoadColumn(1)]
     public float Price { get; set; }
 }
@@ -62,28 +62,28 @@ class Program
     {
         // Crear contexto ML
         var mlContext = new MLContext(seed: 0);
-        
+
         // Cargar datos
         var data = mlContext.Data.LoadFromTextFile<HouseData>(
-            path: "housing.csv", 
-            hasHeader: true, 
+            path: "housing.csv",
+            hasHeader: true,
             separatorChar: ','
         );
-        
+
         // Definir pipeline de entrenamiento
         var pipeline = mlContext.Transforms.Concatenate("Features", new[] { "Size" })
             .Append(mlContext.Regression.Trainers.Sdca(labelColumnName: "Price", maximumNumberOfIterations: 100));
-        
+
         // Entrenar modelo
         var model = pipeline.Fit(data);
-        
+
         // Crear predictor
         var predictionFunction = mlContext.Model.CreatePredictionEngine<HouseData, Prediction>(model);
-        
+
         // Realizar predicción
         var prediction = predictionFunction.Predict(new HouseData { Size = 1200f });
         Console.WriteLine($"Precio predicho: ${prediction.Price:C}");
-        
+
         // Guardar modelo
         mlContext.Model.Save(model, data.Schema, "model.zip");
     }
@@ -102,18 +102,18 @@ public class AnomalyDetectionService
 {
     private readonly MLContext _mlContext;
     private ITransformer _model;
-    
+
     public AnomalyDetectionService()
     {
         _mlContext = new MLContext();
         TrainAnomalyDetectionModel();
     }
-    
+
     private void TrainAnomalyDetectionModel()
     {
         // Datos de métricas del sistema
         var data = _mlContext.Data.LoadFromEnumerable(GetSystemMetrics());
-        
+
         // Pipeline para detección de anomalías
         var pipeline = _mlContext.Transforms.DetectAnomaliesBySrCnn(
             outputColumnName: "Anomaly",
@@ -123,16 +123,16 @@ public class AnomalyDetectionService
             sensitivity: 99.0,
             detectMode: SrCnnDetectMode.AnomalyAndMargin
         );
-        
+
         _model = pipeline.Fit(data);
     }
-    
+
     public bool IsAnomaly(float metricValue)
     {
         var input = new MetricData { Value = metricValue };
         var prediction = _mlContext.Model.CreatePredictionEngine<MetricData, AnomalyPrediction>(_model);
         var result = prediction.Predict(input);
-        
+
         return result.Anomaly[0] == 1;
     }
 }
@@ -155,35 +155,35 @@ public class FailurePredictionService
 {
     private readonly MLContext _mlContext;
     private ITransformer _model;
-    
+
     public void TrainFailurePredictionModel()
     {
         _mlContext = new MLContext();
-        
+
         // Cargar datos históricos de fallos
         var data = _mlContext.Data.LoadFromTextFile<SystemHealth>(
             "system_health.csv", hasHeader: true, separatorChar: ','
         );
-        
+
         // División en entrenamiento y prueba
         var split = _mlContext.Data.TrainTestSplit(data, testFraction: 0.2);
-        
+
         // Pipeline de entrenamiento
-        var pipeline = _mlContext.Transforms.Concatenate("Features", 
+        var pipeline = _mlContext.Transforms.Concatenate("Features",
                 "CpuUsage", "MemoryUsage", "DiskUsage", "NetworkLatency")
             .Append(_mlContext.BinaryClassification.Trainers.SdcaLogisticRegression());
-        
+
         // Entrenar modelo
         _model = pipeline.Fit(split.TrainSet);
-        
+
         // Evaluar modelo
         var predictions = _model.Transform(split.TestSet);
         var metrics = _mlContext.BinaryClassification.Evaluate(predictions);
-        
+
         Console.WriteLine($"Accuracy: {metrics.Accuracy:P2}");
         Console.WriteLine($"F1 Score: {metrics.F1Score:P2}");
     }
-    
+
     public float PredictFailureProbability(SystemHealth health)
     {
         var predictor = _mlContext.Model.CreatePredictionEngine<SystemHealth, FailurePrediction>(_model);
@@ -196,16 +196,16 @@ public class SystemHealth
 {
     [LoadColumn(0)]
     public float CpuUsage { get; set; }
-    
+
     [LoadColumn(1)]
     public float MemoryUsage { get; set; }
-    
+
     [LoadColumn(2)]
     public float DiskUsage { get; set; }
-    
+
     [LoadColumn(3)]
     public float NetworkLatency { get; set; }
-    
+
     [LoadColumn(4)]
     public bool WillFail { get; set; }
 }
@@ -214,7 +214,7 @@ public class FailurePrediction
 {
     [ColumnName("PredictedLabel")]
     public bool PredictedFailure { get; set; }
-    
+
     [ColumnName("Probability")]
     public float Probability { get; set; }
 }
@@ -230,23 +230,23 @@ using Azure.AI.TextAnalytics;
 public class LogAnalysisService
 {
     private readonly TextAnalyticsClient _client;
-    
+
     public LogAnalysisService(string endpoint, string apiKey)
     {
         _client = new TextAnalyticsClient(new Uri(endpoint), new AzureKeyCredential(apiKey));
     }
-    
+
     public async Task<LogAnalysisResult> AnalyzeLogAsync(string logMessage)
     {
         // Análisis de sentimiento
         var sentimentResponse = await _client.AnalyzeSentimentAsync(logMessage);
-        
+
         // Extracción de entidades
         var entitiesResponse = await _client.RecognizeEntitiesAsync(logMessage);
-        
+
         // Extracción de frases clave
         var keyPhrasesResponse = await _client.ExtractKeyPhrasesAsync(logMessage);
-        
+
         return new LogAnalysisResult
         {
             Sentiment = sentimentResponse.Value.Sentiment.ToString(),
@@ -256,7 +256,7 @@ public class LogAnalysisService
             SeverityLevel = DetermineSeverity(sentimentResponse.Value.Sentiment)
         };
     }
-    
+
     private string DetermineSeverity(TextSentiment sentiment)
     {
         return sentiment switch
@@ -304,7 +304,7 @@ stages:
         command: 'run'
         projects: 'tools/FailurePrediction/FailurePrediction.csproj'
         arguments: '--build-metrics $(Build.Repository.Name) $(Build.SourceBranch)'
-    
+
     - task: PowerShell@2
       displayName: 'Decidir estrategia de build'
       inputs:
@@ -325,7 +325,7 @@ stages:
     condition: ne(variables['useIntensiveTesting'], 'true')
     steps:
     - script: echo "Build estándar"
-    
+
   - job: IntensiveBuild
     condition: eq(variables['useIntensiveTesting'], 'true')
     steps:
@@ -349,7 +349,7 @@ using OpenAI.GPT3.ObjectModels.RequestModels;
 public class DevOpsChatBot
 {
     private readonly OpenAIService _openAIService;
-    
+
     public DevOpsChatBot(string apiKey)
     {
         _openAIService = new OpenAIService(new OpenAiOptions()
@@ -357,7 +357,7 @@ public class DevOpsChatBot
             ApiKey = apiKey
         });
     }
-    
+
     public async Task<string> GetDevOpsHelpAsync(string question, string context)
     {
         var completionResult = await _openAIService.ChatCompletion.CreateCompletion(
@@ -371,25 +371,25 @@ public class DevOpsChatBot
                 Model = OpenAI.GPT3.ObjectModels.Models.Gpt_3_5_Turbo,
                 MaxTokens = 500
             });
-        
+
         if (completionResult.Successful)
         {
             return completionResult.Choices.First().Message.Content;
         }
-        
+
         return "Lo siento, no pude procesar tu consulta en este momento.";
     }
-    
+
     private string GetSystemPrompt()
     {
-        return @"Eres un asistente especializado en DevOps y desarrollo de software. 
+        return @"Eres un asistente especializado en DevOps y desarrollo de software.
                 Ayudas a desarrolladores y equipos de operaciones con:
                 - Troubleshooting de pipelines CI/CD
                 - Configuración de Docker y Kubernetes
                 - Mejores prácticas de seguridad
                 - Optimización de procesos DevOps
                 - Análisis de logs y métricas
-                
+
                 Proporciona respuestas precisas, con ejemplos de código cuando sea apropiado,
                 y siempre menciona las mejores prácticas de seguridad.";
     }
@@ -399,22 +399,22 @@ public class DevOpsChatBot
 public class TeamsDevOpsBot : ActivityHandler
 {
     private readonly DevOpsChatBot _chatBot;
-    
+
     public TeamsDevOpsBot(DevOpsChatBot chatBot)
     {
         _chatBot = chatBot;
     }
-    
+
     protected override async Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
     {
         var userMessage = turnContext.Activity.Text;
         var context = await GetUserContextAsync(turnContext);
-        
+
         var response = await _chatBot.GetDevOpsHelpAsync(userMessage, context);
-        
+
         await turnContext.SendActivityAsync(MessageFactory.Text(response), cancellationToken);
     }
-    
+
     private async Task<string> GetUserContextAsync(ITurnContext turnContext)
     {
         // Obtener contexto del usuario (proyecto actual, rol, etc.)
@@ -431,27 +431,27 @@ public class TeamsDevOpsBot : ActivityHandler
 public class AIMetricsService
 {
     private readonly IMetricsCollector _metrics;
-    
+
     public void RecordModelPrediction(string modelName, float confidence, bool accurate)
     {
         _metrics.RecordValue("ml_prediction_confidence", confidence, new { model = modelName });
         _metrics.Increment("ml_predictions_total", new { model = modelName, accurate = accurate.ToString() });
     }
-    
+
     public void RecordAnomalyDetection(string system, bool anomalyDetected, bool confirmed)
     {
-        _metrics.Increment("anomaly_detections_total", new { 
-            system = system, 
+        _metrics.Increment("anomaly_detections_total", new {
+            system = system,
             detected = anomalyDetected.ToString(),
             confirmed = confirmed.ToString()
         });
     }
-    
+
     public void RecordChatBotInteraction(string intent, bool resolved)
     {
-        _metrics.Increment("chatbot_interactions_total", new { 
-            intent = intent, 
-            resolved = resolved.ToString() 
+        _metrics.Increment("chatbot_interactions_total", new {
+            intent = intent,
+            resolved = resolved.ToString()
         });
     }
 }
@@ -493,7 +493,7 @@ public class PrivacyPreservingML
             log.IPAddress = AnonymizeIP(log.IPAddress);
         }
     }
-    
+
     private string RemovePII(string message)
     {
         // Usar regex para remover emails, números de teléfono, etc.
@@ -511,7 +511,7 @@ public class ModelExplainability
     {
         // Usar LIME (Local Interpretable Model-agnostic Explanations)
         var explainer = mlContext.Model.Explainability.PermutationFeatureImportance(model);
-        
+
         return new ModelInsights
         {
             FeatureImportance = explainer.Select(f => new FeatureImportance

@@ -1,4 +1,4 @@
-# Fase 6: Nube y Arquitectura Moderna ☁️
+# Fase 6: Nube y Arquitectura Moderna
 
 Esta fase profundiza en plataformas cloud y arquitecturas modernas para aplicaciones escalables.
 
@@ -50,7 +50,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Estimada
 
-⏱️ **5-6 semanas**
+ **5-6 semanas**
 
 ## Prerrequisitos
 

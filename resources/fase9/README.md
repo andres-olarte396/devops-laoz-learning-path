@@ -1,4 +1,4 @@
-# Fase 9: Arquitectura de Software y Microservicios �
+# Fase 9: Arquitectura de Software y Microservicios
 
 Patrones avanzados de arquitectura y diseño de sistemas distribuidos escalables.
 

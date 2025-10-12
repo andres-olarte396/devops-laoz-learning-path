@@ -1,4 +1,4 @@
-# Fase 7: Ciberseguridad en DevOps 
+# Fase 7: Ciberseguridad en DevOps
 
 Esta fase integra la seguridad como un aspecto fundamental en todo el ciclo de vida de DevOps.
 
@@ -70,7 +70,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Total Estimada
 
-⏱ **7 semanas**
+ **7 semanas**
 
 ## Prerrequisitos
 

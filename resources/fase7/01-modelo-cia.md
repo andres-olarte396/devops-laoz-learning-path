@@ -29,14 +29,14 @@ El modelo CIA es el fundamento de la seguridad de la información, compuesto por
 public class EncryptionService
 {
     private readonly byte[] _key;
-    
+
     public string Encrypt(string plaintext)
     {
         using (var aes = Aes.Create())
         {
             aes.Key = _key;
             var encryptor = aes.CreateEncryptor();
-            
+
             using (var msEncrypt = new MemoryStream())
             {
                 using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
@@ -92,7 +92,7 @@ public class IntegrityService
             return Convert.ToBase64String(hashedBytes);
         }
     }
-    
+
     public bool VerifyIntegrity(string data, string expectedHash)
     {
         var computedHash = ComputeHash(data);
@@ -110,7 +110,7 @@ public class DigitalSignatureService
     {
         return privateKey.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
     }
-    
+
     public bool VerifySignature(byte[] data, byte[] signature, RSA publicKey)
     {
         return publicKey.VerifyData(data, signature, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
@@ -172,12 +172,12 @@ public class RateLimitingMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly IMemoryCache _cache;
-    
+
     public async Task InvokeAsync(HttpContext context)
     {
         var clientId = GetClientIdentifier(context);
         var key = $"rate_limit_{clientId}";
-        
+
         if (_cache.TryGetValue(key, out int requestCount))
         {
             if (requestCount >= 100) // 100 requests per minute
@@ -192,7 +192,7 @@ public class RateLimitingMiddleware
         {
             _cache.Set(key, 1, TimeSpan.FromMinutes(1));
         }
-        
+
         await _next(context);
     }
 }
@@ -208,40 +208,40 @@ public class DocumentService
     private readonly IEncryptionService _encryption;
     private readonly IHashService _hash;
     private readonly IAccessControlService _accessControl;
-    
+
     // CONFIDENCIALIDAD: Cifrar documento antes de almacenar
     public async Task<string> StoreDocumentAsync(Document document, string userId)
     {
         // Verificar autorización
         if (!await _accessControl.CanCreateDocument(userId))
             throw new UnauthorizedAccessException();
-            
+
         // Cifrar contenido sensible
         document.Content = _encryption.Encrypt(document.Content);
-        
+
         // Calcular hash para integridad
         document.ContentHash = _hash.ComputeHash(document.Content);
-        
+
         return await _repository.SaveAsync(document);
     }
-    
+
     // INTEGRIDAD: Verificar que el documento no ha sido alterado
     public async Task<Document> GetDocumentAsync(string documentId, string userId)
     {
         // Verificar autorización (CONFIDENCIALIDAD)
         if (!await _accessControl.CanReadDocument(userId, documentId))
             throw new UnauthorizedAccessException();
-            
+
         var document = await _repository.GetAsync(documentId);
-        
+
         // Verificar integridad
         var currentHash = _hash.ComputeHash(document.Content);
         if (currentHash != document.ContentHash)
             throw new SecurityException("Document integrity compromised");
-            
+
         // Descifrar contenido
         document.Content = _encryption.Decrypt(document.Content);
-        
+
         return document;
     }
 }
@@ -271,28 +271,28 @@ public class DocumentService
 public class SecurityMetrics
 {
     private readonly IMetricsCollector _metrics;
-    
+
     public void RecordAccessAttempt(string userId, string resource, bool authorized)
     {
-        _metrics.Increment("access_attempts_total", new { 
-            user = userId, 
-            resource = resource, 
-            authorized = authorized.ToString() 
+        _metrics.Increment("access_attempts_total", new {
+            user = userId,
+            resource = resource,
+            authorized = authorized.ToString()
         });
     }
-    
+
     public void RecordIntegrityCheck(string resource, bool passed)
     {
-        _metrics.Increment("integrity_checks_total", new { 
-            resource = resource, 
-            result = passed ? "pass" : "fail" 
+        _metrics.Increment("integrity_checks_total", new {
+            resource = resource,
+            result = passed ? "pass" : "fail"
         });
     }
-    
+
     public void RecordAvailabilityEvent(string service, double responseTime)
     {
-        _metrics.RecordValue("response_time_seconds", responseTime, new { 
-            service = service 
+        _metrics.RecordValue("response_time_seconds", responseTime, new {
+            service = service
         });
     }
 }
@@ -320,7 +320,7 @@ Para cada pilar del CIA, identifica:
 
 ## Checklist de Implementación CIA
 
-### Confidencialidad ✓
+### Confidencialidad
 - [ ] Datos sensibles identificados y clasificados
 - [ ] Cifrado en tránsito (HTTPS/TLS)
 - [ ] Cifrado en reposo para datos críticos
@@ -328,7 +328,7 @@ Para cada pilar del CIA, identifica:
 - [ ] Autenticación fuerte habilitada
 - [ ] Logs de acceso configurados
 
-### Integridad ✓
+### Integridad
 - [ ] Checksums implementados para datos críticos
 - [ ] Firmas digitales para documentos importantes
 - [ ] Validación de entrada robusta
@@ -336,7 +336,7 @@ Para cada pilar del CIA, identifica:
 - [ ] Backup y versionado implementado
 - [ ] Detección de alteraciones automática
 
-### Disponibilidad ✓
+### Disponibilidad
 - [ ] Redundancia implementada
 - [ ] Load balancing configurado
 - [ ] Rate limiting implementado

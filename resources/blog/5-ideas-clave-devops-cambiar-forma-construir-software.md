@@ -36,7 +36,7 @@ package {"vim":
 }
 ```
 
-Esta simple declaración le dice a la herramienta "qué" queremos: el paquete vim debe estar presente. No le decimos "cómo" instalarlo. La herramienta de automatización se encarga de toda la complejidad subyacente: detecta el sistema operativo, elige el gestor de paquetes correcto (yum, apt, pkg, etc.) y ejecuta los comandos necesarios solo si el paquete no está ya instalado. 
+Esta simple declaración le dice a la herramienta "qué" queremos: el paquete vim debe estar presente. No le decimos "cómo" instalarlo. La herramienta de automatización se encarga de toda la complejidad subyacente: detecta el sistema operativo, elige el gestor de paquetes correcto (yum, apt, pkg, etc.) y ejecuta los comandos necesarios solo si el paquete no está ya instalado.
 
 **Este cambio de mentalidad reduce drásticamente los errores, garantiza la consistencia en toda la infraestructura y permite a los equipos centrarse en el resultado final, no en los detalles de la implementación.**
 
@@ -115,28 +115,28 @@ Desplegar nuevo código en un entorno de producción siempre conlleva un riesgo.
 - Ofrece **cero downtime** durante el despliegue
 - **Rollback instantáneo**: Si algo sale mal con la nueva versión, solo hay que volver a apuntar el tráfico al entorno antiguo (Azul), revirtiendo el cambio de forma inmediata
 
-**Desventaja Clave**: 
+**Desventaja Clave**:
 - Es costoso, ya que requiere **duplicar toda la infraestructura** de producción
 
 ### Estrategia Canary
 
 **Concepto**: En lugar de cambiar todo el tráfico de golpe, la nueva versión se libera **gradualmente** a un pequeño subconjunto de usuarios (el "canario"). Por ejemplo, el 1% del tráfico se dirige a la nueva versión, mientras que el 99% sigue usando la versión antigua. Durante este tiempo, el equipo monitorea intensivamente las métricas de rendimiento y errores del grupo canario. Si todo funciona como se espera, el tráfico hacia la nueva versión se incrementa gradualmente (5%, 20%, 50%) hasta que el 100% de los usuarios la están utilizando.
 
-**Ventaja Clave**: 
+**Ventaja Clave**:
 - **Minimiza el riesgo y el impacto** de posibles errores. Si hay un problema, solo afecta a un pequeño porcentaje de usuarios, y el despliegue se puede revertir antes de que se extienda
 
-**Desventaja Clave**: 
+**Desventaja Clave**:
 - Es más **complejo de implementar y gestionar**, ya que requiere un enrutamiento de tráfico sofisticado y un sistema de monitoreo muy robusto para detectar problemas en tiempo real
 
 ---
 
 ## Conclusión
 
-Estas cinco ideas no son solo técnicas; representan un **cambio de paradigma fundamental** en la construcción de software. Nos enseñan a pasar de lo manual a lo automatizado, de la rigidez de los scripts a la flexibilidad de las declaraciones, y de la incertidumbre de los grandes lanzamientos a la confianza que otorgan las estrategias de despliegue inteligentes. 
+Estas cinco ideas no son solo técnicas; representan un **cambio de paradigma fundamental** en la construcción de software. Nos enseñan a pasar de lo manual a lo automatizado, de la rigidez de los scripts a la flexibilidad de las declaraciones, y de la incertidumbre de los grandes lanzamientos a la confianza que otorgan las estrategias de despliegue inteligentes.
 
 **DevOps, en su esencia, es un viaje para transformar el miedo y la complejidad en velocidad y fiabilidad.**
 
-Al adoptar estas filosofías, los equipos no solo entregan software más rápido, sino que construyen sistemas más resilientes y liberan el potencial humano para centrarse en lo que realmente importa: **la innovación**. 
+Al adoptar estas filosofías, los equipos no solo entregan software más rápido, sino que construyen sistemas más resilientes y liberan el potencial humano para centrarse en lo que realmente importa: **la innovación**.
 
 ### Llamada a la Acción
 

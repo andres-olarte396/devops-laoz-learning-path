@@ -1,7 +1,7 @@
 <<<<<<< HEAD
-# Test de la Fase 1: Fundamentos de DevOps 
+# Test de la Fase 1: Fundamentos de DevOps
 
-**¡Evalúa tu conocimiento de los conceptos fundamentales de DevOps!**
+**Evalúa tu conocimiento de los conceptos fundamentales de DevOps!**
 
 Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 temas principales que has estudiado.
 
@@ -410,8 +410,8 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ###  **Rangos de Puntuación**
 
-- **26-30 puntos (87-100%)**: ¡Excelente!  Dominas los fundamentos de DevOps
-- **21-25 puntos (70-86%)**: ¡Muy bien!  Tienes un buen entendimiento
+- **26-30 puntos (87-100%)**: Excelente!  Dominas los fundamentos de DevOps
+- **21-25 puntos (70-86%)**: Muy bien!  Tienes un buen entendimiento
 - **16-20 puntos (53-69%)**: Bien  Necesitas repasar algunos conceptos
 - **11-15 puntos (37-52%)**: Regular  Revisa el material nuevamente
 - **0-10 puntos (0-36%)**: Insuficiente  Estudia el contenido completo
@@ -420,7 +420,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ####  **Puntuación Alta (26-30)**
 
-- ¡Felicitaciones! Estás listo para la Fase 2
+- Felicitaciones! Estás listo para la Fase 2
 - Considera ser mentor de otros estudiantes
 - Comparte tu experiencia en la comunidad
 
@@ -496,10 +496,10 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ##  Certificado de Completado
 
-**¡Si obtuviste 21 puntos o más, has completado exitosamente la Fase 1!**
+**Si obtuviste 21 puntos o más, has completado exitosamente la Fase 1!**
 
 ```
- CERTIFICADO DE COMPLETADO 
+ CERTIFICADO DE COMPLETADO
 
 [Tu Nombre]
 
@@ -512,12 +512,12 @@ Del curso "DevOps Learning Path"
 Puntuación obtenida: [Tu puntuación]/30
 Fecha de completado: [Fecha actual]
 
-¡Listo para continuar con la Fase 2!
+Listo para continuar con la Fase 2!
 ```
 
 ---
 
-_¡Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el aprendizaje DevOps es un viaje continuo._ 
+_Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el aprendizaje DevOps es un viaje continuo._
 
 **Última actualización:** 12 de octubre de 2025
 

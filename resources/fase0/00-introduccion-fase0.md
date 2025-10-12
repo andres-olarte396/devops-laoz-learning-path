@@ -32,4 +32,4 @@ Al final de esta fase, te sentirás cómodo trabajando en un entorno sin interfa
 
 ---
 
-**¡Empecemos a dominar la herramienta más poderosa de DevOps!**
+**Empecemos a dominar la herramienta más poderosa de DevOps!**

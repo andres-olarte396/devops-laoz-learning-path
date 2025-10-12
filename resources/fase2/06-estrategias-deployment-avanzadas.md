@@ -1,6 +1,6 @@
-# 06. Estrategias de Deployment Avanzadas 
+# 06. Estrategias de Deployment Avanzadas
 
-**¡Domina estrategias de deployment de nivel empresarial!** Este módulo te enseñará técnicas avanzadas para deployments seguros, escalables y sin downtime.
+**Domina estrategias de deployment de nivel empresarial!** Este módulo te enseñará técnicas avanzadas para deployments seguros, escalables y sin downtime.
 
 ##  Objetivos de Aprendizaje
 
@@ -159,12 +159,12 @@ echo "⏳ Waiting for $TARGET_COLOR deployment to be ready..."
 kubectl rollout status deployment/$APP_NAME-$TARGET_COLOR -n $NAMESPACE --timeout=300s
 
 if [ $? -ne 0 ]; then
-    echo "❌ Deployment failed! Rolling back..."
+    echo " Deployment failed! Rolling back..."
     exit 1
 fi
 
 # Verificar health checks
-echo "� Running health checks on $TARGET_COLOR environment..."
+echo " Running health checks on $TARGET_COLOR environment..."
 TARGET_POD=$(kubectl get pods -n $NAMESPACE -l app=$APP_NAME,version=$TARGET_COLOR -o jsonpath='{.items[0].metadata.name}')
 
 for i in {1..10}; do
@@ -172,27 +172,27 @@ for i in {1..10}; do
         echo " Health check passed"
         break
     fi
-    
+
     if [ $i -eq 10 ]; then
-        echo "❌ Health checks failed after 10 attempts"
+        echo " Health checks failed after 10 attempts"
         exit 1
     fi
-    
+
     echo "⏳ Health check attempt $i failed, retrying..."
     sleep 10
 done
 
 # Ejecutar smoke tests
-echo "� Running smoke tests..."
+echo " Running smoke tests..."
 kubectl exec -n $NAMESPACE $TARGET_POD -- npm run test:smoke
 
 if [ $? -ne 0 ]; then
-    echo "❌ Smoke tests failed!"
+    echo " Smoke tests failed!"
     exit 1
 fi
 
 # Cambiar el tráfico al nuevo color
-echo "� Switching traffic to $TARGET_COLOR"
+echo " Switching traffic to $TARGET_COLOR"
 kubectl patch service $APP_NAME-service -n $NAMESPACE -p '{"spec":{"selector":{"version":"'$TARGET_COLOR'"}}}'
 
 # Verificar que el tráfico se está sirviendo correctamente
@@ -208,19 +208,19 @@ for i in {1..5}; do
         echo " Traffic successfully switched to $TARGET_COLOR"
         break
     fi
-    
+
     if [ $i -eq 5 ]; then
-        echo "❌ Traffic switch verification failed"
+        echo " Traffic switch verification failed"
         # Rollback
         kubectl patch service $APP_NAME-service -n $NAMESPACE -p '{"spec":{"selector":{"version":"'$CURRENT_COLOR'"}}}'
         exit 1
     fi
-    
+
     sleep 10
 done
 
 # Escalar down el deployment anterior
-echo "� Scaling down $CURRENT_COLOR deployment"
+echo " Scaling down $CURRENT_COLOR deployment"
 kubectl scale deployment $APP_NAME-$CURRENT_COLOR --replicas=0 -n $NAMESPACE
 
 echo " Blue-Green deployment completed successfully!"
@@ -228,7 +228,7 @@ echo " Monitor the application and run the following to complete the cleanup:"
 echo "kubectl delete deployment $APP_NAME-$CURRENT_COLOR -n $NAMESPACE"
 ```
 
-#### � **Blue-Green con AWS ECS**
+####  **Blue-Green con AWS ECS**
 
 ```json
 {
@@ -336,7 +336,7 @@ aws ecs wait services-stable \
     --region $REGION
 
 # Ejecutar health checks
-echo "� Running health checks..."
+echo " Running health checks..."
 GREEN_TASK_ARN=$(aws ecs list-tasks \
     --cluster $CLUSTER_NAME \
     --service-name $GREEN_SERVICE_NAME \
@@ -350,7 +350,7 @@ GREEN_TASK_ARN=$(aws ecs list-tasks \
 # Actualizar el Target Group del ALB para apuntar al servicio Green
 # (Esto requiere configuración previa del ALB y Target Groups)
 
-echo "� Switching ALB traffic to Green service"
+echo " Switching ALB traffic to Green service"
 # aws elbv2 modify-listener --listener-arn $LISTENER_ARN --default-actions ...
 
 # Verificar el tráfico
@@ -358,7 +358,7 @@ echo " Verifying traffic switch..."
 sleep 60
 
 # Si todo está bien, eliminar el servicio Blue
-echo "� Cleaning up Blue service"
+echo " Cleaning up Blue service"
 aws ecs update-service \
     --cluster $CLUSTER_NAME \
     --service $SERVICE_NAME \
@@ -376,7 +376,7 @@ echo " Blue-Green deployment completed successfully!"
 
 ### 2. Canary Deployment
 
-#### � **Canary con Istio**
+####  **Canary con Istio**
 
 ```yaml
 # canary-deployment.yaml
@@ -459,10 +459,10 @@ if [ -z "$NEW_VERSION" ]; then
     exit 1
 fi
 
-echo "� Starting Canary deployment for $APP_NAME:$NEW_VERSION"
+echo " Starting Canary deployment for $APP_NAME:$NEW_VERSION"
 
 # Desplegar la nueva versión con 1 réplica
-echo "� Deploying canary version..."
+echo " Deploying canary version..."
 kubectl apply -f - <<EOF
 apiVersion: apps/v1
 kind: Deployment
@@ -502,7 +502,7 @@ echo "⏳ Waiting for canary deployment..."
 kubectl rollout status deployment/$APP_NAME-v2 -n $NAMESPACE
 
 # Configurar tráfico canary (5%)
-echo "� Configuring 5% canary traffic..."
+echo " Configuring 5% canary traffic..."
 kubectl apply -f - <<EOF
 apiVersion: networking.istio.io/v1beta1
 kind: VirtualService
@@ -526,34 +526,34 @@ EOF
 echo " Monitoring canary metrics for 5 minutes..."
 monitor_canary() {
     for i in {1..10}; do
-        echo "� Monitoring iteration $i/10"
-        
+        echo " Monitoring iteration $i/10"
+
         # Obtener métricas de error rate
         ERROR_RATE=$(kubectl exec -n istio-system deployment/prometheus -- \
             promtool query instant \
             'rate(istio_request_total{destination_service_name="'$APP_NAME'",destination_version="v2",response_code!~"2.*"}[1m]) / rate(istio_request_total{destination_service_name="'$APP_NAME'",destination_version="v2"}[1m])' | \
             tail -1 | awk '{print $2}')
-        
+
         # Verificar si error rate es aceptable (< 1%)
         if (( $(echo "$ERROR_RATE > 0.01" | bc -l) )); then
-            echo "❌ Error rate too high: $ERROR_RATE"
+            echo " Error rate too high: $ERROR_RATE"
             rollback_canary
             exit 1
         fi
-        
+
         # Obtener métricas de latencia
         P99_LATENCY=$(kubectl exec -n istio-system deployment/prometheus -- \
             promtool query instant \
             'histogram_quantile(0.99, rate(istio_request_duration_milliseconds_bucket{destination_service_name="'$APP_NAME'",destination_version="v2"}[1m]))' | \
             tail -1 | awk '{print $2}')
-        
+
         # Verificar si latencia es aceptable (< 500ms)
         if (( $(echo "$P99_LATENCY > 500" | bc -l) )); then
-            echo "❌ P99 latency too high: ${P99_LATENCY}ms"
+            echo " P99 latency too high: ${P99_LATENCY}ms"
             rollback_canary
             exit 1
         fi
-        
+
         echo " Metrics OK - Error rate: $ERROR_RATE, P99: ${P99_LATENCY}ms"
         sleep 30
     done
@@ -566,18 +566,18 @@ rollback_canary() {
 }
 
 promote_canary() {
-    echo "� Promoting canary to 50% traffic..."
+    echo " Promoting canary to 50% traffic..."
     kubectl patch virtualservice $APP_NAME-vs -n $NAMESPACE --type='json' -p='[{"op": "replace", "path": "/spec/http/0/route", "value": [{"destination": {"host": "'$APP_NAME'-service", "subset": "v1"}, "weight": 50}, {"destination": {"host": "'$APP_NAME'-service", "subset": "v2"}, "weight": 50}]}]'
-    
+
     # Escalar el canary
     kubectl scale deployment $APP_NAME-v2 --replicas=3 -n $NAMESPACE
-    
+
     # Monitorear por otros 5 minutos
     sleep 300
-    
+
     echo " Promoting canary to 100% traffic..."
     kubectl patch virtualservice $APP_NAME-vs -n $NAMESPACE --type='json' -p='[{"op": "replace", "path": "/spec/http/0/route", "value": [{"destination": {"host": "'$APP_NAME'-service", "subset": "v2"}, "weight": 100}]}]'
-    
+
     # Limpiar la versión anterior
     kubectl delete deployment $APP_NAME-v1 -n $NAMESPACE
     kubectl patch deployment $APP_NAME-v2 -n $NAMESPACE --type='json' -p='[{"op": "replace", "path": "/metadata/name", "value": "'$APP_NAME'"}]'
@@ -608,16 +608,16 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: myapp
-  
+
   # Progress deadline
   progressDeadlineSeconds: 60
-  
+
   # HPA reference (optional)
   autoscalerRef:
     apiVersion: autoscaling/v2beta2
     kind: HorizontalPodAutoscaler
     name: myapp
-  
+
   service:
     # Service port number
     port: 80
@@ -629,7 +629,7 @@ spec:
     # Istio virtual service host names (optional)
     hosts:
     - myapp.example.com
-  
+
   analysis:
     # Schedule interval
     interval: 1m
@@ -744,11 +744,11 @@ if [ -z "$NEW_IMAGE" ]; then
 fi
 
 echo " Starting Rolling deployment for $APP_NAME"
-echo "� New image: $NEW_IMAGE"
+echo " New image: $NEW_IMAGE"
 
 # Verificar que el deployment existe
 if ! kubectl get deployment $APP_NAME -n $NAMESPACE &> /dev/null; then
-    echo "❌ Deployment $APP_NAME not found in namespace $NAMESPACE"
+    echo " Deployment $APP_NAME not found in namespace $NAMESPACE"
     exit 1
 fi
 
@@ -761,7 +761,7 @@ echo " Updating deployment image..."
 kubectl set image deployment/$APP_NAME $APP_NAME=$NEW_IMAGE -n $NAMESPACE
 
 if [ $? -ne 0 ]; then
-    echo "❌ Failed to update deployment image"
+    echo " Failed to update deployment image"
     exit 1
 fi
 
@@ -772,39 +772,39 @@ kubectl rollout status deployment/$APP_NAME -n $NAMESPACE --timeout=${TIMEOUT}s
 ROLLOUT_STATUS=$?
 
 if [ $ROLLOUT_STATUS -ne 0 ]; then
-    echo "❌ Rollout failed or timed out"
-    
+    echo " Rollout failed or timed out"
+
     # Automatic rollback
     echo " Initiating automatic rollback..."
     kubectl rollout undo deployment/$APP_NAME -n $NAMESPACE
-    
+
     echo "⏳ Waiting for rollback to complete..."
     kubectl rollout status deployment/$APP_NAME -n $NAMESPACE --timeout=${TIMEOUT}s
-    
+
     if [ $? -eq 0 ]; then
         echo " Rollback completed successfully"
     else
-        echo "❌ Rollback failed"
+        echo " Rollback failed"
     fi
-    
+
     exit 1
 fi
 
 # Verificar que todos los pods están healthy
-echo "� Verifying pod health..."
+echo " Verifying pod health..."
 READY_REPLICAS=$(kubectl get deployment $APP_NAME -n $NAMESPACE -o jsonpath='{.status.readyReplicas}')
 DESIRED_REPLICAS=$(kubectl get deployment $APP_NAME -n $NAMESPACE -o jsonpath='{.spec.replicas}')
 
 if [ "$READY_REPLICAS" != "$DESIRED_REPLICAS" ]; then
-    echo "❌ Not all replicas are ready: $READY_REPLICAS/$DESIRED_REPLICAS"
+    echo " Not all replicas are ready: $READY_REPLICAS/$DESIRED_REPLICAS"
     exit 1
 fi
 
 # Ejecutar smoke tests
-echo "� Running smoke tests..."
+echo " Running smoke tests..."
 run_smoke_tests() {
     SERVICE_URL=$(kubectl get service $APP_NAME -n $NAMESPACE -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-    
+
     if [ -z "$SERVICE_URL" ]; then
         # Usar port-forward si no hay LoadBalancer
         kubectl port-forward service/$APP_NAME 8080:80 -n $NAMESPACE &
@@ -812,34 +812,34 @@ run_smoke_tests() {
         SERVICE_URL="localhost:8080"
         sleep 5
     fi
-    
+
     # Test básico de conectividad
     for i in {1..5}; do
         if curl -f http://$SERVICE_URL/health &> /dev/null; then
             echo " Smoke test $i passed"
         else
-            echo "❌ Smoke test $i failed"
-            
+            echo " Smoke test $i failed"
+
             # Cleanup port-forward if used
             if [ ! -z "$PORT_FORWARD_PID" ]; then
                 kill $PORT_FORWARD_PID
             fi
-            
+
             return 1
         fi
         sleep 2
     done
-    
+
     # Cleanup port-forward if used
     if [ ! -z "$PORT_FORWARD_PID" ]; then
         kill $PORT_FORWARD_PID
     fi
-    
+
     return 0
 }
 
 if ! run_smoke_tests; then
-    echo "❌ Smoke tests failed, rolling back..."
+    echo " Smoke tests failed, rolling back..."
     kubectl rollout undo deployment/$APP_NAME -n $NAMESPACE
     kubectl rollout status deployment/$APP_NAME -n $NAMESPACE --timeout=${TIMEOUT}s
     exit 1
@@ -853,7 +853,7 @@ kubectl get pods -l app=$APP_NAME -n $NAMESPACE
 
 ### 4. Feature Flags y A/B Testing
 
-#### � **Implementación con LaunchDarkly**
+####  **Implementación con LaunchDarkly**
 
 ```javascript
 // feature-flags-service.js
@@ -863,12 +863,12 @@ class FeatureFlagService {
   constructor(sdkKey) {
     this.client = LDClient.init(sdkKey)
     this.isReady = false
-    
+
     this.client.waitForInitialization().then(() => {
       this.isReady = true
       console.log(' LaunchDarkly client initialized')
     }).catch(error => {
-      console.error('❌ LaunchDarkly initialization failed:', error)
+      console.error(' LaunchDarkly initialization failed:', error)
     })
   }
 
@@ -881,7 +881,7 @@ class FeatureFlagService {
     try {
       return await this.client.variation(flagKey, user, defaultValue)
     } catch (error) {
-      console.error(`❌ Error evaluating flag ${flagKey}:`, error)
+      console.error(` Error evaluating flag ${flagKey}:`, error)
       return defaultValue
     }
   }
@@ -894,7 +894,7 @@ class FeatureFlagService {
     try {
       return await this.client.variation(flagKey, user, defaultValue)
     } catch (error) {
-      console.error(`❌ Error getting variation for ${flagKey}:`, error)
+      console.error(` Error getting variation for ${flagKey}:`, error)
       return defaultValue
     }
   }
@@ -907,7 +907,7 @@ class FeatureFlagService {
     try {
       return await this.client.allFlagsState(user)
     } catch (error) {
-      console.error('❌ Error getting all flags:', error)
+      console.error(' Error getting all flags:', error)
       return {}
     }
   }
@@ -921,7 +921,7 @@ class FeatureFlagService {
     try {
       this.client.track(eventKey, user, data, metricValue)
     } catch (error) {
-      console.error(`❌ Error tracking event ${eventKey}:`, error)
+      console.error(` Error tracking event ${eventKey}:`, error)
     }
   }
 
@@ -950,16 +950,16 @@ export const featureFlagMiddleware = async (req, res, next) => {
   // Obtener todas las feature flags para este usuario
   req.featureFlags = await featureFlags.getAllFlags(user)
   req.user = user
-  
+
   // Helper functions
   req.isFeatureEnabled = (flagKey, defaultValue = false) => {
     return featureFlags.isFeatureEnabled(flagKey, user, defaultValue)
   }
-  
+
   req.getFeatureVariation = (flagKey, defaultValue = 'control') => {
     return featureFlags.getFeatureVariation(flagKey, user, defaultValue)
   }
-  
+
   req.trackEvent = (eventKey, data = null, metricValue = null) => {
     return featureFlags.trackEvent(eventKey, user, data, metricValue)
   }
@@ -977,29 +977,29 @@ import { featureFlags } from './feature-flags-service.js'
 export class ABTestingController {
   async handleCheckoutFlow(req, res) {
     const user = req.user
-    
+
     // A/B Test: Nueva UI de checkout
     const checkoutVariation = await req.getFeatureVariation('checkout-ui-test', 'control')
-    
+
     // Track que el usuario entró al checkout
     req.trackEvent('checkout-entered', {
       variation: checkoutVariation,
       source: req.query.source || 'direct'
     })
-    
+
     switch (checkoutVariation) {
       case 'variant-a':
         return res.render('checkout-new-ui', {
           featureFlags: req.featureFlags,
           experiment: 'checkout-ui-test-a'
         })
-      
+
       case 'variant-b':
         return res.render('checkout-simplified', {
           featureFlags: req.featureFlags,
           experiment: 'checkout-ui-test-b'
         })
-      
+
       default: // control
         return res.render('checkout-original', {
           featureFlags: req.featureFlags,
@@ -1010,16 +1010,16 @@ export class ABTestingController {
 
   async handleCheckoutComplete(req, res) {
     const { orderId, amount, variation } = req.body
-    
+
     // Track conversion event
     req.trackEvent('checkout-completed', {
       orderId,
       variation: variation || 'control'
     }, amount)
-    
+
     // Feature flag para mostrar upsells
     const showUpsells = await req.isFeatureEnabled('post-checkout-upsells', false)
-    
+
     res.json({
       success: true,
       orderId,
@@ -1030,31 +1030,31 @@ export class ABTestingController {
 
   async handleRecommendationEngine(req, res) {
     const user = req.user
-    
+
     // A/B Test: Motor de recomendaciones
     const recommendationAlgorithm = await req.getFeatureVariation('recommendation-algorithm', 'collaborative')
-    
+
     let recommendations = []
-    
+
     switch (recommendationAlgorithm) {
       case 'ml-enhanced':
         recommendations = await this.getMLRecommendations(user)
         break
-      
+
       case 'hybrid':
         recommendations = await this.getHybridRecommendations(user)
         break
-      
+
       default: // collaborative
         recommendations = await this.getCollaborativeRecommendations(user)
     }
-    
+
     // Track recommendation view
     req.trackEvent('recommendations-viewed', {
       algorithm: recommendationAlgorithm,
       count: recommendations.length
     })
-    
+
     res.json({
       recommendations,
       algorithm: recommendationAlgorithm
@@ -1159,7 +1159,7 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
-  
+
   source:
     repoURL: https://github.com/mycompany/myapp-manifests
     targetRevision: HEAD
@@ -1172,11 +1172,11 @@ spec:
         value: v2.0.0
       - name: replicas
         value: "5"
-  
+
   destination:
     server: https://kubernetes.default.svc
     namespace: production
-  
+
   syncPolicy:
     automated:
       prune: true
@@ -1186,23 +1186,23 @@ spec:
     - CreateNamespace=true
     - PrunePropagationPolicy=foreground
     - PruneLast=true
-    
+
     retry:
       limit: 5
       backoff:
         duration: 5s
         factor: 2
         maxDuration: 3m
-  
+
   revisionHistoryLimit: 10
-  
+
   # Health checks personalizados
   ignoreDifferences:
   - group: apps
     kind: Deployment
     jsonPointers:
     - /spec/replicas  # Ignorar cambios en replicas si son manejados por HPA
-  
+
   # Hooks de sincronización
   hooks:
   - name: pre-sync-migration
@@ -1230,9 +1230,9 @@ if [ -z "$NEW_IMAGE_TAG" ]; then
 fi
 
 echo " Starting GitOps deployment"
-echo "� Image tag: $NEW_IMAGE_TAG"
-echo "� Environment: $ENVIRONMENT"
-echo "� Branch: $BRANCH"
+echo " Image tag: $NEW_IMAGE_TAG"
+echo " Environment: $ENVIRONMENT"
+echo " Branch: $BRANCH"
 
 # Clonar el repositorio de manifiestos
 TEMP_DIR=$(mktemp -d)
@@ -1279,17 +1279,17 @@ echo " Monitor deployment progress in ArgoCD UI"
 # Opcional: Esperar a que ArgoCD sincronice
 if command -v argocd &> /dev/null; then
     echo "⏳ Waiting for ArgoCD sync..."
-    
+
     # Login a ArgoCD (requiere configuración previa)
     argocd app sync myapp-$ENVIRONMENT --prune
-    
+
     # Esperar a que el sync complete
     argocd app wait myapp-$ENVIRONMENT --timeout 600
-    
+
     if [ $? -eq 0 ]; then
         echo " ArgoCD sync completed successfully!"
     else
-        echo "❌ ArgoCD sync failed or timed out"
+        echo " ArgoCD sync failed or timed out"
         exit 1
     fi
 fi
@@ -1414,4 +1414,4 @@ kubectl get destinationrule -o yaml
 
 ---
 
-**¡Felicitaciones!** Has completado la Fase 2 del curso DevOps y dominas Automation y CI/CD a nivel profesional. Ahora estás preparado para implementar estrategias de deployment de clase mundial.
+**Felicitaciones!** Has completado la Fase 2 del curso DevOps y dominas Automation y CI/CD a nivel profesional. Ahora estás preparado para implementar estrategias de deployment de clase mundial.

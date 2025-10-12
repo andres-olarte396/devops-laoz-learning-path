@@ -108,20 +108,20 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
-    
+
     - name: Build and publish
       run: |
         dotnet build --configuration Release
         dotnet publish -c Release -o ./publish
-    
+
     - name: Deploy to Azure App Service
       uses: azure/webapps-deploy@v2
       with:
@@ -163,9 +163,9 @@ jobs:
 
 **Debilidades:**
 
-- ❌ Curva de aprendizaje empinada
-- ❌ Pricing complejo
-- ❌ Interfaz puede ser abrumadora
+-  Curva de aprendizaje empinada
+-  Pricing complejo
+-  Interfaz puede ser abrumadora
 
 **Servicios clave para DevOps:**
 
@@ -195,14 +195,14 @@ graph TB
     ECS --> RDS[(RDS PostgreSQL)]
     ECS --> REDIS[(ElastiCache Redis)]
     ECS --> S3[S3 Storage]
-    
+
     subgraph "CI/CD"
         CODECOMMIT[CodeCommit]
         CODEBUILD[CodeBuild]
         CODEPIPELINE[CodePipeline]
         ECR[ECR Registry]
     end
-    
+
     subgraph "Monitoring"
         CLOUDWATCH[CloudWatch]
         XRAY[X-Ray]
@@ -220,9 +220,9 @@ graph TB
 
 **Debilidades:**
 
-- ❌ Menos servicios que AWS
-- ❌ Documentación inconsistente
-- ❌ Cambios frecuentes en productos
+-  Menos servicios que AWS
+-  Documentación inconsistente
+-  Cambios frecuentes en productos
 
 **Servicios clave para DevOps:**
 
@@ -267,7 +267,7 @@ stages:
     displayName: Build
     pool:
       vmImage: 'ubuntu-latest'
-    
+
     steps:
     - task: DotNetCoreCLI@2
       displayName: Build
@@ -275,7 +275,7 @@ stages:
         command: 'build'
         projects: '**/*.csproj'
         arguments: '--configuration Release'
-    
+
     - task: DotNetCoreCLI@2
       displayName: Publish
       inputs:
@@ -283,7 +283,7 @@ stages:
         publishWebProjects: true
         arguments: '--configuration Release --output $(Build.ArtifactStagingDirectory)'
         zipAfterPublish: true
-    
+
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
@@ -293,14 +293,14 @@ stages:
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
-  
+
   jobs:
   - deployment: Deploy
     displayName: Deploy
     environment: 'production'
     pool:
       vmImage: 'ubuntu-latest'
-    
+
     strategy:
       runOnce:
         deploy:
@@ -325,9 +325,9 @@ stages:
 
 **Debilidades:**
 
-- ❌ Menor market share
-- ❌ Menos servicios enterprise
-- ❌ Documentación limitada comparado con AWS
+-  Menor market share
+-  Menos servicios enterprise
+-  Documentación limitada comparado con AWS
 
 **Servicios clave para DevOps:**
 
@@ -446,7 +446,7 @@ images:
 - Menos complejidad de networking
 - Costo optimizado
 
-❌ Cons:
+ Cons:
 - Vendor lock-in
 - Single point of failure
 - Limitado por capabilities del proveedor
@@ -461,7 +461,7 @@ images:
 - Disaster recovery cross-cloud
 - Compliance requirements
 
-❌ Cons:
+ Cons:
 - Complexity management
 - Networking challenges
 - Higher costs
@@ -477,7 +477,7 @@ images:
 - Legacy system integration
 - Cost optimization
 
-❌ Cons:
+ Cons:
 - Complex networking
 - Security challenges
 - Management overhead
@@ -677,21 +677,21 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
     - uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
-    
+
     - name: Build
       run: dotnet build --configuration Release
-    
+
     - name: Publish
       run: dotnet publish -c Release -o ./publish
-    
+
     - name: Deploy to Azure
       uses: azure/webapps-deploy@v2
       with:

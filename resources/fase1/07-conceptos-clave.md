@@ -66,24 +66,24 @@ on:
 jobs:
   continuous-integration:
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         dotnet-version: ['6.0.x', '8.0.x']
-    
+
     steps:
     # 1. Checkout del código
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Fetch full history for GitVersion
-    
+
     # 2. Setup del entorno
     - name: Setup .NET ${{ matrix.dotnet-version }}
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
-    
+
     # 3. Cache de dependencias
     - name: Cache NuGet packages
       uses: actions/cache@v3
@@ -92,15 +92,15 @@ jobs:
         key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
         restore-keys: |
           ${{ runner.os }}-nuget-
-    
+
     # 4. Restaurar dependencias
     - name: Restore dependencies
       run: dotnet restore
-    
+
     # 5. Build de la aplicación
     - name: Build application
       run: dotnet build --no-restore --configuration Release
-    
+
     # 6. Ejecutar tests unitarios
     - name: Run unit tests
       run: |
@@ -110,7 +110,7 @@ jobs:
           --collect:"XPlat Code Coverage" \
           --logger trx \
           --results-directory ./test-results
-    
+
     # 7. Análisis de código con SonarQube
     - name: Static code analysis
       if: matrix.dotnet-version == '8.0.x'
@@ -124,11 +124,11 @@ jobs:
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
           /d:sonar.host.url="https://sonarcloud.io" \
           /d:sonar.cs.opencover.reportsPaths="./test-results/*/coverage.opencover.xml"
-        
+
         dotnet build --configuration Release
-        
+
         dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
-    
+
     # 8. Security scanning con Trivy
     - name: Security vulnerability scan
       uses: aquasecurity/trivy-action@master
@@ -137,7 +137,7 @@ jobs:
         scan-ref: '.'
         format: 'sarif'
         output: 'trivy-results.sarif'
-    
+
     # 9. Upload de resultados
     - name: Upload test results
       uses: actions/upload-artifact@v3
@@ -145,13 +145,13 @@ jobs:
       with:
         name: test-results-${{ matrix.dotnet-version }}
         path: ./test-results
-    
+
     - name: Upload security scan results
       uses: github/codeql-action/upload-sarif@v2
       if: always()
       with:
         sarif_file: 'trivy-results.sarif'
-    
+
     # 10. Publicar artifacts
     - name: Publish build artifacts
       if: matrix.dotnet-version == '8.0.x' && success()
@@ -160,7 +160,7 @@ jobs:
           --configuration Release \
           --output ./publish \
           --no-build
-    
+
     - name: Upload build artifacts
       if: matrix.dotnet-version == '8.0.x' && success()
       uses: actions/upload-artifact@v3
@@ -235,14 +235,14 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     environment: staging
-    
+
     steps:
     - name: Download artifacts
       uses: actions/download-artifact@v3
       with:
         name: build-artifacts
         path: ./artifacts
-    
+
     - name: Deploy to staging
       run: |
         # Deployment a staging automático
@@ -250,14 +250,14 @@ jobs:
           --resource-group rg-staging \
           --name app-staging \
           --src ./artifacts/app.zip
-    
+
     - name: Run integration tests
       run: |
         # Tests de integración en staging
         dotnet test IntegrationTests/ \
           --configuration Release \
           --environment Staging
-    
+
     - name: Run performance tests
       run: |
         # Performance tests
@@ -268,7 +268,7 @@ jobs:
     needs: deploy-staging
     runs-on: ubuntu-latest
     environment: production  # Requiere aprobación manual
-    
+
     steps:
     - name: Deploy to production (Blue-Green)
       run: |
@@ -298,7 +298,7 @@ resource "azurerm_virtual_machine" "main" {
   location            = "East US"
   resource_group_name = azurerm_resource_group.main.name
   vm_size             = "Standard_B2s"
-  
+
   storage_os_disk {
     name              = "osdisk"
     caching           = "ReadWrite"
@@ -346,7 +346,7 @@ terraform {
       version = "~>3.0"
     }
   }
-  
+
   backend "azurerm" {
     resource_group_name  = "rg-terraform-state"
     storage_account_name = "stterraformstate"
@@ -363,7 +363,7 @@ provider "azurerm" {
 resource "azurerm_resource_group" "main" {
   name     = "rg-${var.environment}"
   location = var.location
-  
+
   tags = {
     Environment = var.environment
     Project     = "DevOps Learning"
@@ -377,7 +377,7 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
-  
+
   tags = azurerm_resource_group.main.tags
 }
 
@@ -395,18 +395,18 @@ resource "azurerm_kubernetes_cluster" "main" {
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
   dns_prefix          = "aks${var.environment}"
-  
+
   default_node_pool {
     name       = "default"
     node_count = 2
     vm_size    = "Standard_D2_v2"
     vnet_subnet_id = azurerm_subnet.internal.id
   }
-  
+
   identity {
     type = "SystemAssigned"
   }
-  
+
   tags = azurerm_resource_group.main.tags
 }
 
@@ -430,28 +430,28 @@ output "cluster_ca_certificate" {
 - name: Configure Kubernetes cluster
   hosts: k8s_masters
   become: yes
-  
+
   vars:
     k8s_version: "1.28.0"
     pod_network_cidr: "10.244.0.0/16"
-  
+
   tasks:
     - name: Install Docker
       apt:
         name: docker.io
         state: present
         update_cache: yes
-    
+
     - name: Add Kubernetes apt key
       apt_key:
         url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
         state: present
-    
+
     - name: Add Kubernetes repository
       apt_repository:
         repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
         state: present
-    
+
     - name: Install Kubernetes components
       apt:
         name:
@@ -460,7 +460,7 @@ output "cluster_ca_certificate" {
           - kubectl={{ k8s_version }}-00
         state: present
         allow_downgrade: yes
-    
+
     - name: Initialize Kubernetes cluster
       command: |
         kubeadm init \
@@ -468,14 +468,14 @@ output "cluster_ca_certificate" {
           --apiserver-advertise-address={{ ansible_default_ipv4.address }}
       register: kubeadm_init
       when: inventory_hostname == groups['k8s_masters'][0]
-    
+
     - name: Setup kubeconfig for root
       shell: |
         mkdir -p /root/.kube
         cp -i /etc/kubernetes/admin.conf /root/.kube/config
         chown root:root /root/.kube/config
       when: inventory_hostname == groups['k8s_masters'][0]
-    
+
     - name: Install Calico network plugin
       shell: |
         kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
@@ -563,7 +563,7 @@ sleep 30  # Wait for app to be ready
 if curl -f http://$APP_NAME.$ENVIRONMENT.example.com/health; then
     echo " Deployment successful!"
 else
-    echo "❌ Post-deployment health check failed. Rolling back..."
+    echo " Post-deployment health check failed. Rolling back..."
     kubectl rollout undo deployment/$APP_NAME
     exit 1
 fi
@@ -577,12 +577,12 @@ fi
 - name: Complete Application Deployment
   hosts: app_servers
   become: yes
-  
+
   vars:
     app_name: "{{ app_name }}"
     app_version: "{{ app_version }}"
     environment: "{{ environment | default('staging') }}"
-    
+
   pre_tasks:
     - name: Validate required variables
       fail:
@@ -591,7 +591,7 @@ fi
       loop:
         - app_name
         - app_version
-  
+
   tasks:
     - name: Health check before deployment
       uri:
@@ -601,23 +601,23 @@ fi
       delegate_to: localhost
       retries: 3
       delay: 10
-    
+
     - name: Stop application service
       systemd:
         name: "{{ app_name }}"
         state: stopped
-    
+
     - name: Backup current version
       archive:
         path: "/opt/{{ app_name }}"
         dest: "/opt/backups/{{ app_name }}-{{ ansible_date_time.epoch }}.tar.gz"
-    
+
     - name: Download new version
       get_url:
         url: "https://releases.example.com/{{ app_name }}/{{ app_version }}/{{ app_name }}.tar.gz"
         dest: "/tmp/{{ app_name }}-{{ app_version }}.tar.gz"
         mode: '0644'
-    
+
     - name: Extract new version
       unarchive:
         src: "/tmp/{{ app_name }}-{{ app_version }}.tar.gz"
@@ -625,7 +625,7 @@ fi
         remote_src: yes
         owner: app
         group: app
-    
+
     - name: Update configuration
       template:
         src: "{{ app_name }}.conf.j2"
@@ -634,13 +634,13 @@ fi
         group: app
         mode: '0644'
       notify: restart application
-    
+
     - name: Start application service
       systemd:
         name: "{{ app_name }}"
         state: started
         enabled: yes
-    
+
     - name: Wait for application to be ready
       uri:
         url: "http://{{ inventory_hostname }}:8080/health"
@@ -650,7 +650,7 @@ fi
       until: health_check.status == 200
       retries: 30
       delay: 10
-  
+
   handlers:
     - name: restart application
       systemd:
@@ -687,7 +687,7 @@ class AdvancedDeploymentOrchestrator:
     def __init__(self, targets: List[DeploymentTarget]):
         self.targets = targets
         self.logger = logging.getLogger(__name__)
-    
+
     async def deploy_canary(self, app_name: str, version: str, canary_percentage: int = 10):
         """
         Implements canary deployment strategy
@@ -696,39 +696,39 @@ class AdvancedDeploymentOrchestrator:
             # Phase 1: Deploy to canary targets
             canary_targets = self._select_canary_targets(canary_percentage)
             await self._deploy_to_targets(canary_targets, app_name, version)
-            
+
             # Phase 2: Monitor canary metrics
             if await self._monitor_canary_health(canary_targets, duration_minutes=15):
                 self.logger.info("Canary deployment healthy, proceeding with full deployment")
-                
+
                 # Phase 3: Full deployment
                 remaining_targets = [t for t in self.targets if t not in canary_targets]
                 await self._deploy_to_targets(remaining_targets, app_name, version)
-                
+
                 return DeploymentStatus.SUCCESS
             else:
                 self.logger.error("Canary deployment unhealthy, rolling back")
                 await self._rollback_targets(canary_targets, app_name)
                 return DeploymentStatus.ROLLBACK
-                
+
         except Exception as e:
             self.logger.error(f"Deployment failed: {e}")
             await self._emergency_rollback_all(app_name)
             return DeploymentStatus.FAILED
-    
+
     async def _deploy_to_targets(self, targets: List[DeploymentTarget], app_name: str, version: str):
         """Deploy to specified targets in parallel"""
         tasks = []
         for target in targets:
             task = self._deploy_single_target(target, app_name, version)
             tasks.append(task)
-        
+
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        
+
         for i, result in enumerate(results):
             if isinstance(result, Exception):
                 raise Exception(f"Deployment to {targets[i].name} failed: {result}")
-    
+
     async def _deploy_single_target(self, target: DeploymentTarget, app_name: str, version: str):
         """Deploy to a single target"""
         async with aiohttp.ClientSession() as session:
@@ -738,30 +738,30 @@ class AdvancedDeploymentOrchestrator:
                 "version": version,
                 "strategy": "rolling_update"
             }
-            
+
             async with session.post(deploy_url, json=payload) as response:
                 if response.status != 200:
                     raise Exception(f"Deploy request failed: {await response.text()}")
-                
+
                 deployment_id = (await response.json())["deployment_id"]
-                
+
                 # Poll deployment status
                 while True:
                     status_url = f"{target.url}/api/deploy/{deployment_id}/status"
                     async with session.get(status_url) as status_response:
                         status_data = await status_response.json()
-                        
+
                         if status_data["status"] == "completed":
                             break
                         elif status_data["status"] == "failed":
                             raise Exception(f"Deployment failed: {status_data['error']}")
-                        
+
                         await asyncio.sleep(10)
-    
+
     async def _monitor_canary_health(self, targets: List[DeploymentTarget], duration_minutes: int) -> bool:
         """Monitor canary deployment health"""
         end_time = asyncio.get_event_loop().time() + (duration_minutes * 60)
-        
+
         while asyncio.get_event_loop().time() < end_time:
             try:
                 # Check health of all canary targets
@@ -770,23 +770,23 @@ class AdvancedDeploymentOrchestrator:
                     for target in targets:
                         health_check = self._check_target_health(session, target)
                         health_checks.append(health_check)
-                    
+
                     results = await asyncio.gather(*health_checks)
-                    
+
                     if all(results):
                         self.logger.info("All canary targets healthy")
                     else:
                         self.logger.warning("Some canary targets unhealthy")
                         return False
-                
+
                 await asyncio.sleep(30)  # Check every 30 seconds
-                
+
             except Exception as e:
                 self.logger.error(f"Health check failed: {e}")
                 return False
-        
+
         return True
-    
+
     async def _check_target_health(self, session: aiohttp.ClientSession, target: DeploymentTarget) -> bool:
         """Check health of a single target"""
         try:
@@ -803,10 +803,10 @@ async def main():
         DeploymentTarget("prod-2", "https://prod-2.example.com", "/health"),
         DeploymentTarget("prod-3", "https://prod-3.example.com", "/health"),
     ]
-    
+
     orchestrator = AdvancedDeploymentOrchestrator(targets)
     result = await orchestrator.deploy_canary("mi-app", "v2.1.0", canary_percentage=30)
-    
+
     print(f"Deployment result: {result}")
 
 if __name__ == "__main__":
@@ -850,31 +850,31 @@ public class MetricsMiddleware
 {
     private readonly RequestDelegate _next;
     private readonly ILogger<MetricsMiddleware> _logger;
-    
+
     // Prometheus metrics
     private static readonly Counter RequestCount = Metrics
         .CreateCounter("http_requests_total", "Total HTTP requests", new[] { "method", "endpoint", "status" });
-    
+
     private static readonly Histogram RequestDuration = Metrics
         .CreateHistogram("http_request_duration_seconds", "HTTP request duration", new[] { "method", "endpoint" });
-    
+
     private static readonly Gauge ActiveConnections = Metrics
         .CreateGauge("http_active_connections", "Active HTTP connections");
-    
+
     public MetricsMiddleware(RequestDelegate next, ILogger<MetricsMiddleware> logger)
     {
         _next = next;
         _logger = logger;
     }
-    
+
     public async Task InvokeAsync(HttpContext context)
     {
         ActiveConnections.Inc();
-        
+
         using var timer = RequestDuration
             .WithLabels(context.Request.Method, context.Request.Path)
             .NewTimer();
-        
+
         try
         {
             await _next(context);
@@ -884,7 +884,7 @@ public class MetricsMiddleware
             RequestCount
                 .WithLabels(context.Request.Method, context.Request.Path, context.Response.StatusCode.ToString())
                 .Inc();
-            
+
             ActiveConnections.Dec();
         }
     }
@@ -905,7 +905,7 @@ Log.Logger = new LoggerConfiguration()
     .Enrich.WithProperty("ApplicationName", "DevOpsLearningApp")
     .Enrich.WithProperty("Environment", Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"))
     .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
-    .WriteTo.File("logs/app-.log", 
+    .WriteTo.File("logs/app-.log",
         rollingInterval: RollingInterval.Day,
         retainedFileCountLimit: 7,
         outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3}] {Message:lj} {Properties:j}{NewLine}{Exception}")
@@ -925,7 +925,7 @@ builder.Host.UseSerilog();
 public class OrdersController : ControllerBase
 {
     private readonly ILogger<OrdersController> _logger;
-    
+
     [HttpPost]
     public async Task<IActionResult> CreateOrder([FromBody] CreateOrderRequest request)
     {
@@ -935,16 +935,16 @@ public class OrdersController : ControllerBase
             ["UserId"] = request.UserId,
             ["Amount"] = request.Amount
         });
-        
-        _logger.LogInformation("Processing order creation for user {UserId} with amount {Amount:C}", 
+
+        _logger.LogInformation("Processing order creation for user {UserId} with amount {Amount:C}",
             request.UserId, request.Amount);
-        
+
         try
         {
             var order = await _orderService.CreateOrderAsync(request);
-            
+
             _logger.LogInformation("Order {OrderId} created successfully", order.Id);
-            
+
             return CreatedAtAction(nameof(GetOrder), new { id = order.Id }, order);
         }
         catch (InsufficientFundsException ex)
@@ -995,27 +995,27 @@ public class OrderService
     private readonly ILogger<OrderService> _logger;
     private readonly IPaymentService _paymentService;
     private readonly IInventoryService _inventoryService;
-    
+
     public async Task<Order> CreateOrderAsync(CreateOrderRequest request)
     {
         using var activity = ActivitySource.StartActivity("CreateOrder");
         activity?.SetTag("user.id", request.UserId);
         activity?.SetTag("order.amount", request.Amount);
-        
+
         // Check inventory
         using (var inventoryActivity = ActivitySource.StartActivity("CheckInventory"))
         {
             var availability = await _inventoryService.CheckAvailabilityAsync(request.ProductId);
             inventoryActivity?.SetTag("product.id", request.ProductId);
             inventoryActivity?.SetTag("inventory.available", availability.Available);
-            
+
             if (!availability.Available)
             {
                 activity?.SetStatus(ActivityStatusCode.Error, "Product not available");
                 throw new ProductNotAvailableException();
             }
         }
-        
+
         // Process payment
         using (var paymentActivity = ActivitySource.StartActivity("ProcessPayment"))
         {
@@ -1024,7 +1024,7 @@ public class OrderService
                 var payment = await _paymentService.ProcessPaymentAsync(request.PaymentDetails);
                 paymentActivity?.SetTag("payment.id", payment.Id);
                 paymentActivity?.SetTag("payment.status", payment.Status);
-                
+
                 if (payment.Status != PaymentStatus.Successful)
                 {
                     activity?.SetStatus(ActivityStatusCode.Error, "Payment failed");
@@ -1037,7 +1037,7 @@ public class OrderService
                 throw;
             }
         }
-        
+
         // Create order
         var order = new Order
         {
@@ -1047,10 +1047,10 @@ public class OrderService
             Status = OrderStatus.Created,
             CreatedAt = DateTime.UtcNow
         };
-        
+
         activity?.SetTag("order.id", order.Id);
         activity?.SetStatus(ActivityStatusCode.Ok);
-        
+
         return order;
     }
 }
@@ -1079,28 +1079,28 @@ jobs:
     outputs:
       image-tag: ${{ steps.meta.outputs.tags }}
       image-digest: ${{ steps.build.outputs.digest }}
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
-    
+
     - name: Restore, Build, Test
       run: |
         dotnet restore
         dotnet build --no-restore
         dotnet test --no-build --collect:"XPlat Code Coverage"
-    
+
     - name: Extract metadata
       id: meta
       uses: docker/metadata-action@v5
       with:
         images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-    
+
     - name: Build and push Docker image
       id: build
       uses: docker/build-push-action@v5
@@ -1115,20 +1115,20 @@ jobs:
     needs: ci
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
-    
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
-    
+
     - name: Terraform Plan
       run: |
         cd infrastructure/
         terraform init
         terraform plan -out=tfplan
-    
+
     - name: Terraform Apply
       run: |
         cd infrastructure/
@@ -1140,25 +1140,25 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment: production
-    
+
     steps:
     - name: Deploy to Kubernetes
       run: |
         echo "${{ secrets.KUBECONFIG }}" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Update deployment with new image
         kubectl set image deployment/app \
           app=${{ needs.ci.outputs.image-tag }}
-        
+
         # Wait for rollout
         kubectl rollout status deployment/app --timeout=300s
-    
+
     - name: Run smoke tests
       run: |
         # Basic health check
         curl -f https://app.production.example.com/health
-        
+
         # Run automated smoke tests
         dotnet test SmokeTests/ --environment Production
 
@@ -1167,16 +1167,16 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
     - name: Update monitoring configuration
       run: |
         # Update Prometheus targets
         kubectl apply -f monitoring/prometheus-config.yml
-        
+
         # Update Grafana dashboards
         kubectl apply -f monitoring/grafana-dashboards.yml
-        
+
         # Setup alerts
         kubectl apply -f monitoring/alerting-rules.yml
 ```

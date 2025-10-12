@@ -1,26 +1,26 @@
 # Práctica: Pipeline CI/CD Completo
 
-¡Es hora de poner en práctica todo lo aprendido! En este módulo construiremos un **pipeline CI/CD completo** desde cero para una aplicación real, implementando **pruebas automatizadas**, **múltiples entornos**, **estrategias de despliegue avanzadas** y **rollbacks automáticos**.
+Es hora de poner en práctica todo lo aprendido! En este módulo construiremos un **pipeline CI/CD completo** desde cero para una aplicación real, implementando **pruebas automatizadas**, **múltiples entornos**, **estrategias de despliegue avanzadas** y **rollbacks automáticos**.
 
 Este proyecto te dará experiencia práctica con todas las herramientas y técnicas de DevOps moderno.
 
 ---
 
-## **🎯 Objetivos del Proyecto**
+## ** Objetivos del Proyecto**
 
 Al finalizar esta práctica habrás:
 
-- ✅ **Configurado un pipeline CI/CD completo** con múltiples stages
-- ✅ **Implementado pruebas automatizadas** (unit, integration, E2E)
-- ✅ **Desplegado en múltiples entornos** (staging, production)
-- ✅ **Aplicado estrategias de deployment** (Blue-Green, Canary)
-- ✅ **Configurado monitoring y alerting**
-- ✅ **Implementado rollbacks automáticos**
-- ✅ **Usado Infrastructure as Code**
+-  **Configurado un pipeline CI/CD completo** con múltiples stages
+-  **Implementado pruebas automatizadas** (unit, integration, E2E)
+-  **Desplegado en múltiples entornos** (staging, production)
+-  **Aplicado estrategias de deployment** (Blue-Green, Canary)
+-  **Configurado monitoring y alerting**
+-  **Implementado rollbacks automáticos**
+-  **Usado Infrastructure as Code**
 
 ---
 
-## **🏗️ Proyecto: Todo App con Microservicios**
+## ** Proyecto: Todo App con Microservicios**
 
 ### **Arquitectura del proyecto**
 
@@ -29,24 +29,24 @@ graph TB
     subgraph "Frontend"
         A[React App] --> B[Nginx]
     end
-    
+
     subgraph "Backend Services"
         C[API Gateway] --> D[Auth Service]
-        C --> E[Todo Service]  
+        C --> E[Todo Service]
         C --> F[User Service]
     end
-    
+
     subgraph "Databases"
         D --> G[(PostgreSQL)]
         E --> H[(MongoDB)]
         F --> G
     end
-    
+
     subgraph "Infrastructure"
         I[Redis Cache]
         J[Message Queue]
     end
-    
+
     A --> C
     E --> I
     E --> J
@@ -66,17 +66,17 @@ backend:
   - service: "API Gateway"
     tech: "Node.js + Express"
     port: 3000
-    
-  - service: "Auth Service" 
+
+  - service: "Auth Service"
     tech: "Node.js + JWT"
     port: 3001
     database: "PostgreSQL"
-    
+
   - service: "Todo Service"
     tech: "Node.js + Express"
     port: 3002
     database: "MongoDB"
-    
+
   - service: "User Service"
     tech: "Python + FastAPI"
     port: 3003
@@ -94,7 +94,7 @@ infrastructure:
 
 ---
 
-## **🚀 Fase 1: Setup del Proyecto**
+## ** Fase 1: Setup del Proyecto**
 
 ### **1.1 Estructura del repositorio**
 
@@ -117,43 +117,43 @@ La estructura final será:
 
 ```
 todo-app-cicd/
-├── frontend/                 # React application
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   ├── Dockerfile
-│   └── nginx.conf
-├── backend/
-│   ├── api-gateway/         # Express API Gateway
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── Dockerfile
-│   ├── auth-service/        # Authentication microservice
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── Dockerfile
-│   ├── todo-service/        # Todo CRUD microservice
-│   │   ├── src/
-│   │   ├── package.json
-│   │   └── Dockerfile
-│   └── user-service/        # User management (Python/FastAPI)
-│       ├── app/
-│       ├── requirements.txt
-│       └── Dockerfile
-├── infrastructure/
-│   ├── docker/              # Docker configurations
-│   ├── k8s/                 # Kubernetes manifests
-│   └── terraform/           # Infrastructure as Code
-├── tests/
-│   ├── unit/               # Unit tests
-│   ├── integration/        # Integration tests
-│   ├── e2e/               # End-to-end tests
-│   └── performance/       # Load tests
-├── scripts/               # Automation scripts
-├── .github/workflows/     # CI/CD pipelines
-├── docker-compose.yml     # Development environment
-├── docker-compose.prod.yml # Production environment
-└── Makefile              # Task automation
+ frontend/                 # React application
+    src/
+    public/
+    package.json
+    Dockerfile
+    nginx.conf
+ backend/
+    api-gateway/         # Express API Gateway
+       src/
+       package.json
+       Dockerfile
+    auth-service/        # Authentication microservice
+       src/
+       package.json
+       Dockerfile
+    todo-service/        # Todo CRUD microservice
+       src/
+       package.json
+       Dockerfile
+    user-service/        # User management (Python/FastAPI)
+        app/
+        requirements.txt
+        Dockerfile
+ infrastructure/
+    docker/              # Docker configurations
+    k8s/                 # Kubernetes manifests
+    terraform/           # Infrastructure as Code
+ tests/
+    unit/               # Unit tests
+    integration/        # Integration tests
+    e2e/               # End-to-end tests
+    performance/       # Load tests
+ scripts/               # Automation scripts
+ .github/workflows/     # CI/CD pipelines
+ docker-compose.yml     # Development environment
+ docker-compose.prod.yml # Production environment
+ Makefile              # Task automation
 ```
 
 ### **1.2 Frontend: React Todo App**
@@ -230,7 +230,7 @@ function App() {
       const response = await axios.put(`${API_BASE_URL}/api/todos/${id}`, {
         completed: !completed
       });
-      setTodos(todos.map(todo => 
+      setTodos(todos.map(todo =>
         todo.id === id ? response.data : todo
       ));
       setError(null);
@@ -257,13 +257,13 @@ function App() {
         <h1>Todo App CI/CD</h1>
         <p>Environment: {process.env.NODE_ENV}</p>
         <p>Version: {process.env.REACT_APP_VERSION || '1.0.0'}</p>
-        
+
         {error && (
           <div className="error" data-testid="error-message">
             {error}
           </div>
         )}
-        
+
         <form onSubmit={createTodo} className="todo-form">
           <input
             type="text"
@@ -273,8 +273,8 @@ function App() {
             disabled={loading}
             data-testid="todo-input"
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={loading || !newTodo.trim()}
             data-testid="add-todo-button"
           >
@@ -286,7 +286,7 @@ function App() {
           {loading && todos.length === 0 && (
             <div data-testid="loading">Loading todos...</div>
           )}
-          
+
           {todos.map(todo => (
             <div key={todo.id} className="todo-item" data-testid="todo-item">
               <input
@@ -295,13 +295,13 @@ function App() {
                 onChange={() => toggleTodo(todo.id, todo.completed)}
                 data-testid={`todo-checkbox-${todo.id}`}
               />
-              <span 
+              <span
                 className={todo.completed ? 'completed' : ''}
                 data-testid={`todo-title-${todo.id}`}
               >
                 {todo.title}
               </span>
-              <button 
+              <button
                 onClick={() => deleteTodo(todo.id)}
                 className="delete-button"
                 data-testid={`delete-todo-${todo.id}`}
@@ -310,7 +310,7 @@ function App() {
               </button>
             </div>
           ))}
-          
+
           {todos.length === 0 && !loading && (
             <div data-testid="no-todos">No todos yet. Add one above!</div>
           )}
@@ -344,7 +344,7 @@ const mockTodos = [
     createdAt: '2024-01-01T00:00:00.000Z'
   },
   {
-    id: '2', 
+    id: '2',
     title: 'Test Todo 2',
     completed: true,
     createdAt: '2024-01-01T00:00:00.000Z'
@@ -362,7 +362,7 @@ describe('App Component', () => {
   test('renders todo app header', () => {
     mockedAxios.get.mockResolvedValue({ data: [] });
     render(<App />);
-    
+
     expect(screen.getByText('Todo App CI/CD')).toBeInTheDocument();
     expect(screen.getByText(/Environment:/)).toBeInTheDocument();
     expect(screen.getByText(/Version:/)).toBeInTheDocument();
@@ -370,14 +370,14 @@ describe('App Component', () => {
 
   test('fetches and displays todos on load', async () => {
     mockedAxios.get.mockResolvedValue({ data: mockTodos });
-    
+
     render(<App />);
-    
+
     await waitFor(() => {
       expect(screen.getByText('Test Todo 1')).toBeInTheDocument();
       expect(screen.getByText('Test Todo 2')).toBeInTheDocument();
     });
-    
+
     expect(mockedAxios.get).toHaveBeenCalledWith('http://localhost:3000/api/todos');
   });
 
@@ -388,18 +388,18 @@ describe('App Component', () => {
       completed: false,
       createdAt: '2024-01-01T00:00:00.000Z'
     };
-    
+
     mockedAxios.get.mockResolvedValue({ data: [] });
     mockedAxios.post.mockResolvedValue({ data: newTodo });
-    
+
     render(<App />);
-    
+
     const input = screen.getByTestId('todo-input');
     const button = screen.getByTestId('add-todo-button');
-    
+
     fireEvent.change(input, { target: { value: 'New Test Todo' } });
     fireEvent.click(button);
-    
+
     await waitFor(() => {
       expect(mockedAxios.post).toHaveBeenCalledWith(
         'http://localhost:3000/api/todos',
@@ -410,9 +410,9 @@ describe('App Component', () => {
 
   test('displays error message on API failure', async () => {
     mockedAxios.get.mockRejectedValue(new Error('API Error'));
-    
+
     render(<App />);
-    
+
     await waitFor(() => {
       expect(screen.getByTestId('error-message')).toHaveTextContent('Failed to fetch todos');
     });
@@ -422,16 +422,16 @@ describe('App Component', () => {
     const updatedTodo = { ...mockTodos[0], completed: true };
     mockedAxios.get.mockResolvedValue({ data: [mockTodos[0]] });
     mockedAxios.put.mockResolvedValue({ data: updatedTodo });
-    
+
     render(<App />);
-    
+
     await waitFor(() => {
       expect(screen.getByText('Test Todo 1')).toBeInTheDocument();
     });
-    
+
     const checkbox = screen.getByTestId('todo-checkbox-1');
     fireEvent.click(checkbox);
-    
+
     await waitFor(() => {
       expect(mockedAxios.put).toHaveBeenCalledWith(
         'http://localhost:3000/api/todos/1',
@@ -443,16 +443,16 @@ describe('App Component', () => {
   test('deletes todo', async () => {
     mockedAxios.get.mockResolvedValue({ data: [mockTodos[0]] });
     mockedAxios.delete.mockResolvedValue({});
-    
+
     render(<App />);
-    
+
     await waitFor(() => {
       expect(screen.getByText('Test Todo 1')).toBeInTheDocument();
     });
-    
+
     const deleteButton = screen.getByTestId('delete-todo-1');
     fireEvent.click(deleteButton);
-    
+
     await waitFor(() => {
       expect(mockedAxios.delete).toHaveBeenCalledWith('http://localhost:3000/api/todos/1');
     });
@@ -515,37 +515,37 @@ CMD ["nginx", "-g", "daemon off;"]
 server {
     listen 80;
     server_name localhost;
-    
+
     # Security headers
     add_header X-Content-Type-Options nosniff;
     add_header X-Frame-Options DENY;
     add_header X-XSS-Protection "1; mode=block";
-    
+
     # Gzip compression
     gzip on;
     gzip_vary on;
     gzip_min_length 1024;
     gzip_types text/plain text/css text/xml text/javascript application/javascript application/xml+rss application/json;
-    
+
     # Static files with cache
     location /static/ {
         expires 1y;
         add_header Cache-Control "public, immutable";
     }
-    
+
     # Main application
     location / {
         root /usr/share/nginx/html;
         index index.html index.htm;
         try_files $uri $uri/ /index.html;
-        
+
         # No cache for index.html
         location = /index.html {
             expires -1;
             add_header Cache-Control "no-cache, no-store, must-revalidate";
         }
     }
-    
+
     # Health check endpoint
     location /health {
         access_log off;
@@ -612,20 +612,20 @@ app.use(express.urlencoded({ extended: true }));
 // Metrics middleware
 app.use((req, res, next) => {
   const start = Date.now();
-  
+
   res.on('finish', () => {
     const duration = (Date.now() - start) / 1000;
     const route = req.route ? req.route.path : req.path;
-    
+
     httpRequestDuration
       .labels(req.method, route, res.statusCode)
       .observe(duration);
-      
+
     httpRequestsTotal
       .labels(req.method, route, res.statusCode)
       .inc();
   });
-  
+
   next();
 });
 
@@ -710,11 +710,11 @@ process.on('SIGTERM', () => {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`🚀 API Gateway running on port ${PORT}`);
-  console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🔗 Services:`);
+  console.log(` API Gateway running on port ${PORT}`);
+  console.log(` Environment: ${process.env.NODE_ENV || 'development'}`);
+  console.log(` Services:`);
   console.log(`   Auth: ${services.auth}`);
-  console.log(`   Todo: ${services.todo}`);  
+  console.log(`   Todo: ${services.todo}`);
   console.log(`   User: ${services.user}`);
 });
 
@@ -744,7 +744,7 @@ describe('API Gateway', () => {
         uptime: expect.any(Number),
         version: expect.any(String)
       });
-      
+
       expect(response.body.timestamp).toBeDefined();
     });
   });
@@ -987,7 +987,7 @@ networks:
 
 ---
 
-## **🔄 Fase 2: Pipeline CI/CD con GitHub Actions**
+## ** Fase 2: Pipeline CI/CD con GitHub Actions**
 
 ### **2.1 Workflow principal de CI/CD**
 
@@ -1050,22 +1050,22 @@ jobs:
         node-version: '18'
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
-    
+
     - name: Install dependencies
       run: |
         cd frontend
         npm ci
-    
+
     - name: Run linting
       run: |
         cd frontend
         npm run lint
-    
+
     - name: Run unit tests
       run: |
         cd frontend
         npm run test -- --coverage --watchAll=false
-    
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
@@ -1083,22 +1083,22 @@ jobs:
         node-version: '18'
         cache: 'npm'
         cache-dependency-path: backend/api-gateway/package-lock.json
-    
+
     - name: Install dependencies
       run: |
         cd backend/api-gateway
         npm ci
-    
+
     - name: Run linting
       run: |
         cd backend/api-gateway
         npm run lint
-    
+
     - name: Run unit tests
       run: |
         cd backend/api-gateway
         npm run test -- --coverage
-    
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
@@ -1110,7 +1110,7 @@ jobs:
     needs: [test-frontend, test-api-gateway]
     if: always() && (needs.test-frontend.result == 'success' || needs.test-frontend.result == 'skipped') && (needs.test-api-gateway.result == 'success' || needs.test-api-gateway.result == 'skipped')
     runs-on: ubuntu-latest
-    
+
     services:
       postgres:
         image: postgres:13
@@ -1124,12 +1124,12 @@ jobs:
           --health-retries 5
         ports:
           - 5432:5432
-      
+
       mongodb:
         image: mongo:5
         ports:
           - 27017:27017
-      
+
       redis:
         image: redis:7
         ports:
@@ -1137,23 +1137,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-    
+
     - name: Install dependencies
       run: |
         npm ci
         cd tests/integration
         npm ci
-    
+
     - name: Start services
       run: |
         docker-compose -f docker-compose.test.yml up -d
         sleep 30
-    
+
     - name: Run integration tests
       env:
         DATABASE_URL: postgresql://postgres:postgres@localhost:5432/testdb
@@ -1162,7 +1162,7 @@ jobs:
       run: |
         cd tests/integration
         npm run test
-    
+
     - name: Cleanup
       if: always()
       run: docker-compose -f docker-compose.test.yml down
@@ -1172,26 +1172,26 @@ jobs:
     needs: integration-tests
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
-    
+
     permissions:
       contents: read
       packages: write
-    
+
     strategy:
       matrix:
         service: [frontend, api-gateway, auth-service, todo-service, user-service]
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
+
     - name: Login to Container Registry
       uses: docker/login-action@v2
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-    
+
     - name: Extract metadata
       id: meta
       uses: docker/metadata-action@v4
@@ -1202,7 +1202,7 @@ jobs:
           type=ref,event=pr
           type=semver,pattern={{version}}
           type=sha,prefix={{branch}}-
-    
+
     - name: Build and push
       uses: docker/build-push-action@v4
       with:
@@ -1220,38 +1220,38 @@ jobs:
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     environment: staging
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
+
     - name: Deploy to staging
       env:
         KUBE_CONFIG: ${{ secrets.STAGING_KUBE_CONFIG }}
       run: |
         echo "$KUBE_CONFIG" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Update images in staging
         kubectl set image deployment/frontend-staging frontend=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-frontend:develop -n staging
         kubectl set image deployment/api-gateway-staging api-gateway=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-api-gateway:develop -n staging
-        
+
         # Wait for rollout
         kubectl rollout status deployment/frontend-staging -n staging --timeout=300s
         kubectl rollout status deployment/api-gateway-staging -n staging --timeout=300s
-    
+
     - name: Run E2E tests against staging
       run: |
         cd tests/e2e
         npm ci
         STAGING_URL=https://staging.todo-app.example.com npm run test
-    
+
     - name: Notify staging deployment
       uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
         text: |
-          🚀 Staging deployment completed
+           Staging deployment completed
           Environment: https://staging.todo-app.example.com
           Commit: ${{ github.sha }}
       env:
@@ -1263,42 +1263,42 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     environment: production
-    
+
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    
+
     - name: Deploy to production (Canary)
       env:
         KUBE_CONFIG: ${{ secrets.PRODUCTION_KUBE_CONFIG }}
       run: |
         echo "$KUBE_CONFIG" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Deploy canary version (10% traffic)
         ./scripts/deploy-canary.sh ${{ github.ref_name }}
-    
+
     - name: Monitor canary deployment
       run: |
         # Monitor canary for 5 minutes
         ./scripts/monitor-canary.sh 300
-    
+
     - name: Promote to full production
       env:
         KUBE_CONFIG: ${{ secrets.PRODUCTION_KUBE_CONFIG }}
       run: |
         echo "$KUBE_CONFIG" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Promote canary to 100% traffic
         ./scripts/promote-canary.sh
-    
+
     - name: Notify production deployment
       uses: 8398a7/action-slack@v3
       with:
         status: success
         text: |
-          🎉 Production deployment successful!
+           Production deployment successful!
           Version: ${{ github.ref_name }}
           URL: https://todo-app.example.com
       env:
@@ -1310,7 +1310,7 @@ jobs:
     if: failure()
     runs-on: ubuntu-latest
     environment: production
-    
+
     steps:
     - name: Rollback production deployment
       env:
@@ -1318,17 +1318,17 @@ jobs:
       run: |
         echo "$KUBE_CONFIG" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Rollback all deployments
         ./scripts/rollback-production.sh
-    
+
     - name: Notify rollback
       uses: 8398a7/action-slack@v3
       with:
         status: custom
         custom_payload: |
           {
-            text: "🔄 Production rollback executed",
+            text: " Production rollback executed",
             attachments: [{
               color: "warning",
               fields: [{
@@ -1358,7 +1358,7 @@ if [ -z "$VERSION" ]; then
     exit 1
 fi
 
-echo "🕯️ Starting canary deployment for version $VERSION"
+echo " Starting canary deployment for version $VERSION"
 
 # Update canary deployment with new image
 kubectl set image deployment/todo-app-canary \
@@ -1389,11 +1389,11 @@ spec:
       weight: 10
 EOF
 
-echo "✅ Canary deployment completed - 10% traffic routed to version $VERSION"
+echo " Canary deployment completed - 10% traffic routed to version $VERSION"
 ```
 
 ```bash
-#!/bin/bash  
+#!/bin/bash
 # scripts/monitor-canary.sh
 
 set -e
@@ -1402,7 +1402,7 @@ DURATION=${1:-300}  # Default 5 minutes
 INTERVAL=30
 NAMESPACE="production"
 
-echo "📊 Monitoring canary deployment for ${DURATION} seconds..."
+echo " Monitoring canary deployment for ${DURATION} seconds..."
 
 END_TIME=$(($(date +%s) + DURATION))
 
@@ -1410,52 +1410,52 @@ while [ $(date +%s) -lt $END_TIME ]; do
     # Get metrics from Prometheus
     ERROR_RATE_STABLE=$(curl -s "http://prometheus:9090/api/v1/query?query=rate(http_requests_total{job=\"stable\",status=~\"5.*\"}[5m])" | jq -r '.data.result[0].value[1] // "0"')
     ERROR_RATE_CANARY=$(curl -s "http://prometheus:9090/api/v1/query?query=rate(http_requests_total{job=\"canary\",status=~\"5.*\"}[5m])" | jq -r '.data.result[0].value[1] // "0"')
-    
+
     LATENCY_STABLE=$(curl -s "http://prometheus:9090/api/v1/query?query=histogram_quantile(0.95,rate(http_request_duration_seconds_bucket{job=\"stable\"}[5m]))" | jq -r '.data.result[0].value[1] // "0"')
     LATENCY_CANARY=$(curl -s "http://prometheus:9090/api/v1/query?query=histogram_quantile(0.95,rate(http_request_duration_seconds_bucket{job=\"canary\"}[5m]))" | jq -r '.data.result[0].value[1] // "0"')
-    
-    echo "📈 Metrics:"
+
+    echo " Metrics:"
     echo "   Stable - Error Rate: $ERROR_RATE_STABLE, Latency: ${LATENCY_STABLE}s"
     echo "   Canary - Error Rate: $ERROR_RATE_CANARY, Latency: ${LATENCY_CANARY}s"
-    
+
     # Check rollback conditions
     if (( $(echo "$ERROR_RATE_CANARY > $ERROR_RATE_STABLE * 2" | bc -l) )); then
-        echo "❌ Canary error rate too high - triggering rollback"
+        echo " Canary error rate too high - triggering rollback"
         ./scripts/rollback-canary.sh
         exit 1
     fi
-    
+
     if (( $(echo "$LATENCY_CANARY > $LATENCY_STABLE * 1.5" | bc -l) )); then
-        echo "⚠️ Canary latency significantly higher than stable"
+        echo " Canary latency significantly higher than stable"
     fi
-    
+
     REMAINING=$((END_TIME - $(date +%s)))
     echo "⏳ Time remaining: ${REMAINING}s"
-    
+
     sleep $INTERVAL
 done
 
-echo "✅ Canary monitoring completed - no issues detected"
+echo " Canary monitoring completed - no issues detected"
 ```
 
 ---
 
 ## **Conclusión del Módulo**
 
-¡Felicidades! Has completado el módulo de **Práctica CI/CD** más comprehensivo. Este proyecto te ha dado experiencia práctica con:
+Felicidades! Has completado el módulo de **Práctica CI/CD** más comprehensivo. Este proyecto te ha dado experiencia práctica con:
 
-### **🎯 Lo que has logrado:**
+### ** Lo que has logrado:**
 
-- ✅ **Aplicación completa** con microservicios (Frontend React + API Gateway + 3 servicios backend)
-- ✅ **Tests automatizados** en múltiples niveles (unit, integration, E2E, performance)
-- ✅ **Pipeline CI/CD robusto** con GitHub Actions
-- ✅ **Estrategias de deployment** (Blue-Green, Canary, Rolling)
-- ✅ **Monitoring y métricas** con Prometheus/Grafana
-- ✅ **Rollbacks automáticos** basados en métricas
-- ✅ **Infrastructure as Code** con Docker y Kubernetes
-- ✅ **Security scanning** y quality gates
+-  **Aplicación completa** con microservicios (Frontend React + API Gateway + 3 servicios backend)
+-  **Tests automatizados** en múltiples niveles (unit, integration, E2E, performance)
+-  **Pipeline CI/CD robusto** con GitHub Actions
+-  **Estrategias de deployment** (Blue-Green, Canary, Rolling)
+-  **Monitoring y métricas** con Prometheus/Grafana
+-  **Rollbacks automáticos** basados en métricas
+-  **Infrastructure as Code** con Docker y Kubernetes
+-  **Security scanning** y quality gates
 
-### **🚀 Skills desarrollados:**
+### ** Skills desarrollados:**
 
 - **DevOps Engineering**: Pipeline design, automation, monitoring
 - **Container Orchestration**: Docker, Kubernetes, service mesh
@@ -1468,7 +1468,7 @@ Este proyecto es un **portfolio piece** que demuestra tu competencia en DevOps m
 
 ---
 
-## **🎓 Próximos pasos recomendados:**
+## ** Próximos pasos recomendados:**
 
 1. **Extender el proyecto** con más servicios y complejidad
 2. **Implementar GitOps** con ArgoCD o Flux
@@ -1476,4 +1476,4 @@ Este proyecto es un **portfolio piece** que demuestra tu competencia en DevOps m
 4. **Implementar service mesh** con Istio
 5. **Avanzar a Kubernetes avanzado** con operators y CRDs
 
-¡Has completado exitosamente la **Fase 2** del roadmap DevOps! Ahora estás listo para avanzar a **contenedores, redes y orquestación** en la Fase 3.
+Has completado exitosamente la **Fase 2** del roadmap DevOps! Ahora estás listo para avanzar a **contenedores, redes y orquestación** en la Fase 3.

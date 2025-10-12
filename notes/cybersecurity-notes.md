@@ -1,4 +1,4 @@
-# Notas de Ciberseguridad en DevOps 
+# Notas de Ciberseguridad en DevOps
 
 ## Principios Fundamentales de Seguridad
 
@@ -129,15 +129,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Run SAST with SonarQube
         uses: sonarqube-quality-gate-action@master
-        
+
       - name: Container Security Scan
         run: |
           docker run --rm -v "$PWD:/workspace" \
             aquasec/trivy filesystem --exit-code 1 /workspace
-            
+
       - name: Infrastructure Security
         run: |
           checkov -d ./terraform --framework terraform

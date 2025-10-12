@@ -1,4 +1,4 @@
-# Fase 4: Infraestructura como Código (IaC) 
+# Fase 4: Infraestructura como Código (IaC)
 
 Esta fase te enseñará a gestionar infraestructuras de manera programática usando herramientas modernas de IaC.
 
@@ -50,7 +50,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Estimada
 
-⏱ **3-4 semanas**
+ **3-4 semanas**
 
 ## Prerrequisitos
 

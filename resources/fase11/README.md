@@ -1,4 +1,4 @@
-# Fase 11: Metodologías Ágiles Avanzadas 
+# Fase 11: Metodologías Ágiles Avanzadas
 
 Escalado ágil y optimización de equipos de desarrollo.
 

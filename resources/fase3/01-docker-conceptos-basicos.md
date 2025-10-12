@@ -15,17 +15,17 @@ Docker es una plataforma de contenedorización que permite empaquetar aplicacion
 
 #### Contenedores vs Máquinas Virtuales
 ```
-┌─────────────────────┐  ┌─────────────────────┐
-│     Aplicación      │  │     Aplicación      │
-├─────────────────────┤  ├─────────────────────┤
-│      Runtime        │  │      Runtime        │
-├─────────────────────┤  ├─────────────────────┤
-│    Guest OS         │  │                     │
-├─────────────────────┤  │   Docker Engine     │
-│    Hypervisor       │  │                     │
-├─────────────────────┤  ├─────────────────────┤
-│     Host OS         │  │     Host OS         │
-└─────────────────────┘  └─────────────────────┘
+
+     Aplicación             Aplicación
+
+      Runtime                Runtime
+
+    Guest OS
+     Docker Engine
+    Hypervisor
+
+     Host OS                Host OS
+
    Máquina Virtual            Contenedor
 ```
 

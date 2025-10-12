@@ -216,18 +216,18 @@ git push origin --delete <rama>  # Eliminar rama remota
 
 #### **Git Flow**
 ```
-main/master    ─●─────●─────●─────●─ (Producción)
+main/master     (Producción)
               /       \     \
-develop   ─●─●─────●───●─────●───●─ (Desarrollo)
+develop    (Desarrollo)
          /   \         \   /
-feature/x    ●─●─●─●───●─/       (Funcionalidades)
+feature/x    /       (Funcionalidades)
 ```
 
 #### **GitHub Flow (Simplificado)**
 ```
-main    ─●─────●─────●─────●─ (Siempre desplegable)
+main     (Siempre desplegable)
         /       \     \
-feature  ●─●─●─●─/     ●─●─/  (Ramas cortas)
+feature  /     /  (Ramas cortas)
 ```
 
 #### **Comandos para branching**
@@ -376,10 +376,10 @@ git push origin feature/nueva-api
 Implementa endpoint para autenticación de usuarios usando JWT.
 
 ## Cambios realizados
-- ✅ Crear middleware de autenticación
-- ✅ Implementar generación de tokens JWT
-- ✅ Agregar validación de tokens
-- ✅ Documentar nuevos endpoints
+-  Crear middleware de autenticación
+-  Implementar generación de tokens JWT
+-  Agregar validación de tokens
+-  Documentar nuevos endpoints
 
 ## Testing
 - [x] Pruebas unitarias para AuthService
@@ -431,16 +431,16 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: '16'
-    
+
     - name: Install dependencies
       run: npm ci
-    
+
     - name: Run tests
       run: npm test
-    
+
     - name: Run linting
       run: npm run lint
-    
+
     - name: Check code coverage
       run: npm run coverage
 ```
@@ -517,12 +517,12 @@ fix(ui): corregir alineación de botones en mobile
 
 #### **Commits descriptivos**
 ```bash
-# ❌ Mal
+#  Mal
 git commit -m "fix"
 git commit -m "cambios"
 git commit -m "update"
 
-# ✅ Bien
+#  Bien
 git commit -m "fix: corregir validación de edad en formulario registro"
 git commit -m "feat: implementar cache Redis para sesiones usuario"
 git commit -m "docs: agregar ejemplos de uso de API en README"
@@ -625,7 +625,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Obtener historial completo
-      
+
       - name: Get version from Git tag
         run: |
           VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.1.0")
@@ -643,7 +643,7 @@ echo "Ejecutando pruebas antes del commit..."
 npm test
 
 if [ $? -ne 0 ]; then
-  echo "❌ Las pruebas fallaron. Commit cancelado."
+  echo " Las pruebas fallaron. Commit cancelado."
   exit 1
 fi
 
@@ -651,11 +651,11 @@ echo "Ejecutando linting..."
 npm run lint
 
 if [ $? -ne 0 ]; then
-  echo "❌ Linting falló. Commit cancelado."
+  echo " Linting falló. Commit cancelado."
   exit 1
 fi
 
-echo "✅ Pre-commit checks pasaron."
+echo " Pre-commit checks pasaron."
 ```
 
 ### **Versionado semántico con Git tags**
@@ -931,4 +931,4 @@ Para profundizar en Git y GitHub con ejercicios prácticos y proyectos reales, e
 - **Templates de Pull Requests** y mejores prácticas
 - **Casos de estudio** de flujos de trabajo DevOps
 
-¡Felicidades! Has completado el módulo de Git. Ahora tienes las herramientas fundamentales para colaborar efectivamente en proyectos DevOps y estás listo para avanzar a la automatización de procesos.
+Felicidades! Has completado el módulo de Git. Ahora tienes las herramientas fundamentales para colaborar efectivamente en proyectos DevOps y estás listo para avanzar a la automatización de procesos.

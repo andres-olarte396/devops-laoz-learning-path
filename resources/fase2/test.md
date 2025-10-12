@@ -22,10 +22,10 @@
 
 ¿Cuál es la diferencia principal entre `$@` y `$*` en un script de Bash?
 
-a) No hay diferencia, ambos representan todos los argumentos  
-b) `$@` trata cada argumento como elemento separado, `$*` como string único  
-c) `$*` es para arrays, `$@` para strings  
-d) `$@` incluye el nombre del script, `$*` no  
+a) No hay diferencia, ambos representan todos los argumentos
+b) `$@` trata cada argumento como elemento separado, `$*` como string único
+c) `$*` es para arrays, `$@` para strings
+d) `$@` incluye el nombre del script, `$*` no
 
 ### Pregunta 2
 >
@@ -35,10 +35,10 @@ d) `$@` incluye el nombre del script, `$*` no
 
 En PowerShell, ¿cuál es la forma correcta de manejar errores en un script?
 
-a) `try { } catch { } finally { }`  
-b) `if ($Error) { }`  
-c) `ErrorAction = "Stop"`  
-d) Todas las anteriores  
+a) `try { } catch { } finally { }`
+b) `if ($Error) { }`
+c) `ErrorAction = "Stop"`
+d) Todas las anteriores
 
 ### Pregunta 3
 >
@@ -54,10 +54,10 @@ d) Todas las anteriores
 find /var/log -name "*.log" -mtime +7 -exec rm {} \;
 ```
 
-a) Busca archivos .log modificados en los últimos 7 días  
-b) Elimina archivos .log más antiguos que 7 días  
-c) Comprime archivos .log de más de 7 días  
-d) Mueve archivos .log antiguos a backup  
+a) Busca archivos .log modificados en los últimos 7 días
+b) Elimina archivos .log más antiguos que 7 días
+c) Comprime archivos .log de más de 7 días
+d) Mueve archivos .log antiguos a backup
 
 ### Pregunta 5
 >
@@ -65,19 +65,19 @@ d) Mueve archivos .log antiguos a backup
 
 En un script de automatización, ¿cuál es la mejor práctica para manejar credenciales?
 
-a) Hardcodearlas en el script  
-b) Usar variables de entorno  
-c) Almacenarlas en un archivo de configuración  
-d) Pedirlas por input cada vez  
+a) Hardcodearlas en el script
+b) Usar variables de entorno
+c) Almacenarlas en un archivo de configuración
+d) Pedirlas por input cada vez
 
 ### Pregunta 6
 
 ¿Qué significa el código de salida `0` en un script?
 
-a) Error crítico  
-b) Ejecución exitosa  
-c) Warning  
-d) Proceso cancelado  
+a) Error crítico
+b) Ejecución exitosa
+c) Warning
+d) Proceso cancelado
 
 ### Pregunta 7
 
@@ -92,19 +92,19 @@ cp database.sql "backup_${DATE}.sql"
 
 En PowerShell, ¿cómo obtienes el directorio actual del script?
 
-a) `$PWD`  
-b) `$PSScriptRoot`  
-c) `Get-Location`  
-d) `$MyInvocation.MyCommand.Path`  
+a) `$PWD`
+b) `$PSScriptRoot`
+c) `Get-Location`
+d) `$MyInvocation.MyCommand.Path`
 
 ### Pregunta 9
 
 ¿Cuál es el propósito del comando `set -e` en Bash?
 
-a) Activar el modo debug  
-b) Salir inmediatamente si un comando falla  
-c) Mostrar cada comando antes de ejecutarlo  
-d) Ignorar errores  
+a) Activar el modo debug
+b) Salir inmediatamente si un comando falla
+c) Mostrar cada comando antes de ejecutarlo
+d) Ignorar errores
 
 ### Pregunta 10
 
@@ -120,10 +120,10 @@ d) Ignorar errores
 
 En un Makefile, ¿qué indica una línea que comienza con TAB?
 
-a) Un comentario  
-b) Una variable  
-c) Un comando  
-d) Una dependencia  
+a) Un comentario
+b) Una variable
+c) Un comando
+d) Una dependencia
 
 ### Pregunta 12
 >
@@ -131,19 +131,19 @@ d) Una dependencia
 
 ¿Cuál es la estructura básica de un playbook de Ansible?
 
-a) tasks, handlers, vars  
-b) hosts, tasks, roles  
-c) name, hosts, tasks  
-d) inventory, playbook, modules  
+a) tasks, handlers, vars
+b) hosts, tasks, roles
+c) name, hosts, tasks
+d) inventory, playbook, modules
 
 ### Pregunta 13
 
 En Puppet, ¿qué es un "manifest"?
 
-a) Un archivo de configuración de red  
-b) Un archivo con definiciones de recursos  
-c) Un log de cambios  
-d) Un certificado de seguridad  
+a) Un archivo de configuración de red
+b) Un archivo con definiciones de recursos
+c) Un log de cambios
+d) Un certificado de seguridad
 
 ### Pregunta 14
 
@@ -160,19 +160,19 @@ d) Un certificado de seguridad
 
 ¿Cuál es la diferencia principal entre Chef y Ansible?
 
-a) Chef usa Ruby, Ansible usa Python  
-b) Chef requiere agente, Ansible no  
-c) Chef es push, Ansible es pull  
-d) Chef es para Windows, Ansible para Linux  
+a) Chef usa Ruby, Ansible usa Python
+b) Chef requiere agente, Ansible no
+c) Chef es push, Ansible es pull
+d) Chef es para Windows, Ansible para Linux
 
 ### Pregunta 16
 
 En Make, ¿qué hace la directiva `.PHONY`?
 
-a) Define variables phantom  
-b) Indica targets que no son archivos  
-c) Ejecuta comandos en paralelo  
-d) Oculta la salida de comandos  
+a) Define variables phantom
+b) Indica targets que no son archivos
+c) Ejecuta comandos en paralelo
+d) Oculta la salida de comandos
 
 ### Pregunta 17
 
@@ -182,10 +182,10 @@ d) Oculta la salida de comandos
 
 ¿Qué archivo usa Puppet para definir la configuración del agente?
 
-a) `puppet.conf`  
-b) `site.pp`  
-c) `manifest.pp`  
-d) `modules.conf`  
+a) `puppet.conf`
+b) `site.pp`
+c) `manifest.pp`
+d) `modules.conf`
 
 ---
 
@@ -199,10 +199,10 @@ d) `modules.conf`
 
 ¿Cuál es la diferencia entre un pipeline declarativo e imperativo en Jenkins?
 
-a) Declarativo usa script{}, imperativo usa steps{}  
-b) Declarativo es más estructurado, imperativo más flexible  
-c) No hay diferencia real  
-d) Imperativo es solo para pipelines simples  
+a) Declarativo usa script{}, imperativo usa steps{}
+b) Declarativo es más estructurado, imperativo más flexible
+c) No hay diferencia real
+d) Imperativo es solo para pipelines simples
 
 ### Pregunta 20
 
@@ -225,19 +225,19 @@ pipeline {
 
 ¿Qué hace la directiva `when` en un pipeline de Jenkins?
 
-a) Define cuándo se ejecuta el pipeline  
-b) Establece condiciones para ejecutar un stage  
-c) Configura el timeout  
-d) Define variables de entorno  
+a) Define cuándo se ejecuta el pipeline
+b) Establece condiciones para ejecutar un stage
+c) Configura el timeout
+d) Define variables de entorno
 
 ### Pregunta 22
 
 En Jenkins, ¿qué es un "agente"?
 
-a) Un usuario con permisos administrativos  
-b) Un nodo donde se ejecutan los trabajos  
-c) Un plugin de seguridad  
-d) Un tipo de credencial  
+a) Un usuario con permisos administrativos
+b) Un nodo donde se ejecutan los trabajos
+c) Un plugin de seguridad
+d) Un tipo de credencial
 
 ### Pregunta 23
 
@@ -247,28 +247,28 @@ d) Un tipo de credencial
 
 ¿Cuál es el propósito de `archiveArtifacts` en Jenkins?
 
-a) Comprimir archivos del workspace  
-b) Guardar archivos para uso posterior  
-c) Subir archivos a repositorio  
-d) Limpiar archivos temporales  
+a) Comprimir archivos del workspace
+b) Guardar archivos para uso posterior
+c) Subir archivos a repositorio
+d) Limpiar archivos temporales
 
 ### Pregunta 25
 
 ¿Qué información contiene el archivo `Jenkinsfile`?
 
-a) Configuración del servidor Jenkins  
-b) Definición del pipeline como código  
-c) Lista de plugins instalados  
-d) Configuración de usuarios  
+a) Configuración del servidor Jenkins
+b) Definición del pipeline como código
+c) Lista de plugins instalados
+d) Configuración de usuarios
 
 ### Pregunta 26
 
 En Jenkins, ¿cómo se configuran credenciales de forma segura?
 
-a) Variables de entorno en el pipeline  
-b) Archivos de configuración  
-c) Jenkins Credential Store  
-d) Hardcodeadas en el script  
+a) Variables de entorno en el pipeline
+b) Archivos de configuración
+c) Jenkins Credential Store
+d) Hardcodeadas en el script
 
 ---
 
@@ -282,10 +282,10 @@ d) Hardcodeadas en el script
 
 En GitHub Actions, ¿qué define un "workflow"?
 
-a) Un repositorio de código  
-b) Un conjunto de jobs automatizados  
-c) Una rama específica  
-d) Un usuario colaborador  
+a) Un repositorio de código
+b) Un conjunto de jobs automatizados
+c) Una rama específica
+d) Un usuario colaborador
 
 ### Pregunta 28
 
@@ -305,19 +305,19 @@ jobs:
 
 ¿Cuál es la principal ventaja de GitLab CI/CD sobre Jenkins?
 
-a) Mayor velocidad de ejecución  
-b) Integración nativa con Git  
-c) Mejor interfaz de usuario  
-d) Soporte para más lenguajes  
+a) Mayor velocidad de ejecución
+b) Integración nativa con Git
+c) Mejor interfaz de usuario
+d) Soporte para más lenguajes
 
 ### Pregunta 30
 
 En Azure DevOps, ¿qué son los "artifacts"?
 
-a) Errores en el código  
-b) Archivos generados por el build  
-c) Métricas de performance  
-d) Logs de ejecución  
+a) Errores en el código
+b) Archivos generados por el build
+c) Métricas de performance
+d) Logs de ejecución
 
 ### Pregunta 31
 
@@ -327,19 +327,19 @@ d) Logs de ejecución
 
 ¿Qué significa "matrix build" en CI/CD?
 
-a) Build que usa matrices matemáticas  
-b) Build en paralelo con diferentes configuraciones  
-c) Build que genera múltiples artefactos  
-d) Build con dependencias complejas  
+a) Build que usa matrices matemáticas
+b) Build en paralelo con diferentes configuraciones
+c) Build que genera múltiples artefactos
+d) Build con dependencias complejas
 
 ### Pregunta 33
 
 En GitLab CI/CD, ¿cuál es el propósito de la palabra clave `artifacts`?
 
-a) Definir dependencias del proyecto  
-b) Especificar archivos a preservar entre jobs  
-c) Configurar notificaciones  
-d) Establecer variables de entorno  
+a) Definir dependencias del proyecto
+b) Especificar archivos a preservar entre jobs
+c) Configurar notificaciones
+d) Establecer variables de entorno
 
 ---
 
@@ -353,10 +353,10 @@ d) Establecer variables de entorno
 
 ¿Cuál es el orden correcto en la pirámide de testing?
 
-a) E2E → Integration → Unit  
-b) Unit → Integration → E2E  
-c) Integration → Unit → E2E  
-d) Unit → E2E → Integration  
+a) E2E → Integration → Unit
+b) Unit → Integration → E2E
+c) Integration → Unit → E2E
+d) Unit → E2E → Integration
 
 ### Pregunta 35
 
@@ -375,19 +375,19 @@ describe('Calculator', () => {
 
 ¿Qué es SAST en security testing?
 
-a) Static Application Security Testing  
-b) Software Application Security Tools  
-c) Secure Application Source Testing  
-d) System Application Security Test  
+a) Static Application Security Testing
+b) Software Application Security Tools
+c) Secure Application Source Testing
+d) System Application Security Test
 
 ### Pregunta 37
 
 En SonarQube, ¿qué indica el "Quality Gate"?
 
-a) La puerta de entrada al repositorio  
-b) Criterios mínimos de calidad de código  
-c) El gateway de la aplicación  
-d) La configuración de red  
+a) La puerta de entrada al repositorio
+b) Criterios mínimos de calidad de código
+c) El gateway de la aplicación
+d) La configuración de red
 
 ### Pregunta 38
 
@@ -397,19 +397,19 @@ d) La configuración de red
 
 ¿Cuál es el propósito de un "smoke test"?
 
-a) Verificar que la aplicación no se incendie  
-b) Test básico para verificar funcionalidad crítica  
-c) Test de carga máxima  
-d) Test de seguridad  
+a) Verificar que la aplicación no se incendie
+b) Test básico para verificar funcionalidad crítica
+c) Test de carga máxima
+d) Test de seguridad
 
 ### Pregunta 40
 
 ¿Qué herramienta se usa comúnmente para performance testing?
 
-a) Jest  
-b) K6  
-c) ESLint  
-d) SonarQube  
+a) Jest
+b) K6
+c) ESLint
+d) SonarQube
 
 ---
 
@@ -423,10 +423,10 @@ d) SonarQube
 
 ¿En qué consiste un "Blue-Green deployment"?
 
-a) Usar dos colores para la interfaz  
-b) Mantener dos entornos idénticos para switch instantáneo  
-c) Desplegar en horarios específicos  
-d) Usar dos equipos de desarrollo  
+a) Usar dos colores para la interfaz
+b) Mantener dos entornos idénticos para switch instantáneo
+c) Desplegar en horarios específicos
+d) Usar dos equipos de desarrollo
 
 ### Pregunta 42
 
@@ -436,28 +436,28 @@ d) Usar dos equipos de desarrollo
 
 ¿Cuál es la principal ventaja de un Rolling deployment?
 
-a) Es más rápido que otros métodos  
-b) No requiere downtime  
-c) Usa menos recursos  
-d) Es más fácil de configurar  
+a) Es más rápido que otros métodos
+b) No requiere downtime
+c) Usa menos recursos
+d) Es más fácil de configurar
 
 ### Pregunta 44
 
 ¿Qué son los "Feature Flags"?
 
-a) Banderas nacionales en el código  
-b) Configuraciones para habilitar/deshabilitar funcionalidades  
-c) Marcadores de errores  
-d) Indicadores de performance  
+a) Banderas nacionales en el código
+b) Configuraciones para habilitar/deshabilitar funcionalidades
+c) Marcadores de errores
+d) Indicadores de performance
 
 ### Pregunta 45
 
 En GitOps, ¿dónde se almacena la configuración de infraestructura?
 
-a) En la base de datos  
-b) En un repositorio Git  
-c) En el servidor de producción  
-d) En archivos de configuración locales  
+a) En la base de datos
+b) En un repositorio Git
+c) En el servidor de producción
+d) En archivos de configuración locales
 
 ---
 
@@ -564,4 +564,4 @@ d) En archivos de configuración locales
 
 ---
 
-**¡Felicitaciones por completar el test de la Fase 2!** Este conocimiento en Automation y CI/CD te posiciona para implementar pipelines de nivel empresarial. 
+**Felicitaciones por completar el test de la Fase 2!** Este conocimiento en Automation y CI/CD te posiciona para implementar pipelines de nivel empresarial.

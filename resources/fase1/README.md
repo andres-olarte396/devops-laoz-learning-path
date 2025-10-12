@@ -1,6 +1,6 @@
-# Fase 1: Fundamentos de DevOps 
+# Fase 1: Fundamentos de DevOps
 
-**¡Bienvenido a tu viaje DevOps!** Esta fase te proporcionará todos los conocimientos fundamentales necesarios para entender qué es DevOps, por qué es importante y cómo comenzar a implementarlo en tu carrera profesional.
+**Bienvenido a tu viaje DevOps!** Esta fase te proporcionará todos los conocimientos fundamentales necesarios para entender qué es DevOps, por qué es importante y cómo comenzar a implementarlo en tu carrera profesional.
 
 ##  Estado de la Fase
 
@@ -27,7 +27,7 @@ Al completar esta fase serás capaz de:
 
 ##  Contenido de la Fase
 
-### � Semana 1: Introducción y Conceptos Básicos
+###  Semana 1: Introducción y Conceptos Básicos
 
 #### [01. ¿Qué es DevOps?](01-que-es-devops.md)
 
@@ -53,7 +53,7 @@ Al completar esta fase serás capaz de:
 - **Duración:** 3-4 horas
 - **Tipo:** Comparativo + Ejercicios
 
-### � Semana 2: Ciclo de Vida y Herramientas
+###  Semana 2: Ciclo de Vida y Herramientas
 
 #### [04. Ciclo de Vida DevOps](04-ciclo-de-vida-devops.md)
 
@@ -71,7 +71,7 @@ Al completar esta fase serás capaz de:
 - **Duración:** 6-8 horas
 - **Tipo:** Hands-on + Configuración
 
-### � Semana 3: Fundamentos Técnicos
+###  Semana 3: Fundamentos Técnicos
 
 #### [06. Introducción a la Nube](06-introduccion-nube.md)
 
@@ -89,7 +89,7 @@ Al completar esta fase serás capaz de:
 - **Duración:** 5-6 horas
 - **Tipo:** Técnico + Ejemplos prácticos
 
-### � Semana 4: Git Mastery
+###  Semana 4: Git Mastery
 
 #### [08. Primeros Pasos con Git](08-primeros-pasos-git.md)
 
@@ -100,9 +100,9 @@ Al completar esta fase serás capaz de:
 - **Duración:** 8-10 horas
 - **Tipo:** Intensivo hands-on + Proyectos
 
-## ⏱ Plan de Estudio Recomendado
+##  Plan de Estudio Recomendado
 
-### � **Cronograma Sugerido (4 semanas)**
+###  **Cronograma Sugerido (4 semanas)**
 
 | Semana | Archivos | Enfoque | Tiempo |
 |--------|----------|---------|--------|
@@ -121,7 +121,7 @@ Al completar esta fase serás capaz de:
 - Para personas con experiencia previa
 - Enfoque en laboratorios prácticos
 
-#### � **Relajado (6-8 semanas)**
+####  **Relajado (6-8 semanas)**
 
 - 6-8 horas por semana
 - Ideal para principiantes
@@ -150,7 +150,7 @@ Al completar esta fase serás capaz de:
 - Cuenta en GitHub
 - Acceso a internet para descargas
 
-### ☁ **Cuentas Cloud (Opcionales para Fase 1)**
+###  **Cuentas Cloud (Opcionales para Fase 1)**
 
 - Azure (trial gratuito)
 - AWS (free tier)
@@ -192,16 +192,16 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 
 ##  Navegación
 
-### ⬅ **Anterior**
+###  **Anterior**
 
 - [Roadmap Principal](../../roadmap.md)
 - [README del Curso](../../README.md)
 
-### ➡ **Siguiente**
+###  **Siguiente**
 
 - [Fase 2: Automatización y CI/CD](../fase2/)
 
-### � **Enlaces Útiles**
+###  **Enlaces Útiles**
 
 - [Notas de Git](../../notes/git-notes.md)
 - [Recursos de Aprendizaje](../books.md)
@@ -217,7 +217,7 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 4. **Comparte**: Explica conceptos a otros
 5. **Conecta**: Únete a comunidades DevOps
 
-### � **Errores Comunes a Evitar**
+###  **Errores Comunes a Evitar**
 
 - **Saltarse la teoría**: Los conceptos son tan importantes como la práctica
 - **No practicar Git**: Es fundamental para todo el resto del curso
@@ -232,7 +232,7 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 -  Explicar conceptos a otros
 -  Terminar la fase completa
 
-## � Soporte y Comunidad
+##  Soporte y Comunidad
 
 ###  **Cómo Obtener Ayuda**
 
@@ -254,7 +254,7 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 
 Este contenido está bajo la licencia [MIT](../../LICENSE).
 
-**¡Buen viaje en tu aprendizaje DevOps!** 
+**Buen viaje en tu aprendizaje DevOps!**
 
 ---
 

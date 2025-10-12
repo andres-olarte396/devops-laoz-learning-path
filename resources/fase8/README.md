@@ -1,4 +1,4 @@
-# Fase 8: Inteligencia Artificial aplicada al desarrollo 
+# Fase 8: Inteligencia Artificial aplicada al desarrollo
 
 Esta fase te introduce a la IA y Machine Learning aplicados en soluciones de software y DevOps.
 
@@ -73,7 +73,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Total Estimada
 
-⏱ **7 semanas**
+ **7 semanas**
 
 ## Prerrequisitos
 

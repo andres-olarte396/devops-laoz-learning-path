@@ -1,6 +1,6 @@
-# 04. Plataformas CI/CD Modernas 
+# 04. Plataformas CI/CD Modernas
 
-**¡Domina GitHub Actions, GitLab CI/CD y Azure DevOps!** Este módulo te enseñará a usar las plataformas CI/CD más populares del mercado actual.
+**Domina GitHub Actions, GitLab CI/CD y Azure DevOps!** Este módulo te enseñará a usar las plataformas CI/CD más populares del mercado actual.
 
 ##  Objetivos de Aprendizaje
 
@@ -16,7 +16,7 @@ Al completar este módulo serás capaz de:
 
 ##  Contenido del Módulo
 
-### 1. GitHub Actions �
+### 1. GitHub Actions
 
 ####  **Workflow Básico**
 
@@ -51,7 +51,7 @@ jobs:
   test:
     name:  Test
     runs-on: ubuntu-latest
-    
+
     strategy:
       matrix:
         node-version: [16, 18, 20]
@@ -63,35 +63,35 @@ jobs:
         exclude:
           - node-version: 16
             os: macos-latest
-    
+
     steps:
-      - name: � Checkout code
+      - name:  Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Para SonarCloud
-      
-      - name: � Setup Node.js ${{ matrix.node-version }}
+
+      - name:  Setup Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      
-      - name: � Install dependencies
+
+      - name:  Install dependencies
         run: npm ci
-      
+
       - name:  Lint code
         run: npm run lint
-      
+
       - name:  Run tests
         run: npm test
         env:
           CI: true
-      
+
       - name:  Generate coverage report
         if: matrix.coverage
         run: npm run test:coverage
-      
-      - name: � Upload coverage to Codecov
+
+      - name:  Upload coverage to Codecov
         if: matrix.coverage
         uses: codecov/codecov-action@v3
         with:
@@ -99,10 +99,10 @@ jobs:
           files: ./coverage/lcov.info
           flags: unittests
           name: codecov-umbrella
-      
+
       - name:  Run security audit
         run: npm audit --audit-level moderate
-      
+
       - name:  SonarCloud Scan
         if: matrix.coverage
         uses: SonarSource/sonarcloud-github-action@master
@@ -117,41 +117,41 @@ jobs:
     outputs:
       image-digest: ${{ steps.build.outputs.digest }}
       image-tags: ${{ steps.meta.outputs.tags }}
-    
+
     steps:
-      - name: � Checkout code
+      - name:  Checkout code
         uses: actions/checkout@v4
-      
-      - name: � Setup Node.js
+
+      - name:  Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-      
-      - name: � Install dependencies
+
+      - name:  Install dependencies
         run: npm ci
-      
+
       - name:  Build application
         run: npm run build
-      
+
       - name:  Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-files
           path: dist/
           retention-days: 7
-      
-      - name: � Set up Docker Buildx
+
+      - name:  Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      
-      - name: � Login to Container Registry
+
+      - name:  Login to Container Registry
         uses: docker/login-action@v3
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: � Extract metadata
+
+      - name:  Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
@@ -161,7 +161,7 @@ jobs:
             type=ref,event=pr
             type=sha,prefix={{branch}}-
             type=raw,value=latest,enable={{is_default_branch}}
-      
+
       - name:  Build and push Docker image
         id: build
         uses: docker/build-push-action@v5
@@ -181,26 +181,26 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name != 'pull_request'
-    
+
     permissions:
       security-events: write
-    
+
     steps:
-      - name: � Checkout code
+      - name:  Checkout code
         uses: actions/checkout@v4
-      
+
       - name:  Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: ${{ needs.build.outputs.image-tags }}
           format: 'sarif'
           output: 'trivy-results.sarif'
-      
+
       - name:  Upload Trivy scan results
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-results.sarif'
-      
+
       - name:  CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
@@ -214,31 +214,31 @@ jobs:
     environment:
       name: staging
       url: https://staging.myapp.com
-    
+
     steps:
-      - name: � Checkout code
+      - name:  Checkout code
         uses: actions/checkout@v4
-      
+
       - name:  Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      
+
       - name:  Deploy to ECS
         run: |
           aws ecs update-service \
             --cluster staging-cluster \
             --service myapp-staging \
             --force-new-deployment
-      
+
       - name: ⏳ Wait for deployment
         run: |
           aws ecs wait services-stable \
             --cluster staging-cluster \
             --services myapp-staging
-      
+
       - name:  Run smoke tests
         run: |
           curl -f https://staging.myapp.com/health || exit 1
@@ -252,18 +252,18 @@ jobs:
     environment:
       name: production
       url: https://myapp.com
-    
+
     steps:
-      - name: � Checkout code
+      - name:  Checkout code
         uses: actions/checkout@v4
-      
+
       - name:  Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      
+
       - name:  Blue-Green Deployment
         run: |
           # Obtener configuración actual
@@ -271,7 +271,7 @@ jobs:
             --names prod-blue prod-green \
             --query 'TargetGroups[?contains(LoadBalancerArns, `prod-alb`)].TargetGroupName' \
             --output text)
-          
+
           # Determinar servicio de destino
           if [ "$CURRENT_SERVICE" = "prod-blue" ]; then
             TARGET_SERVICE="prod-green"
@@ -280,34 +280,34 @@ jobs:
             TARGET_SERVICE="prod-blue"
             TARGET_TG="prod-blue"
           fi
-          
+
           echo "Deploying to $TARGET_SERVICE"
-          
+
           # Actualizar servicio inactivo
           aws ecs update-service \
             --cluster production-cluster \
             --service $TARGET_SERVICE \
             --force-new-deployment
-          
+
           # Esperar a que esté estable
           aws ecs wait services-stable \
             --cluster production-cluster \
             --services $TARGET_SERVICE
-          
+
           # Cambiar tráfico del ALB
           aws elbv2 modify-listener \
             --listener-arn ${{ secrets.PROD_LISTENER_ARN }} \
             --default-actions Type=forward,TargetGroupArn=${{ secrets[TARGET_TG + '_ARN'] }}
-          
+
           echo "Traffic switched to $TARGET_SERVICE"
-      
+
       - name:  Post-deployment tests
         run: |
           sleep 30  # Esperar propagación
           curl -f https://myapp.com/health || exit 1
           npm run test:e2e -- --baseUrl=https://myapp.com
-      
-      - name: � Notify deployment
+
+      - name:  Notify deployment
         if: always()
         uses: 8398a7/action-slack@v3
         with:
@@ -317,13 +317,13 @@ jobs:
           fields: repo,message,commit,author,action,eventName,ref,workflow
 
   cleanup:
-    name: � Cleanup
+    name:  Cleanup
     runs-on: ubuntu-latest
     needs: [deploy-staging, deploy-production]
     if: always()
-    
+
     steps:
-      - name: � Delete old artifacts
+      - name:  Delete old artifacts
         uses: actions/github-script@v7
         with:
           script: |
@@ -332,12 +332,12 @@ jobs:
               repo: context.repo.repo,
               run_id: context.runId,
             });
-            
+
             const oldArtifacts = artifacts.data.artifacts.filter(artifact => {
               const ageInDays = (Date.now() - new Date(artifact.created_at)) / (1000 * 60 * 60 * 24);
               return ageInDays > 7;
             });
-            
+
             for (const artifact of oldArtifacts) {
               await github.rest.actions.deleteArtifact({
                 owner: context.repo.owner,
@@ -381,19 +381,19 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       artifact-id: ${{ steps.upload.outputs.artifact-id }}
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
           cache: 'npm'
-      
+
       - run: npm ci
-      
+
       - run: ${{ inputs.build-command }}
-      
+
       - name: Upload artifacts
         id: upload
         uses: actions/upload-artifact@v4
@@ -436,13 +436,13 @@ runs:
       uses: azure/setup-kubectl@v3
       with:
         version: 'v1.28.0'
-    
+
     - name: Configure kubeconfig
       shell: bash
       run: |
         echo "${{ inputs.kubeconfig }}" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-    
+
     - name: Deploy to Kubernetes
       id: deploy
       shell: bash
@@ -450,19 +450,19 @@ runs:
         kubectl set image deployment/myapp \
           myapp=${{ inputs.image-tag }} \
           -n ${{ inputs.namespace }}
-        
+
         kubectl rollout status deployment/myapp \
           -n ${{ inputs.namespace }} \
           --timeout=300s
-        
+
         URL=$(kubectl get ingress myapp \
           -n ${{ inputs.namespace }} \
           -o jsonpath='{.spec.rules[0].host}')
-        
+
         echo "url=https://$URL" >> $GITHUB_OUTPUT
 ```
 
-### 2. GitLab CI/CD �
+### 2. GitLab CI/CD
 
 ####  **Pipeline Completo**
 
@@ -665,18 +665,18 @@ container-scanning:
     - |
       # Crear namespace si no existe
       kubectl create namespace $NAMESPACE --dry-run=client -o yaml | kubectl apply -f -
-      
+
       # Aplicar configuraciones
       envsubst < k8s/deployment.yaml | kubectl apply -f -
       envsubst < k8s/service.yaml | kubectl apply -f -
       envsubst < k8s/ingress.yaml | kubectl apply -f -
-      
+
       # Esperar deployment
       kubectl rollout status deployment/$APP_NAME -n $NAMESPACE --timeout=300s
-      
+
       # Verificar health
       kubectl wait --for=condition=ready pod -l app=$APP_NAME -n $NAMESPACE --timeout=300s
-      
+
       # Obtener URL
       URL=$(kubectl get ingress $APP_NAME -n $NAMESPACE -o jsonpath='{.spec.rules[0].host}')
       echo "Application deployed at: https://$URL"
@@ -737,10 +737,10 @@ deploy-canary:
       # Deploy canary version
       envsubst < k8s/canary-deployment.yaml | kubectl apply -f -
       kubectl rollout status deployment/$APP_NAME -n $NAMESPACE --timeout=300s
-      
+
       # Update Istio VirtualService for traffic splitting
       envsubst < k8s/canary-virtual-service.yaml | kubectl apply -f -
-      
+
       echo "Canary deployment ready with 10% traffic"
   when: manual
   rules:
@@ -754,13 +754,13 @@ promote-canary:
       # Switch 100% traffic to canary
       kubectl patch deployment myapp-production -n production \
         -p '{"spec":{"template":{"spec":{"containers":[{"name":"myapp","image":"'$IMAGE_TAG'"}]}}}}'
-      
+
       # Wait for rollout
       kubectl rollout status deployment/myapp-production -n production --timeout=300s
-      
+
       # Remove canary deployment
       kubectl delete deployment myapp-canary -n production
-      
+
       echo "Canary promoted to production"
   environment:
     name: production
@@ -820,7 +820,7 @@ notify-failure:
       curl -X POST $SLACK_WEBHOOK \
         -H 'Content-type: application/json' \
         --data "{
-          \"text\": \"❌ Deployment failed: $CI_PROJECT_NAME\",
+          \"text\": \" Deployment failed: $CI_PROJECT_NAME\",
           \"attachments\": [{
             \"color\": \"danger\",
             \"fields\": [
@@ -836,7 +836,7 @@ notify-failure:
       when: on_failure
 ```
 
-### 3. Azure DevOps �
+### 3. Azure DevOps
 
 ####  **Pipeline YAML**
 
@@ -907,7 +907,7 @@ stages:
             inputs:
               versionSpec: '18.x'
             displayName: 'Install Node.js'
-          
+
           - task: Cache@2
             inputs:
               key: 'npm | "$(Agent.OS)" | package-lock.json'
@@ -915,13 +915,13 @@ stages:
                 npm | "$(Agent.OS)"
               path: $(npm_config_cache)
             displayName: 'Cache npm'
-          
+
           - script: |
               npm ci
               npm run lint
               npm run type-check
             displayName: 'npm install and lint'
-          
+
           - task: PublishTestResults@2
             condition: succeededOrFailed()
             inputs:
@@ -942,7 +942,7 @@ stages:
             inputs:
               versionSpec: '18.x'
             displayName: 'Install Node.js'
-          
+
           - task: Cache@2
             inputs:
               key: 'npm | "$(Agent.OS)" | package-lock.json'
@@ -950,12 +950,12 @@ stages:
                 npm | "$(Agent.OS)"
               path: $(npm_config_cache)
             displayName: 'Cache npm'
-          
+
           - script: |
               npm ci
               npm run build
             displayName: 'npm install and build'
-          
+
           - task: PublishBuildArtifacts@1
             inputs:
               PathtoPublish: 'dist'
@@ -976,7 +976,7 @@ stages:
               testCommand: 'npm run test:unit'
               testResultsFiles: 'test-results.xml'
               codeCoverageFiles: 'coverage/cobertura-coverage.xml'
-      
+
       - job: IntegrationTests
         displayName: 'Integration Tests'
         pool:
@@ -992,7 +992,7 @@ stages:
             parameters:
               testCommand: 'npm run test:integration'
               testResultsFiles: 'integration-results.xml'
-      
+
       - job: SecurityScan
         displayName: 'Security Scanning'
         pool:
@@ -1001,12 +1001,12 @@ stages:
           - task: NodeTool@0
             inputs:
               versionSpec: '18.x'
-          
+
           - script: |
               npm ci
               npm audit --audit-level moderate
             displayName: 'Security audit'
-          
+
           - task: SonarCloudPrepare@1
             inputs:
               SonarCloud: 'sonarcloud-connection'
@@ -1016,9 +1016,9 @@ stages:
               cliProjectKey: 'myproject'
               cliProjectName: 'My Project'
               cliSources: 'src'
-          
+
           - task: SonarCloudAnalyze@1
-          
+
           - task: SonarCloudPublish@1
             inputs:
               pollingTimeoutSec: '300'
@@ -1043,7 +1043,7 @@ stages:
               tags: |
                 $(tag)
                 latest
-          
+
           - task: AzureContainerRegistry@2
             displayName: 'Scan image for vulnerabilities'
             inputs:
@@ -1076,7 +1076,7 @@ stages:
                     imageTag: $(tag)
                     replicas: 2
                     kubernetesServiceConnection: 'k8s-staging'
-                
+
                 - task: AzureCLI@2
                   displayName: 'Health Check'
                   inputs:
@@ -1120,7 +1120,7 @@ stages:
                     replicas: 5
                     kubernetesServiceConnection: 'k8s-production'
                     deploymentStrategy: 'canary'
-            
+
             on:
               success:
                 steps:
@@ -1133,10 +1133,10 @@ stages:
                       inlineScript: |
                         # Run smoke tests
                         npm run test:smoke -- --baseUrl=https://myapp.com
-                        
+
                         # Performance test
                         curl -f https://myapp.com/metrics | grep response_time
-              
+
               failure:
                 steps:
                   - task: AzureCLI@2
@@ -1151,7 +1151,7 @@ stages:
 
   - stage: Monitor
     displayName: 'Post-Deployment Monitoring'
-    dependsOn: 
+    dependsOn:
       - DeployStaging
       - DeployProduction
     condition: or(succeeded('DeployStaging'), succeeded('DeployProduction'))
@@ -1172,7 +1172,7 @@ stages:
                 az monitor app-insights query \
                   --app myapp-insights \
                   --analytics-query "exceptions | where timestamp > ago(10m) | count"
-          
+
           - task: InvokeRESTAPI@1
             displayName: 'Notify Slack'
             inputs:
@@ -1204,7 +1204,7 @@ stages:
 | **Runners** | GitHub/Self-hosted | GitLab/Self-hosted | Microsoft/Self-hosted |
 | **Workflows** | YAML | YAML | YAML/Visual |
 | **Marketplace** |  Extenso |  Moderado |  Extenso |
-| **Multi-repo** | ❌ |  |  |
+| **Multi-repo** |  |  |  |
 | **Artifacts** |  |  |  |
 | **Environments** |  |  |  |
 | **Security** |  Excellent |  Excellent |  Excellent |
@@ -1278,15 +1278,15 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Update Kubernetes manifests
         run: |
           # Build image
           docker build -t myapp:${{ github.sha }} .
-          
+
           # Update manifest
           sed -i 's|image: myapp:.*|image: myapp:${{ github.sha }}|' k8s/deployment.yaml
-          
+
           # Commit changes to GitOps repo
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
@@ -1373,4 +1373,4 @@ gh secret set MY_SECRET --body "new-value"
 
 ---
 
-**¡Excelente!** Ahora dominas las principales plataformas CI/CD modernas. Continúa con el siguiente módulo para aprender sobre testing automation y quality gates.
+**Excelente!** Ahora dominas las principales plataformas CI/CD modernas. Continúa con el siguiente módulo para aprender sobre testing automation y quality gates.

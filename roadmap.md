@@ -495,14 +495,14 @@ Aquí encontrarás una colección de recursos adicionales para complementar tu a
 
 ---
 
-Con este plan, estarás bien encaminado para convertirte en un experto en DevOps. ¡Buena suerte en tu viaje de aprendizaje! 
+Con este plan, estarás bien encaminado para convertirte en un experto en DevOps. Buena suerte en tu viaje de aprendizaje!
 
 ## **Respuesta final:**
 
 **Plan de estudio estructurado para aprender DevOps desde cero hasta experto:**
 
 1. **Fundamentos de DevOps** - Base conceptual y herramientas clave
-2. **Automatización y CI/CD** - Pipelines y flujos automatizados  
+2. **Automatización y CI/CD** - Pipelines y flujos automatizados
 3. **Contenedores y orquestación** - Docker y Kubernetes
 4. **Infraestructura como Código (IaC)** - Terraform y Ansible
 5. **Monitoreo, observabilidad y seguridad** - Sistemas de monitoreo y DevSecOps

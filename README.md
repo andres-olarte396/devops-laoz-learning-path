@@ -1,10 +1,10 @@
-# DevOps Learning Path 
+# DevOps Learning Path
 
 Este repositorio documenta un **viaje de aprendizaje completo y moderno en DevOps**, desde los conceptos básicos hasta temas avanzados incluyendo **ciberseguridad, inteligencia artificial, arquitectura de software y liderazgo técnico**.
 
 El curso ha sido **completamente renovado y expandido** para incluir las competencias más demandadas en el mercado actual, preparando para roles senior y de liderazgo en tecnología.
 
->  **¡NOVEDAD!** La **Fase 1 - Fundamentos DevOps** está **100% completada** con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **¡Ya puedes comenzar tu viaje DevOps!**
+>  **NOVEDAD!** La **Fase 1 - Fundamentos DevOps** está **100% completada** con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **Ya puedes comenzar tu viaje DevOps!**
 
 ## Empieza Ahora
 
@@ -15,12 +15,12 @@ El curso ha sido **completamente renovado y expandido** para incluir las compete
 La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente desarrollada** y lista para tu aprendizaje:
 
 - **8 archivos completos** con contenido profesional
-- **46+ páginas** de material técnico detallado  
+- **46+ páginas** de material técnico detallado
 - **Laboratorios hands-on** con ejemplos reales
 - **Scripts y automatización** incluidos
 - **Progresión gradual** de básico a avanzado
 
-**� [Comenzar con Fase 1](resources/fase1/01-que-es-devops.md)**
+** [Comenzar con Fase 1](resources/fase1/01-que-es-devops.md)**
 
 ## Acceso Rápido
 
@@ -33,22 +33,22 @@ La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente 
 | [Notas Especializadas](notes/) | Guías técnicas avanzadas |  |
 | [Scripts](scripts/) | Automatización y herramientas |  |
 
-### ⏱ **Tiempo de Dedicación Recomendado**
+###  **Tiempo de Dedicación Recomendado**
 
 - **Fase 1**: 3-4 semanas (8-12 horas/semana)
 - **Curso completo**: 46+ semanas (10-15 horas/semana)
 - **Modalidad**: Flexible, a tu ritmo
 
-## ✨ Novedades del Curso Actualizado
+##  Novedades del Curso Actualizado
 
-### � **Nuevas Fases Agregadas (2024-2025)**
+###  **Nuevas Fases Agregadas (2024-2025)**
 
 - **7 nuevas fases especializadas** en tecnologías de vanguardia
 - **Proyecto final integrador** de 7 semanas con microservicios, IA y seguridad
 - **+40 horas de contenido** adicional estimado
 - **Enfoque en habilidades senior** y liderazgo técnico
 
-### � **Ciberseguridad Integral**
+###  **Ciberseguridad Integral**
 
 - Principios de seguridad de la información (CIA)
 - OWASP Top 10 para desarrolladores .NET
@@ -69,16 +69,16 @@ La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente 
 - Observabilidad y monitoreo avanzado
 - Diseño de sistemas distribuidos
 
-### � **Liderazgo Técnico**
+###  **Liderazgo Técnico**
 
 - Comunicación efectiva y storytelling técnico
 - Mentoría y desarrollo de equipos
 - Pensamiento sistémico y visión estratégica
 - Gestión del cambio organizacional
 =======
-# Ruta de Aprendizaje DevOps 🚀
+# Ruta de Aprendizaje DevOps
 
-¡Bienvenido a la Ruta de Aprendizaje DevOps! Este repositorio es una guía completa y estructurada para aprender DevOps desde los fundamentos hasta un nivel avanzado, combinando teoría y práctica.
+Bienvenido a la Ruta de Aprendizaje DevOps! Este repositorio es una guía completa y estructurada para aprender DevOps desde los fundamentos hasta un nivel avanzado, combinando teoría y práctica.
 >>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 ![DevOps Learning Path](images/devops-fases.png)
@@ -112,13 +112,13 @@ La mejor manera de usar este repositorio es seguir el plan de estudio.
 
 1.  **Consulta el `roadmap.md`:** El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
 2.  **Empieza por la Fase 0:** No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
-3.  **Avanza a tu propio ritmo:** Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, ¡practica!
+3.  **Avanza a tu propio ritmo:** Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, practica!
 
 ---
 
 ## Estructura del Repositorio
 
-- [**roadmap.md**](./roadmap.md): El plan de estudio detallado, dividido en fases. **¡Empieza aquí!**
+- [**roadmap.md**](./roadmap.md): El plan de estudio detallado, dividido en fases. **Empieza aquí!**
 - [**resources/**](./resources/): Contiene todo el material de aprendizaje, organizado por fases.
 - [**notes/**](./notes/): Apuntes y resúmenes personales sobre herramientas específicas como Docker, Git y Kubernetes.
 - [**assets/**](./assets/): Recursos multimedia como audios y videos mencionados en la guía.
@@ -148,7 +148,7 @@ Duración estimada: 20-24 semanas_
 
 ## Cómo Contribuir
 
-Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres añadir algo, ¡siéntete libre de abrir un issue o enviar un pull request! Toda contribución es bienvenida.
+Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres añadir algo, siéntete libre de abrir un issue o enviar un pull request! Toda contribución es bienvenida.
 
 *Duración estimada: 19 semanas_
 
@@ -245,7 +245,7 @@ Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres a�
 - ML.NET, Azure Cognitive Services
 - OpenAI API, TensorFlow.NET
 
-### � **Niveles de Competencia**
+###  **Niveles de Competencia**
 
 - **Básico (Fases 1-3)**: Fundamentos y primeras prácticas
 - **Intermedio (Fases 4-8)**: Especialización y profundización
@@ -296,9 +296,9 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 - [Notas Técnicas Avanzadas](notes/) - Guías especializadas:
   - [Ciberseguridad en DevOps](notes/cybersecurity-notes.md)
   - [IA y Machine Learning](notes/ai-ml-notes.md)
-  - [� Liderazgo Técnico](notes/leadership-notes.md)
-  - [� Docker y Contenedores](notes/docker-notes.md)
-  - [☸ Kubernetes](notes/kubernetes-notes.md)
+  - [ Liderazgo Técnico](notes/leadership-notes.md)
+  - [ Docker y Contenedores](notes/docker-notes.md)
+  - [ Kubernetes](notes/kubernetes-notes.md)
   - [Git y Control de Versiones](notes/git-notes.md)
 - [Scripts de Automatización](scripts/) - Herramientas de productividad
 
@@ -318,7 +318,7 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 3. **Configura tu entorno** de desarrollo y cloud
 4. **Únete a la comunidad** y comparte tu progreso
 
-### ⏱ **Tiempo de Dedicación**
+###  **Tiempo de Dedicación**
 
 - **Tiempo total estimado**: 46+ semanas (casi 1 año)
 - **Dedicación recomendada**: 10-15 horas por semana
@@ -337,7 +337,7 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 
 **Total disponible para estudiar:** 58+ páginas de contenido técnico
 
-### � **Estadísticas del Contenido**
+###  **Estadísticas del Contenido**
 
 - **14 fases** de aprendizaje estructurado
 - **46+ semanas** de contenido estimado
@@ -363,7 +363,7 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 - **Discusiones**: Compartir experiencias y casos de uso
 - **Recursos**: Recomendar herramientas, libros o cursos
 
-### � **Comunidad**
+###  **Comunidad**
 
 Si estás siguiendo este curso:
 
@@ -380,7 +380,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 1 - COMPLETADA (100%)**
 
-** ¡Fundamentos de DevOps Totalmente Listos!**
+** Fundamentos de DevOps Totalmente Listos!**
 
 La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario para comenzar tu viaje en DevOps:
 
@@ -406,7 +406,7 @@ La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario
 
 #### **Próximo paso recomendado:**
 
-**¡Ya puedes comenzar con la [Fase 1](resources/fase1/) completa!** Todo el contenido está listo para tu aprendizaje.
+**Ya puedes comenzar con la [Fase 1](resources/fase1/) completa!** Todo el contenido está listo para tu aprendizaje.
 
 ### **Estado de Otras Fases:**
 
@@ -438,6 +438,5 @@ La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario
 - Videos explicativos para conceptos complejos
 - Laboratorios virtuales automatizados
 - Sistema de tracking de progreso
-
 
 Este proyecto está bajo la licencia [MIT](./LICENSE).

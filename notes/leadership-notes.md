@@ -1,4 +1,4 @@
-# Notas de Liderazgo Técnico y Habilidades Blandas �
+# Notas de Liderazgo Técnico y Habilidades Blandas
 
 ## Fundamentos del Liderazgo Técnico
 

@@ -8,13 +8,13 @@ La **Entrega/Despliegue Continuo** es la extensión natural de la Integración C
 
 ### **Continuous Delivery vs Continuous Deployment**
 
-**🚀 Continuous Delivery (Entrega Continua):**
+** Continuous Delivery (Entrega Continua):**
 - Código **siempre listo** para producción
 - Despliegue **manual** con un click
 - **Validación humana** antes de producción
 - **Control total** sobre releases
 
-**⚡ Continuous Deployment (Despliegue Continuo):**
+** Continuous Deployment (Despliegue Continuo):**
 - Despliegue **totalmente automatizado**
 - **Sin intervención humana**
 - Cambios van **directo a producción**
@@ -28,46 +28,46 @@ graph LR
     D -->|Yes| E[Deploy to Staging]
     E --> F[Automated Tests]
     F --> G{CD Strategy}
-    
+
     G -->|Delivery| H[Manual Approval]
     G -->|Deployment| I[Auto Deploy]
-    
+
     H --> J[Deploy to Production]
     I --> J
-    
+
     J --> K[Monitor & Validate]
     K --> L{Success?}
     L -->|No| M[Auto Rollback]
-    L -->|Yes| N[✅ Release Complete]
+    L -->|Yes| N[ Release Complete]
 ```
 
 ### **Los pilares de CD exitoso**
 
-1. **🧪 Testing confiable**: Cobertura de tests que da confianza total
-2. **🚀 Deployment automatizado**: Procesos repetibles sin errores humanos
-3. **📊 Monitoring proactivo**: Detección inmediata de problemas
-4. **⚡ Rollback instantáneo**: Capacidad de revertir cambios rápidamente
-5. **🎯 Feature flags**: Control granular de funcionalidades
-6. **📈 Métricas continuas**: Visibilidad del impacto de cambios
+1. ** Testing confiable**: Cobertura de tests que da confianza total
+2. ** Deployment automatizado**: Procesos repetibles sin errores humanos
+3. ** Monitoring proactivo**: Detección inmediata de problemas
+4. ** Rollback instantáneo**: Capacidad de revertir cambios rápidamente
+5. ** Feature flags**: Control granular de funcionalidades
+6. ** Métricas continuas**: Visibilidad del impacto de cambios
 
 ---
 
 ## **1. Estrategias de Despliegue**
 
-### **🔵 Blue-Green Deployment**
+### ** Blue-Green Deployment**
 
 **Concepto:** Mantener **dos entornos idénticos** (Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
 
 #### **Ventajas:**
-- ✅ **Cero downtime** - Cambio instantáneo
-- ✅ **Rollback rápido** - Solo cambiar el router
-- ✅ **Testing completo** - Validar en ambiente idéntico
-- ✅ **Baja complejidad** - Fácil de entender
+-  **Cero downtime** - Cambio instantáneo
+-  **Rollback rápido** - Solo cambiar el router
+-  **Testing completo** - Validar en ambiente idéntico
+-  **Baja complejidad** - Fácil de entender
 
 #### **Desventajas:**
-- ❌ **Costo alto** - Doble infraestructura
-- ❌ **Datos complejos** - Migrations pueden ser problemáticas
-- ❌ **Recursos intensivo** - Duplicar todo el stack
+-  **Costo alto** - Doble infraestructura
+-  **Datos complejos** - Migrations pueden ser problemáticas
+-  **Recursos intensivo** - Duplicar todo el stack
 
 #### **Implementación con Docker y Nginx**
 
@@ -86,25 +86,25 @@ if [ "$CURRENT_COLOR" = "blue" ]; then
     NEW_COLOR="green"
     OLD_COLOR="blue"
 else
-    NEW_COLOR="blue" 
+    NEW_COLOR="blue"
     OLD_COLOR="green"
 fi
 
-echo "🔄 Blue-Green Deployment Started"
-echo "📊 Current: $OLD_COLOR → New: $NEW_COLOR"
-echo "🏷️  Version: $NEW_VERSION"
+echo " Blue-Green Deployment Started"
+echo " Current: $OLD_COLOR → New: $NEW_COLOR"
+echo "  Version: $NEW_VERSION"
 
 # 1. Pull nueva imagen
-echo "📥 Pulling new image..."
+echo " Pulling new image..."
 docker pull $APP_NAME:$NEW_VERSION
 
 # 2. Parar container anterior del nuevo color (si existe)
-echo "🛑 Stopping previous $NEW_COLOR container..."
+echo " Stopping previous $NEW_COLOR container..."
 docker stop ${APP_NAME}-${NEW_COLOR} 2>/dev/null || true
 docker rm ${APP_NAME}-${NEW_COLOR} 2>/dev/null || true
 
 # 3. Ejecutar nueva versión en el nuevo color
-echo "🚀 Starting $NEW_COLOR environment..."
+echo " Starting $NEW_COLOR environment..."
 docker run -d \
   --name ${APP_NAME}-${NEW_COLOR} \
   --network app-network \
@@ -113,30 +113,30 @@ docker run -d \
   $APP_NAME:$NEW_VERSION
 
 # 4. Health check del nuevo ambiente
-echo "🔍 Health checking $NEW_COLOR environment..."
+echo " Health checking $NEW_COLOR environment..."
 for i in {1..30}; do
   if docker exec ${APP_NAME}-${NEW_COLOR} curl -f http://localhost:3000/health >/dev/null 2>&1; then
-    echo "✅ $NEW_COLOR environment is healthy"
+    echo " $NEW_COLOR environment is healthy"
     break
   fi
-  
+
   if [ $i -eq 30 ]; then
-    echo "❌ Health check failed, rolling back..."
+    echo " Health check failed, rolling back..."
     docker stop ${APP_NAME}-${NEW_COLOR}
     docker rm ${APP_NAME}-${NEW_COLOR}
     exit 1
   fi
-  
+
   echo "⏳ Waiting for health check... ($i/30)"
   sleep 2
 done
 
 # 5. Smoke tests
-echo "🧪 Running smoke tests..."
+echo " Running smoke tests..."
 docker exec ${APP_NAME}-${NEW_COLOR} npm run test:smoke
 
 # 6. Switch traffic (actualizar nginx)
-echo "🔀 Switching traffic to $NEW_COLOR..."
+echo " Switching traffic to $NEW_COLOR..."
 cat > /etc/nginx/conf.d/app.conf <<EOF
 upstream app_backend {
     server ${APP_NAME}-${NEW_COLOR}:3000;
@@ -145,14 +145,14 @@ upstream app_backend {
 server {
     listen 80;
     server_name example.com;
-    
+
     location / {
         proxy_pass http://app_backend;
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;
         proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
     }
-    
+
     location /health {
         access_log off;
         proxy_pass http://app_backend;
@@ -170,9 +170,9 @@ sleep 30
 # 9. Check error rates
 ERROR_RATE=$(curl -s http://localhost/metrics | grep error_rate | awk '{print $2}')
 if (( $(echo "$ERROR_RATE > 0.05" | bc -l) )); then
-    echo "❌ High error rate detected: $ERROR_RATE"
-    echo "🔄 Rolling back to $OLD_COLOR..."
-    
+    echo " High error rate detected: $ERROR_RATE"
+    echo " Rolling back to $OLD_COLOR..."
+
     # Rollback nginx config
     cat > /etc/nginx/conf.d/app.conf <<EOF
 upstream app_backend {
@@ -184,12 +184,12 @@ EOF
 fi
 
 # 10. Cleanup old version
-echo "🧹 Cleaning up $OLD_COLOR environment..."
+echo " Cleaning up $OLD_COLOR environment..."
 docker stop ${APP_NAME}-${OLD_COLOR} || true
 docker rm ${APP_NAME}-${OLD_COLOR} || true
 
-echo "✅ Blue-Green deployment completed successfully!"
-echo "🎉 $APP_NAME:$NEW_VERSION is now serving traffic"
+echo " Blue-Green deployment completed successfully!"
+echo " $APP_NAME:$NEW_VERSION is now serving traffic"
 ```
 
 #### **Blue-Green con Kubernetes**
@@ -243,7 +243,7 @@ spec:
           initialDelaySeconds: 5
 
 ---
-# Green Deployment  
+# Green Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -292,8 +292,8 @@ else
     OLD_COLOR="green"
 fi
 
-echo "🔄 Kubernetes Blue-Green Deployment"
-echo "📊 Current: $OLD_COLOR → New: $NEW_COLOR"
+echo " Kubernetes Blue-Green Deployment"
+echo " Current: $OLD_COLOR → New: $NEW_COLOR"
 
 # 1. Update deployment image
 kubectl set image deployment/myapp-$NEW_COLOR app=myapp:$NEW_VERSION
@@ -315,23 +315,23 @@ sleep 60
 # 6. Scale down old version
 kubectl scale deployment myapp-$OLD_COLOR --replicas=0
 
-echo "✅ Blue-Green deployment completed!"
+echo " Blue-Green deployment completed!"
 ```
 
-### **🕯️ Canary Deployment**
+### ** Canary Deployment**
 
 **Concepto:** Desplegar nueva versión gradualmente a un **subconjunto pequeño** de usuarios/tráfico, monitoreando métricas antes de full rollout.
 
 #### **Ventajas:**
-- ✅ **Riesgo minimizado** - Solo afecta pequeño porcentaje
-- ✅ **Feedback temprano** - Detectar issues antes de full rollout  
-- ✅ **A/B Testing** - Comparar versiones en producción
-- ✅ **Costo eficiente** - No necesita doble infraestructura
+-  **Riesgo minimizado** - Solo afecta pequeño porcentaje
+-  **Feedback temprano** - Detectar issues antes de full rollout
+-  **A/B Testing** - Comparar versiones en producción
+-  **Costo eficiente** - No necesita doble infraestructura
 
 #### **Desventajas:**
-- ❌ **Complejidad alta** - Requires traffic splitting
-- ❌ **Monitoring intensivo** - Necesita métricas detalladas
-- ❌ **Testing parcial** - No todo el flujo se prueba inicialmente
+-  **Complejidad alta** - Requires traffic splitting
+-  **Monitoring intensivo** - Necesita métricas detalladas
+-  **Testing parcial** - No todo el flujo se prueba inicialmente
 
 #### **Implementación con Nginx y Docker**
 
@@ -356,30 +356,30 @@ split_clients $remote_addr $variant {
 server {
     listen 80;
     server_name example.com;
-    
+
     location / {
         # Custom header for canary identification
         add_header X-Canary-Version $variant;
-        
+
         if ($variant = "canary") {
             proxy_pass http://app_canary;
             break;
         }
-        
+
         proxy_pass http://app_stable;
-        
+
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Canary-User $variant;
     }
-    
+
     # Health checks
     location /health {
         access_log off;
         proxy_pass http://app_stable;
     }
-    
+
     location /canary/health {
         access_log off;
         proxy_pass http://app_canary;
@@ -400,13 +400,13 @@ NEW_VERSION=$1
 CANARY_PERCENTAGE=${2:-10}
 VALIDATION_PERIOD=${3:-300} # 5 minutes
 
-echo "🕯️  Canary Deployment Started"
-echo "🏷️  Version: $NEW_VERSION"
-echo "📊 Canary Traffic: $CANARY_PERCENTAGE%"
-echo "⏱️  Validation Period: ${VALIDATION_PERIOD}s"
+echo "  Canary Deployment Started"
+echo "  Version: $NEW_VERSION"
+echo " Canary Traffic: $CANARY_PERCENTAGE%"
+echo "  Validation Period: ${VALIDATION_PERIOD}s"
 
 # 1. Deploy canary version
-echo "🚀 Deploying canary version..."
+echo " Deploying canary version..."
 docker run -d \
   --name ${APP_NAME}-canary-1 \
   --network app-network \
@@ -416,26 +416,26 @@ docker run -d \
   $APP_NAME:$NEW_VERSION
 
 # 2. Health check canary
-echo "🔍 Health checking canary..."
+echo " Health checking canary..."
 for i in {1..30}; do
   if docker exec ${APP_NAME}-canary-1 curl -f http://localhost:3000/health >/dev/null 2>&1; then
-    echo "✅ Canary is healthy"
+    echo " Canary is healthy"
     break
   fi
-  
+
   if [ $i -eq 30 ]; then
-    echo "❌ Canary health check failed"
+    echo " Canary health check failed"
     docker stop ${APP_NAME}-canary-1
     docker rm ${APP_NAME}-canary-1
     exit 1
   fi
-  
+
   echo "⏳ Waiting for canary health check... ($i/30)"
   sleep 2
 done
 
 # 3. Update nginx to route traffic
-echo "🔀 Configuring traffic split ($CANARY_PERCENTAGE% to canary)..."
+echo " Configuring traffic split ($CANARY_PERCENTAGE% to canary)..."
 cat > /etc/nginx/conf.d/canary.conf <<EOF
 split_clients \$remote_addr \$variant {
     ${CANARY_PERCENTAGE}%     canary;
@@ -446,29 +446,29 @@ EOF
 nginx -s reload
 
 # 4. Monitor canary during validation period
-echo "📊 Monitoring canary deployment..."
+echo " Monitoring canary deployment..."
 MONITOR_INTERVAL=30
 ITERATIONS=$((VALIDATION_PERIOD / MONITOR_INTERVAL))
 
 for i in $(seq 1 $ITERATIONS); do
     echo "⏳ Monitoring iteration $i/$ITERATIONS..."
-    
+
     # Collect metrics
     STABLE_ERROR_RATE=$(curl -s http://localhost/metrics?version=stable | grep error_rate | awk '{print $2}')
     CANARY_ERROR_RATE=$(curl -s http://localhost/metrics?version=canary | grep error_rate | awk '{print $2}')
-    
+
     STABLE_RESPONSE_TIME=$(curl -s http://localhost/metrics?version=stable | grep avg_response_time | awk '{print $2}')
     CANARY_RESPONSE_TIME=$(curl -s http://localhost/metrics?version=canary | grep avg_response_time | awk '{print $2}')
-    
-    echo "📈 Metrics:"
+
+    echo " Metrics:"
     echo "   Stable - Error Rate: $STABLE_ERROR_RATE, Response Time: ${STABLE_RESPONSE_TIME}ms"
     echo "   Canary - Error Rate: $CANARY_ERROR_RATE, Response Time: ${CANARY_RESPONSE_TIME}ms"
-    
+
     # Validation rules
     if (( $(echo "$CANARY_ERROR_RATE > $STABLE_ERROR_RATE * 2" | bc -l) )); then
-        echo "❌ Canary error rate is significantly higher than stable"
-        echo "🔄 Rolling back canary deployment..."
-        
+        echo " Canary error rate is significantly higher than stable"
+        echo " Rolling back canary deployment..."
+
         # Remove canary from nginx config
         cat > /etc/nginx/conf.d/canary.conf <<EOF
 split_clients \$remote_addr \$variant {
@@ -476,23 +476,23 @@ split_clients \$remote_addr \$variant {
 }
 EOF
         nginx -s reload
-        
+
         # Stop canary container
         docker stop ${APP_NAME}-canary-1
         docker rm ${APP_NAME}-canary-1
-        
+
         exit 1
     fi
-    
+
     if (( $(echo "$CANARY_RESPONSE_TIME > $STABLE_RESPONSE_TIME * 1.5" | bc -l) )); then
-        echo "⚠️ Canary response time is significantly slower than stable"
+        echo " Canary response time is significantly slower than stable"
     fi
-    
+
     sleep $MONITOR_INTERVAL
 done
 
 # 5. Canary validation passed, promote to full deployment
-echo "✅ Canary validation passed! Promoting to full deployment..."
+echo " Canary validation passed! Promoting to full deployment..."
 
 # Scale up canary
 docker run -d --name ${APP_NAME}-canary-2 --network app-network -e ENV=production $APP_NAME:$NEW_VERSION
@@ -518,11 +518,11 @@ docker rm ${APP_NAME}-stable-1 ${APP_NAME}-stable-2 ${APP_NAME}-stable-3 || true
 
 # Rename canary to stable
 docker rename ${APP_NAME}-canary-1 ${APP_NAME}-stable-1
-docker rename ${APP_NAME}-canary-2 ${APP_NAME}-stable-2  
+docker rename ${APP_NAME}-canary-2 ${APP_NAME}-stable-2
 docker rename ${APP_NAME}-canary-3 ${APP_NAME}-stable-3
 
-echo "🎉 Canary deployment completed successfully!"
-echo "🚀 $APP_NAME:$NEW_VERSION is now serving 100% of traffic"
+echo " Canary deployment completed successfully!"
+echo " $APP_NAME:$NEW_VERSION is now serving 100% of traffic"
 ```
 
 #### **Canary con Kubernetes e Istio**
@@ -551,7 +551,7 @@ spec:
         subset: stable
       weight: 90
     - destination:
-        host: myapp  
+        host: myapp
         subset: canary
       weight: 10  # 10% canary traffic
 
@@ -594,20 +594,20 @@ spec:
         - containerPort: 3000
 ```
 
-### **🔄 Rolling Updates**
+### ** Rolling Updates**
 
 **Concepto:** Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
 
 #### **Ventajas:**
-- ✅ **Cero downtime** - Siempre hay instancias disponibles
-- ✅ **Uso eficiente de recursos** - No duplica infraestructura
-- ✅ **Simple de implementar** - Estrategia por defecto en Kubernetes
-- ✅ **Rollback rápido** - Fácil revertir cambios
+-  **Cero downtime** - Siempre hay instancias disponibles
+-  **Uso eficiente de recursos** - No duplica infraestructura
+-  **Simple de implementar** - Estrategia por defecto en Kubernetes
+-  **Rollback rápido** - Fácil revertir cambios
 
 #### **Desventajas:**
-- ❌ **Mixing versions** - Múltiples versiones corriendo simultáneamente  
-- ❌ **Database migrations** - Pueden ser complicadas
-- ❌ **Slower rollout** - Toma más tiempo completar deployment
+-  **Mixing versions** - Múltiples versiones corriendo simultáneamente
+-  **Database migrations** - Pueden ser complicadas
+-  **Slower rollout** - Toma más tiempo completar deployment
 
 #### **Rolling Update con Docker Swarm**
 
@@ -621,7 +621,7 @@ services:
       replicas: 6
       update_config:
         parallelism: 2        # Update 2 containers at a time
-        delay: 30s           # Wait 30s between batches  
+        delay: 30s           # Wait 30s between batches
         failure_action: rollback
         monitor: 60s         # Monitor for 60s before next batch
         max_failure_ratio: 0.2
@@ -651,45 +651,45 @@ networks:
 NEW_VERSION=$1
 SERVICE_NAME="myapp_app"
 
-echo "🔄 Rolling Update Started"
-echo "🏷️  Version: $NEW_VERSION"
+echo " Rolling Update Started"
+echo "  Version: $NEW_VERSION"
 
 # 1. Update service image
-echo "📦 Updating service image..."
+echo " Updating service image..."
 docker service update --image myapp:$NEW_VERSION $SERVICE_NAME
 
 # 2. Monitor rollout progress
-echo "📊 Monitoring rollout progress..."
+echo " Monitoring rollout progress..."
 while true; do
     # Get service status
     STATUS=$(docker service ps $SERVICE_NAME --filter desired-state=running --format "table {{.ID}}\t{{.Image}}\t{{.CurrentState}}" | grep -v ID)
-    
+
     # Count instances by version
     OLD_COUNT=$(echo "$STATUS" | grep -v $NEW_VERSION | wc -l)
     NEW_COUNT=$(echo "$STATUS" | grep $NEW_VERSION | grep Running | wc -l)
     TOTAL=$(echo "$STATUS" | wc -l)
-    
-    echo "📈 Progress: $NEW_COUNT/$TOTAL instances updated"
-    
+
+    echo " Progress: $NEW_COUNT/$TOTAL instances updated"
+
     # Check if rollout is complete
     if [ $OLD_COUNT -eq 0 ]; then
-        echo "✅ Rolling update completed successfully!"
+        echo " Rolling update completed successfully!"
         break
     fi
-    
+
     # Check for failed instances
     FAILED_COUNT=$(echo "$STATUS" | grep Failed | wc -l)
     if [ $FAILED_COUNT -gt 0 ]; then
-        echo "❌ Rolling update failed! $FAILED_COUNT instances failed"
-        echo "🔄 Rolling back..."
+        echo " Rolling update failed! $FAILED_COUNT instances failed"
+        echo " Rolling back..."
         docker service rollback $SERVICE_NAME
         exit 1
     fi
-    
+
     sleep 10
 done
 
-echo "🎉 Rolling update to $NEW_VERSION completed!"
+echo " Rolling update to $NEW_VERSION completed!"
 ```
 
 #### **Rolling Update con Kubernetes**
@@ -728,7 +728,7 @@ spec:
           periodSeconds: 10
         readinessProbe:
           httpGet:
-            path: /health  
+            path: /health
             port: 3000
           initialDelaySeconds: 5
           periodSeconds: 5
@@ -761,11 +761,11 @@ spec:
 DEPLOYMENT_NAME="myapp"
 NEW_VERSION=$1
 
-echo "🔄 Kubernetes Rolling Update Started"
-echo "🏷️  Version: $NEW_VERSION"
+echo " Kubernetes Rolling Update Started"
+echo "  Version: $NEW_VERSION"
 
 # 1. Update deployment image
-echo "📦 Updating deployment image..."
+echo " Updating deployment image..."
 kubectl set image deployment/$DEPLOYMENT_NAME app=myapp:$NEW_VERSION
 
 # 2. Wait for rollout to complete
@@ -773,36 +773,36 @@ echo "⏳ Waiting for rollout to complete..."
 kubectl rollout status deployment/$DEPLOYMENT_NAME --timeout=600s
 
 # 3. Verify deployment
-echo "🔍 Verifying deployment..."
+echo " Verifying deployment..."
 READY_REPLICAS=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.status.readyReplicas}')
 DESIRED_REPLICAS=$(kubectl get deployment $DEPLOYMENT_NAME -o jsonpath='{.spec.replicas}')
 
 if [ "$READY_REPLICAS" = "$DESIRED_REPLICAS" ]; then
-    echo "✅ Rolling update completed successfully!"
-    echo "🎯 $READY_REPLICAS/$DESIRED_REPLICAS replicas ready"
+    echo " Rolling update completed successfully!"
+    echo " $READY_REPLICAS/$DESIRED_REPLICAS replicas ready"
 else
-    echo "❌ Rolling update failed!"
-    echo "🎯 $READY_REPLICAS/$DESIRED_REPLICAS replicas ready"
-    
-    echo "🔄 Rolling back..."
+    echo " Rolling update failed!"
+    echo " $READY_REPLICAS/$DESIRED_REPLICAS replicas ready"
+
+    echo " Rolling back..."
     kubectl rollout undo deployment/$DEPLOYMENT_NAME
     kubectl rollout status deployment/$DEPLOYMENT_NAME --timeout=300s
     exit 1
 fi
 
 # 4. Run post-deployment validation
-echo "🧪 Running post-deployment validation..."
+echo " Running post-deployment validation..."
 kubectl run validator --rm -i --image=curlimages/curl -- \
   curl -f http://myapp-service/health
 
-echo "🎉 Rolling update to $NEW_VERSION completed successfully!"
+echo " Rolling update to $NEW_VERSION completed successfully!"
 ```
 
 ---
 
 ## **2. Entornos de Despliegue**
 
-### **🧪 Staging Environment (Pre-producción)**
+### ** Staging Environment (Pre-producción)**
 
 El entorno de staging debe **replicar fielmente** el entorno de producción para validar cambios antes del despliegue final.
 
@@ -919,11 +919,11 @@ jobs:
   staging-deployment:
     runs-on: ubuntu-latest
     environment: staging
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    
+
     - name: Build and push staging image
       env:
         REGISTRY: ghcr.io
@@ -932,31 +932,31 @@ jobs:
         echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
         docker build -t $REGISTRY/$IMAGE_NAME:staging-${{ github.sha }} .
         docker push $REGISTRY/$IMAGE_NAME:staging-${{ github.sha }}
-    
+
     - name: Deploy to staging
       env:
         KUBECONFIG_DATA: ${{ secrets.STAGING_KUBECONFIG }}
       run: |
         echo "$KUBECONFIG_DATA" | base64 --decode > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Update deployment image
         kubectl set image deployment/myapp-staging app=ghcr.io/${{ github.repository }}:staging-${{ github.sha }} -n staging
-        
+
         # Wait for rollout
         kubectl rollout status deployment/myapp-staging -n staging --timeout=300s
-    
+
     - name: Run staging tests
       run: |
         # Integration tests against staging
         npm run test:integration:staging
-        
-        # E2E tests  
+
+        # E2E tests
         npm run test:e2e:staging
-        
+
         # Performance tests
         npm run test:performance:staging
-    
+
     - name: Notify teams
       if: always()
       uses: 8398a7/action-slack@v3
@@ -972,7 +972,7 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 ```
 
-### **🚀 Production Environment**
+### ** Production Environment**
 
 #### **Configuración de producción robusta:**
 
@@ -1018,7 +1018,7 @@ spec:
                   operator: In
                   values: ["myapp"]
               topologyKey: kubernetes.io/hostname
-      
+
       containers:
       - name: app
         image: myapp:v2.0.0
@@ -1033,11 +1033,11 @@ spec:
         - name: REDIS_URL
           valueFrom:
             secretKeyRef:
-              name: production-secrets  
+              name: production-secrets
               key: redis-url
         ports:
         - containerPort: 3000
-        
+
         # Health checks robustos
         livenessProbe:
           httpGet:
@@ -1047,7 +1047,7 @@ spec:
           periodSeconds: 30
           timeoutSeconds: 5
           failureThreshold: 3
-        
+
         readinessProbe:
           httpGet:
             path: /ready
@@ -1056,7 +1056,7 @@ spec:
           periodSeconds: 5
           timeoutSeconds: 3
           failureThreshold: 3
-        
+
         # Resource limits estrictos
         resources:
           requests:
@@ -1065,7 +1065,7 @@ spec:
           limits:
             memory: "2Gi"
             cpu: "2000m"
-        
+
         # Security context
         securityContext:
           runAsNonRoot: true
@@ -1128,7 +1128,7 @@ spec:
 
 ## **3. Rollback Automático**
 
-### **🔙 Estrategias de Rollback**
+### ** Estrategias de Rollback**
 
 #### **Rollback basado en métricas:**
 
@@ -1141,95 +1141,95 @@ NAMESPACE="production"
 MONITORING_PERIOD=300  # 5 minutes
 CHECK_INTERVAL=30     # 30 seconds
 
-echo "🔍 Starting automated rollback monitoring..."
-echo "📊 Deployment: $DEPLOYMENT_NAME"
-echo "⏱️  Monitoring Period: ${MONITORING_PERIOD}s"
+echo " Starting automated rollback monitoring..."
+echo " Deployment: $DEPLOYMENT_NAME"
+echo "  Monitoring Period: ${MONITORING_PERIOD}s"
 
 # Get initial metrics baseline
 BASELINE_ERROR_RATE=$(kubectl exec -n $NAMESPACE deployment/$DEPLOYMENT_NAME -- curl -s http://localhost:3000/metrics | grep error_rate | awk '{print $2}')
 BASELINE_RESPONSE_TIME=$(kubectl exec -n $NAMESPACE deployment/$DEPLOYMENT_NAME -- curl -s http://localhost:3000/metrics | grep avg_response_time | awk '{print $2}')
 
-echo "📈 Baseline Metrics:"
-echo "   Error Rate: $BASELINE_ERROR_RATE"  
+echo " Baseline Metrics:"
+echo "   Error Rate: $BASELINE_ERROR_RATE"
 echo "   Response Time: ${BASELINE_RESPONSE_TIME}ms"
 
 ITERATIONS=$((MONITORING_PERIOD / CHECK_INTERVAL))
 
 for i in $(seq 1 $ITERATIONS); do
     echo "⏳ Monitoring iteration $i/$ITERATIONS..."
-    
+
     # Collect current metrics
     CURRENT_ERROR_RATE=$(kubectl exec -n $NAMESPACE deployment/$DEPLOYMENT_NAME -- curl -s http://localhost:3000/metrics | grep error_rate | awk '{print $2}' 2>/dev/null || echo "0")
     CURRENT_RESPONSE_TIME=$(kubectl exec -n $NAMESPACE deployment/$DEPLOYMENT_NAME -- curl -s http://localhost:3000/metrics | grep avg_response_time | awk '{print $2}' 2>/dev/null || echo "0")
-    
+
     # Check pod health
     READY_PODS=$(kubectl get deployment $DEPLOYMENT_NAME -n $NAMESPACE -o jsonpath='{.status.readyReplicas}')
     DESIRED_PODS=$(kubectl get deployment $DEPLOYMENT_NAME -n $NAMESPACE -o jsonpath='{.spec.replicas}')
-    
-    echo "📊 Current Metrics:"
+
+    echo " Current Metrics:"
     echo "   Error Rate: $CURRENT_ERROR_RATE (baseline: $BASELINE_ERROR_RATE)"
     echo "   Response Time: ${CURRENT_RESPONSE_TIME}ms (baseline: ${BASELINE_RESPONSE_TIME}ms)"
     echo "   Pods Ready: $READY_PODS/$DESIRED_PODS"
-    
+
     # Rollback conditions
     ROLLBACK_REQUIRED=false
     ROLLBACK_REASON=""
-    
+
     # Check error rate (rollback if 3x higher)
     if (( $(echo "$CURRENT_ERROR_RATE > $BASELINE_ERROR_RATE * 3" | bc -l) )); then
         ROLLBACK_REQUIRED=true
         ROLLBACK_REASON="High error rate: $CURRENT_ERROR_RATE (threshold: $(echo "$BASELINE_ERROR_RATE * 3" | bc -l))"
     fi
-    
-    # Check response time (rollback if 2x slower)  
+
+    # Check response time (rollback if 2x slower)
     if (( $(echo "$CURRENT_RESPONSE_TIME > $BASELINE_RESPONSE_TIME * 2" | bc -l) )); then
         ROLLBACK_REQUIRED=true
         ROLLBACK_REASON="${ROLLBACK_REASON}; Slow response time: ${CURRENT_RESPONSE_TIME}ms (threshold: $(echo "$BASELINE_RESPONSE_TIME * 2" | bc -l)ms)"
     fi
-    
+
     # Check pod availability (rollback if less than 80% pods ready)
     if [ $READY_PODS -lt $((DESIRED_PODS * 80 / 100)) ]; then
         ROLLBACK_REQUIRED=true
         ROLLBACK_REASON="${ROLLBACK_REASON}; Low pod availability: $READY_PODS/$DESIRED_PODS"
     fi
-    
+
     # Execute rollback if required
     if [ "$ROLLBACK_REQUIRED" = true ]; then
-        echo "❌ Rollback conditions met: $ROLLBACK_REASON"
-        echo "🔄 Initiating automatic rollback..."
-        
+        echo " Rollback conditions met: $ROLLBACK_REASON"
+        echo " Initiating automatic rollback..."
+
         # Perform rollback
         kubectl rollout undo deployment/$DEPLOYMENT_NAME -n $NAMESPACE
-        
+
         # Wait for rollback to complete
         kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACE --timeout=300s
-        
+
         # Verify rollback
         ROLLBACK_READY_PODS=$(kubectl get deployment $DEPLOYMENT_NAME -n $NAMESPACE -o jsonpath='{.status.readyReplicas}')
-        
+
         if [ $ROLLBACK_READY_PODS -eq $DESIRED_PODS ]; then
-            echo "✅ Automatic rollback completed successfully!"
-            
+            echo " Automatic rollback completed successfully!"
+
             # Notify team
             curl -X POST -H 'Content-type: application/json' \
-                --data "{\"text\":\"🔄 Automatic rollback performed for $DEPLOYMENT_NAME\nReason: $ROLLBACK_REASON\nStatus: Completed successfully\"}" \
+                --data "{\"text\":\" Automatic rollback performed for $DEPLOYMENT_NAME\nReason: $ROLLBACK_REASON\nStatus: Completed successfully\"}" \
                 $SLACK_WEBHOOK_URL
         else
-            echo "❌ Rollback failed! Manual intervention required."
-            
+            echo " Rollback failed! Manual intervention required."
+
             # Urgent notification
             curl -X POST -H 'Content-type: application/json' \
-                --data "{\"text\":\"🚨 URGENT: Automatic rollback failed for $DEPLOYMENT_NAME\nReason: $ROLLBACK_REASON\nManual intervention required immediately!\"}" \
+                --data "{\"text\":\" URGENT: Automatic rollback failed for $DEPLOYMENT_NAME\nReason: $ROLLBACK_REASON\nManual intervention required immediately!\"}" \
                 $SLACK_WEBHOOK_URL
         fi
-        
+
         exit 1
     fi
-    
+
     sleep $CHECK_INTERVAL
 done
 
-echo "✅ Monitoring period completed. Deployment is stable."
+echo " Monitoring period completed. Deployment is stable."
 ```
 
 #### **Rollback con feature flags:**
@@ -1274,17 +1274,17 @@ app.get('/api/new-feature', featureFlag('newFeature', false), (req, res) => {
 app.post('/api/admin/feature-flags/:flag', async (req, res) => {
     const { flag } = req.params;
     const { enabled } = req.body;
-    
+
     try {
         await redis.set(`feature:${flag}`, JSON.stringify(enabled));
         res.json({ success: true, flag, enabled });
-        
+
         // Log feature flag change
         console.log(`Feature flag '${flag}' set to ${enabled}`);
-        
+
         // Optionally notify monitoring systems
         if (!enabled) {
-            console.warn(`⚠️ Feature flag '${flag}' was DISABLED - possible rollback scenario`);
+            console.warn(` Feature flag '${flag}' was DISABLED - possible rollback scenario`);
         }
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
@@ -1300,74 +1300,74 @@ FEATURE_FLAG="newFeature"
 APP_URL="https://api.example.com"
 ADMIN_TOKEN="admin-secret-token"
 
-echo "🎌 Feature Flag Rollback Script"
-echo "🏷️  Flag: $FEATURE_FLAG"
+echo " Feature Flag Rollback Script"
+echo "  Flag: $FEATURE_FLAG"
 
 # Function to disable feature flag
 disable_feature() {
-    echo "❌ Disabling feature flag: $FEATURE_FLAG"
-    
+    echo " Disabling feature flag: $FEATURE_FLAG"
+
     curl -X POST \
         -H "Content-Type: application/json" \
         -H "Authorization: Bearer $ADMIN_TOKEN" \
         -d '{"enabled": false}' \
         "$APP_URL/api/admin/feature-flags/$FEATURE_FLAG"
-    
+
     if [ $? -eq 0 ]; then
-        echo "✅ Feature flag disabled successfully"
+        echo " Feature flag disabled successfully"
         return 0
     else
-        echo "❌ Failed to disable feature flag"
+        echo " Failed to disable feature flag"
         return 1
     fi
 }
 
 # Function to enable feature flag
 enable_feature() {
-    echo "✅ Enabling feature flag: $FEATURE_FLAG"
-    
+    echo " Enabling feature flag: $FEATURE_FLAG"
+
     curl -X POST \
         -H "Content-Type: application/json" \
         -H "Authorization: Bearer $ADMIN_TOKEN" \
         -d '{"enabled": true}' \
         "$APP_URL/api/admin/feature-flags/$FEATURE_FLAG"
-    
+
     if [ $? -eq 0 ]; then
-        echo "✅ Feature flag enabled successfully"
+        echo " Feature flag enabled successfully"
         return 0
     else
-        echo "❌ Failed to enable feature flag"
+        echo " Failed to enable feature flag"
         return 1
     fi
 }
 
 # Monitor and auto-rollback based on metrics
 monitor_and_rollback() {
-    echo "📊 Starting feature flag monitoring..."
-    
+    echo " Starting feature flag monitoring..."
+
     for i in {1..10}; do
         # Check error rate
         ERROR_RATE=$(curl -s "$APP_URL/metrics" | grep "error_rate{feature=\"$FEATURE_FLAG\"}" | awk '{print $2}')
-        
-        echo "📈 Iteration $i/10 - Error rate: $ERROR_RATE"
-        
+
+        echo " Iteration $i/10 - Error rate: $ERROR_RATE"
+
         # If error rate > 5%, disable feature flag
         if (( $(echo "$ERROR_RATE > 0.05" | bc -l) )); then
-            echo "🚨 High error rate detected: $ERROR_RATE"
+            echo " High error rate detected: $ERROR_RATE"
             disable_feature
-            
+
             # Notify team
             curl -X POST -H 'Content-type: application/json' \
-                --data "{\"text\":\"🎌 Feature flag '$FEATURE_FLAG' automatically disabled due to high error rate: $ERROR_RATE\"}" \
+                --data "{\"text\":\" Feature flag '$FEATURE_FLAG' automatically disabled due to high error rate: $ERROR_RATE\"}" \
                 $SLACK_WEBHOOK_URL
-            
+
             return 1
         fi
-        
+
         sleep 30
     done
-    
-    echo "✅ Feature flag monitoring completed - no rollback needed"
+
+    echo " Feature flag monitoring completed - no rollback needed"
     return 0
 }
 
@@ -1393,7 +1393,7 @@ esac
 
 ## **4. Pipelines de CD Completos**
 
-### **🔄 Pipeline end-to-end con GitHub Actions**
+### ** Pipeline end-to-end con GitHub Actions**
 
 ```yaml
 # .github/workflows/complete-cd.yml
@@ -1423,7 +1423,7 @@ jobs:
         npm run lint
         npm test
         npm run build
-    
+
     - name: Build and push image
       id: build
       uses: docker/build-push-action@v4
@@ -1441,17 +1441,17 @@ jobs:
     steps:
     - name: Deploy to staging
       run: |
-        echo "🚀 Deploying to staging..."
+        echo " Deploying to staging..."
         # Deployment logic here
-        
+
     - name: Run staging tests
       run: |
-        echo "🧪 Running staging tests..."
+        echo " Running staging tests..."
         # Staging validation tests
-        
+
     - name: Performance tests
       run: |
-        echo "⚡ Running performance tests..."
+        echo " Running performance tests..."
         # Load testing against staging
 
   # Production deployment approval
@@ -1462,7 +1462,7 @@ jobs:
     environment: production-approval
     steps:
     - name: Manual approval required
-      run: echo "👤 Manual approval required for production deployment"
+      run: echo " Manual approval required for production deployment"
 
   # Canary deployment to production
   deploy-canary:
@@ -1472,12 +1472,12 @@ jobs:
     steps:
     - name: Deploy canary
       run: |
-        echo "🕯️ Starting canary deployment..."
+        echo " Starting canary deployment..."
         # Canary deployment logic
-        
+
     - name: Monitor canary
       run: |
-        echo "📊 Monitoring canary deployment..."
+        echo " Monitoring canary deployment..."
         # Monitoring and validation logic
 
   # Full production rollout
@@ -1488,20 +1488,20 @@ jobs:
     steps:
     - name: Full production deployment
       run: |
-        echo "🚀 Rolling out to full production..."
+        echo " Rolling out to full production..."
         # Full production deployment
-        
+
     - name: Post-deployment validation
       run: |
-        echo "✅ Validating production deployment..."
+        echo " Validating production deployment..."
         # Production validation tests
-        
+
     - name: Notify success
       uses: 8398a7/action-slack@v3
       with:
         status: success
         text: |
-          🎉 Production deployment successful!
+           Production deployment successful!
           Version: ${{ github.ref_name }}
           Image: ${{ needs.ci.outputs.image-tag }}
       env:
@@ -1515,16 +1515,16 @@ jobs:
     steps:
     - name: Automatic rollback
       run: |
-        echo "🔄 Initiating rollback..."
+        echo " Initiating rollback..."
         # Rollback logic
-        
+
     - name: Notify rollback
       uses: 8398a7/action-slack@v3
       with:
         status: custom
         custom_payload: |
           {
-            text: "🔄 Automatic rollback initiated",
+            text: " Automatic rollback initiated",
             attachments: [{
               color: "warning",
               fields: [{
@@ -1542,7 +1542,7 @@ jobs:
 
 ## **5. Monitoreo y Observabilidad**
 
-### **📊 Métricas clave para CD**
+### ** Métricas clave para CD**
 
 #### **Dashboard de métricas de deployment:**
 
@@ -1575,7 +1575,7 @@ data:
             }]
           },
           {
-            "title": "Lead Time for Changes", 
+            "title": "Lead Time for Changes",
             "type": "graph",
             "targets": [{
               "expr": "histogram_quantile(0.95, deployment_lead_time_seconds_bucket)",
@@ -1584,7 +1584,7 @@ data:
           },
           {
             "title": "Mean Time to Recovery",
-            "type": "graph", 
+            "type": "graph",
             "targets": [{
               "expr": "histogram_quantile(0.95, incident_recovery_time_seconds_bucket)",
               "legendFormat": "MTTR 95th percentile"
@@ -1615,7 +1615,7 @@ spec:
       annotations:
         summary: "Deployment failed"
         description: "Deployment for {{ $labels.app }} failed"
-        
+
     - alert: HighErrorRateAfterDeployment
       expr: rate(http_requests_total{status=~"5.."}[5m]) > 0.05
       for: 2m
@@ -1624,7 +1624,7 @@ spec:
       annotations:
         summary: "High error rate detected after deployment"
         description: "Error rate is {{ $value }} for {{ $labels.app }}"
-        
+
     - alert: SlowResponseTimeAfterDeployment
       expr: histogram_quantile(0.95, http_request_duration_seconds_bucket) > 2
       for: 5m
@@ -1633,7 +1633,7 @@ spec:
       annotations:
         summary: "Slow response time after deployment"
         description: "95th percentile response time is {{ $value }}s"
-        
+
     - alert: LowPodAvailability
       expr: (kube_deployment_status_replicas_ready / kube_deployment_spec_replicas) < 0.8
       for: 1m
@@ -1677,4 +1677,4 @@ La **CD es la materialización** de todo el trabajo de DevOps: llevar código de
 - **Azure DevOps**: Plataforma completa de Microsoft
 - **Google Cloud Deploy**: Servicio de CD de Google Cloud
 
-¡Felicidades! Has completado el módulo de **Entrega/Despliegue Continuo**. Ahora tienes las habilidades para implementar pipelines de deployment seguros, estrategias de despliegue sin downtime, y sistemas de rollback automático que te permitirán entregar software de alta calidad de forma consistente y confiable.
+Felicidades! Has completado el módulo de **Entrega/Despliegue Continuo**. Ahora tienes las habilidades para implementar pipelines de deployment seguros, estrategias de despliegue sin downtime, y sistemas de rollback automático que te permitirán entregar software de alta calidad de forma consistente y confiable.

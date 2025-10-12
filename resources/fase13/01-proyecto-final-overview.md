@@ -16,25 +16,25 @@ Este proyecto integrador consolida todo el aprendizaje del curso DevOps Learning
 ### Stack Tecnológico
 
 **Backend Services (.NET 8)**:
-- � **Shopping Service**: Gestión de carrito y checkout
-- � **Catalog Service**: Productos y categorías
-- � **Identity Service**: Autenticación y autorización
-- � **Payment Service**: Procesamiento de pagos
-- � **Notification Service**: Emails y notificaciones push
+-  **Shopping Service**: Gestión de carrito y checkout
+-  **Catalog Service**: Productos y categorías
+-  **Identity Service**: Autenticación y autorización
+-  **Payment Service**: Procesamiento de pagos
+-  **Notification Service**: Emails y notificaciones push
 -  **Analytics Service**: Métricas y reporting
 
 **Frontend Applications**:
 -  **Customer Web App** (React/Next.js)
-- � **Mobile App** (React Native)
+-  **Mobile App** (React Native)
 -  **Admin Dashboard** (Angular)
 
 **Infrastructure**:
-- ☁ **Azure/AWS**: Cloud provider
-- � **Docker**: Containerización
-- ☸ **Kubernetes**: Orquestación
-- � **PostgreSQL/MongoDB**: Bases de datos
+-  **Azure/AWS**: Cloud provider
+-  **Docker**: Containerización
+-  **Kubernetes**: Orquestación
+-  **PostgreSQL/MongoDB**: Bases de datos
 -  **Redis**: Cache distribuido
-- � **RabbitMQ**: Message broker
+-  **RabbitMQ**: Message broker
 
 ### Diagrama de Arquitectura
 
@@ -45,11 +45,11 @@ graph TB
         MOBILE[Mobile App<br/>React Native]
         ADMIN[Admin Dashboard<br/>Angular]
     end
-    
+
     subgraph "API Gateway"
         GATEWAY[Kong/Azure API Gateway]
     end
-    
+
     subgraph "Microservices"
         CATALOG[Catalog Service<br/>.NET 8]
         IDENTITY[Identity Service<br/>.NET 8]
@@ -58,32 +58,32 @@ graph TB
         NOTIFICATION[Notification Service<br/>.NET 8]
         ANALYTICS[Analytics Service<br/>.NET 8]
     end
-    
+
     subgraph "Data Layer"
         POSTGRES[(PostgreSQL)]
         MONGO[(MongoDB)]
         REDIS[(Redis Cache)]
         QUEUE[RabbitMQ]
     end
-    
+
     subgraph "Infrastructure"
         K8S[Kubernetes Cluster]
         MONITORING[Prometheus + Grafana]
         LOGGING[ELK Stack]
         SECURITY[Security Scanning]
     end
-    
+
     WEB --> GATEWAY
     MOBILE --> GATEWAY
     ADMIN --> GATEWAY
-    
+
     GATEWAY --> CATALOG
     GATEWAY --> IDENTITY
     GATEWAY --> SHOPPING
     GATEWAY --> PAYMENT
     GATEWAY --> NOTIFICATION
     GATEWAY --> ANALYTICS
-    
+
     CATALOG --> POSTGRES
     IDENTITY --> POSTGRES
     SHOPPING --> REDIS
@@ -122,39 +122,39 @@ graph TB
 **Ejemplo de estructura de repositorio**:
 ```
 ecommerce-platform/
-├── .github/
-│   ├── workflows/           # GitHub Actions
-│   ├── ISSUE_TEMPLATE/      # Issue templates
-│   └── pull_request_template.md
-├── src/
-│   ├── services/
-│   │   ├── catalog/         # Catalog microservice
-│   │   ├── identity/        # Identity microservice
-│   │   ├── shopping/        # Shopping microservice
-│   │   ├── payment/         # Payment microservice
-│   │   ├── notification/    # Notification microservice
-│   │   └── analytics/       # Analytics microservice
-│   ├── frontends/
-│   │   ├── web-app/         # React web application
-│   │   ├── mobile-app/      # React Native mobile app
-│   │   └── admin-dashboard/ # Angular admin panel
-│   └── shared/
-│       ├── contracts/       # Shared DTOs and interfaces
-│       ├── infrastructure/  # Shared infrastructure code
-│       └── libraries/       # Common libraries
-├── infrastructure/
-│   ├── docker/              # Dockerfiles
-│   ├── kubernetes/          # K8s manifests
-│   ├── terraform/           # Infrastructure as Code
-│   └── monitoring/          # Monitoring configs
-├── docs/
-│   ├── architecture/        # Architecture documentation
-│   ├── api/                 # API documentation
-│   └── deployment/          # Deployment guides
-└── scripts/
-    ├── build/               # Build scripts
-    ├── deployment/          # Deployment scripts
-    └── utilities/           # Utility scripts
+ .github/
+    workflows/           # GitHub Actions
+    ISSUE_TEMPLATE/      # Issue templates
+    pull_request_template.md
+ src/
+    services/
+       catalog/         # Catalog microservice
+       identity/        # Identity microservice
+       shopping/        # Shopping microservice
+       payment/         # Payment microservice
+       notification/    # Notification microservice
+       analytics/       # Analytics microservice
+    frontends/
+       web-app/         # React web application
+       mobile-app/      # React Native mobile app
+       admin-dashboard/ # Angular admin panel
+    shared/
+        contracts/       # Shared DTOs and interfaces
+        infrastructure/  # Shared infrastructure code
+        libraries/       # Common libraries
+ infrastructure/
+    docker/              # Dockerfiles
+    kubernetes/          # K8s manifests
+    terraform/           # Infrastructure as Code
+    monitoring/          # Monitoring configs
+ docs/
+    architecture/        # Architecture documentation
+    api/                 # API documentation
+    deployment/          # Deployment guides
+ scripts/
+     build/               # Build scripts
+     deployment/          # Deployment scripts
+     utilities/           # Utility scripts
 ```
 
 ### Fase 2: Servicios Core (Semanas 3-6)
@@ -196,10 +196,10 @@ public class AuthController : ControllerBase
 
             var user = result.User;
             var token = await _tokenGenerator.GenerateTokenAsync(user);
-            
+
             _logger.LogInformation("User {UserId} registered successfully", user.Id);
-            
-            return CreatedAtAction(nameof(GetProfile), new { id = user.Id }, 
+
+            return CreatedAtAction(nameof(GetProfile), new { id = user.Id },
                 new AuthResponse
                 {
                     UserId = user.Id,
@@ -221,7 +221,7 @@ public class AuthController : ControllerBase
     public async Task<IActionResult> Login([FromBody] LoginRequest request)
     {
         var result = await _identityService.LoginAsync(request.Email, request.Password);
-        
+
         if (!result.Succeeded)
         {
             _logger.LogWarning("Failed login attempt for email {Email}", request.Email);
@@ -229,7 +229,7 @@ public class AuthController : ControllerBase
         }
 
         var token = await _tokenGenerator.GenerateTokenAsync(result.User);
-        
+
         return Ok(new AuthResponse
         {
             UserId = result.User.Id,
@@ -276,7 +276,7 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
         };
 
         await _repository.CreateAsync(product);
-        
+
         // Publish domain event
         await _eventBus.PublishAsync(new ProductCreatedEvent
         {
@@ -532,7 +532,7 @@ jobs:
     strategy:
       matrix:
         service: [identity, catalog, shopping, payment, notification, analytics]
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -592,9 +592,9 @@ jobs:
           /d:sonar.login="${{ secrets.SONAR_TOKEN }}" \
           /d:sonar.host.url="https://sonarcloud.io" \
           /d:sonar.cs.opencover.reportsPaths="./test-results/*/coverage.opencover.xml"
-        
+
         dotnet build src/services/${{ matrix.service }}
-        
+
         dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
   # Security Scanning
@@ -602,7 +602,7 @@ jobs:
     name: Security Scanning
     runs-on: ubuntu-latest
     needs: ci
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -633,11 +633,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: [ci, security]
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop'
-    
+
     strategy:
       matrix:
         service: [identity, catalog, shopping, payment, notification, analytics]
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -681,7 +681,7 @@ jobs:
     needs: build-images
     if: github.ref == 'refs/heads/develop'
     environment: staging
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -700,13 +700,13 @@ jobs:
       run: |
         echo "$KUBE_CONFIG_DATA" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         cd infrastructure/kubernetes/overlays/staging
         kustomize edit set image identity-service=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/identity:develop-${{ github.sha }}
         kustomize edit set image catalog-service=${{ env.DOCKER_REGISTRY }}/${{ github.repository }}/catalog:develop-${{ github.sha }}
-        
+
         kustomize build . | kubectl apply -f -
-        
+
         # Wait for deployment
         kubectl rollout status deployment/identity-service -n ecommerce-staging
         kubectl rollout status deployment/catalog-service -n ecommerce-staging
@@ -717,7 +717,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-staging
     if: github.ref == 'refs/heads/develop'
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -743,7 +743,7 @@ jobs:
     needs: [build-images]
     if: github.ref == 'refs/heads/main'
     environment: production
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -754,7 +754,7 @@ jobs:
       run: |
         echo "$KUBE_CONFIG_DATA" | base64 -d > kubeconfig
         export KUBECONFIG=kubeconfig
-        
+
         # Blue-Green Deployment Script
         ./scripts/deployment/blue-green-deploy.sh \
           --image-tag main-${{ github.sha }} \
@@ -767,7 +767,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: deploy-production
     if: github.ref == 'refs/heads/main'
-    
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -854,7 +854,7 @@ scrape_configs:
       },
       {
         "title": "Response Time",
-        "type": "graph", 
+        "type": "graph",
         "targets": [
           {
             "expr": "histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (service, le))",
@@ -964,7 +964,7 @@ public class CatalogServiceIntegrationTests : IClassFixture<WebApplicationFactor
     {
         using var scope = _factory.Services.CreateScope();
         var context = scope.ServiceProvider.GetRequiredService<CatalogDbContext>();
-        
+
         var category = new Category { Id = Guid.NewGuid(), Name = "Electronics" };
         var product = new Product
         {
@@ -1011,7 +1011,7 @@ const BASE_URL = __ENV.API_BASE_URL || 'http://localhost:8000';
 export default function () {
   // Test product listing
   let response = http.get(`${BASE_URL}/api/catalog/products`);
-  
+
   check(response, {
     'status is 200': (r) => r.status === 200,
     'response time < 500ms': (r) => r.timings.duration < 500,
@@ -1022,7 +1022,7 @@ export default function () {
     const products = JSON.parse(response.body);
     if (products.items && products.items.length > 0) {
       const productId = products.items[0].id;
-      
+
       response = http.get(`${BASE_URL}/api/catalog/products/${productId}`);
       check(response, {
         'product detail status is 200': (r) => r.status === 200,
@@ -1041,8 +1041,8 @@ export default function () {
 # Proyecto E-commerce Platform - Documentación Técnica
 
 ## Resumen Ejecutivo
-Plataforma de e-commerce construida con arquitectura de microservicios, 
-implementando las mejores prácticas de DevOps para escalabilidad, 
+Plataforma de e-commerce construida con arquitectura de microservicios,
+implementando las mejores prácticas de DevOps para escalabilidad,
 seguridad y mantenibilidad.
 
 ## Métricas del Proyecto
@@ -1161,8 +1161,8 @@ seguridad y mantenibilidad.
 
 ---
 
-## ¡Comienza tu Proyecto Final!
+## Comienza tu Proyecto Final!
 
 Este proyecto integrador representa la culminación de tu viaje en el DevOps Learning Path. Es tu oportunidad de demostrar que puedes aplicar todos los conocimientos adquiridos en un proyecto real de clase empresarial.
 
-**¿Estás listo para el desafío?** 
+**¿Estás listo para el desafío?**
