@@ -189,7 +189,7 @@ public class CIMetrics
 
 **Definición**: Extensión de CI donde el código siempre está en un estado deployable, pero el deploy a producción requiere aprobación manual.
 
-**Características:**
+**Características: **
 
 - Automatización hasta pre-producción
 - Deployment manual a producción
@@ -200,7 +200,7 @@ public class CIMetrics
 
 **Definición**: Cada cambio que pasa por el pipeline automatizado se deploya automáticamente a producción sin intervención manual.
 
-**Características:**
+**Características: **
 
 - Automatización completa end-to-end
 - No hay aprobaciones manuales

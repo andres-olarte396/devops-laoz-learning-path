@@ -17,7 +17,7 @@ Desarrollar una **solución microservicio completa y segura con IA integrada**, 
 
 ### 1. Arquitectura del Sistema
 
-**Microservicios requeridos:**
+**Microservicios requeridos: **
 - **API Gateway**: Punto de entrada único con autenticación
 - **User Service**: Gestión de usuarios y autenticación JWT
 - **Product Service**: Catálogo de productos con búsqueda inteligente
@@ -27,22 +27,22 @@ Desarrollar una **solución microservicio completa y segura con IA integrada**, 
 
 ### 2. Stack Tecnológico
 
-**Backend:**
+**Backend: **
 - .NET 8 / ASP.NET Core
 - Entity Framework Core
 - Azure SQL Database / Cosmos DB
 - Redis Cache
 
-**Frontend:**
+**Frontend: **
 - React/Angular/Blazor
 - Authentication con Azure AD B2C
 
-**IA/ML:**
+**IA/ML: **
 - ML.NET para recomendaciones
 - Azure Cognitive Services para análisis de texto
 - OpenAI API para chatbot
 
-**Infraestructura:**
+**Infraestructura: **
 - Azure Container Apps / AKS
 - Azure Service Bus
 - Azure Key Vault

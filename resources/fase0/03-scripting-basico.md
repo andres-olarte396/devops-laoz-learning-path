@@ -69,7 +69,7 @@ if [ $NUMERO -gt 5 ]; then
 fi
 ```
 
-**Operadores de comparación comunes:**
+**Operadores de comparación comunes: **
 - `-f <archivo>`: Verdadero si el archivo existe.
 - `-d <directorio>`: Verdadero si el directorio existe.
 - `-eq`: Igual (números).
@@ -83,7 +83,7 @@ fi
 
 Los bucles se usan para repetir tareas.
 
-**Bucle `for`:**Itera sobre una lista de elementos.
+**Bucle `for`: **Itera sobre una lista de elementos.
 
 ```bash
 #!/bin/bash
@@ -101,7 +101,7 @@ do
 done
 ```
 
-**Bucle `while`:**Se ejecuta mientras una condición sea verdadera.
+**Bucle `while`: **Se ejecuta mientras una condición sea verdadera.
 
 ```bash
 #!/bin/bash
@@ -168,7 +168,7 @@ if ($servicio.Status -eq "Running") {
 }
 ```
 
-**Operadores de comparación comunes:**
+**Operadores de comparación comunes: **
 - `-eq`: Igual.
 - `-ne`: No igual.
 - `-gt`: Mayor que.
@@ -177,7 +177,7 @@ if ($servicio.Status -eq "Running") {
 
 ### **Bucles (`ForEach-Object` y `While`)**
 
-**Bucle `ForEach-Object`:**Es la forma más común de iterar, a menudo usando el alias `foreach`.
+**Bucle `ForEach-Object`: **Es la forma más común de iterar, a menudo usando el alias `foreach`.
 
 ```powershell
 # Iterar sobre una lista de procesos y mostrar su nombre y ID
@@ -187,7 +187,7 @@ Get-Process | ForEach-Object {
 ```
 `$_` es una variable especial que representa el objeto actual en la tubería (pipe).
 
-**Bucle `While`:**
+**Bucle `While`: **
 
 ```powershell
 $contador = 0

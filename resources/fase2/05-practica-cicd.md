@@ -164,7 +164,7 @@ cd frontend
 npx create-react-app . --template typescript
 ```
 
-**Código principal del Frontend:**
+**Código principal del Frontend: **
 
 ```typescript
 // frontend/src/App.tsx
@@ -323,7 +323,7 @@ function App() {
 export default App;
 ```
 
-**Tests del Frontend:**
+**Tests del Frontend: **
 
 ```typescript
 // frontend/src/App.test.tsx
@@ -460,7 +460,7 @@ describe('App Component', () => {
 });
 ```
 
-**Dockerfile del Frontend:**
+**Dockerfile del Frontend: **
 
 ```dockerfile
 # frontend/Dockerfile
@@ -508,7 +508,7 @@ EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
 
-**Configuración Nginx:**
+**Configuración Nginx: **
 
 ```nginx
 # frontend/nginx.conf
@@ -721,7 +721,7 @@ const server = app.listen(PORT, () => {
 module.exports = { app, server };
 ```
 
-**Tests del API Gateway:**
+**Tests del API Gateway: **
 
 ```javascript
 // backend/api-gateway/src/server.test.js
@@ -1444,7 +1444,7 @@ echo " Canary monitoring completed - no issues detected"
 
 Felicidades! Has completado el módulo de **Práctica CI/CD**más comprehensivo. Este proyecto te ha dado experiencia práctica con:
 
-### **Lo que has logrado:**
+### **Lo que has logrado: **
 
 -  **Aplicación completa**con microservicios (Frontend React + API Gateway + 3 servicios backend)
 -  **Tests automatizados**en múltiples niveles (unit, integration, E2E, performance)
@@ -1455,7 +1455,7 @@ Felicidades! Has completado el módulo de **Práctica CI/CD**más comprehensivo.
 -  **Infrastructure as Code**con Docker y Kubernetes
 -  **Security scanning**y quality gates
 
-### **Skills desarrollados:**
+### **Skills desarrollados: **
 
 - **DevOps Engineering**: Pipeline design, automation, monitoring
 - **Container Orchestration**: Docker, Kubernetes, service mesh
@@ -1468,7 +1468,7 @@ Este proyecto es un **portfolio piece**que demuestra tu competencia en DevOps mo
 
 ---
 
-## **Próximos pasos recomendados:**
+## **Próximos pasos recomendados: **
 
 1. **Extender el proyecto**con más servicios y complejidad
 2. **Implementar GitOps**con ArgoCD o Flux

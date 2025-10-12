@@ -300,7 +300,7 @@ git status
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
+
     <title>Mi Aplicación - Versión Principal</title>
 
     <title>Mi Aplicación - Nueva Funcionalidad</title>
@@ -308,7 +308,7 @@ git status
 </head>
 ```
 
-**Pasos para resolución:**
+**Pasos para resolución: **
 ```bash
 # 1. Editar archivos para resolver conflictos
 # 2. Eliminar marcadores de conflicto (<<<<, ====, >>>>)
@@ -369,7 +369,7 @@ git push origin feature/nueva-api
 
 #### **2. Crear PR desde la interfaz web**
 
-**Elementos esenciales de un buen PR:**
+**Elementos esenciales de un buen PR: **
 
 ```markdown
 ## Descripción
@@ -466,7 +466,7 @@ git checkout main
 git merge feature/nueva-funcionalidad  # Fast-forward merge
 ```
 
-**Cuándo usar cada uno:**
+**Cuándo usar cada uno: **
 - **Merge**: Para ramas importantes, cuando quieres preservar el contexto de desarrollo
 - **Rebase**: Para limpiar historial, en ramas de funcionalidades pequeñas
 
@@ -836,7 +836,7 @@ git status
 # Editar archivo:
 # production:
 #   database:
-# <<<<<<< HEAD
+# 
 #     host: "prod-db-server"
 # 
 #     host: "localhost"

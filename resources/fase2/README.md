@@ -33,16 +33,16 @@ Al completar esta fase serás capaz de:
 - Scripts de shell/bash para tareas repetitivas
 - PowerShell para entornos Windows
 - Python para automatización avanzada
-- **Duración:**6-8 horas
-- **Tipo:**Hands-on + Scripting
+- **Duración: **6-8 horas
+- **Tipo: **Hands-on + Scripting
 
 #### [02. Herramientas de Automatización](02-herramientas-automatizacion.md)
 
 - Make para builds automatizados
 - Ansible para configuración de servidores
 - Puppet y Chef (introducción)
-- **Duración:**8-10 horas
-- **Tipo:**Configuración + Laboratorios
+- **Duración: **8-10 horas
+- **Tipo: **Configuración + Laboratorios
 
 ### Semana 2: Integración Continua (CI)
 
@@ -51,16 +51,16 @@ Al completar esta fase serás capaz de:
 - Instalación y configuración de Jenkins
 - Creación de pipelines básicos
 - Integración con Git y GitHub
-- **Duración:**8-10 horas
-- **Tipo:**Instalación + Configuración
+- **Duración: **8-10 horas
+- **Tipo: **Instalación + Configuración
 
 #### [04. Plataformas CI/CD Modernas](04-plataformas-cicd.md)
 
 - GitHub Actions workflows
 - GitLab CI/CD pipelines
 - CircleCI configuración
-- **Duración:**10-12 horas
-- **Tipo:**Comparativo + Hands-on
+- **Duración: **10-12 horas
+- **Tipo: **Comparativo + Hands-on
 
 ### Semana 3: Pruebas Automatizadas
 
@@ -69,8 +69,8 @@ Al completar esta fase serás capaz de:
 - Pruebas unitarias automatizadas
 - Pruebas de integración
 - Pruebas de regresión y E2E
-- **Duración:**8-10 horas
-- **Tipo:**Testing + Automation
+- **Duración: **8-10 horas
+- **Tipo: **Testing + Automation
 
 ### Semana 4: Entrega/Despliegue Continuo (CD)
 
@@ -80,8 +80,8 @@ Al completar esta fase serás capaz de:
 - Canary Releases
 - Rolling Updates
 - Rollbacks automáticos
-- **Duración:**10-12 horas
-- **Tipo:**Estratégico + Implementación
+- **Duración: **10-12 horas
+- **Tipo: **Estratégico + Implementación
 
 ## Plan de Estudio Recomendado
 
@@ -94,7 +94,7 @@ Al completar esta fase serás capaz de:
 | 3 | 05 | Testing automatizado | 8-10 horas |
 | 4 | 06 | Despliegue continuo | 10-12 horas |
 
-**Total estimado:**50-62 horas de estudio
+**Total estimado: **50-62 horas de estudio
 
 ### **Modalidades de Estudio**
 
@@ -128,7 +128,7 @@ Al completar esta fase serás capaz de:
 
 ### **Herramientas Requeridas**
 
-#### **Locales:**
+#### **Locales: **
 
 - Docker Desktop instalado
 - Node.js/npm (para ejemplos)
@@ -136,14 +136,14 @@ Al completar esta fase serás capaz de:
 - Git configurado
 - VS Code con extensiones DevOps
 
-#### **Cuentas Cloud:**
+#### **Cuentas Cloud: **
 
 - GitHub (con GitHub Actions)
 - GitLab (para GitLab CI/CD)
 - Docker Hub
 - Una cuenta cloud (AWS/Azure/GCP)
 
-#### **Servidores (Opcionales):**
+#### **Servidores (Opcionales): **
 
 - VM para Jenkins (puede ser local)
 - Entorno de staging para pruebas
@@ -179,7 +179,7 @@ Para considerar la Fase 2 completada, deberías ser capaz de:
 
 ### **Proyecto Final de Fase**
 
-**Pipeline CI/CD Completo:**Crear un pipeline profesional que incluya:
+**Pipeline CI/CD Completo: **Crear un pipeline profesional que incluya:
 
 - Aplicación web con tests
 - Pipeline multi-stage (build, test, deploy)
@@ -211,7 +211,7 @@ Para considerar la Fase 2 completada, deberías ser capaz de:
 
 ### **Stack Tecnológico de la Fase**
 
-#### **Automatización:**
+#### **Automatización: **
 
 - **Bash/Shell**- Scripts Unix/Linux
 - **PowerShell**- Scripts Windows
@@ -219,7 +219,7 @@ Para considerar la Fase 2 completada, deberías ser capaz de:
 - **Make**- Build automation
 - **Ansible**- Configuration management
 
-#### **CI/CD Platforms:**
+#### **CI/CD Platforms: **
 
 - **Jenkins**- Self-hosted CI/CD
 - **GitHub Actions**- Git-integrated workflows
@@ -227,7 +227,7 @@ Para considerar la Fase 2 completada, deberías ser capaz de:
 - **CircleCI**- Cloud-native CI/CD
 - **Azure DevOps**- Microsoft ecosystem
 
-#### **Testing:**
+#### **Testing: **
 
 - **Jest**- JavaScript testing
 - **PyTest**- Python testing
@@ -235,7 +235,7 @@ Para considerar la Fase 2 completada, deberías ser capaz de:
 - **Selenium**- Web UI testing
 - **Postman/Newman**- API testing
 
-#### **Deployment:**
+#### **Deployment: **
 
 - **Docker**- Containerización
 - **Helm**- Kubernetes packages

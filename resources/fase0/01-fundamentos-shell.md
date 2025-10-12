@@ -49,20 +49,20 @@ Estos son los comandos más básicos y esenciales que usarás constantemente.
 
 En sistemas tipo UNIX (Linux, macOS), cada archivo tiene permisos para tres tipos de usuarios:
 
-- **Propietario (Owner):**El usuario que creó el archivo.
-- **Grupo (Group):**Un grupo de usuarios que comparten permisos.
-- **Otros (Others):**Todos los demás usuarios.
+- **Propietario (Owner): **El usuario que creó el archivo.
+- **Grupo (Group): **Un grupo de usuarios que comparten permisos.
+- **Otros (Others): **Todos los demás usuarios.
 
 Los permisos se dividen en tres acciones:
-- **Lectura (Read - `r`):**Permiso para ver el contenido del archivo.
-- **Escritura (Write - `w`):**Permiso para modificar el archivo.
-- **Ejecución (Execute - `x`):**Permiso para ejecutar el archivo (si es un script o programa).
+- **Lectura (Read - `r`): **Permiso para ver el contenido del archivo.
+- **Escritura (Write - `w`): **Permiso para modificar el archivo.
+- **Ejecución (Execute - `x`): **Permiso para ejecutar el archivo (si es un script o programa).
 
 ### **Comando `chmod` (Change Mode)**
 
 Se usa para cambiar los permisos de un archivo.
 
-**Modo Octal (Numérico):**
+**Modo Octal (Numérico): **
 Es la forma más común. Cada acción tiene un valor numérico:
 - `r` = 4
 - `w` = 2
@@ -70,17 +70,17 @@ Es la forma más común. Cada acción tiene un valor numérico:
 
 Se suman los valores para cada tipo de usuario (Propietario, Grupo, Otros).
 
-**Ejemplos:**
+**Ejemplos: **
 - `chmod 755 mi_script.sh`
-  - **Propietario:**7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
-  - **Grupo:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
-  - **Otros:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Propietario: **7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
+  - **Grupo: **5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Otros: **5 (4+0+1) -> `r-x` (Lectura, Ejecución)
   *(Este es un permiso muy común para scripts que deben ser ejecutables por otros).*
 
 - `chmod 644 mi_config.txt`
-  - **Propietario:**6 (4+2+0) -> `rw-` (Lectura, Escritura)
-  - **Grupo:**4 (4+0+0) -> `r--` (Solo Lectura)
-  - **Otros:**4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Propietario: **6 (4+2+0) -> `rw-` (Lectura, Escritura)
+  - **Grupo: **4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Otros: **4 (4+0+0) -> `r--` (Solo Lectura)
   *(Este es un permiso común para archivos de texto que no deben ser modificados por otros).*
 
 ### **Comando `chown` (Change Owner)**

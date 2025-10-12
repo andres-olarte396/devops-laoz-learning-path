@@ -4,7 +4,7 @@ Este repositorio documenta un **viaje de aprendizaje completo y moderno en DevOp
 
 El curso ha sido **completamente renovado y expandido**para incluir las competencias más demandadas en el mercado actual, preparando para roles senior y de liderazgo en tecnología.
 
->  **NOVEDAD!**La **Fase 1 - Fundamentos DevOps**está **100% completada**con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **Ya puedes comenzar tu viaje DevOps!**
+> **NOVEDAD!**La **Fase 1 - Fundamentos DevOps**está **100% completada**con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **Ya puedes comenzar tu viaje DevOps!**
 
 ## Empieza Ahora
 
@@ -109,9 +109,9 @@ Se asume una familiaridad básica con la informática, pero la **Fase 0**está d
 
 La mejor manera de usar este repositorio es seguir el plan de estudio.
 
-1. **Consulta el `roadmap.md`:**El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
-2. **Empieza por la Fase 0:**No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
-3. **Avanza a tu propio ritmo:**Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, practica!
+1. **Consulta el `roadmap.md`: **El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
+2. **Empieza por la Fase 0: **No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
+3. **Avanza a tu propio ritmo: **Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, practica!
 
 ---
 
@@ -210,35 +210,35 @@ Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres a�
 
 ### **Stack Tecnológico Completo**
 
-**Backend & APIs:**
+**Backend & APIs: **
 
 - .NET 8, ASP.NET Core, Entity Framework
 - Node.js, Python (integración)
 - GraphQL, gRPC, REST APIs
 
-**Frontend & UI:**
+**Frontend & UI: **
 
 - React, Angular, Blazor
 - Micro-frontends, PWAs
 
-**Bases de Datos:**
+**Bases de Datos: **
 
 - SQL Server, PostgreSQL, MySQL
 - MongoDB, Cosmos DB, Redis
 
-**Cloud & Infrastructure:**
+**Cloud & Infrastructure: **
 
 - Azure, AWS, Google Cloud
 - Docker, Kubernetes, Helm
 - Terraform, Bicep, ARM Templates
 
-**DevOps & Monitoring:**
+**DevOps & Monitoring: **
 
 - GitHub Actions, Azure DevOps
 - Prometheus, Grafana, ELK Stack
 - Application Insights, Jaeger
 
-**Security & AI:**
+**Security & AI: **
 
 - Azure Security Center, HashiCorp Vault
 - ML.NET, Azure Cognitive Services
@@ -334,7 +334,7 @@ Este repositorio ha sido **completamente renovado**para proporcionar:
 |  | Fase 3 - Docker & Contenedores | 1/8 | 12 | 12% |
 |  | Fases 4-14 | Estructura | - | Preparado |
 
-**Total disponible para estudiar:**58+ páginas de contenido técnico
+**Total disponible para estudiar: **58+ páginas de contenido técnico
 
 ### **Estadísticas del Contenido**
 
@@ -383,7 +383,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario para comenzar tu viaje en DevOps:
 
-#### **Contenido Disponible (8 archivos completos):**
+#### **Contenido Disponible (8 archivos completos): **
 
 - **[01-que-es-devops.md](resources/fase1/01-que-es-devops.md)**- Introducción y definición completa
 - **[02-beneficios-devops.md](resources/fase1/02-beneficios-debops.md)**- Ventajas y casos de éxito
@@ -394,7 +394,7 @@ La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario 
 - **[07-conceptos-clave.md](resources/fase1/07-conceptos-clave.md)**- CI/CD, IaC y observabilidad
 - **[08-primeros-pasos-git.md](resources/fase1/08-primeros-pasos-git.md)**- Git mastery completo
 
-#### **Lo que obtienes en la Fase 1:**
+#### **Lo que obtienes en la Fase 1: **
 
 - **46+ páginas**de contenido técnico detallado
 - **Ejemplos prácticos**con código real
@@ -403,11 +403,11 @@ La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario 
 - **Ejercicios graduales**de básico a avanzado
 - **Scripts de automatización**listos para usar
 
-#### **Próximo paso recomendado:**
+#### **Próximo paso recomendado: **
 
 **Ya puedes comenzar con la [Fase 1](resources/fase1/) completa!**Todo el contenido está listo para tu aprendizaje.
 
-### **Estado de Otras Fases:**
+### **Estado de Otras Fases: **
 
 - **Fases 2-14**: Estructura creada, contenido en desarrollo
 - **Proyectos**: Directorio base configurado
@@ -418,7 +418,7 @@ La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario 
 
 ### **Última Actualización: 12 de Octubre 2025**
 
-**Changelog v2.1:**
+**Changelog v2.1: **
 
 - **Fase 1 completamente terminada**(8 archivos con 46+ páginas)
 - Contenido técnico detallado con ejemplos prácticos
@@ -429,7 +429,7 @@ La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario 
 - Stack tecnológico actualizado a 2024-2025
 - Preparación para roles senior y liderazgo
 
-**Próximas mejoras planificadas:**
+**Próximas mejoras planificadas: **
 
 - Completar contenido de Fases 2-6 (Fundamentos)
 - Desarrollar Fases 7-12 (Especializaciones avanzadas)

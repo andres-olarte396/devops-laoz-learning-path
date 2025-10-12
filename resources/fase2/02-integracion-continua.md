@@ -16,7 +16,7 @@ La **Integración Continua (CI)**es una práctica de desarrollo donde los desarr
 
 ### **El problema que resuelve CI**
 
-**Antes de CI (Integration Hell):**
+**Antes de CI (Integration Hell): **
 ```
 Developer A: "Funciona en mi máquina"
 Developer B: "Mi código no compila con los cambios de A"
@@ -24,7 +24,7 @@ Developer C: "Los tests fallan cuando integro todo"
 Team Lead: "El release se retrasa 2 semanas"
 ```
 
-**Con CI:**
+**Con CI: **
 ```
  Cada commit se valida automáticamente
  Los problemas se detectan en minutos, no semanas
@@ -1660,12 +1660,12 @@ jobs:
 
 ### **Caso 1: Migración de Jenkins a GitHub Actions**
 
-**Situación inicial:**
+**Situación inicial: **
 - Pipeline Jenkins complejo con 45 minutos de build time
 - Dependencias en infrastructure on-premise
 - Dificultades para escalar runners
 
-**Solución implementada:**
+**Solución implementada: **
 ```yaml
 # Estrategia de migración gradual
 # .github/workflows/migration-test.yml
@@ -1684,19 +1684,19 @@ jobs:
       # Reportar diferencias
 ```
 
-**Resultados:**
+**Resultados: **
 - Reducción de build time: 45min → 8min
 - Eliminación de maintenance de infrastructure
 - Mejor paralelización y caching
 
 ### **Caso 2: CI para Monorepo**
 
-**Desafío:**
+**Desafío: **
 - Múltiples aplicaciones en un repositorio
 - Evitar builds innecesarios
 - Coordinar deployments
 
-**Solución:**
+**Solución: **
 ```yaml
 # .github/workflows/monorepo-ci.yml
 name: Monorepo CI

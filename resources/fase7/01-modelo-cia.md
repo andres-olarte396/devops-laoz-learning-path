@@ -251,17 +251,17 @@ public class DocumentService
 
 ### KPIs de Seguridad CIA
 
-**Confidencialidad:**
+**Confidencialidad: **
 - Número de intentos de acceso no autorizado
 - Tiempo de detección de brechas de datos
 - Porcentaje de datos cifrados
 
-**Integridad:**
+**Integridad: **
 - Número de modificaciones no autorizadas detectadas
 - Tiempo de detección de alteraciones
 - Frecuencia de verificaciones de integridad
 
-**Disponibilidad:**
+**Disponibilidad: **
 - Uptime del sistema (99.9% target)
 - Tiempo de respuesta promedio
 - Número de incidentes de DoS

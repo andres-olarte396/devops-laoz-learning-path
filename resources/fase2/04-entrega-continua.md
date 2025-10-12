@@ -8,13 +8,13 @@ La **Entrega/Despliegue Continuo**es la extensión natural de la Integración Co
 
 ### **Continuous Delivery vs Continuous Deployment**
 
-**Continuous Delivery (Entrega Continua):**
+**Continuous Delivery (Entrega Continua): **
 - Código **siempre listo**para producción
 - Despliegue **manual**con un click
 - **Validación humana**antes de producción
 - **Control total**sobre releases
 
-**Continuous Deployment (Despliegue Continuo):**
+**Continuous Deployment (Despliegue Continuo): **
 - Despliegue **totalmente automatizado**
 - **Sin intervención humana**
 - Cambios van **directo a producción**
@@ -56,15 +56,15 @@ graph LR
 
 ### **Blue-Green Deployment**
 
-**Concepto:**Mantener **dos entornos idénticos**(Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
+**Concepto: **Mantener **dos entornos idénticos**(Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
 
-#### **Ventajas:**
+#### **Ventajas: **
 -  **Cero downtime**- Cambio instantáneo
 -  **Rollback rápido**- Solo cambiar el router
 -  **Testing completo**- Validar en ambiente idéntico
 -  **Baja complejidad**- Fácil de entender
 
-#### **Desventajas:**
+#### **Desventajas: **
 -  **Costo alto**- Doble infraestructura
 -  **Datos complejos**- Migrations pueden ser problemáticas
 -  **Recursos intensivo**- Duplicar todo el stack
@@ -320,15 +320,15 @@ echo " Blue-Green deployment completed!"
 
 ### **Canary Deployment**
 
-**Concepto:**Desplegar nueva versión gradualmente a un **subconjunto pequeño**de usuarios/tráfico, monitoreando métricas antes de full rollout.
+**Concepto: **Desplegar nueva versión gradualmente a un **subconjunto pequeño**de usuarios/tráfico, monitoreando métricas antes de full rollout.
 
-#### **Ventajas:**
+#### **Ventajas: **
 -  **Riesgo minimizado**- Solo afecta pequeño porcentaje
 -  **Feedback temprano**- Detectar issues antes de full rollout
 -  **A/B Testing**- Comparar versiones en producción
 -  **Costo eficiente**- No necesita doble infraestructura
 
-#### **Desventajas:**
+#### **Desventajas: **
 -  **Complejidad alta**- Requires traffic splitting
 -  **Monitoring intensivo**- Necesita métricas detalladas
 -  **Testing parcial**- No todo el flujo se prueba inicialmente
@@ -596,15 +596,15 @@ spec:
 
 ### **Rolling Updates**
 
-**Concepto:**Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
+**Concepto: **Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
 
-#### **Ventajas:**
+#### **Ventajas: **
 -  **Cero downtime**- Siempre hay instancias disponibles
 -  **Uso eficiente de recursos**- No duplica infraestructura
 -  **Simple de implementar**- Estrategia por defecto en Kubernetes
 -  **Rollback rápido**- Fácil revertir cambios
 
-#### **Desventajas:**
+#### **Desventajas: **
 -  **Mixing versions**- Múltiples versiones corriendo simultáneamente
 -  **Database migrations**- Pueden ser complicadas
 -  **Slower rollout**- Toma más tiempo completar deployment
@@ -806,7 +806,7 @@ echo " Rolling update to $NEW_VERSION completed successfully!"
 
 El entorno de staging debe **replicar fielmente**el entorno de producción para validar cambios antes del despliegue final.
 
-#### **Características del Staging ideal:**
+#### **Características del Staging ideal: **
 
 ```yaml
 # staging-environment.yml
@@ -974,7 +974,7 @@ jobs:
 
 ### **Production Environment**
 
-#### **Configuración de producción robusta:**
+#### **Configuración de producción robusta: **
 
 ```yaml
 # production-environment.yml
@@ -1130,7 +1130,7 @@ spec:
 
 ### **Estrategias de Rollback**
 
-#### **Rollback basado en métricas:**
+#### **Rollback basado en métricas: **
 
 ```bash
 #!/bin/bash
@@ -1232,7 +1232,7 @@ done
 echo " Monitoring period completed. Deployment is stable."
 ```
 
-#### **Rollback con feature flags:**
+#### **Rollback con feature flags: **
 
 ```javascript
 // feature-flag-rollback.js
@@ -1544,7 +1544,7 @@ jobs:
 
 ### **Métricas clave para CD**
 
-#### **Dashboard de métricas de deployment:**
+#### **Dashboard de métricas de deployment: **
 
 ```yaml
 # deployment-dashboard.yml
@@ -1595,7 +1595,7 @@ data:
     }
 ```
 
-#### **Alerting para deployments:**
+#### **Alerting para deployments: **
 
 ```yaml
 # deployment-alerts.yml
