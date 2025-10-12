@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DevOps Learning Path 
 
 Este repositorio documenta un **viaje de aprendizaje completo y moderno en DevOps**, desde los conceptos básicos hasta temas avanzados incluyendo **ciberseguridad, inteligencia artificial, arquitectura de software y liderazgo técnico**.
@@ -75,25 +76,66 @@ La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente 
 - Mentoría y desarrollo de equipos
 - Pensamiento sistémico y visión estratégica
 - Gestión del cambio organizacional
+=======
+# Ruta de Aprendizaje DevOps 🚀
 
-## Diagrama de Aprendizaje
+¡Bienvenido a la Ruta de Aprendizaje DevOps! Este repositorio es una guía completa y estructurada para aprender DevOps desde los fundamentos hasta un nivel avanzado, combinando teoría y práctica.
+>>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
-![DevOps Learning Path](images/devops-fases.avif)
+![DevOps Learning Path](images/devops-fases.png)
 
+---
+
+<<<<<<< HEAD
 _Este diagrama muestra las fases clave del viaje completo de aprendizaje en DevOps moderno._
+=======
+## ¿A Quién va Dirigido este Repositorio?
+>>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
-## Índice
+Esta guía está diseñada principalmente para:
 
+<<<<<<< HEAD
 - [ Plan de Estudio Completo](roadmap.md)
 - [ Proyectos Prácticos](projects/)
 - [ Recursos Útiles](resources/)
 - [ Notas Personales](notes/)
 - [ Scripts de Automatización](scripts/)
+=======
+-   **Desarrolladores de Software** que buscan hacer la transición a un rol de DevOps o simplemente quieren entender mejor el ciclo de vida completo del software.
+-   **Administradores de Sistemas (SysAdmins)** que desean modernizar sus habilidades y adoptar prácticas de automatización e infraestructura como código.
+-   **Estudiantes y Recién Graduados** que quieren construir una base sólida de conocimientos en DevOps.
+-   **Cualquier persona con curiosidad** por aprender sobre la cultura, las prácticas y las herramientas que están transformando la industria del software.
+
+Se asume una familiaridad básica con la informática, pero la **Fase 0** está diseñada para poner a todos al día con la herramienta más fundamental: la línea de comandos.
+
+---
+
+## ¿Cómo Empezar?
+
+La mejor manera de usar este repositorio es seguir el plan de estudio.
+
+1.  **Consulta el `roadmap.md`:** El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
+2.  **Empieza por la Fase 0:** No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
+3.  **Avanza a tu propio ritmo:** Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, ¡practica!
+
+---
+
+## Estructura del Repositorio
+
+-   [**roadmap.md**](./roadmap.md): El plan de estudio detallado, dividido en fases. **¡Empieza aquí!**
+-   [**resources/**](./resources/): Contiene todo el material de aprendizaje, organizado por fases.
+-   [**notes/**](./notes/): Apuntes y resúmenes personales sobre herramientas específicas como Docker, Git y Kubernetes.
+-   [**assets/**](./assets/): Recursos multimedia como audios y videos mencionados en la guía.
+-   [**images/**](./images/): Imágenes y diagramas utilizados en la documentación.
+
+---
+>>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 ## Estructura del Curso
 
 ###  Fases Fundamentales (1-6)
 
+<<<<<<< HEAD
 *Duración estimada: 20-24 semanas_
 
 - **Fase 1**: [Fundamentos de DevOps](resources/fase1/) - Principios, cultura y herramientas básicas
@@ -104,6 +146,16 @@ _Este diagrama muestra las fases clave del viaje completo de aprendizaje en DevO
 - **Fase 6**: [Nube y Arquitectura Moderna](resources/fase6/) - Cloud services, serverless y microservicios
 
 ###  Fases Avanzadas (7-12)
+=======
+-   Proveer una ruta de aprendizaje en DevOps clara, estructurada y en español.
+-   Documentar mi propio progreso y descubrimientos en DevOps.
+-   Compartir conocimientos y recursos valiosos con la comunidad.
+-   Crear un espacio para experimentar con herramientas y tecnologías.
+
+## Cómo Contribuir
+
+Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres añadir algo, ¡siéntete libre de abrir un issue o enviar un pull request! Toda contribución es bienvenida.
+>>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 *Duración estimada: 19 semanas_
 
@@ -329,6 +381,7 @@ Si estás siguiendo este curso:
 
 ##  Licencia
 
+<<<<<<< HEAD
 Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ## � Estado Actual del Curso
@@ -393,3 +446,6 @@ La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario
 -  Videos explicativos para conceptos complejos
 -  Laboratorios virtuales automatizados
 -  Sistema de tracking de progreso
+=======
+Este proyecto está bajo la licencia [MIT](./LICENSE).
+>>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160

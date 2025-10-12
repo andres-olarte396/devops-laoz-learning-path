@@ -4,6 +4,30 @@ Este plan de estudio estructurado te guiará desde los fundamentos hasta un nive
 
 ---
 
+## **Fase 0: Dominio de la Terminal**
+
+Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea de comandos. Esta fase te preparará con las habilidades esenciales para navegar y automatizar tareas en cualquier sistema operativo.
+
+1. **Fundamentos de la Shell**
+
+   - [Introducción a la Fase 0](./resources/fase0/00-introduccion-fase0.md)
+   - [Navegación y manipulación de archivos {ls, cd, pwd, cp, mv, rm, mkdir}](./resources/fase0/01-fundamentos-shell.md)
+   - [Permisos de archivos (chmod, chown)](./resources/fase0/01-fundamentos-shell.md#permisos)
+   - [Redirección de entradas/salidas {>, >>, <, |}](./resources/fase0/01-fundamentos-shell.md#redireccion)
+
+2. **Herramientas de Línea de Comandos**
+
+   - [Búsqueda y filtrado de texto (grep, find, awk, sed)](./resources/fase0/02-herramientas-cli.md)
+   - [Archivado y compresión (tar, gzip, zip)](./resources/fase0/02-herramientas-cli.md#archivado)
+   - [Editores de texto en terminal (Vim/Neovim, Nano)](./resources/fase0/02-herramientas-cli.md#editores)
+
+3. **Scripting Básico**
+
+   - [Introducción a Bash Scripting (variables, bucles, condicionales)](./resources/fase0/03-scripting-basico.md)
+   - [Introducción a PowerShell para Windows](./resources/fase0/03-scripting-basico.md#powershell)
+
+---
+
 ## **Fase 1: Fundamentos de DevOps**
 
 En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía y cómo se integra en el ciclo de vida del software.
@@ -11,8 +35,10 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
 - [ **Guía de estudio de la Fase 1**](./resources/fase1/README.md)
 
 1. **Introducción a DevOps**
+
+   - [Introducción a la Fase 1](./resources/fase1/00-introduccion-fase1.md)
    - [¿Qué es DevOps? (Cultura, herramientas y prácticas)](./resources/fase1/01-que-es-devops.md)
-   - [Beneficios de DevOps](./resources/fase1/02-beneficios-debops.md)
+   - [Beneficios de DevOps](./resources/fase1/02-beneficios-devops.md)
    - [Diferencia entre DevOps, Agile y Waterfall](./resources/fase1/03-devops-agile-waterfall.md)
    - [Ciclo de vida de DevOps: CI/CD, monitoreo, infraestructura como código, etc.](./resources/fase1/04-ciclo-de-vida-devops.md)
 
@@ -56,14 +82,15 @@ Aquí te enfocarás en la automatización del flujo de trabajo de desarrollo y d
    - [Test de la unidad](./resources/fase2/test.md)
 
 4. **Práctica**
-   - Configurar un pipeline completo de CI/CD para una aplicación simple
-   - Implementar pruebas automatizadas en el pipeline
+   - [Configurar un pipeline completo de CI/CD para una aplicación simple](./resources/fase2/04-practica-cicd.md)
+   - [Implementar pruebas automatizadas en el pipeline](./resources/fase2/04-practica-cicd.md#implementar-pruebas)
+   - [Test de la unidad](./resources/fase2/test.md)
 
 ---
 
-## **Fase 3: Contenedores y Orquestación**
+## **Fase 3: Contenedores, Redes y Orquestación**
 
-Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás sobre Docker y Kubernetes.
+Los contenedores son una parte fundamental de DevOps moderno. Aquí aprenderás sobre redes, Docker y Kubernetes.
 
 1. **Docker**
    - [Conceptos básicos: imágenes, contenedores, volúmenes, redes](./resources/fase3/01-docker-conceptos-basicos.md)
@@ -450,11 +477,11 @@ Valida tus habilidades con certificaciones profesionales y desarrolla tu carrera
 
 ## **Recursos Recomendados**
 
-- **Libros**:
-  - "The Phoenix Project" de Gene Kim
-  - "Continuous Delivery" de Jez Humble y David Farley
-- **Cursos en línea**:
-  - Pluralsight, Udemy, Coursera, edX
+Aquí encontrarás una colección de recursos adicionales para complementar tu aprendizaje.
+
+- **[Libros](./resources/books.md)**: Una lista curada de libros fundamentales sobre DevOps, cultura y tecnología.
+- **[Cursos en Línea](./resources/courses.md)**: Enlaces a cursos recomendados en plataformas como Pluralsight, Udemy, etc.
+- **[Herramientas](./resources/tools.md)**: Un listado de las herramientas más populares en el ecosistema DevOps.
 - **Documentación oficial**:
   - Docker, Kubernetes, Terraform, AWS, Azure, etc.
 
