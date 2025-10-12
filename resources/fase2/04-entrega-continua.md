@@ -1,6 +1,6 @@
 # Entrega/Despliegue Continuo (CD)
 
-La **Entrega/Despliegue Continuo** es la extensión natural de la Integración Continua, automatizando la entrega de software a diferentes entornos de forma segura, confiable y repetible. En este módulo aprenderás las estrategias y técnicas para desplegar aplicaciones con **cero downtime**, **rollbacks automáticos** y **confianza total** en tus releases.
+La **Entrega/Despliegue Continuo**es la extensión natural de la Integración Continua, automatizando la entrega de software a diferentes entornos de forma segura, confiable y repetible. En este módulo aprenderás las estrategias y técnicas para desplegar aplicaciones con **cero downtime**, **rollbacks automáticos**y **confianza total**en tus releases.
 
 ---
 
@@ -8,17 +8,17 @@ La **Entrega/Despliegue Continuo** es la extensión natural de la Integración C
 
 ### **Continuous Delivery vs Continuous Deployment**
 
-** Continuous Delivery (Entrega Continua):**
-- Código **siempre listo** para producción
-- Despliegue **manual** con un click
-- **Validación humana** antes de producción
-- **Control total** sobre releases
+**Continuous Delivery (Entrega Continua):**
+- Código **siempre listo**para producción
+- Despliegue **manual**con un click
+- **Validación humana**antes de producción
+- **Control total**sobre releases
 
-** Continuous Deployment (Despliegue Continuo):**
+**Continuous Deployment (Despliegue Continuo):**
 - Despliegue **totalmente automatizado**
 - **Sin intervención humana**
 - Cambios van **directo a producción**
-- **Confianza absoluta** en automatización
+- **Confianza absoluta**en automatización
 
 ```mermaid
 graph LR
@@ -43,31 +43,31 @@ graph LR
 
 ### **Los pilares de CD exitoso**
 
-1. ** Testing confiable**: Cobertura de tests que da confianza total
-2. ** Deployment automatizado**: Procesos repetibles sin errores humanos
-3. ** Monitoring proactivo**: Detección inmediata de problemas
-4. ** Rollback instantáneo**: Capacidad de revertir cambios rápidamente
-5. ** Feature flags**: Control granular de funcionalidades
-6. ** Métricas continuas**: Visibilidad del impacto de cambios
+1. **Testing confiable**: Cobertura de tests que da confianza total
+2. **Deployment automatizado**: Procesos repetibles sin errores humanos
+3. **Monitoring proactivo**: Detección inmediata de problemas
+4. **Rollback instantáneo**: Capacidad de revertir cambios rápidamente
+5. **Feature flags**: Control granular de funcionalidades
+6. **Métricas continuas**: Visibilidad del impacto de cambios
 
 ---
 
 ## **1. Estrategias de Despliegue**
 
-### ** Blue-Green Deployment**
+### **Blue-Green Deployment**
 
-**Concepto:** Mantener **dos entornos idénticos** (Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
+**Concepto:**Mantener **dos entornos idénticos**(Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
 
 #### **Ventajas:**
--  **Cero downtime** - Cambio instantáneo
--  **Rollback rápido** - Solo cambiar el router
--  **Testing completo** - Validar en ambiente idéntico
--  **Baja complejidad** - Fácil de entender
+-  **Cero downtime**- Cambio instantáneo
+-  **Rollback rápido**- Solo cambiar el router
+-  **Testing completo**- Validar en ambiente idéntico
+-  **Baja complejidad**- Fácil de entender
 
 #### **Desventajas:**
--  **Costo alto** - Doble infraestructura
--  **Datos complejos** - Migrations pueden ser problemáticas
--  **Recursos intensivo** - Duplicar todo el stack
+-  **Costo alto**- Doble infraestructura
+-  **Datos complejos**- Migrations pueden ser problemáticas
+-  **Recursos intensivo**- Duplicar todo el stack
 
 #### **Implementación con Docker y Nginx**
 
@@ -318,20 +318,20 @@ kubectl scale deployment myapp-$OLD_COLOR --replicas=0
 echo " Blue-Green deployment completed!"
 ```
 
-### ** Canary Deployment**
+### **Canary Deployment**
 
-**Concepto:** Desplegar nueva versión gradualmente a un **subconjunto pequeño** de usuarios/tráfico, monitoreando métricas antes de full rollout.
+**Concepto:**Desplegar nueva versión gradualmente a un **subconjunto pequeño**de usuarios/tráfico, monitoreando métricas antes de full rollout.
 
 #### **Ventajas:**
--  **Riesgo minimizado** - Solo afecta pequeño porcentaje
--  **Feedback temprano** - Detectar issues antes de full rollout
--  **A/B Testing** - Comparar versiones en producción
--  **Costo eficiente** - No necesita doble infraestructura
+-  **Riesgo minimizado**- Solo afecta pequeño porcentaje
+-  **Feedback temprano**- Detectar issues antes de full rollout
+-  **A/B Testing**- Comparar versiones en producción
+-  **Costo eficiente**- No necesita doble infraestructura
 
 #### **Desventajas:**
--  **Complejidad alta** - Requires traffic splitting
--  **Monitoring intensivo** - Necesita métricas detalladas
--  **Testing parcial** - No todo el flujo se prueba inicialmente
+-  **Complejidad alta**- Requires traffic splitting
+-  **Monitoring intensivo**- Necesita métricas detalladas
+-  **Testing parcial**- No todo el flujo se prueba inicialmente
 
 #### **Implementación con Nginx y Docker**
 
@@ -594,20 +594,20 @@ spec:
         - containerPort: 3000
 ```
 
-### ** Rolling Updates**
+### **Rolling Updates**
 
-**Concepto:** Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
+**Concepto:**Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
 
 #### **Ventajas:**
--  **Cero downtime** - Siempre hay instancias disponibles
--  **Uso eficiente de recursos** - No duplica infraestructura
--  **Simple de implementar** - Estrategia por defecto en Kubernetes
--  **Rollback rápido** - Fácil revertir cambios
+-  **Cero downtime**- Siempre hay instancias disponibles
+-  **Uso eficiente de recursos**- No duplica infraestructura
+-  **Simple de implementar**- Estrategia por defecto en Kubernetes
+-  **Rollback rápido**- Fácil revertir cambios
 
 #### **Desventajas:**
--  **Mixing versions** - Múltiples versiones corriendo simultáneamente
--  **Database migrations** - Pueden ser complicadas
--  **Slower rollout** - Toma más tiempo completar deployment
+-  **Mixing versions**- Múltiples versiones corriendo simultáneamente
+-  **Database migrations**- Pueden ser complicadas
+-  **Slower rollout**- Toma más tiempo completar deployment
 
 #### **Rolling Update con Docker Swarm**
 
@@ -802,9 +802,9 @@ echo " Rolling update to $NEW_VERSION completed successfully!"
 
 ## **2. Entornos de Despliegue**
 
-### ** Staging Environment (Pre-producción)**
+### **Staging Environment (Pre-producción)**
 
-El entorno de staging debe **replicar fielmente** el entorno de producción para validar cambios antes del despliegue final.
+El entorno de staging debe **replicar fielmente**el entorno de producción para validar cambios antes del despliegue final.
 
 #### **Características del Staging ideal:**
 
@@ -972,7 +972,7 @@ jobs:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
 ```
 
-### ** Production Environment**
+### **Production Environment**
 
 #### **Configuración de producción robusta:**
 
@@ -1128,7 +1128,7 @@ spec:
 
 ## **3. Rollback Automático**
 
-### ** Estrategias de Rollback**
+### **Estrategias de Rollback**
 
 #### **Rollback basado en métricas:**
 
@@ -1393,7 +1393,7 @@ esac
 
 ## **4. Pipelines de CD Completos**
 
-### ** Pipeline end-to-end con GitHub Actions**
+### **Pipeline end-to-end con GitHub Actions**
 
 ```yaml
 # .github/workflows/complete-cd.yml
@@ -1542,7 +1542,7 @@ jobs:
 
 ## **5. Monitoreo y Observabilidad**
 
-### ** Métricas clave para CD**
+### **Métricas clave para CD**
 
 #### **Dashboard de métricas de deployment:**
 
@@ -1654,7 +1654,7 @@ Una vez que domines la Entrega/Despliegue Continuo, estarás listo para:
 - **Infraestructura como Código**: Terraform, CloudFormation
 - **Monitoreo y Observabilidad**: Logs, métricas, trazas distribuidas
 
-La **CD es la materialización** de todo el trabajo de DevOps: llevar código desde desarrollo hasta producción de forma **segura, rápida y confiable**.
+La **CD es la materialización**de todo el trabajo de DevOps: llevar código desde desarrollo hasta producción de forma **segura, rápida y confiable**.
 
 ---
 

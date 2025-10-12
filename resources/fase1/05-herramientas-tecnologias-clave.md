@@ -62,7 +62,7 @@ graph TB
 
 ### Git - El Estándar Universal
 
-**¿Qué es?** Sistema de control de versiones distribuido que rastrea cambios en archivos y coordina el trabajo entre múltiples desarrolladores.
+**¿Qué es?**Sistema de control de versiones distribuido que rastrea cambios en archivos y coordina el trabajo entre múltiples desarrolladores.
 
 **¿Por qué es esencial?**
 
@@ -117,7 +117,7 @@ git merge feature/nueva-funcionalidad
 
 ### Jenkins - El Veterano Confiable
 
-**¿Qué es?** Servidor de automatización open source que permite implementar CI/CD através de pipelines.
+**¿Qué es?**Servidor de automatización open source que permite implementar CI/CD através de pipelines.
 
 **Ventajas:**
 
@@ -160,7 +160,7 @@ pipeline {
 
 ### GitHub Actions - El Moderno
 
-**¿Qué es?** Plataforma de CI/CD nativa de GitHub que automatiza workflows directamente en el repositorio.
+**¿Qué es?**Plataforma de CI/CD nativa de GitHub que automatiza workflows directamente en el repositorio.
 
 **Ventajas:**
 
@@ -258,7 +258,7 @@ steps:
 
 ### Docker - Revolución en Deployment
 
-**¿Qué es?** Plataforma que utiliza containerización para empaquetar aplicaciones con todas sus dependencias.
+**¿Qué es?**Plataforma que utiliza containerización para empaquetar aplicaciones con todas sus dependencias.
 
 **Conceptos clave:**
 
@@ -311,7 +311,7 @@ docker pull nginx:latest
 
 ### Kubernetes - Orquestación de Containers
 
-**¿Qué es?** Sistema de orquestación que automatiza el deployment, scaling y gestión de aplicaciones containerizadas.
+**¿Qué es?**Sistema de orquestación que automatiza el deployment, scaling y gestión de aplicaciones containerizadas.
 
 **Conceptos fundamentales:**
 
@@ -355,7 +355,7 @@ spec:
 
 ### Terraform - El Estándar Multi-Cloud
 
-**¿Qué es?** Herramienta que permite definir y provisionar infraestructura usando código declarativo.
+**¿Qué es?**Herramienta que permite definir y provisionar infraestructura usando código declarativo.
 
 **Ventajas:**
 
@@ -414,7 +414,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
 ### Ansible - Automatización Simple
 
-**¿Qué es?** Herramienta de automatización que gestiona configuración y deployment usando YAML.
+**¿Qué es?**Herramienta de automatización que gestiona configuración y deployment usando YAML.
 
 **Características:**
 
@@ -463,14 +463,14 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
 ### Prometheus + Grafana - El Stack de Monitoreo
 
-**Prometheus** - Sistema de monitoreo y alertas:
+**Prometheus**- Sistema de monitoreo y alertas:
 
 - Base de datos de time series
 - Pull-based metrics collection
 - Potente lenguaje de queries (PromQL)
 - Alerting integrado
 
-**Grafana** - Plataforma de visualización:
+**Grafana**- Plataforma de visualización:
 
 - Dashboards interactivos
 - Múltiples data sources
@@ -523,9 +523,9 @@ public class MetricsController : ControllerBase
 
 ### ELK Stack - Gestión Centralizada de Logs
 
-**Elasticsearch** - Motor de búsqueda y análisis
-**Logstash** - Procesamiento de logs
-**Kibana** - Visualización y exploración
+**Elasticsearch**- Motor de búsqueda y análisis
+**Logstash**- Procesamiento de logs
+**Kibana**- Visualización y exploración
 
 **Ejemplo de configuración Logstash:**
 
@@ -594,12 +594,12 @@ output {
 
 | Criterio | Peso | Descripción |
 |----------|------|-------------|
-| **Facilidad de uso** | 20% | Curva de aprendizaje y usabilidad |
-| **Integración** | 25% | Compatibilidad con stack existente |
-| **Escalabilidad** | 20% | Capacidad de crecer con la organización |
-| **Comunidad** | 15% | Support y ecosystem |
-| **Costo** | 10% | Licencias y operational costs |
-| **Seguridad** | 10% | Features de seguridad |
+| **Facilidad de uso**| 20% | Curva de aprendizaje y usabilidad |
+| **Integración**| 25% | Compatibilidad con stack existente |
+| **Escalabilidad**| 20% | Capacidad de crecer con la organización |
+| **Comunidad**| 15% | Support y ecosystem |
+| **Costo**| 10% | Licencias y operational costs |
+| **Seguridad**| 10% | Features de seguridad |
 
 ### Recomendaciones por Tamaño de Organización
 
@@ -755,11 +755,11 @@ jobs:
 
 Una vez que tengas una comprensión sólida de estas herramientas fundamentales:
 
-1. **Profundiza en 2-3 herramientas** que sean relevantes para tu contexto
-2. **Experimenta con integraciones** entre herramientas
-3. **Construye un pipeline end-to-end** simple
-4. **Aprende sobre seguridad** en cada herramienta
-5. **Explora herramientas emergentes** en el ecosistema
+1. **Profundiza en 2-3 herramientas**que sean relevantes para tu contexto
+2. **Experimenta con integraciones**entre herramientas
+3. **Construye un pipeline end-to-end**simple
+4. **Aprende sobre seguridad**en cada herramienta
+5. **Explora herramientas emergentes**en el ecosistema
 
 ## Recursos Adicionales
 

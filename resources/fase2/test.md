@@ -1,6 +1,6 @@
 # Test de Evaluación - Fase 2: Automatización y CI/CD
 
-**Evalúa tu dominio en Automation y CI/CD!** Este test comprensivo cubre todos los módulos de la Fase 2, desde scripts básicos hasta estrategias de deployment empresariales.
+**Evalúa tu dominio en Automation y CI/CD!**Este test comprensivo cubre todos los módulos de la Fase 2, desde scripts básicos hasta estrategias de deployment empresariales.
 
 ## Instrucciones del Test
 
@@ -112,9 +112,9 @@ d) Ignorar errores
 
 ---
 
-##  **Sección 2: Herramientas de Automatización** (8 preguntas)
+## **Sección 2: Herramientas de Automatización**(8 preguntas)
 
->  **Contenido de referencia:** [02-herramientas-automatizacion.md](02-herramientas-automatizacion.md)
+>  **Contenido de referencia:**[02-herramientas-automatizacion.md](02-herramientas-automatizacion.md)
 
 ### Pregunta 11
 
@@ -147,7 +147,7 @@ d) Un certificado de seguridad
 
 ### Pregunta 14
 
-**Completa el código** de Ansible para instalar nginx:
+**Completa el código**de Ansible para instalar nginx:
 
 ```yaml
 - name: Install nginx
@@ -189,9 +189,9 @@ d) `modules.conf`
 
 ---
 
-##  **Sección 3: Jenkins CI/CD** (8 preguntas)
+## **Sección 3: Jenkins CI/CD**(8 preguntas)
 
->  **Contenido de referencia:** [03-jenkins-ci.md](03-jenkins-ci.md)
+>  **Contenido de referencia:**[03-jenkins-ci.md](03-jenkins-ci.md)
 
 ### Pregunta 19
 >
@@ -206,7 +206,7 @@ d) Imperativo es solo para pipelines simples
 
 ### Pregunta 20
 
-**Completa el código** de Jenkinsfile para definir un stage:
+**Completa el código**de Jenkinsfile para definir un stage:
 
 ```groovy
 pipeline {
@@ -272,9 +272,9 @@ d) Hardcodeadas en el script
 
 ---
 
-##  **Sección 4: Plataformas CI/CD Modernas** (7 preguntas)
+## **Sección 4: Plataformas CI/CD Modernas**(7 preguntas)
 
->  **Contenido de referencia:** [04-plataformas-ci-cd-modernas.md](04-plataformas-ci-cd-modernas.md)
+>  **Contenido de referencia:**[04-plataformas-ci-cd-modernas.md](04-plataformas-ci-cd-modernas.md)
 
 ### Pregunta 27
 >
@@ -289,7 +289,7 @@ d) Un usuario colaborador
 
 ### Pregunta 28
 
-**Completa el YAML** de GitHub Actions:
+**Completa el YAML**de GitHub Actions:
 
 ```yaml
 name: CI
@@ -343,9 +343,9 @@ d) Establecer variables de entorno
 
 ---
 
-##  **Sección 5: Testing Automation y Quality Gates** (7 preguntas)
+## **Sección 5: Testing Automation y Quality Gates**(7 preguntas)
 
->  **Contenido de referencia:** [05-testing-automation-quality-gates.md](05-testing-automation-quality-gates.md)
+>  **Contenido de referencia:**[05-testing-automation-quality-gates.md](05-testing-automation-quality-gates.md)
 
 ### Pregunta 34
 >
@@ -360,7 +360,7 @@ d) Unit → E2E → Integration
 
 ### Pregunta 35
 
-**Completa el código** de Jest para un test unitario:
+**Completa el código**de Jest para un test unitario:
 
 ```javascript
 describe('Calculator', () => {
@@ -413,9 +413,9 @@ d) SonarQube
 
 ---
 
-##  **Sección 6: Estrategias de Deployment** (5 preguntas)
+## **Sección 6: Estrategias de Deployment**(5 preguntas)
 
->  **Contenido de referencia:** [06-estrategias-deployment-avanzadas.md](06-estrategias-deployment-avanzadas.md)
+>  **Contenido de referencia:**[06-estrategias-deployment-avanzadas.md](06-estrategias-deployment-avanzadas.md)
 
 ### Pregunta 40
 >
@@ -461,82 +461,82 @@ d) En archivos de configuración locales
 
 ---
 
-##  **Respuestas Correctas**
+## **Respuestas Correctas**
 
 ### Sección 1: Scripts y Automatización
 
-1. **b)** `$@` trata cada argumento como elemento separado, `$*` como string único
-2. **d)** Todas las anteriores
-3. **Verdadero** - `subprocess.run()` es más seguro y controlable
-4. **b)** Elimina archivos .log más antiguos que 7 días
-5. **b)** Usar variables de entorno
-6. **b)** Ejecución exitosa
-7. **`date +%Y%m%d_%H%M%S`** o **`date +%Y-%m-%d`**
-8. **b)** `$PSScriptRoot`
-9. **b)** Salir inmediatamente si un comando falla
-10. **Falso** - También están systemd timers, at, etc.
+1. **b)**`$@` trata cada argumento como elemento separado, `$*` como string único
+2. **d)**Todas las anteriores
+3. **Verdadero**- `subprocess.run()` es más seguro y controlable
+4. **b)**Elimina archivos .log más antiguos que 7 días
+5. **b)**Usar variables de entorno
+6. **b)**Ejecución exitosa
+7. **`date +%Y%m%d_%H%M%S`**o **`date +%Y-%m-%d`**
+8. **b)**`$PSScriptRoot`
+9. **b)**Salir inmediatamente si un comando falla
+10. **Falso**- También están systemd timers, at, etc.
 
 ### Sección 2: Herramientas de Automatización
 
-11. **c)** Un comando
-12. **c)** name, hosts, tasks
-13. **b)** Un archivo con definiciones de recursos
-14. **`package`** o **`apt`** o **`yum`**
-15. **b)** Chef requiere agente, Ansible no
-16. **b)** Indica targets que no son archivos
+11. **c)**Un comando
+12. **c)**name, hosts, tasks
+13. **b)**Un archivo con definiciones de recursos
+14. **`package`**o **`apt`**o **`yum`**
+15. **b)**Chef requiere agente, Ansible no
+16. **b)**Indica targets que no son archivos
 17. **Verdadero**
-18. **a)** `puppet.conf`
+18. **a)**`puppet.conf`
 
 ### Sección 3: Jenkins CI/CD
 
-19. **b)** Declarativo es más estructurado, imperativo más flexible
+19. **b)**Declarativo es más estructurado, imperativo más flexible
 20. **`steps`**
-21. **b)** Establece condiciones para ejecutar un stage
-22. **b)** Un nodo donde se ejecutan los trabajos
+21. **b)**Establece condiciones para ejecutar un stage
+22. **b)**Un nodo donde se ejecutan los trabajos
 23. **Verdadero**
-24. **b)** Guardar archivos para uso posterior
-25. **b)** Definición del pipeline como código
-26. **c)** Jenkins Credential Store
+24. **b)**Guardar archivos para uso posterior
+25. **b)**Definición del pipeline como código
+26. **c)**Jenkins Credential Store
 
 ### Sección 4: Plataformas CI/CD Modernas
 
-27. **b)** Un conjunto de jobs automatizados
+27. **b)**Un conjunto de jobs automatizados
 28. **`runs-on`**
-29. **b)** Integración nativa con Git
-30. **b)** Archivos generados por el build
+29. **b)**Integración nativa con Git
+30. **b)**Archivos generados por el build
 31. **Verdadero**
-32. **b)** Build en paralelo con diferentes configuraciones
-33. **b)** Especificar archivos a preservar entre jobs
+32. **b)**Build en paralelo con diferentes configuraciones
+33. **b)**Especificar archivos a preservar entre jobs
 
 ### Sección 5: Testing y Quality Gates
 
-34. **b)** Unit → Integration → E2E
+34. **b)**Unit → Integration → E2E
 35. **`expect`**
-36. **a)** Static Application Security Testing
-37. **b)** Criterios mínimos de calidad de código
-38. **Falso** - Los unit tests van primero
-39. **b)** Test básico para verificar funcionalidad crítica
-40. **b)** K6
+36. **a)**Static Application Security Testing
+37. **b)**Criterios mínimos de calidad de código
+38. **Falso**- Los unit tests van primero
+39. **b)**Test básico para verificar funcionalidad crítica
+40. **b)**K6
 
 ### Sección 6: Estrategias de Deployment
 
-41. **b)** Mantener dos entornos idénticos para switch instantáneo
+41. **b)**Mantener dos entornos idénticos para switch instantáneo
 42. **Verdadero**
-43. **b)** No requiere downtime
-44. **b)** Configuraciones para habilitar/deshabilitar funcionalidades
-45. **b)** En un repositorio Git
+43. **b)**No requiere downtime
+44. **b)**Configuraciones para habilitar/deshabilitar funcionalidades
+45. **b)**En un repositorio Git
 
 ---
 
-##  **Evaluación de Resultados**
+## **Evaluación de Resultados**
 
 ### Escala de Calificación
 
-- **42-45 puntos (93-100%)**:  **Experto** - Dominio excepcional en CI/CD
-- **38-41 puntos (84-91%)**:  **Avanzado** - Sólido conocimiento práctico
-- **32-37 puntos (71-82%)**:  **Competente** - Aprobado, refuerza algunos conceptos
-- **27-31 puntos (60-69%)**:  **En desarrollo** - Revisa módulos específicos
-- **Menos de 27 puntos (<60%)**:  **Necesita estudio** - Repasa toda la Fase 2
+- **42-45 puntos (93-100%)**:  **Experto**- Dominio excepcional en CI/CD
+- **38-41 puntos (84-91%)**:  **Avanzado**- Sólido conocimiento práctico
+- **32-37 puntos (71-82%)**:  **Competente**- Aprobado, refuerza algunos conceptos
+- **27-31 puntos (60-69%)**:  **En desarrollo**- Revisa módulos específicos
+- **Menos de 27 puntos (<60%)**:  **Necesita estudio**- Repasa toda la Fase 2
 
 ### Recomendaciones por Sección
 
@@ -548,20 +548,20 @@ d) En archivos de configuración locales
 
 ---
 
-##  **Próximos Pasos**
+## **Próximos Pasos**
 
 ### Si Aprobaste (≥70%)
 
-1.  **Continúa a Fase 3**: Contenedores y Orquestación
-2.  **Practica**: Implementa un pipeline completo end-to-end
-3.  **Aplica**: Usa lo aprendido en proyectos reales
+1. **Continúa a Fase 3**: Contenedores y Orquestación
+2. **Practica**: Implementa un pipeline completo end-to-end
+3. **Aplica**: Usa lo aprendido en proyectos reales
 
 ### Si No Aprobaste (<70%)
 
-1.  **Repasa**: Los módulos donde obtuviste menor puntaje
-2.  **Practica**: Implementa los laboratorios de cada módulo
-3.  **Repite**: El test cuando te sientas preparado
+1. **Repasa**: Los módulos donde obtuviste menor puntaje
+2. **Practica**: Implementa los laboratorios de cada módulo
+3. **Repite**: El test cuando te sientas preparado
 
 ---
 
-**Felicitaciones por completar el test de la Fase 2!** Este conocimiento en Automation y CI/CD te posiciona para implementar pipelines de nivel empresarial.
+**Felicitaciones por completar el test de la Fase 2!**Este conocimiento en Automation y CI/CD te posiciona para implementar pipelines de nivel empresarial.

@@ -24,9 +24,9 @@ Este proyecto integrador consolida todo el aprendizaje del curso DevOps Learning
 -  **Analytics Service**: Métricas y reporting
 
 **Frontend Applications**:
--  **Customer Web App** (React/Next.js)
--  **Mobile App** (React Native)
--  **Admin Dashboard** (Angular)
+-  **Customer Web App**(React/Next.js)
+-  **Mobile App**(React Native)
+-  **Admin Dashboard**(Angular)
 
 **Infrastructure**:
 -  **Azure/AWS**: Cloud provider
@@ -1104,26 +1104,26 @@ seguridad y mantenibilidad.
 # Presentación del Proyecto (30 minutos)
 
 ## Agenda
-1. **Introducción** (3 min)
+1. **Introducción**(3 min)
    - Objetivos del proyecto
    - Stack tecnológico elegido
 
-2. **Arquitectura** (7 min)
+2. **Arquitectura**(7 min)
    - Diagrama de arquitectura
    - Decisiones de diseño (ADRs)
    - Patrones implementados
 
-3. **DevOps Pipeline** (10 min)
+3. **DevOps Pipeline**(10 min)
    - Demo de CI/CD en acción
    - Estrategias de testing
    - Monitoreo y alertas
 
-4. **Demo de la Aplicación** (7 min)
+4. **Demo de la Aplicación**(7 min)
    - Funcionalidades implementadas
    - Performance y escalabilidad
    - Seguridad
 
-5. **Lecciones Aprendidas** (3 min)
+5. **Lecciones Aprendidas**(3 min)
    - Desafíos enfrentados
    - Mejoras futuras
    - Reflexiones personales
@@ -1132,18 +1132,18 @@ seguridad y mantenibilidad.
 ## Criterios de Evaluación
 
 ### Técnicos (40%)
-- **Arquitectura** (10%): Diseño de microservicios, patrones implementados
-- **Código** (15%): Calidad, testing, documentación
-- **Infrastructure** (15%): Kubernetes, containerización, IaC
+- **Arquitectura**(10%): Diseño de microservicios, patrones implementados
+- **Código**(15%): Calidad, testing, documentación
+- **Infrastructure**(15%): Kubernetes, containerización, IaC
 
 ### DevOps (40%)
-- **CI/CD** (20%): Pipeline completo, automatización
-- **Monitoreo** (10%): Observabilidad, métricas, alertas
-- **Seguridad** (10%): Implementación de controles de seguridad
+- **CI/CD**(20%): Pipeline completo, automatización
+- **Monitoreo**(10%): Observabilidad, métricas, alertas
+- **Seguridad**(10%): Implementación de controles de seguridad
 
 ### Profesionales (20%)
-- **Documentación** (10%): ADRs, README, APIs
-- **Presentación** (10%): Demo, comunicación, reflexiones
+- **Documentación**(10%): ADRs, README, APIs
+- **Presentación**(10%): Demo, comunicación, reflexiones
 
 ## Próximos Pasos Post-Proyecto
 

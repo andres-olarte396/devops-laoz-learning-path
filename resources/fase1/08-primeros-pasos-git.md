@@ -12,7 +12,7 @@ Al completar este módulo serás capaz de:
 
 ## ¿Qué es Git?
 
-**Git** es un sistema de control de versiones distribuido diseñado para manejar proyectos de cualquier tamaño con velocidad y eficiencia.
+**Git**es un sistema de control de versiones distribuido diseñado para manejar proyectos de cualquier tamaño con velocidad y eficiencia.
 
 ### Características Fundamentales
 
@@ -240,7 +240,7 @@ header Content-Type: application/json"
 
 ### Estrategias de Branching
 
-**Git Flow** - Para proyectos con releases programados
+**Git Flow**- Para proyectos con releases programados
 
 ```bash
 # Branches principales
@@ -261,7 +261,7 @@ git merge feature/user-registration
 git branch -d feature/user-registration
 ```
 
-**GitHub Flow** - Para deployment continuo
+**GitHub Flow**- Para deployment continuo
 
 ```bash
 # Solo dos tipos de branches:
@@ -277,7 +277,7 @@ git push origin feature/payment-integration
 # Crear PR, review, merge
 ```
 
-**GitLab Flow** - Híbrido con environment branches
+**GitLab Flow**- Híbrido con environment branches
 
 ```bash
 main           # Desarrollo principal
@@ -354,7 +354,7 @@ const config = {
 <<<<<<< HEAD
   timeout: 5000,
   retries: 3
-=======
+
   timeout: 10000,
   maxRetries: 5
 >>>>>>> feature/conflict-branch
@@ -882,11 +882,11 @@ git commit
 
 Después de dominar Git básico:
 
-1. **Practica workflows** en proyectos reales
-2. **Aprende Git hooks** para automatización
-3. **Explora Git LFS** para archivos grandes
-4. **Domina Git submodules** para proyectos complejos
-5. **Estudia GitOps** para deployment automatizado
+1. **Practica workflows**en proyectos reales
+2. **Aprende Git hooks**para automatización
+3. **Explora Git LFS**para archivos grandes
+4. **Domina Git submodules**para proyectos complejos
+5. **Estudia GitOps**para deployment automatizado
 
 ## Recursos Adicionales
 

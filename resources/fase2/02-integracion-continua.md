@@ -6,13 +6,13 @@ La Integración Continua es el **corazón del desarrollo moderno de software**. 
 
 ## **¿Qué es la Integración Continua?**
 
-La **Integración Continua (CI)** es una práctica de desarrollo donde los desarrolladores integran código en un repositorio compartido frecuentemente, idealmente varias veces al día. Cada integración se verifica automáticamente mediante:
+La **Integración Continua (CI)**es una práctica de desarrollo donde los desarrolladores integran código en un repositorio compartido frecuentemente, idealmente varias veces al día. Cada integración se verifica automáticamente mediante:
 
-- **Build automatizado** del código
-- **Ejecución de tests** automatizados
-- **Análisis de calidad** de código
+- **Build automatizado**del código
+- **Ejecución de tests**automatizados
+- **Análisis de calidad**de código
 - **Validaciones de seguridad**
-- **Generación de artefactos** desplegables
+- **Generación de artefactos**desplegables
 
 ### **El problema que resuelve CI**
 
@@ -1518,7 +1518,7 @@ jobs:
 # Script para medir tiempos de build
 #!/bin/bash
 echo " Build Metrics Report"
-echo "======================="
+echo "=="
 
 start_time=$(date +%s)
 
@@ -1754,7 +1754,7 @@ Una vez que domines la Integración Continua, estarás listo para avanzar a:
 - **Entrega/Despliegue Continuo (CD)**: Automatizar deployments
 - **Monitoreo de Pipelines**: Observabilidad y métricas
 
-La CI es el **fundamento** de DevOps moderno. Un pipeline de CI bien diseñado es la diferencia entre un equipo que entrega software confiable rápidamente y uno que lucha con bugs e integraciones problemáticas.
+La CI es el **fundamento**de DevOps moderno. Un pipeline de CI bien diseñado es la diferencia entre un equipo que entrega software confiable rápidamente y uno que lucha con bugs e integraciones problemáticas.
 
 ---
 

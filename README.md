@@ -2,9 +2,9 @@
 
 Este repositorio documenta un **viaje de aprendizaje completo y moderno en DevOps**, desde los conceptos básicos hasta temas avanzados incluyendo **ciberseguridad, inteligencia artificial, arquitectura de software y liderazgo técnico**.
 
-El curso ha sido **completamente renovado y expandido** para incluir las competencias más demandadas en el mercado actual, preparando para roles senior y de liderazgo en tecnología.
+El curso ha sido **completamente renovado y expandido**para incluir las competencias más demandadas en el mercado actual, preparando para roles senior y de liderazgo en tecnología.
 
->  **NOVEDAD!** La **Fase 1 - Fundamentos DevOps** está **100% completada** con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **Ya puedes comenzar tu viaje DevOps!**
+>  **NOVEDAD!**La **Fase 1 - Fundamentos DevOps**está **100% completada**con 46+ páginas de contenido técnico detallado, laboratorios prácticos y ejemplos de código real. **Ya puedes comenzar tu viaje DevOps!**
 
 ## Empieza Ahora
 
@@ -12,15 +12,15 @@ El curso ha sido **completamente renovado y expandido** para incluir las compete
 
 #### LISTA PARA ESTUDIAR
 
-La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente desarrollada** y lista para tu aprendizaje:
+La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente desarrollada**y lista para tu aprendizaje:
 
-- **8 archivos completos** con contenido profesional
-- **46+ páginas** de material técnico detallado
-- **Laboratorios hands-on** con ejemplos reales
-- **Scripts y automatización** incluidos
-- **Progresión gradual** de básico a avanzado
+- **8 archivos completos**con contenido profesional
+- **46+ páginas**de material técnico detallado
+- **Laboratorios hands-on**con ejemplos reales
+- **Scripts y automatización**incluidos
+- **Progresión gradual**de básico a avanzado
 
-** [Comenzar con Fase 1](resources/fase1/01-que-es-devops.md)**
+**[Comenzar con Fase 1](resources/fase1/01-que-es-devops.md)**
 
 ## Acceso Rápido
 
@@ -33,22 +33,22 @@ La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente 
 | [Notas Especializadas](notes/) | Guías técnicas avanzadas |  |
 | [Scripts](scripts/) | Automatización y herramientas |  |
 
-###  **Tiempo de Dedicación Recomendado**
+### **Tiempo de Dedicación Recomendado**
 
 - **Fase 1**: 3-4 semanas (8-12 horas/semana)
 - **Curso completo**: 46+ semanas (10-15 horas/semana)
 - **Modalidad**: Flexible, a tu ritmo
 
-##  Novedades del Curso Actualizado
+## Novedades del Curso Actualizado
 
-###  **Nuevas Fases Agregadas (2024-2025)**
+### **Nuevas Fases Agregadas (2024-2025)**
 
-- **7 nuevas fases especializadas** en tecnologías de vanguardia
-- **Proyecto final integrador** de 7 semanas con microservicios, IA y seguridad
-- **+40 horas de contenido** adicional estimado
-- **Enfoque en habilidades senior** y liderazgo técnico
+- **7 nuevas fases especializadas**en tecnologías de vanguardia
+- **Proyecto final integrador**de 7 semanas con microservicios, IA y seguridad
+- **+40 horas de contenido**adicional estimado
+- **Enfoque en habilidades senior**y liderazgo técnico
 
-###  **Ciberseguridad Integral**
+### **Ciberseguridad Integral**
 
 - Principios de seguridad de la información (CIA)
 - OWASP Top 10 para desarrolladores .NET
@@ -69,17 +69,16 @@ La [**Fase 1 - Fundamentos de DevOps**](resources/fase1/) está **completamente 
 - Observabilidad y monitoreo avanzado
 - Diseño de sistemas distribuidos
 
-###  **Liderazgo Técnico**
+### **Liderazgo Técnico**
 
 - Comunicación efectiva y storytelling técnico
 - Mentoría y desarrollo de equipos
 - Pensamiento sistémico y visión estratégica
 - Gestión del cambio organizacional
-=======
+
 # Ruta de Aprendizaje DevOps
 
 Bienvenido a la Ruta de Aprendizaje DevOps! Este repositorio es una guía completa y estructurada para aprender DevOps desde los fundamentos hasta un nivel avanzado, combinando teoría y práctica.
->>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 ![DevOps Learning Path](images/devops-fases.png)
 
@@ -97,12 +96,12 @@ Esta guía está diseñada principalmente para:
 - [Notas Personales](notes/)
 - [Scripts de Automatización](scripts/)
 
-- **Desarrolladores de Software** que buscan hacer la transición a un rol de DevOps o simplemente quieren entender mejor el ciclo de vida completo del software.
-- **Administradores de Sistemas (SysAdmins)** que desean modernizar sus habilidades y adoptar prácticas de automatización e infraestructura como código.
-- **Estudiantes y Recién Graduados** que quieren construir una base sólida de conocimientos en DevOps.
-- **Cualquier persona con curiosidad** por aprender sobre la cultura, las prácticas y las herramientas que están transformando la industria del software.
+- **Desarrolladores de Software**que buscan hacer la transición a un rol de DevOps o simplemente quieren entender mejor el ciclo de vida completo del software.
+- **Administradores de Sistemas (SysAdmins)**que desean modernizar sus habilidades y adoptar prácticas de automatización e infraestructura como código.
+- **Estudiantes y Recién Graduados**que quieren construir una base sólida de conocimientos en DevOps.
+- **Cualquier persona con curiosidad**por aprender sobre la cultura, las prácticas y las herramientas que están transformando la industria del software.
 
-Se asume una familiaridad básica con la informática, pero la **Fase 0** está diseñada para poner a todos al día con la herramienta más fundamental: la línea de comandos.
+Se asume una familiaridad básica con la informática, pero la **Fase 0**está diseñada para poner a todos al día con la herramienta más fundamental: la línea de comandos.
 
 ---
 
@@ -110,9 +109,9 @@ Se asume una familiaridad básica con la informática, pero la **Fase 0** está 
 
 La mejor manera de usar este repositorio es seguir el plan de estudio.
 
-1.  **Consulta el `roadmap.md`:** El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
-2.  **Empieza por la Fase 0:** No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
-3.  **Avanza a tu propio ritmo:** Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, practica!
+1. **Consulta el `roadmap.md`:**El archivo [**roadmap.md**](./roadmap.md) es el corazón de esta guía. Contiene la ruta de aprendizaje completa, dividida en fases progresivas.
+2. **Empieza por la Fase 0:**No subestimes los fundamentos. La [**Fase 0: Dominio de la Terminal**](./roadmap.md#fase-0-dominio-de-la-terminal) te dará la fluidez necesaria en la línea de comandos para tener éxito en las fases posteriores.
+3. **Avanza a tu propio ritmo:**Cada fase está diseñada para construir sobre la anterior. Explora los recursos, lee las notas y, lo más importante, practica!
 
 ---
 
@@ -245,7 +244,7 @@ Si encuentras errores, tienes sugerencias para mejorar el contenido o quieres a�
 - ML.NET, Azure Cognitive Services
 - OpenAI API, TensorFlow.NET
 
-###  **Niveles de Competencia**
+### **Niveles de Competencia**
 
 - **Básico (Fases 1-3)**: Fundamentos y primeras prácticas
 - **Intermedio (Fases 4-8)**: Especialización y profundización
@@ -265,7 +264,7 @@ Al completar el curso estarás preparado para roles como:
 
 ## Objetivos del Repositorio
 
-Este repositorio ha sido **completamente renovado** para proporcionar:
+Este repositorio ha sido **completamente renovado**para proporcionar:
 
 ### **Aprendizaje Integral**
 
@@ -313,12 +312,12 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 
 ### **Primer Paso**
 
-1. **Revisa el [Plan de Estudio](roadmap.md)** para entender el scope completo
-2. **Comienza con [Fase 1](resources/fase1/)** - Fundamentos de DevOps
-3. **Configura tu entorno** de desarrollo y cloud
-4. **Únete a la comunidad** y comparte tu progreso
+1. **Revisa el [Plan de Estudio](roadmap.md)**para entender el scope completo
+2. **Comienza con [Fase 1](resources/fase1/)**- Fundamentos de DevOps
+3. **Configura tu entorno**de desarrollo y cloud
+4. **Únete a la comunidad**y comparte tu progreso
 
-###  **Tiempo de Dedicación**
+### **Tiempo de Dedicación**
 
 - **Tiempo total estimado**: 46+ semanas (casi 1 año)
 - **Dedicación recomendada**: 10-15 horas por semana
@@ -335,15 +334,15 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 |  | Fase 3 - Docker & Contenedores | 1/8 | 12 | 12% |
 |  | Fases 4-14 | Estructura | - | Preparado |
 
-**Total disponible para estudiar:** 58+ páginas de contenido técnico
+**Total disponible para estudiar:**58+ páginas de contenido técnico
 
-###  **Estadísticas del Contenido**
+### **Estadísticas del Contenido**
 
-- **14 fases** de aprendizaje estructurado
-- **46+ semanas** de contenido estimado
-- **3 categorías** de especialización (Fundamental, Avanzado, Aplicación)
-- **1 proyecto integrador** de nivel empresarial
-- **20+ tecnologías** cubiertas en profundidad
+- **14 fases**de aprendizaje estructurado
+- **46+ semanas**de contenido estimado
+- **3 categorías**de especialización (Fundamental, Avanzado, Aplicación)
+- **1 proyecto integrador**de nivel empresarial
+- **20+ tecnologías**cubiertas en profundidad
 
 ### **Certificaciones Preparadas**
 
@@ -363,7 +362,7 @@ Este repositorio ha sido **completamente renovado** para proporcionar:
 - **Discusiones**: Compartir experiencias y casos de uso
 - **Recursos**: Recomendar herramientas, libros o cursos
 
-###  **Comunidad**
+### **Comunidad**
 
 Si estás siguiendo este curso:
 
@@ -380,33 +379,33 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 1 - COMPLETADA (100%)**
 
-** Fundamentos de DevOps Totalmente Listos!**
+**Fundamentos de DevOps Totalmente Listos!**
 
-La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario para comenzar tu viaje en DevOps:
+La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario para comenzar tu viaje en DevOps:
 
 #### **Contenido Disponible (8 archivos completos):**
 
-- **[01-que-es-devops.md](resources/fase1/01-que-es-devops.md)** - Introducción y definición completa
-- **[02-beneficios-devops.md](resources/fase1/02-beneficios-debops.md)** - Ventajas y casos de éxito
-- **[03-devops-agile-waterfall.md](resources/fase1/03-devops-agile-waterfall.md)** - Metodologías comparadas
-- **[04-ciclo-de-vida-devops.md](resources/fase1/04-ciclo-de-vida-devops.md)** - Proceso completo SDLC
-- **[05-herramientas-tecnologias-clave.md](resources/fase1/05-herramientas-tecnologias-clave.md)** - Stack tecnológico esencial
-- **[06-introduccion-nube.md](resources/fase1/06-introduccion-nube.md)** - Fundamentos cloud
-- **[07-conceptos-clave.md](resources/fase1/07-conceptos-clave.md)** - CI/CD, IaC y observabilidad
-- **[08-primeros-pasos-git.md](resources/fase1/08-primeros-pasos-git.md)** - Git mastery completo
+- **[01-que-es-devops.md](resources/fase1/01-que-es-devops.md)**- Introducción y definición completa
+- **[02-beneficios-devops.md](resources/fase1/02-beneficios-debops.md)**- Ventajas y casos de éxito
+- **[03-devops-agile-waterfall.md](resources/fase1/03-devops-agile-waterfall.md)**- Metodologías comparadas
+- **[04-ciclo-de-vida-devops.md](resources/fase1/04-ciclo-de-vida-devops.md)**- Proceso completo SDLC
+- **[05-herramientas-tecnologias-clave.md](resources/fase1/05-herramientas-tecnologias-clave.md)**- Stack tecnológico esencial
+- **[06-introduccion-nube.md](resources/fase1/06-introduccion-nube.md)**- Fundamentos cloud
+- **[07-conceptos-clave.md](resources/fase1/07-conceptos-clave.md)**- CI/CD, IaC y observabilidad
+- **[08-primeros-pasos-git.md](resources/fase1/08-primeros-pasos-git.md)**- Git mastery completo
 
 #### **Lo que obtienes en la Fase 1:**
 
-- **46+ páginas** de contenido técnico detallado
-- **Ejemplos prácticos** con código real
-- **Laboratorios hands-on** para cada herramienta
-- **Troubleshooting guides** y mejores prácticas
-- **Ejercicios graduales** de básico a avanzado
-- **Scripts de automatización** listos para usar
+- **46+ páginas**de contenido técnico detallado
+- **Ejemplos prácticos**con código real
+- **Laboratorios hands-on**para cada herramienta
+- **Troubleshooting guides**y mejores prácticas
+- **Ejercicios graduales**de básico a avanzado
+- **Scripts de automatización**listos para usar
 
 #### **Próximo paso recomendado:**
 
-**Ya puedes comenzar con la [Fase 1](resources/fase1/) completa!** Todo el contenido está listo para tu aprendizaje.
+**Ya puedes comenzar con la [Fase 1](resources/fase1/) completa!**Todo el contenido está listo para tu aprendizaje.
 
 ### **Estado de Otras Fases:**
 
@@ -421,7 +420,7 @@ La Fase 1 ha sido **completamente desarrollada** con todo el contenido necesario
 
 **Changelog v2.1:**
 
-- **Fase 1 completamente terminada** (8 archivos con 46+ páginas)
+- **Fase 1 completamente terminada**(8 archivos con 46+ páginas)
 - Contenido técnico detallado con ejemplos prácticos
 - Laboratorios hands-on y ejercicios graduales
 - 7 nuevas fases especializadas agregadas

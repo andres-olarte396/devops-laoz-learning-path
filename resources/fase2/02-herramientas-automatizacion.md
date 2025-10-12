@@ -1,23 +1,23 @@
 # 02. Herramientas de Automatización
 
-**Potencia tu automatización con herramientas especializadas!** Este módulo te enseñará a usar herramientas profesionales de automatización que van más allá de scripts simples.
+**Potencia tu automatización con herramientas especializadas!**Este módulo te enseñará a usar herramientas profesionales de automatización que van más allá de scripts simples.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Dominar Make** para automatización de builds
-- **Configurar Ansible** para gestión de infraestructura
-- **Entender Puppet y Chef** para configuration management
-- **Implementar automatización** declarativa vs imperativa
-- **Gestionar inventarios** y configuraciones complejas
-- **Crear playbooks** reutilizables y escalables
+- **Dominar Make**para automatización de builds
+- **Configurar Ansible**para gestión de infraestructura
+- **Entender Puppet y Chef**para configuration management
+- **Implementar automatización**declarativa vs imperativa
+- **Gestionar inventarios**y configuraciones complejas
+- **Crear playbooks**reutilizables y escalables
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. Make - Automatización de Builds
 
-####  **Fundamentos de Make**
+#### **Fundamentos de Make**
 
 Make es una herramienta de automatización de build que utiliza un archivo `Makefile` para definir tareas y sus dependencias.
 
@@ -148,7 +148,7 @@ restore: ## Restaurar desde backup
  @echo " Restauración completada"
 ```
 
-####  **Makefile Avanzado para Microservicios**
+#### **Makefile Avanzado para Microservicios**
 
 ```makefile
 # Makefile para arquitectura de microservicios
@@ -243,7 +243,7 @@ clean: ## Limpiar recursos
  docker system prune -f
  @echo " Limpieza completada"
 
-nuke: ##  PELIGRO: Eliminar todos los servicios
+nuke: ## PELIGRO: Eliminar todos los servicios
  @echo " Eliminando TODOS los servicios..."
  @read -p "¿Estás seguro? Esto eliminará todo en el namespace $(NAMESPACE) [y/N] " confirm && \
  if [ "$$confirm" = "y" ] || [ "$$confirm" = "Y" ]; then \
@@ -256,11 +256,11 @@ nuke: ##  PELIGRO: Eliminar todos los servicios
 
 ### 2. Ansible - Configuration Management
 
-####  **Introducción a Ansible**
+#### **Introducción a Ansible**
 
 Ansible es una herramienta de automatización que utiliza un lenguaje declarativo simple para describir configuraciones de sistemas.
 
-####  **Inventario de Ansible**
+#### **Inventario de Ansible**
 
 ```ini
 # inventory/hosts.ini
@@ -290,7 +290,7 @@ mysql_port=3306
 mysql_datadir=/var/lib/mysql
 ```
 
-####  **Playbook Básico de Ansible**
+#### **Playbook Básico de Ansible**
 
 ```yaml
 ---
@@ -442,7 +442,7 @@ mysql_datadir=/var/lib/mysql
         state: restarted
 ```
 
-####  **Templates de Ansible**
+#### **Templates de Ansible**
 
 ```jinja2
 {# templates/env.j2 #}
@@ -556,7 +556,7 @@ server {
 }
 ```
 
-####  **Ansible Vault para Secretos**
+#### **Ansible Vault para Secretos**
 
 ```bash
 # Crear archivo de secretos
@@ -575,7 +575,7 @@ ansible-vault edit group_vars/all/vault.yml
 ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vault-pass
 ```
 
-####  **Playbook de Deployment**
+#### **Playbook de Deployment**
 
 ```yaml
 ---
@@ -658,7 +658,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/webserver-setup.yml --ask-vaul
 
 ### 3. Puppet - Configuration Management Declarativo
 
-####  **Introducción a Puppet**
+#### **Introducción a Puppet**
 
 Puppet es una herramienta de configuration management que utiliza un lenguaje declarativo para definir el estado deseado de los sistemas.
 
@@ -803,7 +803,7 @@ node 'webserver.example.com' {
 
 ### 4. Chef - Infrastructure as Code
 
-####  **Introducción a Chef**
+#### **Introducción a Chef**
 
 Chef utiliza "recetas" (recipes) escritas en Ruby para definir configuraciones de sistema.
 
@@ -939,7 +939,7 @@ execute 'configure-firewall' do
 end
 ```
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Automatización con Make
 
@@ -1034,7 +1034,7 @@ Tarea: Configurar un servidor web con nginx usando:
 
 Comparar ventajas y desventajas de cada enfoque.
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Pipeline de CI/CD con Make
 
@@ -1064,7 +1064,7 @@ Crear una solución que combine:
 - Ansible para configuración de infraestructura
 - Scripts personalizados para tareas específicas
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes con Make
 
@@ -1103,14 +1103,14 @@ ansible all -i inventory -m ping
 user ALL=(ALL) NOPASSWD:ALL
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [GNU Make Manual](https://www.gnu.org/software/make/manual/)
 - [Ansible Documentation](https://docs.ansible.com/)
 - [Puppet Documentation](https://puppet.com/docs/)
 - [Chef Documentation](https://docs.chef.io/)
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Creado Makefile básico para automatización
 - [ ] Implementado Makefile avanzado para microservicios
@@ -1124,4 +1124,4 @@ user ALL=(ALL) NOPASSWD:ALL
 
 ---
 
-**Excelente!** Ahora dominas las herramientas fundamentales de automatización DevOps. Continúa con el siguiente módulo para aprender sobre CI/CD con Jenkins y plataformas modernas.
+**Excelente!**Ahora dominas las herramientas fundamentales de automatización DevOps. Continúa con el siguiente módulo para aprender sobre CI/CD con Jenkins y plataformas modernas.

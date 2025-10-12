@@ -169,7 +169,7 @@ Desarrollar una **solución microservicio completa y segura con IA integrada**, 
 
 ## Duración Total
 
- **7 semanas** (Nivel: Avanzado)
+ **7 semanas**(Nivel: Avanzado)
 
 ## Prerrequisitos
 

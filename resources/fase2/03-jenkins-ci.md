@@ -1,24 +1,24 @@
 # 03. Configuración de Jenkins
 
-**Domina Jenkins para CI/CD profesional!** Este módulo te enseñará a configurar y gestionar Jenkins desde cero hasta implementaciones empresariales avanzadas.
+**Domina Jenkins para CI/CD profesional!**Este módulo te enseñará a configurar y gestionar Jenkins desde cero hasta implementaciones empresariales avanzadas.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Instalar y configurar** Jenkins en diferentes entornos
-- **Crear pipelines** declarativos e imperativos
-- **Gestionar plugins** y configuraciones avanzadas
-- **Implementar seguridad** y control de acceso
-- **Configurar agentes** distribuidos
-- **Integrar con Git** y sistemas de control de versiones
-- **Automatizar deployments** con Jenkins
+- **Instalar y configurar**Jenkins en diferentes entornos
+- **Crear pipelines**declarativos e imperativos
+- **Gestionar plugins**y configuraciones avanzadas
+- **Implementar seguridad**y control de acceso
+- **Configurar agentes**distribuidos
+- **Integrar con Git**y sistemas de control de versiones
+- **Automatizar deployments**con Jenkins
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. Instalación y Configuración Inicial
 
-####  **Instalación con Docker (Recomendado)**
+#### **Instalación con Docker (Recomendado)**
 
 ```yaml
 # docker-compose.yml
@@ -93,7 +93,7 @@ docker-compose logs -f jenkins
 docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
-####  **Instalación en Ubuntu/Debian**
+#### **Instalación en Ubuntu/Debian**
 
 ```bash
 #!/bin/bash
@@ -135,7 +135,7 @@ echo " Password inicial:"
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-####  **Configuración Inicial Automatizada**
+#### **Configuración Inicial Automatizada**
 
 ```groovy
 // init.groovy.d/basic-security.groovy
@@ -167,7 +167,7 @@ instance.save()
 
 ### 2. Pipelines Declarativos
 
-####  **Pipeline Básico**
+#### **Pipeline Básico**
 
 ```groovy
 // Jenkinsfile
@@ -350,7 +350,7 @@ pipeline {
 }
 ```
 
-####  **Pipeline Multibranch Avanzado**
+#### **Pipeline Multibranch Avanzado**
 
 ```groovy
 // Jenkinsfile.multibranch
@@ -739,7 +739,7 @@ def getDeploymentUrl(environment) {
 
 ### 3. Configuración de Agentes
 
-####  **Agente Docker**
+#### **Agente Docker**
 
 ```groovy
 // Configuración de agente Docker en Jenkinsfile
@@ -792,7 +792,7 @@ pipeline {
 }
 ```
 
-####  **Agente Kubernetes**
+#### **Agente Kubernetes**
 
 ```yaml
 # jenkins-agent-pod.yaml
@@ -869,7 +869,7 @@ pipeline {
 
 ### 4. Plugins Esenciales y Configuración
 
-####  **Configuración de Plugins Críticos**
+#### **Configuración de Plugins Críticos**
 
 ```groovy
 // plugins.groovy - Configuración automatizada de plugins
@@ -905,7 +905,7 @@ if (k8sPlugin) {
 instance.save()
 ```
 
-####  **Configuración de Notificaciones**
+#### **Configuración de Notificaciones**
 
 ```groovy
 // email-config.groovy
@@ -939,7 +939,7 @@ slack.sendAs = "Jenkins CI"
 slack.save()
 ```
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Jenkins con Docker
 
@@ -1039,7 +1039,7 @@ pipeline {
    - Branch Sources → GitHub
    - Configurar credenciales y repositorio
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Pipeline de Microservicios
 
@@ -1068,7 +1068,7 @@ Implementar:
 - Pipeline de recuperación de desastres
 - Documentación de procedimientos
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes
 
@@ -1110,14 +1110,14 @@ tail -f /var/jenkins_home/logs/jenkins.log
 curl http://localhost:8080/metrics
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [Jenkins Documentation](https://www.jenkins.io/doc/)
 - [Pipeline Syntax Reference](https://www.jenkins.io/doc/book/pipeline/syntax/)
 - [Plugin Index](https://plugins.jenkins.io/)
 - [Best Practices](https://www.jenkins.io/doc/book/pipeline/pipeline-best-practices/)
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Instalado Jenkins con Docker
 - [ ] Configurado seguridad básica
@@ -1132,4 +1132,4 @@ curl http://localhost:8080/metrics
 
 ---
 
-**Excelente!** Ahora dominas Jenkins para CI/CD profesional. Continúa con el siguiente módulo para explorar plataformas CI/CD modernas como GitHub Actions y GitLab CI/CD.
+**Excelente!**Ahora dominas Jenkins para CI/CD profesional. Continúa con el siguiente módulo para explorar plataformas CI/CD modernas como GitHub Actions y GitLab CI/CD.

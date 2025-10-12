@@ -11,7 +11,7 @@ Al completar este módulo serás capaz de:
 
 ## ¿Qué es Cloud Computing?
 
-**Cloud Computing** es la entrega bajo demanda de recursos de TI través de Internet con un modelo de precios de pago por uso.
+**Cloud Computing**es la entrega bajo demanda de recursos de TI través de Internet con un modelo de precios de pago por uso.
 
 ### Características Fundamentales
 
@@ -392,46 +392,46 @@ images:
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Virtual Machines** | EC2 | Virtual Machines | Compute Engine |
-| **Containers** | ECS, EKS, Fargate | ACI, AKS | Cloud Run, GKE |
-| **Serverless Functions** | Lambda | Functions | Cloud Functions |
-| **Batch Processing** | Batch | Batch | Dataflow |
+| **Virtual Machines**| EC2 | Virtual Machines | Compute Engine |
+| **Containers**| ECS, EKS, Fargate | ACI, AKS | Cloud Run, GKE |
+| **Serverless Functions**| Lambda | Functions | Cloud Functions |
+| **Batch Processing**| Batch | Batch | Dataflow |
 
 ### Storage Services
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Object Storage** | S3 | Blob Storage | Cloud Storage |
-| **File Storage** | EFS | Files | Filestore |
-| **Block Storage** | EBS | Disk Storage | Persistent Disk |
-| **Archive** | Glacier | Archive Storage | Coldline/Nearline |
+| **Object Storage**| S3 | Blob Storage | Cloud Storage |
+| **File Storage**| EFS | Files | Filestore |
+| **Block Storage**| EBS | Disk Storage | Persistent Disk |
+| **Archive**| Glacier | Archive Storage | Coldline/Nearline |
 
 ### Database Services
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Relational** | RDS | SQL Database | Cloud SQL |
-| **NoSQL** | DynamoDB | Cosmos DB | Firestore |
-| **Data Warehouse** | Redshift | Synapse Analytics | BigQuery |
-| **Cache** | ElastiCache | Cache for Redis | Memorystore |
+| **Relational**| RDS | SQL Database | Cloud SQL |
+| **NoSQL**| DynamoDB | Cosmos DB | Firestore |
+| **Data Warehouse**| Redshift | Synapse Analytics | BigQuery |
+| **Cache**| ElastiCache | Cache for Redis | Memorystore |
 
 ### Networking
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Virtual Network** | VPC | Virtual Network | VPC |
-| **Load Balancer** | ALB/NLB | Load Balancer | Cloud Load Balancing |
-| **CDN** | CloudFront | CDN | Cloud CDN |
-| **DNS** | Route 53 | DNS | Cloud DNS |
+| **Virtual Network**| VPC | Virtual Network | VPC |
+| **Load Balancer**| ALB/NLB | Load Balancer | Cloud Load Balancing |
+| **CDN**| CloudFront | CDN | Cloud CDN |
+| **DNS**| Route 53 | DNS | Cloud DNS |
 
 ### DevOps Tools
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Source Control** | CodeCommit | Azure Repos | Cloud Source Repositories |
-| **CI/CD** | CodePipeline | Azure Pipelines | Cloud Build |
-| **Container Registry** | ECR | Container Registry | Container Registry |
-| **Monitoring** | CloudWatch | Monitor | Cloud Monitoring |
+| **Source Control**| CodeCommit | Azure Repos | Cloud Source Repositories |
+| **CI/CD**| CodePipeline | Azure Pipelines | Cloud Build |
+| **Container Registry**| ECR | Container Registry | Container Registry |
+| **Monitoring**| CloudWatch | Monitor | Cloud Monitoring |
 
 ## Estrategias de Adopción
 
@@ -601,10 +601,10 @@ spec:
 
 | Categoría | AWS | Azure | GCP |
 |-----------|-----|-------|-----|
-| **Identity** | IAM | Active Directory | Identity & Access Management |
-| **Encryption** | KMS | Key Vault | Cloud KMS |
-| **Network Security** | Security Groups | Network Security Groups | Firewall Rules |
-| **Compliance** | Config, CloudTrail | Policy, Monitor | Security Command Center |
+| **Identity**| IAM | Active Directory | Identity & Access Management |
+| **Encryption**| KMS | Key Vault | Cloud KMS |
+| **Network Security**| Security Groups | Network Security Groups | Firewall Rules |
+| **Compliance**| Config, CloudTrail | Policy, Monitor | Security Command Center |
 
 ```json
 {
@@ -723,37 +723,37 @@ az webapp config appsettings set \
 
 **1. ¿Cuál es tu stack tecnológico principal?**
 
-- **Microsoft (.NET, SQL Server, Office)** → Azure
-- **Open Source/Mixed** → AWS o GCP
-- **AI/ML Heavy** → GCP
-- **Enterprise Java** → Cualquiera
+- **Microsoft (.NET, SQL Server, Office)**→ Azure
+- **Open Source/Mixed**→ AWS o GCP
+- **AI/ML Heavy**→ GCP
+- **Enterprise Java**→ Cualquiera
 
 **2. ¿Cuál es tu nivel de experiencia en cloud?**
 
-- **Principiante** → Azure (integración familiar)
-- **Intermedio** → AWS (más recursos de aprendizaje)
-- **Avanzado** → GCP (innovación cutting-edge)
+- **Principiante**→ Azure (integración familiar)
+- **Intermedio**→ AWS (más recursos de aprendizaje)
+- **Avanzado**→ GCP (innovación cutting-edge)
 
 **3. ¿Cuáles son tus requerimientos de compliance?**
 
-- **Alto (financiero, salud)** → Azure o AWS
-- **Moderado** → Cualquiera
-- **Bajo** → GCP
+- **Alto (financiero, salud)**→ Azure o AWS
+- **Moderado**→ Cualquiera
+- **Bajo**→ GCP
 
 **4. ¿Cuál es tu presupuesto?**
 
-- **Ajustado** → GCP (pricing predecible)
-- **Flexible** → AWS (más opciones)
-- **Enterprise** → Azure (descuentos empresariales)
+- **Ajustado**→ GCP (pricing predecible)
+- **Flexible**→ AWS (más opciones)
+- **Enterprise**→ Azure (descuentos empresariales)
 
 ## Próximos Pasos
 
 Después de completar esta introducción:
 
-1. **Elige un proveedor** para profundizar
-2. **Crea una cuenta gratuita** y explora
-3. **Completa tutoriales oficiales** del proveedor elegido
-4. **Implementa un proyecto pequeño** end-to-end
+1. **Elige un proveedor**para profundizar
+2. **Crea una cuenta gratuita**y explora
+3. **Completa tutoriales oficiales**del proveedor elegido
+4. **Implementa un proyecto pequeño**end-to-end
 5. **Aprende sobre billing y cost optimization**
 
 ## Recursos Adicionales

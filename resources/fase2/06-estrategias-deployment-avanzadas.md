@@ -1,24 +1,24 @@
 # 06. Estrategias de Deployment Avanzadas
 
-**Domina estrategias de deployment de nivel empresarial!** Este módulo te enseñará técnicas avanzadas para deployments seguros, escalables y sin downtime.
+**Domina estrategias de deployment de nivel empresarial!**Este módulo te enseñará técnicas avanzadas para deployments seguros, escalables y sin downtime.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Implementar Blue-Green deployments** para zero downtime
-- **Configurar Canary deployments** para releases seguras
-- **Usar Rolling deployments** efectivamente
-- **Implementar Feature Flags** y A/B testing
-- **Configurar GitOps** workflows completos
-- **Gestionar rollbacks** automáticos
-- **Monitorear deployments** en tiempo real
+- **Implementar Blue-Green deployments**para zero downtime
+- **Configurar Canary deployments**para releases seguras
+- **Usar Rolling deployments**efectivamente
+- **Implementar Feature Flags**y A/B testing
+- **Configurar GitOps**workflows completos
+- **Gestionar rollbacks**automáticos
+- **Monitorear deployments**en tiempo real
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. Blue-Green Deployment
 
-####  **Implementación con Kubernetes**
+#### **Implementación con Kubernetes**
 
 ```yaml
 # blue-green-deployment.yaml
@@ -228,7 +228,7 @@ echo " Monitor the application and run the following to complete the cleanup:"
 echo "kubectl delete deployment $APP_NAME-$CURRENT_COLOR -n $NAMESPACE"
 ```
 
-####  **Blue-Green con AWS ECS**
+#### **Blue-Green con AWS ECS**
 
 ```json
 {
@@ -376,7 +376,7 @@ echo " Blue-Green deployment completed successfully!"
 
 ### 2. Canary Deployment
 
-####  **Canary con Istio**
+#### **Canary con Istio**
 
 ```yaml
 # canary-deployment.yaml
@@ -593,7 +593,7 @@ promote_canary
 echo " Canary deployment completed successfully!"
 ```
 
-####  **Canary Automatizado con Flagger**
+#### **Canary Automatizado con Flagger**
 
 ```yaml
 # flagger-canary.yaml
@@ -669,7 +669,7 @@ spec:
 
 ### 3. Rolling Deployment
 
-####  **Rolling Update con Kubernetes**
+#### **Rolling Update con Kubernetes**
 
 ```yaml
 # rolling-deployment.yaml
@@ -853,7 +853,7 @@ kubectl get pods -l app=$APP_NAME -n $NAMESPACE
 
 ### 4. Feature Flags y A/B Testing
 
-####  **Implementación con LaunchDarkly**
+#### **Implementación con LaunchDarkly**
 
 ```javascript
 // feature-flags-service.js
@@ -1079,7 +1079,7 @@ export class ABTestingController {
 }
 ```
 
-####  **Feature Flags con Deployment**
+#### **Feature Flags con Deployment**
 
 ```yaml
 # feature-flag-deployment.yml
@@ -1146,7 +1146,7 @@ spec:
 
 ### 5. GitOps Workflow
 
-####  **ArgoCD Configuration**
+#### **ArgoCD Configuration**
 
 ```yaml
 # argocd-application.yaml
@@ -1299,7 +1299,7 @@ cd /
 rm -rf $TEMP_DIR
 ```
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Blue-Green con Health Checks
 
@@ -1328,7 +1328,7 @@ rm -rf $TEMP_DIR
 3. **Automatizar actualizaciones**
 4. **Implementar multi-environment**
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Multi-Environment Pipeline
 
@@ -1357,7 +1357,7 @@ Desarrollar estrategias para:
 - Reducir costos de deployment
 - Monitorear gastos por release
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes
 
@@ -1391,7 +1391,7 @@ kubectl get virtualservice -o yaml
 kubectl get destinationrule -o yaml
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [Kubernetes Deployment Strategies](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 - [Istio Traffic Management](https://istio.io/latest/docs/concepts/traffic-management/)
@@ -1399,7 +1399,7 @@ kubectl get destinationrule -o yaml
 - [Flagger Documentation](https://docs.flagger.app/)
 - [LaunchDarkly Best Practices](https://docs.launchdarkly.com/guides)
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Implementado Blue-Green deployment
 - [ ] Configurado Canary deployment con métricas
@@ -1414,4 +1414,4 @@ kubectl get destinationrule -o yaml
 
 ---
 
-**Felicitaciones!** Has completado la Fase 2 del curso DevOps y dominas Automation y CI/CD a nivel profesional. Ahora estás preparado para implementar estrategias de deployment de clase mundial.
+**Felicitaciones!**Has completado la Fase 2 del curso DevOps y dominas Automation y CI/CD a nivel profesional. Ahora estás preparado para implementar estrategias de deployment de clase mundial.

@@ -145,10 +145,10 @@ Relacionado con issues #456 y #789.
 # Reunión Arquitectura - [Fecha]
 
 ## Agenda (60 min)
-1. **Check-in** (5 min)
-2. **Review de ADRs pendientes** (20 min)
-3. **Presentación: Nueva propuesta de arquitectura** (25 min)
-4. **Decisiones y próximos pasos** (10 min)
+1. **Check-in**(5 min)
+2. **Review de ADRs pendientes**(20 min)
+3. **Presentación: Nueva propuesta de arquitectura**(25 min)
+4. **Decisiones y próximos pasos**(10 min)
 
 ## Materiales Pre-reunión
 - [ ] Leer ADR-005: Database sharding proposal
@@ -169,7 +169,7 @@ Relacionado con issues #456 y #789.
 
 ### Daily Standups Efectivos
 
-**Estructura SBAR** (Situation, Background, Assessment, Recommendation):
+**Estructura SBAR**(Situation, Background, Assessment, Recommendation):
 
 ```markdown
 # Daily Standup - Desarrollador
@@ -199,10 +199,10 @@ Relacionado con issues #456 y #789.
 ### Framework para Resolución de Conflictos
 
 **Método DESC**:
-- **Describe** la situación objetivamente
-- **Express** cómo te afecta
-- **Specify** lo que necesitas
-- **Consequences** resultados positivos esperados
+- **Describe**la situación objetivamente
+- **Express**cómo te afecta
+- **Specify**lo que necesitas
+- **Consequences**resultados positivos esperados
 
 **Ejemplo de aplicación**:
 ```markdown
@@ -279,10 +279,10 @@ public class TechnicalDebtNegotiation
 ### Principios de Async Communication
 
 **Async-First Rules**:
-1. **Documenta decisiones** en lugares públicos
-2. **Usa threads** para contexto relacionado
-3. **Establece SLAs** para diferentes tipos de comunicación
-4. **Sobrecomunica** contexto y reasoning
+1. **Documenta decisiones**en lugares públicos
+2. **Usa threads**para contexto relacionado
+3. **Establece SLAs**para diferentes tipos de comunicación
+4. **Sobrecomunica**contexto y reasoning
 
 ### Herramientas y Estrategias
 

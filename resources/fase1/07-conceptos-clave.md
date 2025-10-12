@@ -211,11 +211,11 @@ public class CIMetrics
 
 | Aspecto | Continuous Delivery | Continuous Deployment |
 |---------|-------------------|---------------------|
-| **Automatización** | Hasta pre-producción | Completa |
-| **Deploy a Prod** | Manual/Scheduled | Automático |
-| **Frecuencia** | Según negocio | Con cada commit |
-| **Risk** | Medio | Alto |
-| **Madurez Requerida** | Media | Alta |
+| **Automatización**| Hasta pre-producción | Completa |
+| **Deploy a Prod**| Manual/Scheduled | Automático |
+| **Frecuencia**| Según negocio | Con cada commit |
+| **Risk**| Medio | Alto |
+| **Madurez Requerida**| Media | Alta |
 
 ### Pipeline de Entrega Continua
 
@@ -289,7 +289,7 @@ jobs:
 
 **Declarativo vs Imperativo**
 
-**Declarativo** (¿Qué queremos?)
+**Declarativo**(¿Qué queremos?)
 
 ```hcl
 # Terraform - Declarativo
@@ -308,7 +308,7 @@ resource "azurerm_virtual_machine" "main" {
 }
 ```
 
-**Imperativo** (¿Cómo hacerlo?)
+**Imperativo**(¿Cómo hacerlo?)
 
 ```bash
 # Script imperativo
@@ -322,7 +322,7 @@ az vm create \
 
 ### Herramientas de IaC
 
-**Terraform** - Multi-cloud, declarativo
+**Terraform**- Multi-cloud, declarativo
 
 ```hcl
 # variables.tf
@@ -422,7 +422,7 @@ output "cluster_ca_certificate" {
 }
 ```
 
-**Ansible** - Configuración y deployment
+**Ansible**- Configuración y deployment
 
 ```yaml
 ---
@@ -817,9 +817,9 @@ if __name__ == "__main__":
 
 ### Los Tres Pilares de la Observabilidad
 
-**Métricas** - Datos numéricos agregados en el tiempo
-**Logs** - Eventos discretos con timestamp
-**Traces** - Seguimiento de requests través de sistemas distribuidos
+**Métricas**- Datos numéricos agregados en el tiempo
+**Logs**- Eventos discretos con timestamp
+**Traces**- Seguimiento de requests través de sistemas distribuidos
 
 ### Implementación de Observabilidad
 
@@ -1185,11 +1185,11 @@ jobs:
 
 Después de dominar estos conceptos fundamentales:
 
-1. **Practica implementando** un pipeline simple end-to-end
-2. **Experimenta con diferentes herramientas** para cada concepto
-3. **Mide y optimiza** tu pipeline (tiempo, calidad, frecuencia)
-4. **Aprende sobre advanced patterns** (GitOps, Service Mesh, etc.)
-5. **Explora emerging practices** (AI-powered DevOps, etc.)
+1. **Practica implementando**un pipeline simple end-to-end
+2. **Experimenta con diferentes herramientas**para cada concepto
+3. **Mide y optimiza**tu pipeline (tiempo, calidad, frecuencia)
+4. **Aprende sobre advanced patterns**(GitOps, Service Mesh, etc.)
+5. **Explora emerging practices**(AI-powered DevOps, etc.)
 
 ## Recursos Adicionales
 

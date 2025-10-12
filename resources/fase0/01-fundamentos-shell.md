@@ -6,14 +6,14 @@ Dominar la línea de comandos es el primer paso para convertirte en un ingeniero
 
 ## 1. ¿Qué es la Shell y por qué es importante?
 
-La **shell** es un programa que toma comandos del teclado y los entrega al sistema operativo para que los ejecute. Actúa como una interfaz entre el usuario y el kernel del sistema.
+La **shell**es un programa que toma comandos del teclado y los entrega al sistema operativo para que los ejecute. Actúa como una interfaz entre el usuario y el kernel del sistema.
 
 En DevOps, usarás la shell para:
-- **Automatizar tareas repetitivas** mediante scripts.
-- **Gestionar servidores remotos** de forma segura a través de SSH.
-- **Interactuar con herramientas de la nube** (AWS CLI, Azure CLI, gcloud).
-- **Controlar contenedores** (Docker, Kubernetes).
-- **Construir y desplegar** aplicaciones.
+- **Automatizar tareas repetitivas**mediante scripts.
+- **Gestionar servidores remotos**de forma segura a través de SSH.
+- **Interactuar con herramientas de la nube**(AWS CLI, Azure CLI, gcloud).
+- **Controlar contenedores**(Docker, Kubernetes).
+- **Construir y desplegar**aplicaciones.
 
 ---
 
@@ -49,14 +49,14 @@ Estos son los comandos más básicos y esenciales que usarás constantemente.
 
 En sistemas tipo UNIX (Linux, macOS), cada archivo tiene permisos para tres tipos de usuarios:
 
-- **Propietario (Owner):** El usuario que creó el archivo.
-- **Grupo (Group):** Un grupo de usuarios que comparten permisos.
-- **Otros (Others):** Todos los demás usuarios.
+- **Propietario (Owner):**El usuario que creó el archivo.
+- **Grupo (Group):**Un grupo de usuarios que comparten permisos.
+- **Otros (Others):**Todos los demás usuarios.
 
 Los permisos se dividen en tres acciones:
-- **Lectura (Read - `r`):** Permiso para ver el contenido del archivo.
-- **Escritura (Write - `w`):** Permiso para modificar el archivo.
-- **Ejecución (Execute - `x`):** Permiso para ejecutar el archivo (si es un script o programa).
+- **Lectura (Read - `r`):**Permiso para ver el contenido del archivo.
+- **Escritura (Write - `w`):**Permiso para modificar el archivo.
+- **Ejecución (Execute - `x`):**Permiso para ejecutar el archivo (si es un script o programa).
 
 ### **Comando `chmod` (Change Mode)**
 
@@ -72,15 +72,15 @@ Se suman los valores para cada tipo de usuario (Propietario, Grupo, Otros).
 
 **Ejemplos:**
 - `chmod 755 mi_script.sh`
-  - **Propietario:** 7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
-  - **Grupo:** 5 (4+0+1) -> `r-x` (Lectura, Ejecución)
-  - **Otros:** 5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Propietario:**7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
+  - **Grupo:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Otros:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
   *(Este es un permiso muy común para scripts que deben ser ejecutables por otros).*
 
 - `chmod 644 mi_config.txt`
-  - **Propietario:** 6 (4+2+0) -> `rw-` (Lectura, Escritura)
-  - **Grupo:** 4 (4+0+0) -> `r--` (Solo Lectura)
-  - **Otros:** 4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Propietario:**6 (4+2+0) -> `rw-` (Lectura, Escritura)
+  - **Grupo:**4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Otros:**4 (4+0+0) -> `r--` (Solo Lectura)
   *(Este es un permiso común para archivos de texto que no deben ser modificados por otros).*
 
 ### **Comando `chown` (Change Owner)**

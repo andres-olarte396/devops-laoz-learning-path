@@ -8,11 +8,11 @@ Git es el sistema de control de versiones distribuido más popular del mundo y u
 
 Git es mucho más que una herramienta de versionado; es el fundamento que permite:
 
-- **Colaboración eficiente** entre equipos de desarrollo
-- **Trazabilidad completa** de todos los cambios en el código
-- **Integración** con pipelines de CI/CD
-- **Gestión de ramas** para diferentes entornos (desarrollo, testing, producción)
-- **Reversión rápida** de cambios problemáticos
+- **Colaboración eficiente**entre equipos de desarrollo
+- **Trazabilidad completa**de todos los cambios en el código
+- **Integración**con pipelines de CI/CD
+- **Gestión de ramas**para diferentes entornos (desarrollo, testing, producción)
+- **Reversión rápida**de cambios problemáticos
 
 En DevOps, Git actúa como el punto de entrada para la mayoría de automatizaciones: cada commit puede disparar builds, tests, deployments y monitoreo.
 
@@ -45,11 +45,11 @@ El control de versiones es un sistema que registra los cambios realizados en arc
 
 | Característica | Git (Distribuido) | SVN/CVS (Centralizado) |
 |---|---|---|
-| **Arquitectura** | Cada desarrollador tiene el historial completo | Servidor central con historial |
-| **Trabajo offline** | Completamente funcional | Limitado |
-| **Velocidad** | Operaciones locales muy rápidas | Depende de la red |
-| **Branching** | Muy eficiente y rápido | Lento y complejo |
-| **Integridad** | Checksums SHA-1 para todo | Números de revisión |
+| **Arquitectura**| Cada desarrollador tiene el historial completo | Servidor central con historial |
+| **Trabajo offline**| Completamente funcional | Limitado |
+| **Velocidad**| Operaciones locales muy rápidas | Depende de la red |
+| **Branching**| Muy eficiente y rápido | Lento y complejo |
+| **Integridad**| Checksums SHA-1 para todo | Números de revisión |
 
 ### **Conceptos básicos de Git**
 
@@ -129,11 +129,11 @@ git reset --hard HEAD      # Descartar TODOS los cambios locales
 
 | Aspecto | GitHub | GitLab |
 |---|---|---|
-| **Alojamiento** | Principalmente en la nube | Cloud y on-premise |
-| **CI/CD** | GitHub Actions (desde 2019) | GitLab CI/CD integrado desde el inicio |
-| **DevOps** | Ecosystem de terceros | Suite DevOps completa integrada |
-| **Precio** | Gratuito para repositorios públicos | Más funciones gratuitas |
-| **Comunidad** | Más grande, especialmente open source | Enfoque enterprise |
+| **Alojamiento**| Principalmente en la nube | Cloud y on-premise |
+| **CI/CD**| GitHub Actions (desde 2019) | GitLab CI/CD integrado desde el inicio |
+| **DevOps**| Ecosystem de terceros | Suite DevOps completa integrada |
+| **Precio**| Gratuito para repositorios públicos | Más funciones gratuitas |
+| **Comunidad**| Más grande, especialmente open source | Enfoque enterprise |
 
 ### **Configuración en GitHub**
 
@@ -302,7 +302,7 @@ git status
 <head>
 <<<<<<< HEAD
     <title>Mi Aplicación - Versión Principal</title>
-=======
+
     <title>Mi Aplicación - Nueva Funcionalidad</title>
 >>>>>>> feature/otra-funcionalidad
 </head>
@@ -342,8 +342,8 @@ git log --oneline --graph -10
    ```
 
 2. **Commits pequeños y frecuentes**
-3. **Comunicación en equipo** sobre archivos compartidos
-4. **Usar .gitignore** apropiadamente
+3. **Comunicación en equipo**sobre archivos compartidos
+4. **Usar .gitignore**apropiadamente
 
 ---
 
@@ -352,10 +352,10 @@ git log --oneline --graph -10
 ### **¿Qué son los Pull Requests?**
 
 Los Pull Requests (PR) son una funcionalidad que permite:
-- **Revisar código** antes de fusionar cambios
-- **Discutir** implementaciones y mejoras
-- **Ejecutar pruebas automáticas** antes del merge
-- **Mantener historial** de decisiones técnicas
+- **Revisar código**antes de fusionar cambios
+- **Discutir**implementaciones y mejoras
+- **Ejecutar pruebas automáticas**antes del merge
+- **Mantener historial**de decisiones técnicas
 
 ### **Proceso de Pull Request**
 
@@ -684,10 +684,10 @@ git checkout v1.2.0
 
 | Herramienta | Plataforma | Características |
 |---|---|---|
-| **GitKraken** | Windows, Mac, Linux | Interfaz visual intuitiva, integración con servicios |
-| **SourceTree** | Windows, Mac | Gratuita, de Atlassian |
-| **GitHub Desktop** | Windows, Mac | Simple, ideal para principiantes |
-| **VS Code Git** | Integrado | Extensiones Git Lens, Git History |
+| **GitKraken**| Windows, Mac, Linux | Interfaz visual intuitiva, integración con servicios |
+| **SourceTree**| Windows, Mac | Gratuita, de Atlassian |
+| **GitHub Desktop**| Windows, Mac | Simple, ideal para principiantes |
+| **VS Code Git**| Integrado | Extensiones Git Lens, Git History |
 
 ### **Comandos útiles para debugging**
 
@@ -838,7 +838,7 @@ git status
 #   database:
 # <<<<<<< HEAD
 #     host: "prod-db-server"
-# =======
+# 
 #     host: "localhost"
 #   cache:
 #     enabled: true
@@ -867,7 +867,7 @@ git commit -m "resolve: merge database optimization and Redis cache"
 
 ### **Repositorios de práctica y proyectos**
 
-- **[GitHub Projects Learning](https://github.com/andres-olarte396/github-projects-learning)** - Repositorio con proyectos prácticos y ejercicios para profundizar en Git y GitHub. Incluye ejemplos de flujos de trabajo, resolución de conflictos, y colaboración en equipos.
+- **[GitHub Projects Learning](https://github.com/andres-olarte396/github-projects-learning)**- Repositorio con proyectos prácticos y ejercicios para profundizar en Git y GitHub. Incluye ejemplos de flujos de trabajo, resolución de conflictos, y colaboración en equipos.
 
 ### **Recursos visuales**
 
@@ -902,10 +902,10 @@ git commit -m "resolve: merge database optimization and Redis cache"
 
 Una vez que domines estos conceptos de Git, estarás listo para avanzar a la **Fase 2: Automatización y CI/CD**, donde aprenderás cómo Git se integra con:
 
-- **Pipelines de CI/CD** automatizados
+- **Pipelines de CI/CD**automatizados
 - **Jenkins, GitHub Actions, GitLab CI**
-- **Estrategias de deployment** basadas en ramas
-- **Testing automatizado** en cada commit
+- **Estrategias de deployment**basadas en ramas
+- **Testing automatizado**en cada commit
 
 Git es el primer eslabón en la cadena de herramientas DevOps, y dominar estos conceptos te proporcionará una base sólida para todo lo que viene después.
 
@@ -915,20 +915,20 @@ Git es el primer eslabón en la cadena de herramientas DevOps, y dominar estos c
 
 ### **Ejercicios básicos**
 
-1. **Configurar un repositorio completo** con ramas de develop, staging y main
-2. **Simular conflictos** y practicar resolución manual
-3. **Crear Pull Requests** con revisiones de código
-4. **Implementar Git hooks** para automatizar validaciones
-5. **Configurar diferentes flujos de trabajo** (Git Flow vs GitHub Flow)
+1. **Configurar un repositorio completo**con ramas de develop, staging y main
+2. **Simular conflictos**y practicar resolución manual
+3. **Crear Pull Requests**con revisiones de código
+4. **Implementar Git hooks**para automatizar validaciones
+5. **Configurar diferentes flujos de trabajo**(Git Flow vs GitHub Flow)
 
 ### **Proyectos prácticos avanzados**
 
 Para profundizar en Git y GitHub con ejercicios prácticos y proyectos reales, explora el **[repositorio GitHub Projects Learning](https://github.com/andres-olarte396/github-projects-learning)**. Este repositorio incluye:
 
-- **Proyectos colaborativos** para practicar flujos de trabajo en equipo
-- **Ejercicios de resolución de conflictos** con escenarios realistas
-- **Ejemplos de Git hooks** y automatización
-- **Templates de Pull Requests** y mejores prácticas
-- **Casos de estudio** de flujos de trabajo DevOps
+- **Proyectos colaborativos**para practicar flujos de trabajo en equipo
+- **Ejercicios de resolución de conflictos**con escenarios realistas
+- **Ejemplos de Git hooks**y automatización
+- **Templates de Pull Requests**y mejores prácticas
+- **Casos de estudio**de flujos de trabajo DevOps
 
 Felicidades! Has completado el módulo de Git. Ahora tienes las herramientas fundamentales para colaborar efectivamente en proyectos DevOps y estás listo para avanzar a la automatización de procesos.

@@ -99,31 +99,31 @@ Este es el siguiente paso lógico. Aquí, todo el proceso, desde el commit del c
 
 ### La Diferencia Clave
 
-**La diferencia clave es ese punto de control manual.** La Entrega Continua ofrece un amortiguador estratégico, permitiendo que las decisiones de negocio (¿es el momento adecuado para lanzar esta funcionalidad?) dicten el ritmo de los lanzamientos. El Despliegue Continuo, en cambio, representa la máxima confianza en la automatización y en la robustez del pipeline de pruebas. Es la materialización de la idea de que los cambios pequeños y frecuentes, validados automáticamente, son la forma más segura y rápida de entregar valor.
+**La diferencia clave es ese punto de control manual.**La Entrega Continua ofrece un amortiguador estratégico, permitiendo que las decisiones de negocio (¿es el momento adecuado para lanzar esta funcionalidad?) dicten el ritmo de los lanzamientos. El Despliegue Continuo, en cambio, representa la máxima confianza en la automatización y en la robustez del pipeline de pruebas. Es la materialización de la idea de que los cambios pequeños y frecuentes, validados automáticamente, son la forma más segura y rápida de entregar valor.
 
 ---
 
 ## 5. El Arte de Desplegar sin Miedo: Estrategias Blue-Green vs. Canary
 
-Desplegar nuevo código en un entorno de producción siempre conlleva un riesgo. ¿Qué pasa si un bug no detectado llega a los usuarios? DevOps ofrece estrategias de despliegue inteligentes diseñadas para minimizar este riesgo y permitir lanzamientos con confianza. Dos de las más populares son **Blue-Green** y **Canary**. Junto a estas, otra estrategia común es la de Rolling Updates, pero los despliegues Blue-Green y Canary ofrecen un control más deliberado sobre el riesgo y la experiencia del usuario.
+Desplegar nuevo código en un entorno de producción siempre conlleva un riesgo. ¿Qué pasa si un bug no detectado llega a los usuarios? DevOps ofrece estrategias de despliegue inteligentes diseñadas para minimizar este riesgo y permitir lanzamientos con confianza. Dos de las más populares son **Blue-Green**y **Canary**. Junto a estas, otra estrategia común es la de Rolling Updates, pero los despliegues Blue-Green y Canary ofrecen un control más deliberado sobre el riesgo y la experiencia del usuario.
 
 ### Estrategia Blue-Green
 
 **Concepto**: Se mantienen dos entornos de producción idénticos, a los que llamamos "Azul" (Blue) y "Verde" (Green). En un momento dado, solo uno de ellos (por ejemplo, el Azul) está activo y sirviendo todo el tráfico de los usuarios. La nueva versión de la aplicación se despliega en el entorno inactivo (el Verde). Una vez que la nueva versión ha sido probada y validada en el entorno Verde, un simple cambio en el enrutador de tráfico redirige a todos los usuarios al entorno Verde. El entorno Azul se convierte ahora en el inactivo, listo para el próximo despliegue.
 
 **Ventajas Clave**:
-- Ofrece **cero downtime** durante el despliegue
+- Ofrece **cero downtime**durante el despliegue
 - **Rollback instantáneo**: Si algo sale mal con la nueva versión, solo hay que volver a apuntar el tráfico al entorno antiguo (Azul), revirtiendo el cambio de forma inmediata
 
 **Desventaja Clave**:
-- Es costoso, ya que requiere **duplicar toda la infraestructura** de producción
+- Es costoso, ya que requiere **duplicar toda la infraestructura**de producción
 
 ### Estrategia Canary
 
-**Concepto**: En lugar de cambiar todo el tráfico de golpe, la nueva versión se libera **gradualmente** a un pequeño subconjunto de usuarios (el "canario"). Por ejemplo, el 1% del tráfico se dirige a la nueva versión, mientras que el 99% sigue usando la versión antigua. Durante este tiempo, el equipo monitorea intensivamente las métricas de rendimiento y errores del grupo canario. Si todo funciona como se espera, el tráfico hacia la nueva versión se incrementa gradualmente (5%, 20%, 50%) hasta que el 100% de los usuarios la están utilizando.
+**Concepto**: En lugar de cambiar todo el tráfico de golpe, la nueva versión se libera **gradualmente**a un pequeño subconjunto de usuarios (el "canario"). Por ejemplo, el 1% del tráfico se dirige a la nueva versión, mientras que el 99% sigue usando la versión antigua. Durante este tiempo, el equipo monitorea intensivamente las métricas de rendimiento y errores del grupo canario. Si todo funciona como se espera, el tráfico hacia la nueva versión se incrementa gradualmente (5%, 20%, 50%) hasta que el 100% de los usuarios la están utilizando.
 
 **Ventaja Clave**:
-- **Minimiza el riesgo y el impacto** de posibles errores. Si hay un problema, solo afecta a un pequeño porcentaje de usuarios, y el despliegue se puede revertir antes de que se extienda
+- **Minimiza el riesgo y el impacto**de posibles errores. Si hay un problema, solo afecta a un pequeño porcentaje de usuarios, y el despliegue se puede revertir antes de que se extienda
 
 **Desventaja Clave**:
 - Es más **complejo de implementar y gestionar**, ya que requiere un enrutamiento de tráfico sofisticado y un sistema de monitoreo muy robusto para detectar problemas en tiempo real
@@ -132,7 +132,7 @@ Desplegar nuevo código en un entorno de producción siempre conlleva un riesgo.
 
 ## Conclusión
 
-Estas cinco ideas no son solo técnicas; representan un **cambio de paradigma fundamental** en la construcción de software. Nos enseñan a pasar de lo manual a lo automatizado, de la rigidez de los scripts a la flexibilidad de las declaraciones, y de la incertidumbre de los grandes lanzamientos a la confianza que otorgan las estrategias de despliegue inteligentes.
+Estas cinco ideas no son solo técnicas; representan un **cambio de paradigma fundamental**en la construcción de software. Nos enseñan a pasar de lo manual a lo automatizado, de la rigidez de los scripts a la flexibilidad de las declaraciones, y de la incertidumbre de los grandes lanzamientos a la confianza que otorgan las estrategias de despliegue inteligentes.
 
 **DevOps, en su esencia, es un viaje para transformar el miedo y la complejidad en velocidad y fiabilidad.**
 

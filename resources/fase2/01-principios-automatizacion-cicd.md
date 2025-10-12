@@ -6,7 +6,7 @@ La automatización es el **DNA de DevOps**. En este módulo aprenderás a transf
 
 ## **¿Por qué automatizar tareas en DevOps?**
 
-La automatización en DevOps no es solo una conveniencia; es un **imperativo estratégico** que permite:
+La automatización en DevOps no es solo una conveniencia; es un **imperativo estratégico**que permite:
 
 - **Velocidad**: Ejecutar tareas en segundos que toman horas manualmente
 - **Consistencia**: Eliminar variaciones humanas en procesos críticos
@@ -14,7 +14,7 @@ La automatización en DevOps no es solo una conveniencia; es un **imperativo est
 - **Escalabilidad**: Manejar volúmenes crecientes sin aumentar personal
 - **Liberación de tiempo**: Enfocar esfuerzos en innovación y resolución de problemas complejos
 
-En DevOps, **"si lo haces más de dos veces, automatízalo"** es más que un eslogan; es una filosofía operativa.
+En DevOps, **"si lo haces más de dos veces, automatízalo"**es más que un eslogan; es una filosofía operativa.
 
 ---
 
@@ -1297,7 +1297,7 @@ generate_report() {
     {
         echo "System Health Report for $HOSTNAME"
         echo "Generated: $(date)"
-        echo "================================"
+        echo "===="
         echo
 
         echo "CPU Information:"
@@ -1422,31 +1422,31 @@ jobs:
 ```markdown
 ## Checklist para Scripts de Automatización
 
-###  Funcionalidad
+### Funcionalidad
 - [ ] El script es idempotente
 - [ ] Maneja errores gracefully
 - [ ] Tiene rollback en caso de fallo
 - [ ] Valida prerrequisitos antes de ejecutar
 
-###  Seguridad
+### Seguridad
 - [ ] No contiene credenciales hardcodeadas
 - [ ] Usa variables de entorno para secretos
 - [ ] Valida inputs del usuario
 - [ ] Ejecuta con privilegios mínimos necesarios
 
-###  Observabilidad
+### Observabilidad
 - [ ] Genera logs detallados
 - [ ] Incluye timestamps en logs
 - [ ] Reporta métricas de ejecución
 - [ ] Envía notificaciones en caso de error
 
-###  Mantenibilidad
+### Mantenibilidad
 - [ ] Código bien documentado
 - [ ] Funciones modulares y reutilizables
 - [ ] Configuración externalizada
 - [ ] Tests automatizados incluidos
 
-###  Performance
+### Performance
 - [ ] Optimizado para tiempo de ejecución
 - [ ] Maneja recursos eficientemente
 - [ ] Incluye timeouts apropiados
@@ -1463,17 +1463,17 @@ Una vez que domines la automatización de tareas, estarás listo para avanzar a:
 - **Entrega/Despliegue Continuo (CD)**: Automatizar deployments y releases
 - **Pruebas Automatizadas**: Integrar testing en pipelines automatizados
 
-La automatización es el **fundamento** sobre el cual se construyen todas las prácticas avanzadas de DevOps. Cada hora invertida en automatización se multiplica en eficiencia y confiabilidad a largo plazo.
+La automatización es el **fundamento**sobre el cual se construyen todas las prácticas avanzadas de DevOps. Cada hora invertida en automatización se multiplica en eficiencia y confiabilidad a largo plazo.
 
 ---
 
 ## **Recursos y Referencias**
 
-### ** Recursos Multimedia**
+### **Recursos Multimedia**
 
 Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión de configuración, hemos incluido recursos multimedia especializados:
 
-#### ** Video: Infrastructure as Code - Puppet vs Chef vs Ansible**
+#### **Video: Infrastructure as Code - Puppet vs Chef vs Ansible**
 
 <video width="100%" controls>
   <source src="../../assets/IaC__Puppet_vs_Chef_vs_Ansible.mp4" type="video/mp4">
@@ -1488,7 +1488,7 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 - Ejemplos prácticos de configuración
 - Criterios para elegir la herramienta adecuada
 
-#### ** Audio: Puppet vs Chef vs Ansible - Análisis Profundo**
+#### **Audio: Puppet vs Chef vs Ansible - Análisis Profundo**
 
 <audio controls style="width: 100%;">
   <source src="../../assets/Puppet_vs._Chef_vs - 1758859501151.m4a" type="audio/mp4">
@@ -1502,7 +1502,7 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 - Mejores prácticas específicas por herramienta
 - Tendencias del mercado y futuro de IaC
 
-> ** Tip de aprendizaje**: Te recomendamos ver el video primero para obtener una comprensión visual de las herramientas, y luego escuchar el audio para profundizar en los aspectos técnicos y estratégicos.
+> **Tip de aprendizaje**: Te recomendamos ver el video primero para obtener una comprensión visual de las herramientas, y luego escuchar el audio para profundizar en los aspectos técnicos y estratégicos.
 
 ### **Documentación oficial**
 - [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)

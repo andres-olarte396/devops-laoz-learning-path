@@ -123,7 +123,7 @@ Habrá momentos en los que necesites editar un archivo de configuración directa
 ### **`nano`**
 
 - **Ideal para principiantes.**
-- **Fácil de usar:** Muestra los atajos de teclado más importantes en la parte inferior de la pantalla.
+- **Fácil de usar:**Muestra los atajos de teclado más importantes en la parte inferior de la pantalla.
 - **Uso básico:**
   1. Abrir un archivo: `nano mi_archivo.txt`
   2. Editar el texto.
@@ -133,10 +133,10 @@ Habrá momentos en los que necesites editar un archivo de configuración directa
 ### **`vim` (o `neovim`)**
 
 - **Extremadamente potente y eficiente, pero con una curva de aprendizaje pronunciada.**
-- **Modal:** Tiene diferentes modos (Normal, Inserción, Visual, Comando).
+- **Modal:**Tiene diferentes modos (Normal, Inserción, Visual, Comando).
 - **Uso básico:**
   1. Abrir un archivo: `vim mi_archivo.txt`
-  2. Entrar al **modo de Inserción** para escribir: presiona la tecla `i`.
+  2. Entrar al **modo de Inserción**para escribir: presiona la tecla `i`.
   3. Salir del modo de Inserción al **modo Normal**: presiona la tecla `Esc`.
   4. Desde el modo Normal, para guardar y salir:
      - Escribe `:wq` y presiona Enter (Write & Quit).

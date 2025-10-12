@@ -1,24 +1,24 @@
 # 04. Plataformas CI/CD Modernas
 
-**Domina GitHub Actions, GitLab CI/CD y Azure DevOps!** Este módulo te enseñará a usar las plataformas CI/CD más populares del mercado actual.
+**Domina GitHub Actions, GitLab CI/CD y Azure DevOps!**Este módulo te enseñará a usar las plataformas CI/CD más populares del mercado actual.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Crear workflows** avanzados en GitHub Actions
-- **Implementar pipelines** complejos en GitLab CI/CD
-- **Configurar Azure DevOps** para equipos empresariales
-- **Comparar plataformas** y elegir la mejor opción
-- **Migrar entre plataformas** de CI/CD
-- **Implementar GitOps** con estas herramientas
-- **Optimizar costos** y performance
+- **Crear workflows**avanzados en GitHub Actions
+- **Implementar pipelines**complejos en GitLab CI/CD
+- **Configurar Azure DevOps**para equipos empresariales
+- **Comparar plataformas**y elegir la mejor opción
+- **Migrar entre plataformas**de CI/CD
+- **Implementar GitOps**con estas herramientas
+- **Optimizar costos**y performance
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. GitHub Actions
 
-####  **Workflow Básico**
+#### **Workflow Básico**
 
 ```yaml
 # .github/workflows/ci.yml
@@ -347,7 +347,7 @@ jobs:
             }
 ```
 
-####  **Reusable Workflows**
+#### **Reusable Workflows**
 
 ```yaml
 # .github/workflows/reusable-build.yml
@@ -402,7 +402,7 @@ jobs:
           path: dist/
 ```
 
-####  **Custom Actions**
+#### **Custom Actions**
 
 ```yaml
 # .github/actions/deploy-to-k8s/action.yml
@@ -464,7 +464,7 @@ runs:
 
 ### 2. GitLab CI/CD
 
-####  **Pipeline Completo**
+#### **Pipeline Completo**
 
 ```yaml
 # .gitlab-ci.yml
@@ -838,7 +838,7 @@ notify-failure:
 
 ### 3. Azure DevOps
 
-####  **Pipeline YAML**
+#### **Pipeline YAML**
 
 ```yaml
 # azure-pipelines.yml
@@ -1195,22 +1195,22 @@ stages:
                 }
 ```
 
-##  Comparación de Plataformas
+## Comparación de Plataformas
 
 | Característica | GitHub Actions | GitLab CI/CD | Azure DevOps |
 |----------------|----------------|--------------|--------------|
-| **Hosting** | SaaS/Self-hosted | SaaS/Self-hosted | SaaS/Self-hosted |
-| **Precio** | Gratis (2000min/mes) | Gratis (400min/mes) | Gratis (1800min/mes) |
-| **Runners** | GitHub/Self-hosted | GitLab/Self-hosted | Microsoft/Self-hosted |
-| **Workflows** | YAML | YAML | YAML/Visual |
-| **Marketplace** |  Extenso |  Moderado |  Extenso |
-| **Multi-repo** |  |  |  |
-| **Artifacts** |  |  |  |
-| **Environments** |  |  |  |
-| **Security** |  Excellent |  Excellent |  Excellent |
-| **Enterprise** |  |  |  |
+| **Hosting**| SaaS/Self-hosted | SaaS/Self-hosted | SaaS/Self-hosted |
+| **Precio**| Gratis (2000min/mes) | Gratis (400min/mes) | Gratis (1800min/mes) |
+| **Runners**| GitHub/Self-hosted | GitLab/Self-hosted | Microsoft/Self-hosted |
+| **Workflows**| YAML | YAML | YAML/Visual |
+| **Marketplace**|  Extenso |  Moderado |  Extenso |
+| **Multi-repo**|  |  |  |
+| **Artifacts**|  |  |  |
+| **Environments**|  |  |  |
+| **Security**|  Excellent |  Excellent |  Excellent |
+| **Enterprise**|  |  |  |
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Migración entre Plataformas
 
@@ -1295,7 +1295,7 @@ jobs:
           git push
 ```
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Pipeline Multi-Cloud
 
@@ -1322,7 +1322,7 @@ Desarrollar estrategias para:
 - Implementar caching inteligente
 - Usar spot instances para builds
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes
 
@@ -1351,14 +1351,14 @@ strategy:
 gh secret set MY_SECRET --body "new-value"
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [GitHub Actions Documentation](https://docs.github.com/actions)
 - [GitLab CI/CD Documentation](https://docs.gitlab.com/ee/ci/)
 - [Azure DevOps Documentation](https://docs.microsoft.com/azure/devops/)
 - [CI/CD Best Practices](https://docs.microsoft.com/devops/deliver/what-is-continuous-integration)
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Configurado GitHub Actions workflow
 - [ ] Implementado GitLab CI/CD pipeline
@@ -1373,4 +1373,4 @@ gh secret set MY_SECRET --body "new-value"
 
 ---
 
-**Excelente!** Ahora dominas las principales plataformas CI/CD modernas. Continúa con el siguiente módulo para aprender sobre testing automation y quality gates.
+**Excelente!**Ahora dominas las principales plataformas CI/CD modernas. Continúa con el siguiente módulo para aprender sobre testing automation y quality gates.

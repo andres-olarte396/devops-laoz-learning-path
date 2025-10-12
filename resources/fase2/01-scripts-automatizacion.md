@@ -1,23 +1,23 @@
 # 01. Scripts de Automatización
 
-**Automatiza tareas repetitivas y mejora tu productividad!** Este módulo te enseñará a crear scripts poderosos para automatizar procesos comunes en DevOps.
+**Automatiza tareas repetitivas y mejora tu productividad!**Este módulo te enseñará a crear scripts poderosos para automatizar procesos comunes en DevOps.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Crear scripts bash/shell** para automatización en Unix/Linux
-- **Desarrollar scripts PowerShell** para entornos Windows
-- **Utilizar Python** para automatización multiplataforma
-- **Gestionar parámetros** y configuraciones en scripts
-- **Implementar logging** y manejo de errores
-- **Crear scripts reutilizables** y mantenibles
+- **Crear scripts bash/shell**para automatización en Unix/Linux
+- **Desarrollar scripts PowerShell**para entornos Windows
+- **Utilizar Python**para automatización multiplataforma
+- **Gestionar parámetros**y configuraciones en scripts
+- **Implementar logging**y manejo de errores
+- **Crear scripts reutilizables**y mantenibles
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. Scripts Bash/Shell para Unix/Linux
 
-####  **Fundamentos de Bash**
+#### **Fundamentos de Bash**
 
 ```bash
 #!/bin/bash
@@ -84,7 +84,7 @@ main() {
 main "$@"
 ```
 
-####  **Script Avanzado: Deployment Automatizado**
+#### **Script Avanzado: Deployment Automatizado**
 
 ```bash
 #!/bin/bash
@@ -282,7 +282,7 @@ rollback() {
 # Función principal
 main() {
     echo " Iniciando deployment automatizado de $APP_NAME"
-    echo "================================================"
+    echo "======"
 
     check_prerequisites
     create_backup
@@ -293,7 +293,7 @@ main() {
     start_service
     health_check
 
-    echo "================================================"
+    echo "======"
     echo " Deployment completado exitosamente"
     echo " $APP_NAME está ahora ejecutándose con la nueva versión"
 }
@@ -309,7 +309,7 @@ fi
 
 ### 2. Scripts PowerShell para Windows
 
-####  **Script PowerShell Básico**
+#### **Script PowerShell Básico**
 
 ```powershell
 # Script de automatización para Windows
@@ -423,7 +423,7 @@ function Main {
 Main
 ```
 
-####  **Script PowerShell Avanzado: CI/CD Helper**
+#### **Script PowerShell Avanzado: CI/CD Helper**
 
 ```powershell
 # Script avanzado para CI/CD en Windows
@@ -662,7 +662,7 @@ catch {
 
 ### 3. Python para Automatización Multiplataforma
 
-####  **Script Python Básico**
+#### **Script Python Básico**
 
 ```python
 #!/usr/bin/env python3
@@ -960,7 +960,7 @@ if __name__ == "__main__":
     main()
 ```
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Script de Backup Básico
 
@@ -1077,7 +1077,7 @@ while True:
     time.sleep(30)  # Check cada 30 segundos
 ```
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Script de Deployment Multi-Entorno
 
@@ -1108,7 +1108,7 @@ Desarrollar un script que:
 - Optimice espacio en disco
 - Genere reporte de limpieza
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes
 
@@ -1137,14 +1137,14 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 set -euo pipefail  # Fail fast
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [Bash Scripting Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
 - [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
 - [Python Automation](https://automatetheboringstuff.com/)
 - [Shell Check](https://www.shellcheck.net/) - Validador de scripts bash
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Creado script bash básico de backup
 - [ ] Desarrollado script PowerShell para Windows
@@ -1157,4 +1157,4 @@ set -euo pipefail  # Fail fast
 
 ---
 
-**Felicitaciones!** Has dominado los fundamentos de scripting para automatización DevOps. Continúa con el siguiente módulo para aprender sobre herramientas de automatización más avanzadas.
+**Felicitaciones!**Has dominado los fundamentos de scripting para automatización DevOps. Continúa con el siguiente módulo para aprender sobre herramientas de automatización más avanzadas.

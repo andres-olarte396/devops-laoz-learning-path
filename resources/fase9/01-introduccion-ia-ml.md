@@ -9,7 +9,7 @@ Al completar este módulo serás capaz de:
 
 ## ¿Qué es la Inteligencia Artificial?
 
-La **Inteligencia Artificial (IA)** es un campo de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.
+La **Inteligencia Artificial (IA)**es un campo de la informática que busca crear sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.
 
 ### Conceptos Clave
 

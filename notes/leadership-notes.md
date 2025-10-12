@@ -205,12 +205,12 @@ public class TeamMetrics
 
 #### Presentaciones para Ejecutivos
 **Estructura recomendada**:
-1. **Executive Summary** (30 segundos)
-2. **Problema/Oportunidad** (1 minuto)
-3. **Solución Propuesta** (2 minutos)
-4. **Implementación y Timeline** (1 minuto)
-5. **ROI y Métricas** (1 minuto)
-6. **Riesgos y Mitigación** (30 segundos)
+1. **Executive Summary**(30 segundos)
+2. **Problema/Oportunidad**(1 minuto)
+3. **Solución Propuesta**(2 minutos)
+4. **Implementación y Timeline**(1 minuto)
+5. **ROI y Métricas**(1 minuto)
+6. **Riesgos y Mitigación**(30 segundos)
 
 #### Negociación Técnica
 **Principios clave**:
@@ -255,11 +255,11 @@ Hold:
 
 #### 1-on-1 Meetings Efectivos
 **Agenda sugerida**:
-1. **Personal check-in** (5 min)
-2. **Progress on goals** (10 min)
-3. **Challenges and blockers** (10 min)
-4. **Learning and development** (10 min)
-5. **Feedback bidireccional** (5 min)
+1. **Personal check-in**(5 min)
+2. **Progress on goals**(10 min)
+3. **Challenges and blockers**(10 min)
+4. **Learning and development**(10 min)
+5. **Feedback bidireccional**(5 min)
 
 #### Building Psychological Safety
 1. **Admitir ignorancia e incertidumbre**

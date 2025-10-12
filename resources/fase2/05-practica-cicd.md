@@ -1,26 +1,26 @@
 # Práctica: Pipeline CI/CD Completo
 
-Es hora de poner en práctica todo lo aprendido! En este módulo construiremos un **pipeline CI/CD completo** desde cero para una aplicación real, implementando **pruebas automatizadas**, **múltiples entornos**, **estrategias de despliegue avanzadas** y **rollbacks automáticos**.
+Es hora de poner en práctica todo lo aprendido! En este módulo construiremos un **pipeline CI/CD completo**desde cero para una aplicación real, implementando **pruebas automatizadas**, **múltiples entornos**, **estrategias de despliegue avanzadas**y **rollbacks automáticos**.
 
 Este proyecto te dará experiencia práctica con todas las herramientas y técnicas de DevOps moderno.
 
 ---
 
-## ** Objetivos del Proyecto**
+## **Objetivos del Proyecto**
 
 Al finalizar esta práctica habrás:
 
--  **Configurado un pipeline CI/CD completo** con múltiples stages
--  **Implementado pruebas automatizadas** (unit, integration, E2E)
--  **Desplegado en múltiples entornos** (staging, production)
--  **Aplicado estrategias de deployment** (Blue-Green, Canary)
+-  **Configurado un pipeline CI/CD completo**con múltiples stages
+-  **Implementado pruebas automatizadas**(unit, integration, E2E)
+-  **Desplegado en múltiples entornos**(staging, production)
+-  **Aplicado estrategias de deployment**(Blue-Green, Canary)
 -  **Configurado monitoring y alerting**
 -  **Implementado rollbacks automáticos**
 -  **Usado Infrastructure as Code**
 
 ---
 
-## ** Proyecto: Todo App con Microservicios**
+## **Proyecto: Todo App con Microservicios**
 
 ### **Arquitectura del proyecto**
 
@@ -94,7 +94,7 @@ infrastructure:
 
 ---
 
-## ** Fase 1: Setup del Proyecto**
+## **Fase 1: Setup del Proyecto**
 
 ### **1.1 Estructura del repositorio**
 
@@ -987,7 +987,7 @@ networks:
 
 ---
 
-## ** Fase 2: Pipeline CI/CD con GitHub Actions**
+## **Fase 2: Pipeline CI/CD con GitHub Actions**
 
 ### **2.1 Workflow principal de CI/CD**
 
@@ -1442,20 +1442,20 @@ echo " Canary monitoring completed - no issues detected"
 
 ## **Conclusión del Módulo**
 
-Felicidades! Has completado el módulo de **Práctica CI/CD** más comprehensivo. Este proyecto te ha dado experiencia práctica con:
+Felicidades! Has completado el módulo de **Práctica CI/CD**más comprehensivo. Este proyecto te ha dado experiencia práctica con:
 
-### ** Lo que has logrado:**
+### **Lo que has logrado:**
 
--  **Aplicación completa** con microservicios (Frontend React + API Gateway + 3 servicios backend)
--  **Tests automatizados** en múltiples niveles (unit, integration, E2E, performance)
--  **Pipeline CI/CD robusto** con GitHub Actions
--  **Estrategias de deployment** (Blue-Green, Canary, Rolling)
--  **Monitoring y métricas** con Prometheus/Grafana
--  **Rollbacks automáticos** basados en métricas
--  **Infrastructure as Code** con Docker y Kubernetes
--  **Security scanning** y quality gates
+-  **Aplicación completa**con microservicios (Frontend React + API Gateway + 3 servicios backend)
+-  **Tests automatizados**en múltiples niveles (unit, integration, E2E, performance)
+-  **Pipeline CI/CD robusto**con GitHub Actions
+-  **Estrategias de deployment**(Blue-Green, Canary, Rolling)
+-  **Monitoring y métricas**con Prometheus/Grafana
+-  **Rollbacks automáticos**basados en métricas
+-  **Infrastructure as Code**con Docker y Kubernetes
+-  **Security scanning**y quality gates
 
-### ** Skills desarrollados:**
+### **Skills desarrollados:**
 
 - **DevOps Engineering**: Pipeline design, automation, monitoring
 - **Container Orchestration**: Docker, Kubernetes, service mesh
@@ -1464,16 +1464,16 @@ Felicidades! Has completado el módulo de **Práctica CI/CD** más comprehensivo
 - **Security**: Vulnerability scanning, secure deployments
 - **Cloud Native**: Microservices, 12-factor app, observability
 
-Este proyecto es un **portfolio piece** que demuestra tu competencia en DevOps moderno y puede ser usado como referencia en entrevistas técnicas.
+Este proyecto es un **portfolio piece**que demuestra tu competencia en DevOps moderno y puede ser usado como referencia en entrevistas técnicas.
 
 ---
 
-## ** Próximos pasos recomendados:**
+## **Próximos pasos recomendados:**
 
-1. **Extender el proyecto** con más servicios y complejidad
-2. **Implementar GitOps** con ArgoCD o Flux
-3. **Agregar chaos engineering** con Chaos Monkey
-4. **Implementar service mesh** con Istio
-5. **Avanzar a Kubernetes avanzado** con operators y CRDs
+1. **Extender el proyecto**con más servicios y complejidad
+2. **Implementar GitOps**con ArgoCD o Flux
+3. **Agregar chaos engineering**con Chaos Monkey
+4. **Implementar service mesh**con Istio
+5. **Avanzar a Kubernetes avanzado**con operators y CRDs
 
-Has completado exitosamente la **Fase 2** del roadmap DevOps! Ahora estás listo para avanzar a **contenedores, redes y orquestación** en la Fase 3.
+Has completado exitosamente la **Fase 2**del roadmap DevOps! Ahora estás listo para avanzar a **contenedores, redes y orquestación**en la Fase 3.

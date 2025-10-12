@@ -98,12 +98,12 @@ services.AddRateLimiter(options =>
 ## DevSecOps Pipeline
 
 ### Security Gates en CI/CD
-1. **SAST** (Static Application Security Testing)
+1. **SAST**(Static Application Security Testing)
    - SonarQube
    - Checkmarx
    - Veracode
 
-2. **DAST** (Dynamic Application Security Testing)
+2. **DAST**(Dynamic Application Security Testing)
    - OWASP ZAP
    - Burp Suite
    - Nessus

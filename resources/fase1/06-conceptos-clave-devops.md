@@ -2,13 +2,13 @@
 
 Los conceptos fundamentales de DevOps forman la base teórica y práctica sobre la que se construyen todas las implementaciones exitosas. Comprender estos pilares conceptuales es esencial antes de profundizar en herramientas específicas o implementaciones técnicas.
 
-En este módulo exploraremos los **4 conceptos más críticos** que definen la práctica moderna de DevOps y que sustentan toda la transformación digital.
+En este módulo exploraremos los **4 conceptos más críticos**que definen la práctica moderna de DevOps y que sustentan toda la transformación digital.
 
 ---
 
 ## ¿Por qué Estos Conceptos Son Fundamentales?
 
-Estos no son simplemente términos técnicos; son los **principios arquitectónicos** que permiten:
+Estos no son simplemente términos técnicos; son los **principios arquitectónicos**que permiten:
 
 - **Velocidad sin sacrificar calidad**
 - **Escalabilidad predecible y controlada**
@@ -56,12 +56,12 @@ La Integración Continua es la práctica de integrar cambios de código en un re
 Aunque ambos se abrevian como "CD", son conceptos diferentes:
 
 #### Entrega Continua (Continuous Delivery)
-- **Objetivo**: Mantener el código **siempre listo** para producción
+- **Objetivo**: Mantener el código **siempre listo**para producción
 - **Proceso**: Despliegue a producción requiere **aprobación manual**
 - **Beneficio**: Reduce el riesgo y tiempo de despliegues
 
 #### Despliegue Continuo (Continuous Deployment)
-- **Objetivo**: **Automatizar completamente** el pipeline hasta producción
+- **Objetivo**: **Automatizar completamente**el pipeline hasta producción
 - **Proceso**: Todo cambio que pase las pruebas se despliega **automáticamente**
 - **Beneficio**: Máxima velocidad de entrega de valor
 
@@ -91,7 +91,7 @@ Código → Commit → Build → Test → Package → Deploy Stage → Test E2E 
 
 ### ¿Qué es Infrastructure as Code?
 
-IaC es la práctica de **gestionar y provisionar infraestructura** mediante código legible por máquinas, en lugar de procesos manuales o herramientas de configuración interactivas.
+IaC es la práctica de **gestionar y provisionar infraestructura**mediante código legible por máquinas, en lugar de procesos manuales o herramientas de configuración interactivas.
 
 #### Principios Fundamentales de IaC
 
@@ -173,7 +173,7 @@ resource "aws_security_group" "web_sg" {
 
 ### ¿Por qué Automatizar?
 
-La automatización es el **multiplicador de fuerza** que permite a los equipos escalar sin incrementar linealmente el personal.
+La automatización es el **multiplicador de fuerza**que permite a los equipos escalar sin incrementar linealmente el personal.
 
 #### Problemas que Resuelve la Automatización
 
@@ -372,27 +372,27 @@ Estos 4 conceptos no trabajan en aislamiento, sino que se potencian mutuamente:
 
 #### Aplicación de CI/CD
 
-- **Deploy frecuente** de optimizaciones días antes del evento
-- **Feature flags** para activar/desactivar funciones según carga
-- **Rollback automático** si métricas indican problemas
+- **Deploy frecuente**de optimizaciones días antes del evento
+- **Feature flags**para activar/desactivar funciones según carga
+- **Rollback automático**si métricas indican problemas
 
 #### Aplicación de IaC
 
-- **Auto-scaling groups** definidos en Terraform
-- **Pre-warming** de recursos definido como código
-- **Disaster recovery** environment listo para activar
+- **Auto-scaling groups**definidos en Terraform
+- **Pre-warming**de recursos definido como código
+- **Disaster recovery**environment listo para activar
 
 #### Aplicación de Automatización
 
-- **Auto-scaling** basado en CPU y request rate
-- **Circuit breakers** que protegen servicios downstream
-- **Queue management** automático para manejar picos
+- **Auto-scaling**basado en CPU y request rate
+- **Circuit breakers**que protegen servicios downstream
+- **Queue management**automático para manejar picos
 
 #### Aplicación de Observabilidad
 
-- **Real-time dashboards** mostrando KPIs críticos
-- **Alerting** proactivo antes de que usuarios se vean afectados
-- **Distributed tracing** para identificar cuellos de botella
+- **Real-time dashboards**mostrando KPIs críticos
+- **Alerting**proactivo antes de que usuarios se vean afectados
+- **Distributed tracing**para identificar cuellos de botella
 
 ---
 
@@ -400,34 +400,34 @@ Estos 4 conceptos no trabajan en aislamiento, sino que se potencian mutuamente:
 
 ### Nivel Principiante
 
-1. **Entiende los conceptos** teóricamente
-2. **Experimenta con herramientas básicas** (GitHub Actions, Docker)
-3. **Implementa monitoring básico** (métricas simples)
+1. **Entiende los conceptos**teóricamente
+2. **Experimenta con herramientas básicas**(GitHub Actions, Docker)
+3. **Implementa monitoring básico**(métricas simples)
 
 ### Nivel Intermedio
 
-1. **Construye pipelines CI/CD** completos
-2. **Gestiona infraestructura** con Terraform
-3. **Implementa observabilidad** con Prometheus + Grafana
+1. **Construye pipelines CI/CD**completos
+2. **Gestiona infraestructura**con Terraform
+3. **Implementa observabilidad**con Prometheus + Grafana
 
 ### Nivel Avanzado
 
-1. **Diseña arquitecturas** que incorporen todos los conceptos
-2. **Optimiza performance** usando métricas avanzadas
-3. **Mentoriza equipos** en implementación de conceptos
+1. **Diseña arquitecturas**que incorporen todos los conceptos
+2. **Optimiza performance**usando métricas avanzadas
+3. **Mentoriza equipos**en implementación de conceptos
 
 ---
 
 ## Conclusión: Los Cimientos del Éxito
 
-Estos cuatro conceptos - **CI/CD, IaC, Automatización y Observabilidad** - no son características opcionales de DevOps; son los **cimientos arquitectónicos** sobre los que se construye toda implementación exitosa.
+Estos cuatro conceptos - **CI/CD, IaC, Automatización y Observabilidad**- no son características opcionales de DevOps; son los **cimientos arquitectónicos**sobre los que se construye toda implementación exitosa.
 
 Dominar estos conceptos te permitirá:
 
-- **Evaluar herramientas** con criterio técnico sólido
-- **Diseñar soluciones** que escalen y sean mantenibles
-- **Liderar transformaciones** DevOps en tu organización
-- **Adaptarte** a nuevas tecnologías sin perder los fundamentos
+- **Evaluar herramientas**con criterio técnico sólido
+- **Diseñar soluciones**que escalen y sean mantenibles
+- **Liderar transformaciones**DevOps en tu organización
+- **Adaptarte**a nuevas tecnologías sin perder los fundamentos
 
 ### Principios para Recordar
 

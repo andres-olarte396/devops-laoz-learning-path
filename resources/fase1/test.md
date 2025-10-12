@@ -5,28 +5,28 @@
 
 Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 temas principales que has estudiado.
 
-> **Instrucciones:** Selecciona la respuesta correcta para cada pregunta. Las respuestas se encuentran al final del documento.
+> **Instrucciones:**Selecciona la respuesta correcta para cada pregunta. Las respuestas se encuentran al final del documento.
 
 ---
 
-##  Temario Cubierto en el Test
+## Temario Cubierto en el Test
 
-** Fase 1 Completada - 8 Temas:**
+**Fase 1 Completada - 8 Temas:**
 
-1. **[¿Qué es DevOps?](01-que-es-devops.md)** - Cultura, herramientas y prácticas
-2. **[Beneficios de DevOps](02-beneficios-debops.md)** - Ventajas técnicas y de negocio
-3. **[DevOps vs Agile vs Waterfall](03-devops-agile-waterfall.md)** - Comparación de metodologías
-4. **[Ciclo de Vida DevOps](04-ciclo-de-vida-devops.md)** - 8 fases del proceso
-5. **[Herramientas y Tecnologías Clave](05-herramientas-tecnologias-clave.md)** - Stack tecnológico
-6. **[Introducción a la Nube](06-introduccion-nube.md)** - Fundamentos cloud
-7. **[Conceptos Clave: CI/CD, IaC y Observabilidad](07-conceptos-clave.md)** - Pilares técnicos
-8. **[Primeros Pasos con Git](08-primeros-pasos-git.md)** - Control de versiones mastery
+1. **[¿Qué es DevOps?](01-que-es-devops.md)**- Cultura, herramientas y prácticas
+2. **[Beneficios de DevOps](02-beneficios-debops.md)**- Ventajas técnicas y de negocio
+3. **[DevOps vs Agile vs Waterfall](03-devops-agile-waterfall.md)**- Comparación de metodologías
+4. **[Ciclo de Vida DevOps](04-ciclo-de-vida-devops.md)**- 8 fases del proceso
+5. **[Herramientas y Tecnologías Clave](05-herramientas-tecnologias-clave.md)**- Stack tecnológico
+6. **[Introducción a la Nube](06-introduccion-nube.md)**- Fundamentos cloud
+7. **[Conceptos Clave: CI/CD, IaC y Observabilidad](07-conceptos-clave.md)**- Pilares técnicos
+8. **[Primeros Pasos con Git](08-primeros-pasos-git.md)**- Control de versiones mastery
 
 ---
 
 ## 1. ¿Qué es DevOps? (Cultura, herramientas y prácticas)
 
->  **Contenido de referencia:** [01-que-es-devops.md](01-que-es-devops.md)
+>  **Contenido de referencia:**[01-que-es-devops.md](01-que-es-devops.md)
 
 1. **¿Cuál es el objetivo principal de DevOps según el modelo CALMS?**
 
@@ -48,18 +48,17 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
    - [ ] b) Cambiar la arquitectura del software
    - [ ] c) Reducir el número de desarrolladores
    - [ ] d) Implementar solo en servidores de la izquierda
-=======
+
 # Test de Autoevaluación: Fundamentos de DevOps (Fase 0 y 1)
 
 Este test está diseñado para ayudarte a evaluar tu comprensión de los conceptos fundamentales introducidos en las Fases 0 y 1. Cada pregunta incluye un enlace a la sección relevante del material de estudio para que puedas repasar.
->>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 ---
 
 ## Sección 1: Fase 0 - Dominio de la Terminal
 
 <<<<<<< HEAD
->  **Contenido de referencia:** [02-beneficios-debops.md](02-beneficios-debops.md)
+>  **Contenido de referencia:**[02-beneficios-debops.md](02-beneficios-debops.md)
 
 4. **¿Cuál de los siguientes es un beneficio clave de DevOps?**
 
@@ -81,8 +80,8 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
    - [ ] b) Mean Time To Recovery (MTTR) reducido
    - [ ] c) Menos comunicación entre equipos
    - [ ] d) Mayor costo operacional
-=======
-**Pregunta 1:** ¿Cuál es el comando para crear un nuevo directorio llamado `proyecto` y luego mover un archivo `plan.txt` dentro de él?
+
+**Pregunta 1:**¿Cuál es el comando para crear un nuevo directorio llamado `proyecto` y luego mover un archivo `plan.txt` dentro de él?
 
 - [ ] a) `mkdir proyecto` y luego `cp plan.txt proyecto/`
 - [ ] b) `newdir proyecto` y luego `move plan.txt proyecto/`
@@ -94,7 +93,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
   <p><a href="./../fase0/01-fundamentos-shell.md#2-navegación-y-manipulación-de-archivos">Fuente: Fase 0 - Fundamentos de la Shell</a></p>
 </details>
 
-**Pregunta 2:** Quieres que un script llamado `deploy.sh` sea ejecutable por su propietario, pero solo de lectura para todos los demás. ¿Qué comando `chmod` usarías?
+**Pregunta 2:**Quieres que un script llamado `deploy.sh` sea ejecutable por su propietario, pero solo de lectura para todos los demás. ¿Qué comando `chmod` usarías?
 
 - [ ] a) `chmod 644 deploy.sh`
 - [ ] b) `chmod 755 deploy.sh`
@@ -106,7 +105,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
   <p><a href="./../fase0/01-fundamentos-shell.md#permisos">Fuente: Fase 0 - Permisos de Archivos</a></p>
 </details>
 
-**Pregunta 3:** ¿Qué cadena de comandos usarías para buscar la palabra "ERROR" (ignorando mayúsculas/minúsculas) en un archivo `app.log` y guardar el resultado en un nuevo archivo llamado `errores.log`?
+**Pregunta 3:**¿Qué cadena de comandos usarías para buscar la palabra "ERROR" (ignorando mayúsculas/minúsculas) en un archivo `app.log` y guardar el resultado en un nuevo archivo llamado `errores.log`?
 
 - [ ] a) `grep -i "ERROR" app.log > errores.log`
 - [ ] b) `find "ERROR" in app.log > errores.log`
@@ -118,20 +117,19 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
   <p><a href="./../fase0/02-herramientas-cli.md#1-búsqueda-y-filtrado-de-texto">Fuente: Fase 0 - Herramientas de Línea de Comandos</a></p>
 </details>
 
-**Pregunta 4:** ¿Cuál es la diferencia fundamental entre un bucle `for` y un bucle `while` en Bash scripting?
+**Pregunta 4:**¿Cuál es la diferencia fundamental entre un bucle `for` y un bucle `while` en Bash scripting?
 
 <details>
   <summary>Ver Fuente</summary>
   <p><a href="./../fase0/03-scripting-basico.md#bucles-for-y-while">Fuente: Fase 0 - Scripting Básico</a></p>
 </details>
->>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
 
 ---
 
 ## Sección 2: Fase 1 - Fundamentos de DevOps
 
 <<<<<<< HEAD
->  **Contenido de referencia:** [03-devops-agile-waterfall.md](03-devops-agile-waterfall.md)
+>  **Contenido de referencia:**[03-devops-agile-waterfall.md](03-devops-agile-waterfall.md)
 
 7. **¿Cuál de los siguientes modelos es lineal y secuencial?**
 
@@ -153,15 +151,15 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
    - [ ] b) DevOps es más lento que Agile
    - [ ] c) No hay diferencias
    - [ ] d) Agile requiere más automatización
-=======
-**Pregunta 5:** Según la sección de cultura, ¿qué es un "Post-Mortem Sin Culpa" y por qué es crucial para la seguridad psicológica de un equipo?
+
+**Pregunta 5:**Según la sección de cultura, ¿qué es un "Post-Mortem Sin Culpa" y por qué es crucial para la seguridad psicológica de un equipo?
 
 <details>
   <summary>Ver Fuente</summary>
   <p><a href="./01-que-es-devops.md#el-mindset-devops-más-allá-de-las-prácticas">Fuente: Fase 1 - Cultura de DevOps</a></p>
 </details>
 
-**Pregunta 6:** ¿Cuál de las siguientes NO es una de las 4 métricas clave de DORA?
+**Pregunta 6:**¿Cuál de las siguientes NO es una de las 4 métricas clave de DORA?
 
 - [ ] a) Deployment Frequency
 - [ ] b) Lead Time for Changes
@@ -173,8 +171,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
   <p>Aunque el contenido detallado sobre DORA aún no se ha escrito, el <a href="../../roadmap.md">Roadmap</a> las introduce como un concepto clave. La respuesta se puede inferir de los nombres de las métricas, que se centran en el proceso de entrega, no en la cantidad de código.</p>
 </details>
 
-**Pregunta 7:** Estás trabajando en una nueva funcionalidad en una rama llamada `feature/login`. Has hecho varios commits pequeños. Antes de fusionarla a `main`, quieres combinar todos esos commits en uno solo para mantener el historial limpio. ¿Qué estrategia de merge usarías?
->>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160
+**Pregunta 7:**Estás trabajando en una nueva funcionalidad en una rama llamada `feature/login`. Has hecho varios commits pequeños. Antes de fusionarla a `main`, quieres combinar todos esos commits en uno solo para mantener el historial limpio. ¿Qué estrategia de merge usarías?
 
 - [ ] a) Three-Way Merge
 - [ ] b) Fast-Forward Merge
@@ -184,7 +181,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 <<<<<<< HEAD
 ## 4. Ciclo de Vida de DevOps (8 Fases)
 
->  **Contenido de referencia:** [04-ciclo-de-vida-devops.md](04-ciclo-de-vida-devops.md)
+>  **Contenido de referencia:**[04-ciclo-de-vida-devops.md](04-ciclo-de-vida-devops.md)
 
 10. **¿Cuáles son las 8 fases del ciclo de vida DevOps en orden?**
 
@@ -211,7 +208,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ## 5. Herramientas y Tecnologías Clave
 
->  **Contenido de referencia:** [05-herramientas-tecnologias-clave.md](05-herramientas-tecnologias-clave.md)
+>  **Contenido de referencia:**[05-herramientas-tecnologias-clave.md](05-herramientas-tecnologias-clave.md)
 
 13. **¿Cuál de las siguientes herramientas se utiliza para la Integración Continua?**
 
@@ -245,7 +242,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ## 6. Introducción a la Nube
 
->  **Contenido de referencia:** [06-introduccion-nube.md](06-introduccion-nube.md)
+>  **Contenido de referencia:**[06-introduccion-nube.md](06-introduccion-nube.md)
 
 17. **¿Cuáles son los tres principales modelos de servicio en la nube?**
 
@@ -272,7 +269,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ## 7. Conceptos Clave: CI/CD, IaC y Observabilidad
 
->  **Contenido de referencia:** [07-conceptos-clave.md](07-conceptos-clave.md)
+>  **Contenido de referencia:**[07-conceptos-clave.md](07-conceptos-clave.md)
 
 20. **¿Qué significa CI/CD?**
 
@@ -306,7 +303,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ## 8. Primeros Pasos con Git
 
->  **Contenido de referencia:** [08-primeros-pasos-git.md](08-primeros-pasos-git.md)
+>  **Contenido de referencia:**[08-primeros-pasos-git.md](08-primeros-pasos-git.md)
 
 24. **¿Cuál es el comando para clonar un repositorio remoto?**
 
@@ -345,70 +342,70 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ---
 
-##  Respuestas Correctas
+## Respuestas Correctas
 
 ### 1. ¿Qué es DevOps? (Cultura, herramientas y prácticas)
 
-1. **b)** Unificar desarrollo y operaciones para entregar software más rápido y confiable
-2. **c)** Silos organizacionales (esto NO es un principio de DevOps)
-3. **a)** Mover las pruebas y seguridad más temprano en el ciclo de desarrollo
+1. **b)**Unificar desarrollo y operaciones para entregar software más rápido y confiable
+2. **c)**Silos organizacionales (esto NO es un principio de DevOps)
+3. **a)**Mover las pruebas y seguridad más temprano en el ciclo de desarrollo
 
 ### 2. Beneficios de DevOps
 
-4. **c)** Entrega más rápida de software con mayor calidad
-5. **b)** Detectando errores tempranamente mediante pruebas automatizadas
-6. **b)** Mean Time To Recovery (MTTR) reducido
+4. **c)**Entrega más rápida de software con mayor calidad
+5. **b)**Detectando errores tempranamente mediante pruebas automatizadas
+6. **b)**Mean Time To Recovery (MTTR) reducido
 
 ### 3. Diferencia entre DevOps, Agile y Waterfall
 
-7. **c)** Waterfall
-8. **b)** Agile
-9. **a)** Agile solo se enfoca en desarrollo, DevOps incluye operaciones
+7. **c)**Waterfall
+8. **b)**Agile
+9. **a)**Agile solo se enfoca en desarrollo, DevOps incluye operaciones
 
 ### 4. Ciclo de Vida de DevOps (8 Fases)
 
-10. **a)** Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
-11. **d)** En múltiples fases (Code, Build, Deploy)
-12. **b)** Se gestionan los entornos de producción y se escala según demanda
+10. **a)**Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
+11. **d)**En múltiples fases (Code, Build, Deploy)
+12. **b)**Se gestionan los entornos de producción y se escala según demanda
 
 ### 5. Herramientas y Tecnologías Clave
 
-13. **b)** Jenkins
-14. **b)** Containerización de aplicaciones
-15. **b)** Orquestación de contenedores
-16. **c)** Terraform
+13. **b)**Jenkins
+14. **b)**Containerización de aplicaciones
+15. **b)**Orquestación de contenedores
+16. **c)**Terraform
 
 ### 6. Introducción a la Nube
 
-17. **a)** SaaS, PaaS, IaaS
-18. **b)** Agregar más máquinas al sistema
-19. **b)** Elasticidad y aprovisionamiento rápido de recursos
+17. **a)**SaaS, PaaS, IaaS
+18. **b)**Agregar más máquinas al sistema
+19. **b)**Elasticidad y aprovisionamiento rápido de recursos
 
 ### 7. Conceptos Clave: CI/CD, IaC y Observabilidad
 
-20. **b)** Continuous Integration / Continuous Deployment
-21. **b)** Gestionar la infraestructura mediante archivos de configuración versionados
-22. **b)** Métricas, logs y trazas distribuidas
-23. **b)** Continuous Deployment automatiza el despliegue a producción, Continuous Delivery requiere aprobación manual
+20. **b)**Continuous Integration / Continuous Deployment
+21. **b)**Gestionar la infraestructura mediante archivos de configuración versionados
+22. **b)**Métricas, logs y trazas distribuidas
+23. **b)**Continuous Deployment automatiza el despliegue a producción, Continuous Delivery requiere aprobación manual
 
 ### 8. Primeros Pasos con Git
 
-24. **b)** `git clone <URL>`
-25. **b)** Git Flow
-26. **b)** Solicitar revisión de código antes de integrar cambios
-27. **c)** `git checkout -b nueva-rama`
-28. **b)** Escribir mensajes descriptivos que expliquen el "qué" y "por qué"
+24. **b)**`git clone <URL>`
+25. **b)**Git Flow
+26. **b)**Solicitar revisión de código antes de integrar cambios
+27. **c)**`git checkout -b nueva-rama`
+28. **b)**Escribir mensajes descriptivos que expliquen el "qué" y "por qué"
 
 ### 9. Preguntas Integradoras
 
-29. **a)** Git → Jenkins → Docker → Kubernetes → Prometheus
-30. **b)** Planificar → Desarrollar → CI/CD automático → Monitoreo → Feedback
+29. **a)**Git → Jenkins → Docker → Kubernetes → Prometheus
+30. **b)**Planificar → Desarrollar → CI/CD automático → Monitoreo → Feedback
 
 ---
 
-##  Evaluación de Resultados
+## Evaluación de Resultados
 
-###  **Rangos de Puntuación**
+### **Rangos de Puntuación**
 
 - **26-30 puntos (87-100%)**: Excelente!  Dominas los fundamentos de DevOps
 - **21-25 puntos (70-86%)**: Muy bien!  Tienes un buen entendimiento
@@ -416,33 +413,33 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 - **11-15 puntos (37-52%)**: Regular  Revisa el material nuevamente
 - **0-10 puntos (0-36%)**: Insuficiente  Estudia el contenido completo
 
-###  **Recomendaciones por Puntuación**
+### **Recomendaciones por Puntuación**
 
-####  **Puntuación Alta (26-30)**
+#### **Puntuación Alta (26-30)**
 
 - Felicitaciones! Estás listo para la Fase 2
 - Considera ser mentor de otros estudiantes
 - Comparte tu experiencia en la comunidad
 
-####  **Puntuación Buena (21-25)**
+#### **Puntuación Buena (21-25)**
 
 - Revisa los temas donde tuviste errores
 - Practica más con las herramientas específicas
 - Procede a la Fase 2 con confianza
 
-####  **Puntuación Regular (16-20)**
+#### **Puntuación Regular (16-20)**
 
 - Repasa los archivos donde tuviste más errores
 - Completa nuevamente los laboratorios prácticos
 - Busca recursos adicionales para conceptos difíciles
 
-####  **Puntuación Baja (11-15)**
+#### **Puntuación Baja (11-15)**
 
 - Vuelve a estudiar el material completo
 - Toma más tiempo con cada tema
 - Busca ayuda en la comunidad
 
-####  **Puntuación Insuficiente (0-10)**
+#### **Puntuación Insuficiente (0-10)**
 
 - Reinicia la Fase 1 desde el principio
 - Dedica más tiempo a cada archivo
@@ -450,23 +447,23 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ---
 
-##  Siguientes Pasos
+## Siguientes Pasos
 
-###  **Si Aprobaste (21+ puntos)**
+### **Si Aprobaste (21+ puntos)**
 
-1. **Celebra tu logro**  Has completado exitosamente la Fase 1
-2. **Documenta tu aprendizaje** en tu portfolio personal
+1. **Celebra tu logro** Has completado exitosamente la Fase 1
+2. **Documenta tu aprendizaje**en tu portfolio personal
 3. **Procede a la [Fase 2: Automatización y CI/CD](../fase2/)**
-4. **Comparte tu experiencia** con otros estudiantes
+4. **Comparte tu experiencia**con otros estudiantes
 
-###  **Si Necesitas Mejorar (≤20 puntos)**
+### **Si Necesitas Mejorar (≤20 puntos)**
 
-1. **Identifica tus áreas débiles** basándote en las respuestas incorrectas
-2. **Repasa el material específico** que necesitas reforzar
-3. **Completa nuevamente los laboratorios** de esos temas
-4. **Retoma el test** cuando te sientas más preparado
+1. **Identifica tus áreas débiles**basándote en las respuestas incorrectas
+2. **Repasa el material específico**que necesitas reforzar
+3. **Completa nuevamente los laboratorios**de esos temas
+4. **Retoma el test**cuando te sientas más preparado
 
-###  **Recursos Adicionales**
+### **Recursos Adicionales**
 
 - [Roadmap Completo](../../roadmap.md)
 - [Notas de Git](../../notes/git-notes.md)
@@ -476,16 +473,16 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ---
 
-##  Consejos para el Éxito
+## Consejos para el Éxito
 
-###  **Para Futuros Tests**
+### **Para Futuros Tests**
 
-1. **Lee atentamente** cada pregunta y todas las opciones
-2. **Elimina opciones incorrectas** para aumentar probabilidades
-3. **Revisa material** cuando no estés seguro de una respuesta
-4. **Practica regularmente** para mantener conocimientos frescos
+1. **Lee atentamente**cada pregunta y todas las opciones
+2. **Elimina opciones incorrectas**para aumentar probabilidades
+3. **Revisa material**cuando no estés seguro de una respuesta
+4. **Practica regularmente**para mantener conocimientos frescos
 
-###  **Para Continuar Aprendiendo**
+### **Para Continuar Aprendiendo**
 
 1. **Mantén la práctica**: Los conceptos DevOps necesitan aplicación constante
 2. **Únete a comunidades**: Aprende de experiencias de otros profesionales
@@ -494,7 +491,7 @@ Este test está diseñado para ayudarte a evaluar tu comprensión de los concept
 
 ---
 
-##  Certificado de Completado
+## Certificado de Completado
 
 **Si obtuviste 21 puntos o más, has completado exitosamente la Fase 1!**
 
@@ -519,7 +516,7 @@ Listo para continuar con la Fase 2!
 
 _Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el aprendizaje DevOps es un viaje continuo._
 
-**Última actualización:** 12 de octubre de 2025
+**Última actualización:**12 de octubre de 2025
 
 ## 9. Preguntas Integradoras
 
@@ -541,25 +538,25 @@ _Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el apren
 
 ## Resumen de Preguntas por Tema
 
-1. **¿Qué es DevOps?** Preguntas 1, 2, 3.
+1. **¿Qué es DevOps?**Preguntas 1, 2, 3.
 
    - 1.1. b)
    - 1.2. b)
    - 1.3. b)
 
-2. **Beneficios de DevOps** Preguntas 4, 5, 6.
+2. **Beneficios de DevOps**Preguntas 4, 5, 6.
 
    - 2.1. c)
    - 2.2. b)
    - 2.3. b)
 
-3. **Diferencia entre DevOps, Agile y Waterfall** Preguntas 7, 8, 9.
+3. **Diferencia entre DevOps, Agile y Waterfall**Preguntas 7, 8, 9.
 
    - 3.1. c)
    - 3.2. b)
    - 3.3. c)
 
-4. **Ciclo de vida de DevOps** Preguntas 10, 11, 12, 13, 14, 15.
+4. **Ciclo de vida de DevOps**Preguntas 10, 11, 12, 13, 14, 15.
 
    - 4.1. b)
    - 4.2. b)
@@ -567,13 +564,13 @@ _Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el apren
    - 4.4. b)
    - 4.5. b)
    - 4.6. b)
-=======
+
 <details>
   <summary>Ver Fuente</summary>
   <p><a href="./07-primeros-pasos-git.md#5-merges-y-resolución-de-conflictos">Fuente: Fase 1 - Merges y Resolución de Conflictos</a></p>
 </details>
 
-**Pregunta 8:** ¿Para qué sirve el comando `git stash`?
+**Pregunta 8:**¿Para qué sirve el comando `git stash`?
 
 - [ ] a) Para eliminar commits antiguos.
 - [ ] b) Para guardar temporalmente cambios que no están listos para ser commitidos.
@@ -585,10 +582,9 @@ _Felicitaciones por completar la evaluación de la Fase 1! Recuerda que el apren
   <p><a href="./07-primeros-pasos-git.md#7-flujos-de-trabajo-avanzados">Fuente: Fase 1 - Flujos de Trabajo Avanzados (Stash)</a></p>
 </details>
 
-**Pregunta 9:** ¿Qué es la "Infraestructura como Código" (IaC) y qué herramienta mencionada en la Fase 1 se utiliza para este propósito?
+**Pregunta 9:**¿Qué es la "Infraestructura como Código" (IaC) y qué herramienta mencionada en la Fase 1 se utiliza para este propósito?
 
 <details>
   <summary>Ver Fuente</summary>
   <p><a href="./06-conceptos-clave-devops.md#2-infraestructura-como-código-iac">Fuente: Fase 1 - Conceptos Clave (IaC)</a></p>
 </details>
->>>>>>> d13a01097f34152e2d223be68d20e55eaf2ce160

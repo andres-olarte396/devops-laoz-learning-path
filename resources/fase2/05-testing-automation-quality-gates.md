@@ -1,24 +1,24 @@
 # 05. Testing Automation y Quality Gates
 
-**Automatiza testing y asegura calidad de código!** Este módulo te enseñará a implementar testing automation completo y quality gates efectivos en tus pipelines CI/CD.
+**Automatiza testing y asegura calidad de código!**Este módulo te enseñará a implementar testing automation completo y quality gates efectivos en tus pipelines CI/CD.
 
-##  Objetivos de Aprendizaje
+## Objetivos de Aprendizaje
 
 Al completar este módulo serás capaz de:
 
-- **Implementar testing automation** en múltiples niveles
-- **Configurar quality gates** efectivos
-- **Integrar herramientas** de análisis de código
-- **Automatizar security testing** en pipelines
-- **Crear test reports** y métricas
-- **Implementar performance testing** automático
-- **Gestionar test data** y ambientes
+- **Implementar testing automation**en múltiples niveles
+- **Configurar quality gates**efectivos
+- **Integrar herramientas**de análisis de código
+- **Automatizar security testing**en pipelines
+- **Crear test reports**y métricas
+- **Implementar performance testing**automático
+- **Gestionar test data**y ambientes
 
-##  Contenido del Módulo
+## Contenido del Módulo
 
 ### 1. Pirámide de Testing Automation
 
-####  **Unit Testing**
+#### **Unit Testing**
 
 ```javascript
 // tests/unit/calculator.test.js
@@ -181,7 +181,7 @@ class TestUserService:
         assert result == expected_category
 ```
 
-####  **Integration Testing**
+#### **Integration Testing**
 
 ```javascript
 // tests/integration/api.test.js
@@ -335,7 +335,7 @@ describe('User API Integration Tests', () => {
 })
 ```
 
-####  **End-to-End Testing**
+#### **End-to-End Testing**
 
 ```javascript
 // tests/e2e/user-registration.spec.js
@@ -451,7 +451,7 @@ test.describe('E-commerce Checkout Flow', () => {
 
 ### 2. Quality Gates Configuration
 
-####  **SonarQube Quality Gates**
+#### **SonarQube Quality Gates**
 
 ```yaml
 # sonar-project.properties
@@ -529,7 +529,7 @@ else
 fi
 ```
 
-####  **Custom Quality Gates**
+#### **Custom Quality Gates**
 
 ```javascript
 // quality-gate-checker.js
@@ -774,7 +774,7 @@ checker.runChecks().then(report => {
 
 ### 3. Security Testing Automation
 
-####  **SAST (Static Application Security Testing)**
+#### **SAST (Static Application Security Testing)**
 
 ```yaml
 # .github/workflows/security-testing.yml
@@ -931,7 +931,7 @@ jobs:
           path: report_html.html
 ```
 
-####  **Secret Scanning**
+#### **Secret Scanning**
 
 ```bash
 #!/bin/bash
@@ -1021,7 +1021,7 @@ fi
 
 ### 4. Performance Testing Automation
 
-####  **Load Testing with K6**
+#### **Load Testing with K6**
 
 ```javascript
 // tests/performance/load-test.js
@@ -1154,7 +1154,7 @@ export function teardown(data) {
 }
 ```
 
-####  **Performance Monitoring**
+#### **Performance Monitoring**
 
 ```javascript
 // tests/performance/lighthouse-ci.js
@@ -1246,7 +1246,7 @@ runPerformanceTests().catch(error => {
 })
 ```
 
-##  Laboratorios Prácticos
+## Laboratorios Prácticos
 
 ### Lab 1: Implementar Testing Pyramid
 
@@ -1299,7 +1299,7 @@ quality-gate:
       junit: reports/junit.xml
 ```
 
-##  Ejercicios Prácticos
+## Ejercicios Prácticos
 
 ### Ejercicio 1: Test Data Management
 
@@ -1325,7 +1325,7 @@ Implementar testing de regresión visual que:
 - Detecte cambios visuales no intencionados
 - Integre con el pipeline CI/CD
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Problemas Comunes
 
@@ -1363,7 +1363,7 @@ afterEach(() => {
 })
 ```
 
-##  Recursos Adicionales
+## Recursos Adicionales
 
 - [Testing Best Practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
 - [Jest Documentation](https://jestjs.io/docs/getting-started)
@@ -1371,7 +1371,7 @@ afterEach(() => {
 - [K6 Load Testing](https://k6.io/docs/)
 - [SonarQube Quality Gates](https://docs.sonarqube.org/latest/user-guide/quality-gates/)
 
-##  Checklist de Completado
+## Checklist de Completado
 
 - [ ] Implementado unit testing completo
 - [ ] Configurado integration testing
@@ -1386,4 +1386,4 @@ afterEach(() => {
 
 ---
 
-**Excelente!** Has dominado testing automation y quality gates. Continúa con el módulo final para aprender sobre estrategias de deployment avanzadas.
+**Excelente!**Has dominado testing automation y quality gates. Continúa con el módulo final para aprender sobre estrategias de deployment avanzadas.

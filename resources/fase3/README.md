@@ -46,7 +46,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Estimada
 
- **4-6 semanas** (dependiendo de experiencia previa)
+ **4-6 semanas**(dependiendo de experiencia previa)
 
 ## Prerrequisitos
 

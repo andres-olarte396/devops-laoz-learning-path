@@ -58,15 +58,15 @@ DevOps, Agile y Waterfall son metodologías y enfoques utilizados en el desarrol
 
 ## **Comparación entre Waterfall, Agile y DevOps**
 
-| **Aspecto**              | **Waterfall**                          | **Agile**                                | **DevOps**                              |
+| **Aspecto**             | **Waterfall**                         | **Agile**                               | **DevOps**                             |
 |--------------------------|----------------------------------------|------------------------------------------|-----------------------------------------|
-| **Enfoque**              | Lineal y secuencial                   | Iterativo e incremental                  | Cultura de colaboración y automatización |
-| **Flexibilidad**         | Baja (rígido)                         | Alta (adaptable a cambios)               | Alta (enfocado en mejora continua)      |
-| **Entrega**              | Al final del proyecto                 | Incremental (por sprints)                | Continua (CI/CD)                        |
-| **Colaboración**         | Equipos separados por fases           | Equipos multifuncionales y colaborativos | Integración Dev y Ops                   |
-| **Retroalimentación**    | Tardía (al final)                     | Constante (durante sprints)              | Constante (monitoreo y métricas)        |
-| **Automatización**       | Mínima                                | Parcial (pruebas, integración)           | Extensa (CI/CD, infraestructura, etc.)  |
-| **Uso ideal**            | Proyectos con requisitos fijos        | Proyectos con requisitos cambiantes      | Entornos de entrega rápida y frecuente  |
+| **Enfoque**             | Lineal y secuencial                   | Iterativo e incremental                  | Cultura de colaboración y automatización |
+| **Flexibilidad**        | Baja (rígido)                         | Alta (adaptable a cambios)               | Alta (enfocado en mejora continua)      |
+| **Entrega**             | Al final del proyecto                 | Incremental (por sprints)                | Continua (CI/CD)                        |
+| **Colaboración**        | Equipos separados por fases           | Equipos multifuncionales y colaborativos | Integración Dev y Ops                   |
+| **Retroalimentación**   | Tardía (al final)                     | Constante (durante sprints)              | Constante (monitoreo y métricas)        |
+| **Automatización**      | Mínima                                | Parcial (pruebas, integración)           | Extensa (CI/CD, infraestructura, etc.)  |
+| **Uso ideal**           | Proyectos con requisitos fijos        | Proyectos con requisitos cambiantes      | Entornos de entrega rápida y frecuente  |
 
 ---
 
@@ -79,8 +79,8 @@ DevOps, Agile y Waterfall son metodologías y enfoques utilizados en el desarrol
 
 ## **Conclusión**
 
-- **Waterfall** es ideal para proyectos con requisitos claros y estables, pero carece de flexibilidad.
-- **Agile** es perfecto para proyectos dinámicos con requisitos cambiantes, pero se centra principalmente en el desarrollo.
-- **DevOps** complementa Agile al integrar operaciones, automatizando y optimizando todo el ciclo de vida del software para una entrega rápida y confiable.
+- **Waterfall**es ideal para proyectos con requisitos claros y estables, pero carece de flexibilidad.
+- **Agile**es perfecto para proyectos dinámicos con requisitos cambiantes, pero se centra principalmente en el desarrollo.
+- **DevOps**complementa Agile al integrar operaciones, automatizando y optimizando todo el ciclo de vida del software para una entrega rápida y confiable.
 
 > Cada enfoque tiene su lugar dependiendo del tipo de proyecto, los requisitos y la cultura organizacional. En muchos casos, Agile y DevOps se utilizan juntos para maximizar la eficiencia y la calidad del software.

@@ -501,17 +501,17 @@ Con este plan, estarás bien encaminado para convertirte en un experto en DevOps
 
 **Plan de estudio estructurado para aprender DevOps desde cero hasta experto:**
 
-1. **Fundamentos de DevOps** - Base conceptual y herramientas clave
-2. **Automatización y CI/CD** - Pipelines y flujos automatizados
-3. **Contenedores y orquestación** - Docker y Kubernetes
-4. **Infraestructura como Código (IaC)** - Terraform y Ansible
-5. **Monitoreo, observabilidad y seguridad** - Sistemas de monitoreo y DevSecOps
-6. **Nube y arquitectura moderna** - Servicios cloud y microservicios
-7. **Ciberseguridad en DevOps** - Seguridad integral en el ciclo de desarrollo
-8. **Inteligencia Artificial aplicada al desarrollo** - IA y ML en soluciones técnicas
-9. **Arquitectura de Software y Microservicios** - Patrones avanzados de diseño
-10. **DevOps y Automatización Avanzada** - Técnicas avanzadas de automatización
-11. **Metodologías Ágiles Avanzadas** - Scrum, Kanban y escalado ágil
-12. **Habilidades Blandas y Liderazgo Técnico** - Competencias interpersonales
-13. **Proyecto Final Integrador** - Aplicación práctica integral
-14. **Proyectos y Certificaciones** - Validación profesional
+1. **Fundamentos de DevOps**- Base conceptual y herramientas clave
+2. **Automatización y CI/CD**- Pipelines y flujos automatizados
+3. **Contenedores y orquestación**- Docker y Kubernetes
+4. **Infraestructura como Código (IaC)**- Terraform y Ansible
+5. **Monitoreo, observabilidad y seguridad**- Sistemas de monitoreo y DevSecOps
+6. **Nube y arquitectura moderna**- Servicios cloud y microservicios
+7. **Ciberseguridad en DevOps**- Seguridad integral en el ciclo de desarrollo
+8. **Inteligencia Artificial aplicada al desarrollo**- IA y ML en soluciones técnicas
+9. **Arquitectura de Software y Microservicios**- Patrones avanzados de diseño
+10. **DevOps y Automatización Avanzada**- Técnicas avanzadas de automatización
+11. **Metodologías Ágiles Avanzadas**- Scrum, Kanban y escalado ágil
+12. **Habilidades Blandas y Liderazgo Técnico**- Competencias interpersonales
+13. **Proyecto Final Integrador**- Aplicación práctica integral
+14. **Proyectos y Certificaciones**- Validación profesional

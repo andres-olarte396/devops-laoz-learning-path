@@ -2,7 +2,7 @@
 
 Este test evalúa tu comprensión de los conceptos básicos de la línea de comandos, herramientas CLI y scripting, cubiertos en la Fase 0.
 
-**Instrucciones:** Elige la respuesta que consideres correcta para cada pregunta.
+**Instrucciones:**Elige la respuesta que consideres correcta para cada pregunta.
 
 ---
 
@@ -125,9 +125,9 @@ Este test evalúa tu comprensión de los conceptos básicos de la línea de coma
   3. **c) `mkdir proyectos`**
   4. **c) `grep "error" app.log`**
   5. **b) `cat`**
-  6. **c) `which node`** (o `whereis` en algunos sistemas, pero `which` es más común para esto).
+  6. **c) `which node`**(o `whereis` en algunos sistemas, pero `which` es más común para esto).
   7. **a) `#!/bin/bash`**
-  8. **d) `saludo="hola"`** (Importante: sin espacios alrededor del `=`).
+  8. **d) `saludo="hola"`**(Importante: sin espacios alrededor del `=`).
   9. **c) `if [ ... ]; then`**
 
 </details>
