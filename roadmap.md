@@ -48,14 +48,14 @@ En esta fase, aprenderás los principios fundamentales de DevOps, su filosofía 
 
 3. **Conceptos clave**
    - [Integración Continua (CI) y Entrega/Despliegue Continuo (CD)](./resources/fase1/07-conceptos-clave.md)
-   - Infraestructura como Código (IaC)
-   - Automatización
-   - Monitoreo y observabilidad
+   - [Infraestructura como Código (IaC)](./resources/fase1/10-infraestructura-como-codigo.md)
+   - [Automatización](./resources/fase1/11-automatizacion.md)
+   - [Monitoreo y observabilidad](./resources/fase1/12-monitoreo-observabilidad.md)
 
 4. **Primeros pasos con Git**
    - [Control de versiones con Git](./resources/fase1/08-primeros-pasos-git.md)
-   - GitHub/GitLab: Colaboración y flujos de trabajo
-   - Ramas, merges, pull requests y conflictos
+   - [GitHub/GitLab: Colaboración y flujos de trabajo](./resources/fase1/09-github-gitlab-colaboracion.md)
+   - [Ramas, merges, pull requests y conflictos](./resources/fase1/13-ramas-merges-pull-requests.md)
 
 5. **Evaluación**
    - [Test de la unidad](./resources/fase1/test.md)

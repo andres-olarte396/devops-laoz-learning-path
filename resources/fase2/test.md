@@ -238,7 +238,7 @@ cp database.sql "backup_${DATE}.sql"
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **20. Completa el bloque de pipeline Jenkins: **
@@ -258,7 +258,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **21. ¿Para qué sirve la directiva `when` en un pipeline Jenkins?**
@@ -270,7 +270,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **22. En Jenkins, ¿qué es un "node"?**
@@ -282,14 +282,14 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **23. Verdadero/Falso: Jenkins puede integrar con sistemas de control de versiones como Git.**
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **24. ¿Qué es un "artifact" en Jenkins?**
@@ -301,7 +301,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **25. ¿Qué significa "Pipeline as Code"?**
@@ -313,7 +313,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 **26. ¿Dónde se almacenan de forma segura las credenciales en Jenkins?**
@@ -325,7 +325,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./03-jenkins-pipelines.md">Fuente: Jenkins y Pipelines</a></p>
+  <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
 ---
@@ -341,7 +341,7 @@ pipeline {
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **28. Completa la configuración de GitHub Actions: **
@@ -356,7 +356,7 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **29. ¿Cuál es una ventaja principal de GitLab CI/CD?**
@@ -368,7 +368,7 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **30. En CircleCI, ¿qué son los "artifacts"?**
@@ -380,14 +380,14 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **31. Verdadero/Falso: Azure DevOps puede integrar con repositorios de GitHub.**
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **32. ¿Para qué sirve una "matrix strategy" en GitHub Actions?**
@@ -399,7 +399,7 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 **33. ¿Qué hace la directiva `artifacts:` en GitLab CI?**
@@ -411,7 +411,7 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-plataformas-cicd.md">Fuente: Plataformas CI/CD Modernas</a></p>
+  <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
 ---
@@ -427,7 +427,7 @@ jobs:
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **35. Completa el comando para test de carga con Artillery: **
@@ -440,7 +440,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **36. ¿Qué significa SAST en el contexto de testing?**
@@ -452,7 +452,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **37. ¿Qué son los "quality gates"?**
@@ -464,14 +464,14 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **38. Verdadero/Falso: Los tests de integración deben ejecutarse antes que los unit tests.**
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **39. ¿Qué es un "smoke test"?**
@@ -483,7 +483,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 **40. ¿Cuál de estas es una herramienta moderna de testing de carga?**
@@ -495,7 +495,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./05-testing-quality.md">Fuente: Testing y Quality Gates</a></p>
+  <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
 ---
@@ -511,14 +511,14 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./06-estrategias-deployment.md">Fuente: Estrategias de Deployment</a></p>
+  <p><a href="./06-estrategias-deployment-avanzadas.md">Fuente: Estrategias de Deployment</a></p>
 </details>
 
 **42. Verdadero/Falso: El deployment "Rolling" permite actualizaciones graduales sin downtime.**
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./06-estrategias-deployment.md">Fuente: Estrategias de Deployment</a></p>
+  <p><a href="./06-estrategias-deployment-avanzadas.md">Fuente: Estrategias de Deployment</a></p>
 </details>
 
 **43. ¿Cuál es la principal ventaja del deployment "Canary"?**
@@ -530,7 +530,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./06-estrategias-deployment.md">Fuente: Estrategias de Deployment</a></p>
+  <p><a href="./06-estrategias-deployment-avanzadas.md">Fuente: Estrategias de Deployment</a></p>
 </details>
 
 **44. ¿Qué son los "feature flags"?**
@@ -542,7 +542,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./06-estrategias-deployment.md">Fuente: Estrategias de Deployment</a></p>
+  <p><a href="./06-estrategias-deployment-avanzadas.md">Fuente: Estrategias de Deployment</a></p>
 </details>
 
 **45. ¿Dónde es recomendable almacenar las configuraciones de deployment?**
@@ -554,7 +554,7 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./06-estrategias-deployment.md">Fuente: Estrategias de Deployment</a></p>
+  <p><a href="./06-estrategias-deployment-avanzadas.md">Fuente: Estrategias de Deployment</a></p>
 </details>
 
 ---

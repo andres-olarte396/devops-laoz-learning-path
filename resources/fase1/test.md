@@ -77,7 +77,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./02-beneficios-debops.md">Fuente: Beneficios de DevOps</a></p>
+  <p><a href="./02-beneficios-devops.md">Fuente: Beneficios de DevOps</a></p>
 </details>
 
 **5. ¿Cómo mejora DevOps la calidad del software?**
@@ -89,7 +89,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./02-beneficios-debops.md">Fuente: Beneficios de DevOps</a></p>
+  <p><a href="./02-beneficios-devops.md">Fuente: Beneficios de DevOps</a></p>
 </details>
 
 **6. ¿Qué métrica indica el éxito de una implementación DevOps?**
@@ -101,7 +101,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./02-beneficios-debops.md">Fuente: Beneficios de DevOps</a></p>
+  <p><a href="./02-beneficios-devops.md">Fuente: Beneficios de DevOps</a></p>
 </details>
 
 ---
@@ -157,7 +157,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-ciclo-de-vida-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
+  <p><a href="./04-modelo-operativo-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
 </details>
 
 **11. ¿En qué fase se implementa Infrastructure as Code (IaC)?**
@@ -169,7 +169,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-ciclo-de-vida-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
+  <p><a href="./04-modelo-operativo-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
 </details>
 
 **12. ¿Qué ocurre en la fase "Operate"?**
@@ -181,7 +181,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 <details>
   <summary>Ver Fuente</summary>
-  <p><a href="./04-ciclo-de-vida-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
+  <p><a href="./04-modelo-operativo-devops.md">Fuente: Ciclo de Vida DevOps</a></p>
 </details>
 
 ---
