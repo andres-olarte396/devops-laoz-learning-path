@@ -30,10 +30,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **1. ¿Cuál es el objetivo principal de DevOps según el modelo CALMS?**
 
-- a) Reducir costos de hardware
-- b) Unificar desarrollo y operaciones para entregar software más rápido y confiable
-- c) Eliminar la necesidad de pruebas de software
-- d) Aumentar la duración de los proyectos
+- [ ] a) Reducir costos de hardware
+- [ ] b) Unificar desarrollo y operaciones para entregar software más rápido y confiable
+- [ ] c) Eliminar la necesidad de pruebas de software
+- [ ] d) Aumentar la duración de los proyectos
 
 <details>
   <summary>Ver Fuente</summary>
@@ -42,10 +42,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **2. ¿Cuál de los siguientes NO es un principio fundamental de DevOps?**
 
-- a) Automatización
-- b) Colaboración
-- c) Silos organizacionales
-- d) Medición
+- [ ] a) Automatización
+- [ ] b) Colaboración
+- [ ] c) Silos organizacionales
+- [ ] d) Medición
 
 <details>
   <summary>Ver Fuente</summary>
@@ -54,10 +54,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **3. ¿Qué significa "Shift Left" en DevOps?**
 
-- a) Mover las pruebas y seguridad más temprano en el ciclo de desarrollo
-- b) Cambiar la arquitectura del software
-- c) Reducir el número de desarrolladores
-- d) Implementar solo en servidores de la izquierda
+- [ ] a) Mover las pruebas y seguridad más temprano en el ciclo de desarrollo
+- [ ] b) Cambiar la arquitectura del software
+- [ ] c) Reducir el número de desarrolladores
+- [ ] d) Implementar solo en servidores de la izquierda
 
 <details>
   <summary>Ver Fuente</summary>
@@ -70,10 +70,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **4. ¿Cuál de los siguientes es un beneficio clave de DevOps?**
 
-- a) Mayor tiempo de entrega de software
-- b) Reducción de la colaboración entre equipos
-- c) Entrega más rápida de software con mayor calidad
-- d) Aumento de errores en producción
+- [ ] a) Mayor tiempo de entrega de software
+- [ ] b) Reducción de la colaboración entre equipos
+- [ ] c) Entrega más rápida de software con mayor calidad
+- [ ] d) Aumento de errores en producción
 
 <details>
   <summary>Ver Fuente</summary>
@@ -82,10 +82,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **5. ¿Cómo mejora DevOps la calidad del software?**
 
-- a) Eliminando la necesidad de pruebas
-- b) Detectando errores tempranamente mediante pruebas automatizadas
-- c) Reduciendo la comunicación entre equipos
-- d) Aumentando el tiempo de desarrollo
+- [ ] a) Eliminando la necesidad de pruebas
+- [ ] b) Detectando errores tempranamente mediante pruebas automatizadas
+- [ ] c) Reduciendo la comunicación entre equipos
+- [ ] d) Aumentando el tiempo de desarrollo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -94,10 +94,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **6. ¿Qué métrica indica el éxito de una implementación DevOps?**
 
-- a) Mayor tiempo entre releases
-- b) Mean Time To Recovery (MTTR) reducido
-- c) Menos comunicación entre equipos
-- d) Mayor costo operacional
+- [ ] a) Mayor tiempo entre releases
+- [ ] b) Mean Time To Recovery (MTTR) reducido
+- [ ] c) Menos comunicación entre equipos
+- [ ] d) Mayor costo operacional
 
 <details>
   <summary>Ver Fuente</summary>
@@ -110,10 +110,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **7. ¿Cuál de los siguientes modelos es lineal y secuencial?**
 
-- a) Agile
-- b) DevOps
-- c) Waterfall
-- d) Scrum
+- [ ] a) Agile
+- [ ] b) DevOps
+- [ ] c) Waterfall
+- [ ] d) Scrum
 
 <details>
   <summary>Ver Fuente</summary>
@@ -122,10 +122,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **8. ¿Qué metodología se enfoca en iteraciones cortas y entregas incrementales?**
 
-- a) Waterfall
-- b) Agile
-- c) DevOps (solo)
-- d) Ninguna de las anteriores
+- [ ] a) Waterfall
+- [ ] b) Agile
+- [ ] c) DevOps (solo)
+- [ ] d) Ninguna de las anteriores
 
 <details>
   <summary>Ver Fuente</summary>
@@ -134,10 +134,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **9. ¿Cuál es la principal diferencia entre Agile y DevOps?**
 
-- a) Agile solo se enfoca en desarrollo, DevOps incluye operaciones
-- b) DevOps es más lento que Agile
-- c) No hay diferencias
-- d) Agile requiere más automatización
+- [ ] a) Agile solo se enfoca en desarrollo, DevOps incluye operaciones
+- [ ] b) DevOps es más lento que Agile
+- [ ] c) No hay diferencias
+- [ ] d) Agile requiere más automatización
 
 <details>
   <summary>Ver Fuente</summary>
@@ -150,10 +150,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **10. ¿Cuáles son las 8 fases del ciclo de vida DevOps en orden?**
 
-- a) Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
-- b) Code → Plan → Test → Build → Deploy → Release → Monitor → Operate
-- c) Plan → Build → Code → Test → Deploy → Release → Operate → Monitor
-- d) Plan → Code → Test → Build → Release → Deploy → Operate → Monitor
+- [ ] a) Plan → Code → Build → Test → Release → Deploy → Operate → Monitor
+- [ ] b) Code → Plan → Test → Build → Deploy → Release → Monitor → Operate
+- [ ] c) Plan → Build → Code → Test → Deploy → Release → Operate → Monitor
+- [ ] d) Plan → Code → Test → Build → Release → Deploy → Operate → Monitor
 
 <details>
   <summary>Ver Fuente</summary>
@@ -162,10 +162,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **11. ¿En qué fase se implementa Infrastructure as Code (IaC)?**
 
-- a) Plan
-- b) Code
-- c) Deploy
-- d) En múltiples fases (Code, Build, Deploy)
+- [ ] a) Plan
+- [ ] b) Code
+- [ ] c) Deploy
+- [ ] d) En múltiples fases (Code, Build, Deploy)
 
 <details>
   <summary>Ver Fuente</summary>
@@ -174,10 +174,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **12. ¿Qué ocurre en la fase "Operate"?**
 
-- a) Se escribe el código de la aplicación
-- b) Se gestionan los entornos de producción y se escala según demanda
-- c) Se planifican nuevas funcionalidades
-- d) Se ejecutan únicamente las pruebas unitarias
+- [ ] a) Se escribe el código de la aplicación
+- [ ] b) Se gestionan los entornos de producción y se escala según demanda
+- [ ] c) Se planifican nuevas funcionalidades
+- [ ] d) Se ejecutan únicamente las pruebas unitarias
 
 <details>
   <summary>Ver Fuente</summary>
@@ -239,10 +239,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **17. ¿Cuáles son los tres principales modelos de servicio en la nube?**
 
-- a) SaaS, PaaS, IaaS
-- b) Public, Private, Hybrid
-- c) AWS, Azure, GCP
-- d) Development, Testing, Production
+- [ ] a) SaaS, PaaS, IaaS
+- [ ] b) Public, Private, Hybrid
+- [ ] c) AWS, Azure, GCP
+- [ ] d) Development, Testing, Production
 
 <details>
   <summary>Ver Fuente</summary>
@@ -251,10 +251,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **18. ¿Qué significa "escalabilidad horizontal" en la nube?**
 
-- a) Aumentar la potencia de una máquina existente
-- b) Agregar más máquinas al sistema
-- c) Reducir el número de servidores
-- d) Cambiar el proveedor de nube
+- [ ] a) Aumentar la potencia de una máquina existente
+- [ ] b) Agregar más máquinas al sistema
+- [ ] c) Reducir el número de servidores
+- [ ] d) Cambiar el proveedor de nube
 
 <details>
   <summary>Ver Fuente</summary>
@@ -263,10 +263,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **19. ¿Cuál es una ventaja principal del cloud computing para DevOps?**
 
-- a) Mayor costo operacional
-- b) Elasticidad y aprovisionamiento rápido de recursos
-- c) Menos automatización
-- d) Mayor tiempo de configuración
+- [ ] a) Mayor costo operacional
+- [ ] b) Elasticidad y aprovisionamiento rápido de recursos
+- [ ] c) Menos automatización
+- [ ] d) Mayor tiempo de configuración
 
 <details>
   <summary>Ver Fuente</summary>
@@ -279,10 +279,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **20. ¿Qué significa CI/CD?**
 
-- a) Control de Infraestructura / Control de Datos
-- b) Continuous Integration / Continuous Deployment
-- c) Cloud Infrastructure / Cloud Deployment
-- d) Code Integration / Code Development
+- [ ] a) Control de Infraestructura / Control de Datos
+- [ ] b) Continuous Integration / Continuous Deployment
+- [ ] c) Cloud Infrastructure / Cloud Deployment
+- [ ] d) Code Integration / Code Development
 
 <details>
   <summary>Ver Fuente</summary>
@@ -291,10 +291,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **21. ¿Cuál es el objetivo principal de la Infraestructura como Código (IaC)?**
 
-- a) Escribir código de aplicación más rápido
-- b) Gestionar la infraestructura mediante archivos de configuración versionados
-- c) Eliminar la necesidad de servidores
-- d) Reducir la seguridad del sistema
+- [ ] a) Escribir código de aplicación más rápido
+- [ ] b) Gestionar la infraestructura mediante archivos de configuración versionados
+- [ ] c) Eliminar la necesidad de servidores
+- [ ] d) Reducir la seguridad del sistema
 
 <details>
   <summary>Ver Fuente</summary>
@@ -303,10 +303,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **22. ¿Qué abarca la "Observabilidad" en DevOps?**
 
-- a) Solo logs de aplicación
-- b) Métricas, logs y trazas distribuidas
-- c) Solo monitoreo de servidores
-- d) Únicamente alertas de error
+- [ ] a) Solo logs de aplicación
+- [ ] b) Métricas, logs y trazas distribuidas
+- [ ] c) Solo monitoreo de servidores
+- [ ] d) Únicamente alertas de error
 
 <details>
   <summary>Ver Fuente</summary>
@@ -315,10 +315,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **23. ¿Cuál es la diferencia entre Continuous Deployment y Continuous Delivery?**
 
-- a) No hay diferencia
-- b) Continuous Deployment automatiza el despliegue a producción, Continuous Delivery requiere aprobación manual
-- c) Continuous Delivery es más rápido
-- d) Continuous Deployment solo funciona en desarrollo
+- [ ] a) No hay diferencia
+- [ ] b) Continuous Deployment automatiza el despliegue a producción, Continuous Delivery requiere aprobación manual
+- [ ] c) Continuous Delivery es más rápido
+- [ ] d) Continuous Deployment solo funciona en desarrollo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -331,10 +331,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **24. ¿Cuál es el comando para clonar un repositorio remoto?**
 
-- a) `git pull origin main`
-- b) `git clone <URL>`
-- c) `git checkout <URL>`
-- d) `git fetch <URL>`
+- [ ] a) `git pull origin main`
+- [ ] b) `git clone <URL>`
+- [ ] c) `git checkout <URL>`
+- [ ] d) `git fetch <URL>`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -343,10 +343,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **25. ¿Qué estrategia de branching es más adecuada para equipos grandes?**
 
-- a) Trabajar directamente en main
-- b) Git Flow
-- c) Feature branches sin revisión
-- d) Una sola rama para todo
+- [ ] a) Trabajar directamente en main
+- [ ] b) Git Flow
+- [ ] c) Feature branches sin revisión
+- [ ] d) Una sola rama para todo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -355,10 +355,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **26. ¿Cuál es el propósito de un Pull Request/Merge Request?**
 
-- a) Descargar código del repositorio
-- b) Solicitar revisión de código antes de integrar cambios
-- c) Eliminar ramas del repositorio
-- d) Crear un nuevo repositorio
+- [ ] a) Descargar código del repositorio
+- [ ] b) Solicitar revisión de código antes de integrar cambios
+- [ ] c) Eliminar ramas del repositorio
+- [ ] d) Crear un nuevo repositorio
 
 <details>
   <summary>Ver Fuente</summary>
@@ -367,10 +367,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **27. ¿Qué comando se usa para crear y cambiar a una nueva rama?**
 
-- a) `git branch nueva-rama`
-- b) `git checkout nueva-rama`
-- c) `git checkout -b nueva-rama`
-- d) `git switch nueva-rama`
+- [ ] a) `git branch nueva-rama`
+- [ ] b) `git checkout nueva-rama`
+- [ ] c) `git checkout -b nueva-rama`
+- [ ] d) `git switch nueva-rama`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -379,10 +379,10 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 **28. ¿Cuál es una buena práctica para mensajes de commit?**
 
-- a) Usar mensajes genéricos como "fix"
-- b) Escribir mensajes descriptivos que expliquen el "qué" y "por qué"
-- c) No incluir mensajes
-- d) Usar solo emojis
+- [ ] a) Usar mensajes genéricos como "fix"
+- [ ] b) Escribir mensajes descriptivos que expliquen el "qué" y "por qué"
+- [ ] c) No incluir mensajes
+- [ ] d) Usar solo emojis
 
 <details>
   <summary>Ver Fuente</summary>
