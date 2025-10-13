@@ -109,7 +109,7 @@ do
 done
 ```
 
-**Bucle `while`:**Se ejecuta mientras una condición sea verdadera.
+**Bucle `while`:** Se ejecuta mientras una condición sea verdadera.
 
 ```bash
 #!/bin/bash

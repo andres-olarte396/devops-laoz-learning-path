@@ -1,7 +1,9 @@
 # Docker: Conceptos Básicos
 
 ## Objetivos
+
 Al completar este módulo serás capaz de:
+
 - Comprender qué son los contenedores y cómo funcionan
 - Distinguir entre imágenes y contenedores
 - Trabajar con volúmenes y redes en Docker
@@ -14,24 +16,51 @@ Docker es una plataforma de contenedorización que permite empaquetar aplicacion
 ### Conceptos Fundamentales
 
 #### Contenedores vs Máquinas Virtuales
+
+```mermaid
+graph TD
+    subgraph VM["🖥️ Máquina Virtual"]
+        direction TB
+        App1["📱 Aplicación"]
+        Runtime1["⚙️ Runtime"]
+        GuestOS["🖥️ Guest OS"]
+        Hypervisor["🔧 Hypervisor"]
+        HostOS1["💻 Host OS"]
+        
+        App1 --> Runtime1
+        Runtime1 --> GuestOS
+        GuestOS --> Hypervisor
+        Hypervisor --> HostOS1
+    end
+    
+    subgraph Container["🐳 Contenedor"]
+        direction TB
+        App2["📱 Aplicación"]
+        Runtime2["⚙️ Runtime"]
+        DockerEngine["🐳 Docker Engine"]
+        HostOS2["💻 Host OS"]
+        
+        App2 --> Runtime2
+        Runtime2 --> DockerEngine
+        DockerEngine --> HostOS2
+    end
+    
+    style VM fill:#ffe6e6
+    style Container fill:#e6f3ff
+    style App1 fill:#ffd700
+    style App2 fill:#ffd700
+    style DockerEngine fill:#0db7ed
 ```
 
-     Aplicación             Aplicación
+**Diferencias clave:**
 
-      Runtime                Runtime
-
-    Guest OS
-     Docker Engine
-    Hypervisor
-
-     Host OS                Host OS
-
-   Máquina Virtual            Contenedor
-```
+- **Máquinas Virtuales**: Incluyen un sistema operativo completo (Guest OS)
+- **Contenedores**: Comparten el kernel del sistema host, son más ligeros
 
 ### Imágenes
 
 Las imágenes son plantillas de solo lectura que contienen:
+
 - Sistema operativo base
 - Aplicación y dependencias
 - Configuración y metadatos
@@ -78,14 +107,16 @@ docker rm mi-nginx
 
 Los volúmenes permiten persistir datos fuera del contenedor:
 
-#### Tipos de volúmenes:
+#### Tipos de volúmenes
 
 1. **Bind mounts**: Montan directorio del host
+
 ```bash
 docker run -v /host/path:/container/path nginx
 ```
 
 2. **Named volumes**: Volúmenes gestionados por Docker
+
 ```bash
 # Crear volumen
 docker volume create mi-volumen
@@ -95,6 +126,7 @@ docker run -v mi-volumen:/data nginx
 ```
 
 3. **tmpfs mounts**: Almacenamiento temporal en memoria
+
 ```bash
 docker run --tmpfs /tmp nginx
 ```
@@ -103,7 +135,8 @@ docker run --tmpfs /tmp nginx
 
 Docker maneja varios tipos de redes:
 
-#### Tipos de red:
+#### Tipos de red
+
 - **bridge**: Red por defecto para contenedores
 - **host**: Usa directamente la red del host
 - **none**: Sin acceso a red
@@ -150,7 +183,7 @@ docker system prune
 
 ## Ejemplo Práctico
 
-### Ejecutar servidor web simple:
+### Ejecutar servidor web simple
 
 ```bash
 # 1. Descargar imagen de nginx
@@ -177,25 +210,30 @@ docker rm mi-servidor
 ## Ejercicios
 
 ### Ejercicio 1: Contenedor básico
+
 1. Ejecuta un contenedor de Ubuntu interactivo
 2. Instala `curl` dentro del contenedor
 3. Sal del contenedor y observa que los cambios se pierden
 
 ### Ejercicio 2: Volúmenes
+
 1. Crea un volumen llamado `mi-datos`
 2. Ejecuta un contenedor que monte este volumen en `/data`
 3. Crea un archivo dentro de `/data`
 4. Ejecuta otro contenedor con el mismo volumen y verifica que el archivo existe
 
 ### Ejercicio 3: Redes
+
 1. Crea una red llamada `mi-app-red`
 2. Ejecuta dos contenedores en esta red
 3. Verifica que pueden comunicarse entre ellos
 
 ## Recursos Adicionales
+
 - [Docker Documentation](https://docs.docker.com/)
 - [Docker Hub](https://hub.docker.com/)
 - [Play with Docker](https://labs.play-with-docker.com/)
 
 ## Siguiente Paso
+
 [Crear y gestionar imágenes con Dockerfile](./02-dockerfile-imagenes.md)

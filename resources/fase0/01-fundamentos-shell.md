@@ -77,15 +77,15 @@ Se suman los valores para cada tipo de usuario (Propietario, Grupo, Otros).
 **Ejemplos:**
 
 - `chmod 755 mi_script.sh`
-  - **Propietario:**7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
-  - **Grupo:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
-  - **Otros:**5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Propietario:** 7 (4+2+1) -> `rwx` (Lectura, Escritura, Ejecución)
+  - **Grupo:** 5 (4+0+1) -> `r-x` (Lectura, Ejecución)
+  - **Otros:** 5 (4+0+1) -> `r-x` (Lectura, Ejecución)
   *(Este es un permiso muy común para scripts que deben ser ejecutables por otros).*
 
 - `chmod 644 mi_config.txt`
-  - **Propietario:**6 (4+2+0) -> `rw-` (Lectura, Escritura)
-  - **Grupo:**4 (4+0+0) -> `r--` (Solo Lectura)
-  - **Otros:**4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Propietario:** 6 (4+2+0) -> `rw-` (Lectura, Escritura)
+  - **Grupo:** 4 (4+0+0) -> `r--` (Solo Lectura)
+  - **Otros:** 4 (4+0+0) -> `r--` (Solo Lectura)
   *(Este es un permiso común para archivos de texto que no deben ser modificados por otros).*
 
 ### **Comando `chown` (Change Owner)**

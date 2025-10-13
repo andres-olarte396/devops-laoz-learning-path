@@ -158,12 +158,12 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 
 Al completar esta fase, serás capaz de:
 
-- [x] **Explicar qué es DevOps**y por qué representa un cambio en el desarrollo de software
-- [x] **Identificar los beneficios clave**que DevOps aporta a equipos y organizaciones
-- [x] **Diferenciar DevOps**de otras metodologías como Agile y Waterfall
-- [x] **Describir el ciclo de vida DevOps**y sus componentes principales
-- [x] **Contextualizar la evolución**de la administración de sistemas en la era de la nube
-- [x] **Reconocer las herramientas fundamentales**en cada fase del proceso
+- [x] **Explicar qué es DevOps** y por qué representa un cambio en el desarrollo de software
+- [x] **Identificar los beneficios clave** que DevOps aporta a equipos y organizaciones
+- [x] **Diferenciar DevOps** de otras metodologías como Agile y Waterfall
+- [x] **Describir el ciclo de vida DevOps** y sus componentes principales
+- [x] **Contextualizar la evolución** de la administración de sistemas en la era de la nube
+- [x] **Reconocer las herramientas fundamentales** en cada fase del proceso
 
 ## Cómo Navegar Esta Fase
 
@@ -178,10 +178,10 @@ Al completar esta fase, serás capaz de:
 
 ### Consejos de Estudio
 
-- **Toma notas activas**mientras lees cada módulo
-- **Relaciona conceptos**entre los diferentes módulos
-- **Reflexiona sobre ejemplos**de tu experiencia profesional
-- **Discute los conceptos**con colegas o en comunidades de DevOps
+- **Toma notas activas** mientras lees cada módulo
+- **Relaciona conceptos** entre los diferentes módulos
+- **Reflexiona sobre ejemplos** de tu experiencia profesional
+- **Discute los conceptos** con colegas o en comunidades de DevOps
 
 ## Preparándote para la Siguiente Fase
 
