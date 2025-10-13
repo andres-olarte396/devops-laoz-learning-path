@@ -770,20 +770,20 @@ Si obtuviste <70%:
 
 ```plaintext
 ╔══════════════════════════════════════════════════════╗
-║              CERTIFICADO DE COMPLETADO              ║
+║              CERTIFICADO DE COMPLETADO               ║
 ║                                                      ║
-║                    [Tu Nombre]                      ║
+║                    [Tu Nombre]                       ║
 ║                                                      ║
-║           Ha completado exitosamente la             ║
+║           Ha completado exitosamente la              ║
 ║                                                      ║
-║         FASE 2: AUTOMATIZACIÓN Y CI/CD              ║
+║         FASE 2: AUTOMATIZACIÓN Y CI/CD               ║
 ║                                                      ║
-║            Del curso "DevOps Learning Path"         ║
+║            Del curso "DevOps Learning Path"          ║
 ║                                                      ║
-║    Puntuación obtenida: [Tu puntuación]/45         ║
-║    Fecha de completado: 12 de octubre de 2025      ║
+║    Puntuación obtenida: [Tu puntuación]/45           ║
+║    Fecha de completado: 12 de octubre de 2025        ║
 ║                                                      ║
-║      ¡Listo para continuar con la Fase 3!          ║
+║      ¡Listo para continuar con la Fase 3!            ║
 ║                                                      ║
 ╚══════════════════════════════════════════════════════╝
 ```

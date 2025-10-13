@@ -15,6 +15,24 @@ En esta fase inicial, exploraremos los principios fundamentales que forman la ba
 
 Esta fase incluye los siguientes módulos de aprendizaje:
 
+```mermaid
+flowchart TD
+    A[Planificación] --> B[Desarrollo]
+    B --> C[Integración Continua]
+    C --> D[Pruebas Continuas]
+    D --> E[Despliegue Continuo]
+    E --> F[Monitorización]
+
+    subgraph Herramientas
+        G[Git] --> B
+        H[Docker] --> E
+        I[Jenkins] --> C
+        J[Kubernetes] --> E
+        K[Prometheus] --> F
+    end
+
+```
+
 ### Módulos Principales
 
 1. **[¿Qué es DevOps?](./01-que-es-devops.md)**

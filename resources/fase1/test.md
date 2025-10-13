@@ -540,25 +540,23 @@ Si obtuviste <70%:
 
 **Si obtuviste 20 puntos o más, has completado exitosamente la Fase 1!**
 
-```plaintext
 ╔══════════════════════════════════════════════════════╗
-║              CERTIFICADO DE COMPLETADO              ║
+║              CERTIFICADO DE COMPLETADO               ║
 ║                                                      ║
-║                    [Tu Nombre]                      ║
+║                    [Tu Nombre]                       ║
 ║                                                      ║
-║           Ha completado exitosamente la             ║
+║           Ha completado exitosamente la              ║
 ║                                                      ║
-║            FASE 1: FUNDAMENTOS DE DEVOPS            ║
+║            FASE 1: FUNDAMENTOS DE DEVOPS             ║
 ║                                                      ║
-║            Del curso "DevOps Learning Path"         ║
+║            Del curso "DevOps Learning Path"          ║
 ║                                                      ║
-║    Puntuación obtenida: [Tu puntuación]/28         ║
-║    Fecha de completado: 12 de octubre de 2025      ║
+║    Puntuación obtenida: [Tu puntuación]/28           ║
+║    Fecha de completado: 12 de octubre de 2025        ║
 ║                                                      ║
-║         ¡Listo para continuar con la Fase 2!       ║
+║         ¡Listo para continuar con la Fase 2!         ║
 ║                                                      ║
 ╚══════════════════════════════════════════════════════╝
-```
 
 ---
 

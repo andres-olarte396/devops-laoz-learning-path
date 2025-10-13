@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Tema Oscuro</title>
+</head>
+<body>
+    <h1>Pruebas del Sistema de Temas</h1>
+    
+    <h2>URLs de Prueba para el Certificado:</h2>
+    
+    <h3>🌞 Tema Claro (por defecto)</h3>
+    <p><a href="certificate.html?nombre=Ana%20García&curso=DevOps%20Expert" target="_blank">
+        certificate.html?nombre=Ana García&curso=DevOps Expert
+    </a></p>
+    
+    <h3>🌙 Tema Oscuro</h3>
+    <p><a href="certificate.html?nombre=Carlos%20López&curso=DevOps%20Expert&tema=dark" target="_blank">
+        certificate.html?nombre=Carlos López&curso=DevOps Expert&tema=dark
+    </a></p>
+    
+    <h3>🎨 Tema Oscuro con Colores Personalizados</h3>
+    <p><a href="certificate.html?nombre=María%20Fernández&curso=DevOps%20Master&tema=dark&primaryColor=%23ff6b6b&textColor=%23f8f9fa" target="_blank">
+        certificate.html?nombre=María Fernández&curso=DevOps Master&tema=dark&primaryColor=#ff6b6b&textColor=#f8f9fa
+    </a></p>
+    
+    <h3>🔄 Tema Automático (según preferencias del sistema)</h3>
+    <p><a href="certificate.html?nombre=Juan%20Pérez&curso=DevOps%20Fundamentals&tema=auto" target="_blank">
+        certificate.html?nombre=Juan Pérez&curso=DevOps Fundamentals&tema=auto
+    </a></p>
+    
+    <h3>🖼️ Tema Oscuro con Fondo Personalizado</h3>
+    <p><a href="certificate.html?nombre=Luis%20Martín&curso=Kubernetes%20Expert&tema=dark&fondo=./images/certificate.webp&overlayOpacity=0.7" target="_blank">
+        certificate.html?nombre=Luis Martín&curso=Kubernetes Expert&tema=dark&fondo=./images/certificate.webp&overlayOpacity=0.7
+    </a></p>
+
+    <h2>Funcionalidades Implementadas:</h2>
+    <ul>
+        <li>✅ Tema claro (por defecto)</li>
+        <li>✅ Tema oscuro</li>
+        <li>✅ Tema automático (detecta preferencias del sistema)</li>
+        <li>✅ Colores personalizables vía URL</li>
+        <li>✅ Botón para alternar tema dinámicamente</li>
+        <li>✅ Transiciones suaves entre temas</li>
+        <li>✅ Soporte para imagen de fondo</li>
+        <li>✅ Opacidad configurable del overlay</li>
+    </ul>
+
+    <h2>Parámetros de Tema Disponibles:</h2>
+    <ul>
+        <li><code>tema</code> - light, dark, auto</li>
+        <li><code>primaryColor</code> - Color principal en formato hexadecimal</li>
+        <li><code>bgColor</code> - Color de fondo</li>
+        <li><code>textColor</code> - Color del texto</li>
+    </ul>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        h1 { color: #2c5aa0; }
+        h2 { color: #007bff; margin-top: 2rem; }
+        h3 { color: #495057; }
+        
+        a {
+            color: #007bff;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        ul {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</body>
+</html>
