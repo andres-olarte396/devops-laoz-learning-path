@@ -845,6 +845,7 @@ echo "Backup completed successfully: ${BACKUP_FILE}.gz"
 ### 1. **Principios de Automatización**
 
 #### **Idempotencia**
+
 ```bash
 # ✅ Idempotente
 if ! command -v docker &> /dev/null; then
@@ -858,6 +859,7 @@ sh get-docker.sh
 ```
 
 #### **Fail Fast**
+
 ```bash
 #!/bin/bash
 set -euo pipefail  # Salir ante cualquier error
@@ -980,21 +982,27 @@ class TestAutomation(unittest.TestCase):
 ## Ejercicios Prácticos
 
 ### Ejercicio 1: Pipeline Básico
+
 Crear un pipeline que:
+
 1. Compile una aplicación
 2. Ejecute tests unitarios
 3. Genere reporte de cobertura
 4. Publique artefactos
 
 ### Ejercicio 2: Deployment Automation
+
 Automatizar deployment con:
+
 1. Blue-green deployment
 2. Health checks
 3. Rollback automático en caso de falla
 4. Notificaciones
 
 ### Ejercicio 3: Infrastructure Automation
+
 Crear scripts para:
+
 1. Provisionar infraestructura con Terraform
 2. Configurar servidores con Ansible
 3. Monitorear recursos
@@ -1003,11 +1011,13 @@ Crear scripts para:
 ## Recursos Adicionales
 
 ### Documentación
+
 - [Jenkins Documentation](https://www.jenkins.io/doc/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [Ansible Documentation](https://docs.ansible.com/)
 
 ### Tutoriales
+
 - [DevOps Automation Best Practices](https://docs.microsoft.com/en-us/azure/devops/learn/)
 - [CI/CD Pipeline Tutorials](https://www.redhat.com/en/topics/devops/what-cicd-pipeline)
 

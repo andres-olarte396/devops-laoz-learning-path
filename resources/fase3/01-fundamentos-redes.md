@@ -57,8 +57,8 @@ El DNS es como la "guía telefónica" de Internet. Traduce nombres de dominio le
 **Tipos de registros DNS comunes: **
 - **A: **Mapea un nombre de dominio a una dirección IPv4.
 - **AAAA: **Mapea un nombre de dominio a una dirección IPv6.
-- **CNAME (Canonical Name): **Crea un alias de un nombre de dominio a otro.
-- **MX (Mail Exchange): **Especifica los servidores de correo para un dominio.
+- **CNAME (Canonical Name):** Crea un alias de un nombre de dominio a otro.
+- **MX (Mail Exchange):** Especifica los servidores de correo para un dominio.
 
 ---
 
@@ -67,15 +67,15 @@ El DNS es como la "guía telefónica" de Internet. Traduce nombres de dominio le
 
 ### **Protocolos de Transporte**
 
-- **TCP (Transmission Control Protocol): **
+- **TCP (Transmission Control Protocol):** 
   - **Orientado a la conexión: **Establece una conexión (un "handshake") antes de enviar datos.
   - **Fiable: **Garantiza que todos los paquetes lleguen en orden y sin errores.
-  - **Ejemplos: **HTTP/S, FTP, SSH.
+  - **Ejemplos:**HTTP/S, FTP, SSH.
 
-- **UDP (User Datagram Protocol): **
+- **UDP (User Datagram Protocol):** 
   - **Sin conexión: **Simplemente envía los paquetes.
-  - **No fiable (pero rápido): **No garantiza la entrega ni el orden. Es más veloz.
-  - **Ejemplos: **DNS, streaming de video, videojuegos.
+  - **No fiable (pero rápido):** No garantiza la entrega ni el orden. Es más veloz.
+  - **Ejemplos:**DNS, streaming de video, videojuegos.
 
 ### **Puertos (Ports)**
 
@@ -102,9 +102,9 @@ En DevOps, a menudo configurarás **grupos de seguridad**en la nube, que actúan
 
 Los proveedores de nube (AWS, Azure, GCP) ofrecen servicios para que construyas tu propia red privada y aislada en la nube.
 
-- **VPC (Virtual Private Cloud): **Tu propia sección de red privada y aislada en la nube de un proveedor. Tienes control total sobre ella.
+- **VPC (Virtual Private Cloud):** Tu propia sección de red privada y aislada en la nube de un proveedor. Tienes control total sobre ella.
 - **Subnets: **Divisiones de tu VPC. Puedes tener subredes públicas (accesibles desde Internet) y privadas (no accesibles directamente).
 - **Internet Gateway: **Permite que los recursos en tus subredes públicas se comuniquen con Internet.
-- **NAT Gateway (Network Address Translation): **Permite que los recursos en tus subredes privadas inicien conexiones a Internet (ej: para descargar actualizaciones) sin permitir que Internet inicie conexiones hacia ellos.
-- **Security Groups / Network Security Groups (NSGs): **Actúan como firewalls a nivel de instancia (servidor virtual) para controlar el tráfico entrante y saliente.
-- **NACLs (Network Access Control Lists): **Actúan como firewalls a nivel de subred, añadiendo otra capa de seguridad.
+- **NAT Gateway (Network Address Translation):** Permite que los recursos en tus subredes privadas inicien conexiones a Internet (ej: para descargar actualizaciones) sin permitir que Internet inicie conexiones hacia ellos.
+- **Security Groups / Network Security Groups (NSGs):** Actúan como firewalls a nivel de instancia (servidor virtual) para controlar el tráfico entrante y saliente.
+- **NACLs (Network Access Control Lists):** Actúan como firewalls a nivel de subred, añadiendo otra capa de seguridad.

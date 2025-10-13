@@ -71,7 +71,7 @@ graph TB
 - Historial completo de cambios
 - Branching y merging sofisticados
 
-**Comandos fundamentales: **
+**Comandos fundamentales:**
 
 ```bash
 # Configuración inicial
@@ -94,24 +94,24 @@ git merge feature/nueva-funcionalidad
 
 **GitHub**
 
--  Más popular, gran comunidad
--  GitHub Actions integrado
--  Excelente para open source
--  Limitaciones en planes gratuitos
+- Más popular, gran comunidad
+- GitHub Actions integrado
+- Excelente para open source
+- Limitaciones en planes gratuitos
 
 **GitLab**
 
--  CI/CD integrado poderoso
--  Self-hosted disponible
--  DevOps completo en una plataforma
--  Interfaz menos intuitiva
+- CI/CD integrado poderoso
+- Self-hosted disponible
+- DevOps completo en una plataforma
+- Interfaz menos intuitiva
 
 **Azure DevOps**
 
--  Integración perfecta con Microsoft
--  Azure Boards para gestión de proyectos
--  Escalabilidad empresarial
--  Menos adoption en comunidad open source
+- Integración perfecta con Microsoft
+- Azure Boards para gestión de proyectos
+- Escalabilidad empresarial
+- Menos adoption en comunidad open source
 
 ## Integración y Entrega Continua (CI/CD)
 
@@ -119,14 +119,14 @@ git merge feature/nueva-funcionalidad
 
 **¿Qué es?**Servidor de automatización open source que permite implementar CI/CD através de pipelines.
 
-**Ventajas: **
+**Ventajas:**
 
 - Ecosistema de plugins gigantesco (+1800)
 - Altamente personalizable
 - Self-hosted (control total)
 - Comunidad madura
 
-**Ejemplo de Pipeline Jenkins: **
+**Ejemplo de Pipeline Jenkins:**
 
 ```groovy
 pipeline {
@@ -162,14 +162,14 @@ pipeline {
 
 **¿Qué es?**Plataforma de CI/CD nativa de GitHub que automatiza workflows directamente en el repositorio.
 
-**Ventajas: **
+**Ventajas:**
 
 - Integración perfecta con GitHub
 - Sintaxis YAML sencilla
 - Marketplace de acciones
 - Gratis para repositorios públicos
 
-**Ejemplo de Workflow: **
+**Ejemplo de Workflow:**
 
 ```yaml
 name: CI/CD Pipeline
@@ -260,14 +260,14 @@ steps:
 
 **¿Qué es?**Plataforma que utiliza containerización para empaquetar aplicaciones con todas sus dependencias.
 
-**Conceptos clave: **
+**Conceptos clave:**
 
 - **Imagen**: Template inmutable de una aplicación
 - **Container**: Instancia ejecutable de una imagen
 - **Dockerfile**: Instrucciones para construir una imagen
 - **Registry**: Repositorio de imágenes (Docker Hub, ECR, ACR)
 
-**Ejemplo Dockerfile para .NET: **
+**Ejemplo Dockerfile para .NET:**
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
@@ -290,7 +290,7 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "MiApp.dll"]
 ```
 
-**Comandos esenciales: **
+**Comandos esenciales:**
 
 ```bash
 # Gestión de imágenes
@@ -313,14 +313,14 @@ docker pull nginx:latest
 
 **¿Qué es?**Sistema de orquestación que automatiza el deployment, scaling y gestión de aplicaciones containerizadas.
 
-**Conceptos fundamentales: **
+**Conceptos fundamentales:**
 
 - **Pod**: Unidad mínima deployable
 - **Service**: Abstracción de red para Pods
 - **Deployment**: Gestiona réplicas de Pods
 - **Namespace**: Aislamiento lógico de recursos
 
-**Ejemplo de Deployment: **
+**Ejemplo de Deployment:**
 
 ```yaml
 apiVersion: apps/v1
@@ -357,14 +357,14 @@ spec:
 
 **¿Qué es?**Herramienta que permite definir y provisionar infraestructura usando código declarativo.
 
-**Ventajas: **
+**Ventajas:**
 
 - Multi-cloud (AWS, Azure, GCP)
 - Estado de infraestructura (state file)
 - Plan y apply seguro
 - Ecosistema de providers extenso
 
-**Ejemplo de configuración Azure: **
+**Ejemplo de configuración Azure:**
 
 ```hcl
 # main.tf
@@ -416,14 +416,14 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
 **¿Qué es?**Herramienta de automatización que gestiona configuración y deployment usando YAML.
 
-**Características: **
+**Características:**
 
 - Agentless (sin agentes en servidores)
 - Idempotente (mismo resultado al ejecutar múltiples veces)
 - Sintaxis YAML legible
 - Módulos extensos
 
-**Ejemplo de Playbook: **
+**Ejemplo de Playbook:**
 
 ```yaml
 ---
@@ -477,7 +477,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 - Alerting visual
 - Compartición de dashboards
 
-**Ejemplo de configuración Prometheus: **
+**Ejemplo de configuración Prometheus:**
 
 ```yaml
 # prometheus.yml
@@ -492,7 +492,7 @@ scrape_configs:
     scrape_interval: 5s
 ```
 
-**Ejemplo de métricas en aplicación .NET: **
+**Ejemplo de métricas en aplicación .NET:**
 
 ```csharp
 using Prometheus;
@@ -527,7 +527,7 @@ public class MetricsController : ControllerBase
 **Logstash**- Procesamiento de logs
 **Kibana**- Visualización y exploración
 
-**Ejemplo de configuración Logstash: **
+**Ejemplo de configuración Logstash:**
 
 ```ruby
 # logstash.conf
@@ -560,7 +560,7 @@ output {
 
 ### Amazon Web Services (AWS)
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 - **EC2**: Máquinas virtuales
 - **ECS/EKS**: Container orchestration
@@ -570,7 +570,7 @@ output {
 
 ### Microsoft Azure
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 - **Azure Virtual Machines**: Compute
 - **AKS**: Kubernetes managed
@@ -580,7 +580,7 @@ output {
 
 ### Google Cloud Platform (GCP)
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 - **Compute Engine**: VMs
 - **GKE**: Kubernetes managed
@@ -603,7 +603,7 @@ output {
 
 ### Recomendaciones por Tamaño de Organización
 
-**Startup/Pequeña empresa: **
+**Startup/Pequeña empresa:**
 
 ```markdown
  Recomendado:
@@ -618,7 +618,7 @@ output {
 - Multi-cloud complexity
 ```
 
-**Mediana empresa: **
+**Mediana empresa:**
 
 ```markdown
  Recomendado:
@@ -633,7 +633,7 @@ output {
 - Multi-cloud si hay compliance requirements
 ```
 
-**Gran empresa: **
+**Gran empresa:**
 
 ```markdown
  Recomendado:
@@ -654,7 +654,7 @@ output {
 
 ### Ejercicio 1: Setup de Desarrollo Local
 
-1. **Instalar herramientas base: **
+1. **Instalar herramientas base:**
 
 ```bash
 # Git
@@ -674,7 +674,7 @@ unzip terraform_1.5.0_linux_amd64.zip
 sudo mv terraform /usr/local/bin/
 ```
 
-2. **Crear aplicación de ejemplo: **
+2. **Crear aplicación de ejemplo:**
 
 ```bash
 # Crear proyecto .NET
@@ -685,7 +685,7 @@ cd MiAppDevOps
 dotnet add package prometheus-net.AspNetCore
 ```
 
-3. **Dockerizar aplicación: **
+3. **Dockerizar aplicación:**
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
@@ -695,7 +695,7 @@ EXPOSE 80
 ENTRYPOINT ["dotnet", "MiAppDevOps.dll"]
 ```
 
-4. **Crear docker-compose.yml: **
+4. **Crear docker-compose.yml:**
 
 ```yaml
 version: '3.8'

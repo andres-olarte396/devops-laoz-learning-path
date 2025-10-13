@@ -10,22 +10,29 @@ Bash (Bourne Again SHell) es la shell por defecto en la mayoría de sistemas Lin
 
 ### **Creando tu Primer Script**
 
-1.  Crea un archivo con la extensión `.sh`, por ejemplo, `mi_script.sh`.
-2.  La primera línea del script debe ser el "shebang", que le dice al sistema qué intérprete usar:
+1. Crea un archivo con la extensión `.sh`, por ejemplo, `mi_script.sh`.
+2. La primera línea del script debe ser el "shebang", que le dice al sistema qué intérprete usar:
+
     ```bash
     #!/bin/bash
     ```
-3.  Añade algunos comandos:
+
+3. Añade algunos comandos:
+
     ```bash
     #!/bin/bash
     echo "Hola, Mundo!"
     echo "La fecha actual es: $(date)"
     ```
-4.  Dale permisos de ejecución al archivo:
+
+4. Dale permisos de ejecución al archivo:
+
     ```bash
     chmod +x mi_script.sh
     ```
-5.  Ejecuta el script:
+
+5. Ejecuta el script:
+
     ```bash
     ./mi_script.sh
     ```
@@ -69,7 +76,8 @@ if [ $NUMERO -gt 5 ]; then
 fi
 ```
 
-**Operadores de comparación comunes: **
+**Operadores de comparación comunes:**
+
 - `-f <archivo>`: Verdadero si el archivo existe.
 - `-d <directorio>`: Verdadero si el directorio existe.
 - `-eq`: Igual (números).
@@ -83,7 +91,7 @@ fi
 
 Los bucles se usan para repetir tareas.
 
-**Bucle `for`: **Itera sobre una lista de elementos.
+**Bucle `for`:**Itera sobre una lista de elementos.
 
 ```bash
 #!/bin/bash
@@ -101,7 +109,7 @@ do
 done
 ```
 
-**Bucle `while`: **Se ejecuta mientras una condición sea verdadera.
+**Bucle `while`:**Se ejecuta mientras una condición sea verdadera.
 
 ```bash
 #!/bin/bash
@@ -116,23 +124,29 @@ done
 ---
 
 <a name="powershell"></a>
+
 ## 2. Introducción a PowerShell para Windows
 
 PowerShell es la shell moderna y el lenguaje de scripting de Microsoft. Es el estándar para la automatización en entornos Windows. A diferencia de Bash que trabaja con texto, PowerShell trabaja con **objetos**.
 
 ### **Creando tu Primer Script de PowerShell**
 
-1.  Crea un archivo con la extensión `.ps1`, por ejemplo, `mi_script.ps1`.
-2.  Añade comandos (llamados "cmdlets"):
+1. Crea un archivo con la extensión `.ps1`, por ejemplo, `mi_script.ps1`.
+2. Añade comandos (llamados "cmdlets"):
+
     ```powershell
     Write-Host "Hola, Mundo desde PowerShell!"
     Get-Date
     ```
-3.  Por defecto, la ejecución de scripts está deshabilitada. Para permitirla en tu sesión actual, abre PowerShell y ejecuta:
+
+3. Por defecto, la ejecución de scripts está deshabilitada. Para permitirla en tu sesión actual, abre PowerShell y ejecuta:
+
     ```powershell
     Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
     ```
-4.  Ejecuta el script:
+
+4. Ejecuta el script:
+
     ```powershell
     .\mi_script.ps1
     ```
@@ -168,7 +182,8 @@ if ($servicio.Status -eq "Running") {
 }
 ```
 
-**Operadores de comparación comunes: **
+**Operadores de comparación comunes:**
+
 - `-eq`: Igual.
 - `-ne`: No igual.
 - `-gt`: Mayor que.
@@ -177,7 +192,7 @@ if ($servicio.Status -eq "Running") {
 
 ### **Bucles (`ForEach-Object` y `While`)**
 
-**Bucle `ForEach-Object`: **Es la forma más común de iterar, a menudo usando el alias `foreach`.
+**Bucle `ForEach-Object`:**Es la forma más común de iterar, a menudo usando el alias `foreach`.
 
 ```powershell
 # Iterar sobre una lista de procesos y mostrar su nombre y ID
@@ -185,9 +200,10 @@ Get-Process | ForEach-Object {
     Write-Host "Proceso: $($_.Name), ID: $($_.Id)"
 }
 ```
+
 `$_` es una variable especial que representa el objeto actual en la tubería (pipe).
 
-**Bucle `While`: **
+**Bucle `While`:**
 
 ```powershell
 $contador = 0
@@ -205,4 +221,5 @@ Al igual que en Bash, la tubería (`|`) es fundamental. Sin embargo, en lugar de
 # Obtener los 5 procesos que más memoria consumen, ordenarlos y mostrar su nombre y consumo de memoria en MB
 Get-Process | Sort-Object -Property WS -Descending | Select-Object -First 5 | Format-Table -Property Name, @{Name="Memoria (MB)"; Expression={$_.WS / 1MB -as [int]}}
 ```
+
 Este ejemplo muestra la naturaleza orientada a objetos de PowerShell y es algo que sería mucho más complejo de lograr con herramientas de texto tradicionales como Bash.

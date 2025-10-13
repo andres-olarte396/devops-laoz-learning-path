@@ -59,7 +59,7 @@ Al completar este módulo serás capaz de:
 - Aplicaciones
 - Datos
 
-**Ejemplos: **
+**Ejemplos:**
 
 - **AWS**: EC2, S3, VPC
 - **Azure**: Virtual Machines, Storage Accounts, Virtual Networks
@@ -91,7 +91,7 @@ az vm create \
 - Datos
 - Configuración
 
-**Ejemplos: **
+**Ejemplos:**
 
 - **AWS**: Elastic Beanstalk, RDS, Lambda
 - **Azure**: App Service, SQL Database, Functions
@@ -143,7 +143,7 @@ jobs:
 - Configuración de la aplicación
 - Datos de usuario
 
-**Ejemplos: **
+**Ejemplos:**
 
 - **Microsoft 365**: Productividad
 - **Salesforce**: CRM
@@ -154,20 +154,20 @@ jobs:
 
 ### Amazon Web Services (AWS)
 
-**Fortalezas: **
+**Fortalezas:**
 
--  Pionero del mercado (2006)
--  Mayor variedad de servicios (+200)
--  Ecosistema maduro y extenso
--  Mejor para startups y empresas tech-first
+- Pionero del mercado (2006)
+- Mayor variedad de servicios (+200)
+- Ecosistema maduro y extenso
+- Mejor para startups y empresas tech-first
 
-**Debilidades: **
+**Debilidades:**
 
--  Curva de aprendizaje empinada
--  Pricing complejo
--  Interfaz puede ser abrumadora
+- Curva de aprendizaje empinada
+- Pricing complejo
+- Interfaz puede ser abrumadora
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 ```bash
 # EC2 - Compute
@@ -186,7 +186,7 @@ aws ecs create-cluster --cluster-name my-cluster
 aws ecs register-task-definition --cli-input-json file://task-def.json
 ```
 
-**Arquitectura típica AWS: **
+**Arquitectura típica AWS:**
 
 ```mermaid
 graph TB
@@ -211,20 +211,20 @@ graph TB
 
 ### Microsoft Azure
 
-**Fortalezas: **
+**Fortalezas:**
 
--  Integración perfecta con Microsoft stack
--  Híbrido cloud líder
--  Enterprise-friendly
--  Fuerte en PaaS offerings
+- Integración perfecta con Microsoft stack
+- Híbrido cloud líder
+- Enterprise-friendly
+- Fuerte en PaaS offerings
 
-**Debilidades: **
+**Debilidades:**
 
--  Menos servicios que AWS
--  Documentación inconsistente
--  Cambios frecuentes en productos
+- Menos servicios que AWS
+- Documentación inconsistente
+- Cambios frecuentes en productos
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 ```bash
 # Azure CLI basics
@@ -247,7 +247,7 @@ az container create \
     --ports 80
 ```
 
-**Azure DevOps Pipeline example: **
+**Azure DevOps Pipeline example:**
 
 ```yaml
 # azure-pipelines.yml
@@ -316,20 +316,20 @@ stages:
 
 ### Google Cloud Platform (GCP)
 
-**Fortalezas: **
+**Fortalezas:**
 
--  Fuerte en AI/ML e innovación
--  Networking superior
--  Kubernetes nativo (inventores de K8s)
--  Pricing más simple y predecible
+- Fuerte en AI/ML e innovación
+- Networking superior
+- Kubernetes nativo (inventores de K8s)
+- Pricing más simple y predecible
 
-**Debilidades: **
+**Debilidades:**
 
--  Menor market share
--  Menos servicios enterprise
--  Documentación limitada comparado con AWS
+- Menor market share
+- Menos servicios enterprise
+- Documentación limitada comparado con AWS
 
-**Servicios clave para DevOps: **
+**Servicios clave para DevOps:**
 
 ```bash
 # gcloud CLI basics
@@ -355,7 +355,7 @@ gcloud container clusters create my-cluster \
     --num-nodes 3
 ```
 
-**Cloud Build configuration: **
+**Cloud Build configuration:**
 
 ```yaml
 # cloudbuild.yaml
@@ -572,7 +572,7 @@ spec:
         averageUtilization: 80
 ```
 
-**Herramientas de Cost Management: **
+**Herramientas de Cost Management:**
 
 - **AWS**: Cost Explorer, Budgets, Trusted Advisor
 - **Azure**: Cost Management + Billing, Advisor
@@ -582,14 +582,14 @@ spec:
 
 ### Shared Responsibility Model
 
-**Cloud Provider Responsibility: **
+**Cloud Provider Responsibility:**
 
 - Seguridad de la infraestructura física
 - Hypervisor security
 - Network infrastructure
 - Hardware maintenance
 
-**Customer Responsibility: **
+**Customer Responsibility:**
 
 - OS patches y updates
 - Application security
@@ -625,13 +625,13 @@ spec:
 
 ### Ejercicio 1: Deploy Simple en Azure
 
-1. **Crear Resource Group: **
+1. **Crear Resource Group:**
 
 ```bash
 az group create --name rg-mi-primer-app --location eastus
 ```
 
-2. **Crear App Service Plan: **
+2. **Crear App Service Plan:**
 
 ```bash
 az appservice plan create \
@@ -641,7 +641,7 @@ az appservice plan create \
   --is-linux
 ```
 
-3. **Crear Web App: **
+3. **Crear Web App:**
 
 ```bash
 az webapp create \
@@ -651,7 +651,7 @@ az webapp create \
   --runtime "DOTNETCORE:8.0"
 ```
 
-4. **Deploy desde código local: **
+4. **Deploy desde código local:**
 
 ```bash
 # Preparar aplicación
@@ -723,10 +723,10 @@ az webapp config appsettings set \
 
 **1. ¿Cuál es tu stack tecnológico principal?**
 
-- **Microsoft (.NET, SQL Server, Office)**→ Azure
-- **Open Source/Mixed**→ AWS o GCP
-- **AI/ML Heavy**→ GCP
-- **Enterprise Java**→ Cualquiera
+- **Microsoft (.NET, SQL Server, Office)** → Azure
+- **Open Source/Mixed** → AWS o GCP
+- **AI/ML Heavy** → GCP
+- **Enterprise Java** → Cualquiera
 
 **2. ¿Cuál es tu nivel de experiencia en cloud?**
 

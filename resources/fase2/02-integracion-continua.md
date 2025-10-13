@@ -16,7 +16,8 @@ La **Integración Continua (CI)**es una práctica de desarrollo donde los desarr
 
 ### **El problema que resuelve CI**
 
-**Antes de CI (Integration Hell): **
+**Antes de CI (Integration Hell):**
+
 ```
 Developer A: "Funciona en mi máquina"
 Developer B: "Mi código no compila con los cambios de A"
@@ -24,7 +25,8 @@ Developer C: "Los tests fallan cuando integro todo"
 Team Lead: "El release se retrasa 2 semanas"
 ```
 
-**Con CI: **
+**Con CI:**
+
 ```
  Cada commit se valida automáticamente
  Los problemas se detectan en minutos, no semanas
@@ -47,41 +49,49 @@ Team Lead: "El release se retrasa 2 semanas"
 ### **Los pilares de CI**
 
 #### **1. Un repositorio único**
+
 - Todo el código fuente en un repositorio versionado (Git)
 - Incluye tests, scripts de build, configuración
 - Una sola fuente de verdad para el equipo
 
 #### **2. Builds automatizados**
+
 - Proceso de build completamente automatizado
 - Sin intervención manual
 - Reproducible en cualquier entorno
 
 #### **3. Testing automatizado**
+
 - Tests unitarios, integración, funcionales
 - Ejecución automática en cada cambio
 - Cobertura de código medible
 
 #### **4. Commits frecuentes**
+
 - Integración diaria (mínimo) por desarrollador
 - Cambios pequeños e incrementales
 - Evitar ramas de larga duración
 
 #### **5. Build rápido**
+
 - Feedback en menos de 10 minutos
 - Parallelización cuando sea posible
 - Tests optimizados para velocidad
 
 #### **6. Ambiente similar a producción**
+
 - Tests ejecutados en ambiente que simula producción
 - Mismas dependencias y configuraciones
 - Containerización para consistencia
 
 #### **7. Fácil acceso a deliverables**
+
 - Artefactos disponibles para todo el equipo
 - Versionado claro de releases
 - Trazabilidad de cambios
 
 #### **8. Visibilidad del estado**
+
 - Dashboard con estado actual del build
 - Notificaciones inmediatas de fallos
 - Métricas y tendencias visibles
@@ -1453,6 +1463,7 @@ workflows:
 ### **Principios de pipeline efectivo**
 
 #### **1. Fail Fast**
+
 ```yaml
 # Ejemplo: Ejecutar linting antes que tests pesados
 stages:
@@ -1463,6 +1474,7 @@ stages:
 ```
 
 #### **2. Paralelización inteligente**
+
 ```yaml
 # GitHub Actions - Jobs paralelos
 jobs:
@@ -1481,6 +1493,7 @@ jobs:
 ```
 
 #### **3. Cache estratégico**
+
 ```yaml
 # Cache de dependencias
 - uses: actions/cache@v3
@@ -1498,6 +1511,7 @@ jobs:
 ```
 
 #### **4. Environments y secretos**
+
 ```yaml
 # Manejo seguro de secretos
 jobs:
@@ -1514,6 +1528,7 @@ jobs:
 ### **Métricas de CI importantes**
 
 #### **Build Time Optimization**
+
 ```bash
 # Script para medir tiempos de build
 #!/bin/bash
@@ -1563,6 +1578,7 @@ fi
 ```
 
 #### **Dashboard de métricas**
+
 ```json
 {
   "ci_metrics": {
@@ -1584,6 +1600,7 @@ fi
 ### **Problemas frecuentes y soluciones**
 
 #### **1. Tests flaky (intermitentes)**
+
 ```javascript
 //  Test flaky - depende de timing
 test('async operation', async () => {
@@ -1602,6 +1619,7 @@ test('async operation', async () => {
 ```
 
 #### **2. Dependencias de red**
+
 ```yaml
 #  Tests que dependen de servicios externos
 - name: Test external API
@@ -1617,6 +1635,7 @@ test('async operation', async () => {
 ```
 
 #### **3. Problemas de recursos**
+
 ```yaml
 #  Configurar límites de memoria
 jobs:
@@ -1630,6 +1649,7 @@ jobs:
 ```
 
 #### **4. Debug de pipeline failures**
+
 ```yaml
 # Agregar debugging steps
 - name: Debug environment
@@ -1660,12 +1680,14 @@ jobs:
 
 ### **Caso 1: Migración de Jenkins a GitHub Actions**
 
-**Situación inicial: **
+**Situación inicial:**
+
 - Pipeline Jenkins complejo con 45 minutos de build time
 - Dependencias en infrastructure on-premise
 - Dificultades para escalar runners
 
-**Solución implementada: **
+**Solución implementada:**
+
 ```yaml
 # Estrategia de migración gradual
 # .github/workflows/migration-test.yml
@@ -1684,19 +1706,22 @@ jobs:
       # Reportar diferencias
 ```
 
-**Resultados: **
+**Resultados:**
+
 - Reducción de build time: 45min → 8min
 - Eliminación de maintenance de infrastructure
 - Mejor paralelización y caching
 
 ### **Caso 2: CI para Monorepo**
 
-**Desafío: **
+**Desafío:**
+
 - Múltiples aplicaciones en un repositorio
 - Evitar builds innecesarios
 - Coordinar deployments
 
-**Solución: **
+**Solución:**
+
 ```yaml
 # .github/workflows/monorepo-ci.yml
 name: Monorepo CI
@@ -1761,17 +1786,20 @@ La CI es el **fundamento**de DevOps moderno. Un pipeline de CI bien diseñado es
 ## **Recursos y Referencias**
 
 ### **Documentación oficial**
+
 - [Jenkins Documentation](https://www.jenkins.io/doc/)
 - [GitHub Actions Documentation](https://docs.github.com/en/actions)
 - [GitLab CI/CD Documentation](https://docs.gitlab.com/ee/ci/)
 - [CircleCI Documentation](https://circleci.com/docs/)
 
 ### **Herramientas de testing y calidad**
+
 - [SonarQube](https://www.sonarqube.org/) - Análisis de calidad de código
 - [Codecov](https://codecov.io/) - Cobertura de código
 - [Snyk](https://snyk.io/) - Seguridad de dependencias
 
 ### **Plantillas y ejemplos**
+
 - [GitHub Actions Starter Workflows](https://github.com/actions/starter-workflows)
 - [GitLab CI/CD Templates](https://gitlab.com/gitlab-org/gitlab-foss/-/tree/master/lib/gitlab/ci/templates)
 - [CircleCI Orbs Registry](https://circleci.com/developer/orbs)

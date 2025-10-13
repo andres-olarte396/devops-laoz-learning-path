@@ -11,6 +11,7 @@ Una vez que dominas los comandos básicos de Git, el siguiente paso es aprender 
 **GitHub** y **GitLab** son plataformas basadas en web que utilizan Git para el control de versiones y agregan funcionalidades adicionales para la colaboración en equipos de desarrollo.
 
 **Diferencias principales:**
+
 - **GitHub**: Mayor adopción, enfoque en open source, propiedad de Microsoft
 - **GitLab**: Plataforma más completa con CI/CD integrado, opciones self-hosted
 
@@ -23,6 +24,7 @@ Las ramas permiten desarrollar funcionalidades de forma aislada sin afectar el c
 ### Estrategias de Branching
 
 #### 1. **Git Flow**
+
 ```
 main/master  ─────●─────●─────●─────
                   │     │     │
@@ -32,6 +34,7 @@ feature/login ────●─────●
 ```
 
 **Ramas principales:**
+
 - `main/master`: Código de producción
 - `develop`: Integración de funcionalidades
 - `feature/*`: Desarrollo de funcionalidades específicas
@@ -39,6 +42,7 @@ feature/login ────●─────●
 - `hotfix/*`: Correcciones urgentes en producción
 
 #### 2. **GitHub Flow (Simplificado)**
+
 ```
 main    ─────●─────●─────●─────
               │     │     │
@@ -46,13 +50,16 @@ feature ──────●─────●─────┘
 ```
 
 **Proceso:**
+
 1. Crear rama desde `main`
 2. Desarrollar funcionalidad
 3. Abrir Pull Request
 4. Revisar y mergear a `main`
 
 #### 3. **GitLab Flow**
+
 Similar a GitHub Flow pero con ambientes específicos:
+
 ```
 main         ─────●─────●─────●─────
                    │     │     │
@@ -89,21 +96,27 @@ git push origin --delete feature/nueva-funcionalidad
 ### Tipos de Merge
 
 #### 1. **Merge Commit**
+
 Crea un commit de merge que preserva la historia:
+
 ```bash
 git checkout main
 git merge feature/nueva-funcionalidad
 ```
 
 #### 2. **Fast-Forward Merge**
+
 Cuando no hay cambios en la rama de destino:
+
 ```bash
 git checkout main
 git merge --ff-only feature/nueva-funcionalidad
 ```
 
 #### 3. **Squash Merge**
+
 Combina todos los commits de la rama en uno solo:
+
 ```bash
 git checkout main
 git merge --squash feature/nueva-funcionalidad
@@ -111,7 +124,9 @@ git commit -m "Agregar nueva funcionalidad"
 ```
 
 #### 4. **Rebase**
+
 Reescribe la historia colocando commits encima de la rama de destino:
+
 ```bash
 git checkout feature/nueva-funcionalidad
 git rebase main
@@ -141,6 +156,7 @@ git push origin feature/nueva-funcionalidad
 ```
 
 En la interfaz web:
+
 1. Navegar al repositorio
 2. Hacer clic en "New Pull Request"
 3. Seleccionar branch base y branch con cambios
@@ -218,12 +234,14 @@ function calculateTotal(products) {
 ### Resolución de Conflictos
 
 #### 1. **Identificar Conflictos**
+
 ```bash
 git status
 # Muestra archivos con conflictos
 ```
 
 #### 2. **Resolver Manualmente**
+
 ```javascript
 // Decisión: mantener ambos cambios combinados
 function calculateTotal(items) {
@@ -232,6 +250,7 @@ function calculateTotal(items) {
 ```
 
 #### 3. **Marcar como Resuelto**
+
 ```bash
 git add archivo-con-conflicto.js
 git commit -m "Resolver conflicto en calculateTotal"
@@ -240,10 +259,12 @@ git commit -m "Resolver conflicto en calculateTotal"
 ### Herramientas para Resolución de Conflictos
 
 #### **VS Code**
+
 - Interfaz visual para resolver conflictos
 - Botones para aceptar cambios actuales, entrantes o ambos
 
 #### **Herramientas de Merge**
+
 ```bash
 # Configurar herramienta de merge
 git config --global merge.tool vimdiff
@@ -337,6 +358,7 @@ Se muestra error "Invalid credentials"
 ### Labels y Milestones
 
 #### **Etiquetas Comunes:**
+
 - `bug`: Errores en el código
 - `enhancement`: Mejoras o nuevas funcionalidades
 - `documentation`: Cambios en documentación
@@ -346,6 +368,7 @@ Se muestra error "Invalid credentials"
 ### GitHub Projects / GitLab Boards
 
 **Columnas típicas:**
+
 - **Backlog:** Issues sin asignar
 - **To Do:** Issues asignados pero no iniciados
 - **In Progress:** En desarrollo activo
@@ -424,6 +447,7 @@ build:
 ### Commits
 
 1. **Mensajes descriptivos:**
+
    ```bash
    # ✅ Bueno
    git commit -m "feat: agregar validación de email en formulario de registro"
@@ -433,6 +457,7 @@ build:
    ```
 
 2. **Conventional Commits:**
+
    ```
    feat: nueva funcionalidad
    fix: corrección de bug
@@ -453,6 +478,7 @@ build:
 ### Branches
 
 1. **Nombres descriptivos:**
+
    ```bash
    feature/user-authentication
    bugfix/login-validation
@@ -465,11 +491,13 @@ build:
 ## Herramientas y Recursos
 
 ### Git GUI Tools
+
 - **SourceTree:** Cliente visual gratuito
 - **GitKraken:** Cliente visual con funcionalidades avanzadas
 - **VS Code:** Integración Git nativa
 
 ### Extensiones útiles
+
 - **GitLens (VS Code):** Información detallada de Git
 - **Git Graph (VS Code):** Visualización de ramas
 - **GitHub Pull Requests (VS Code):** Gestión de PRs
@@ -477,6 +505,7 @@ build:
 ## Ejercicios Prácticos
 
 ### Ejercicio 1: Flujo Básico
+
 1. Crear repositorio en GitHub
 2. Clonar localmente
 3. Crear rama `feature/readme-update`
@@ -485,12 +514,14 @@ build:
 6. Mergear PR
 
 ### Ejercicio 2: Resolver Conflictos
+
 1. Crear dos ramas que modifiquen el mismo archivo
 2. Intentar mergear
 3. Resolver conflictos manualmente
 4. Completar merge
 
 ### Ejercicio 3: Workflow de Equipo
+
 1. Simular trabajo en equipo con múltiples contribuidores
 2. Usar GitHub Issues para tracking
 3. Implementar GitHub Actions para CI
@@ -499,15 +530,18 @@ build:
 ## Recursos Adicionales
 
 ### Documentación Oficial
+
 - [GitHub Docs](https://docs.github.com/)
 - [GitLab Docs](https://docs.gitlab.com/)
 - [Git Documentation](https://git-scm.com/doc)
 
 ### Tutoriales Interactivos
+
 - [GitHub Learning Lab](https://lab.github.com/)
 - [Atlassian Git Tutorials](https://www.atlassian.com/git/tutorials)
 
 ### Cheat Sheets
+
 - [GitHub Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 - [GitLab Git Cheat Sheet](https://about.gitlab.com/images/press/git-cheat-sheet.pdf)
 

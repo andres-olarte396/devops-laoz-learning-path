@@ -25,7 +25,7 @@ Al completar este módulo serás capaz de:
 
 ### Instalación de Git
 
-**Windows: **
+**Windows:**
 
 ```powershell
 # Usando Chocolatey
@@ -37,7 +37,7 @@ winget install Git.Git
 # O descargar desde https://git-scm.com/
 ```
 
-**macOS: **
+**macOS:**
 
 ```bash
 # Usando Homebrew
@@ -47,7 +47,7 @@ brew install git
 xcode-select --install
 ```
 
-**Linux (Ubuntu/Debian): **
+**Linux (Ubuntu/Debian):**
 
 ```bash
 sudo apt update
@@ -345,7 +345,7 @@ CONFLICT (content): Merge conflict in src/config.js
 Automatic merge failed; fix conflicts and then commit the result.
 ```
 
-**Archivo con conflicto: **
+**Archivo con conflicto:**
 
 ```javascript
 // src/config.js
@@ -384,7 +384,7 @@ git commit -m "resolve: merge conflict in config.js
 
 ### Herramientas de Merge
 
-**VS Code (integrado): **
+**VS Code (integrado):**
 
 ```bash
 # Configurar VS Code como merge tool
@@ -395,7 +395,7 @@ git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 git mergetool
 ```
 
-**Otras herramientas populares: **
+**Otras herramientas populares:**
 
 ```bash
 # KDiff3
@@ -458,7 +458,7 @@ git push origin feature/mi-contribucion
 
 ### Code Review Best Practices
 
-**Para el autor del PR: **
+**Para el autor del PR:**
 
 ```markdown
 # Template de Pull Request
@@ -486,7 +486,7 @@ Breve descripción de los cambios realizados.
 - [ ] He actualizado la documentación según necesario
 ```
 
-**Para reviewers: **
+**Para reviewers:**
 
 ```bash
 # Checkout del PR para testing local

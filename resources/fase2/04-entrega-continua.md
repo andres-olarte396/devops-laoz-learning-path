@@ -8,13 +8,15 @@ La **Entrega/Despliegue Continuo**es la extensión natural de la Integración Co
 
 ### **Continuous Delivery vs Continuous Deployment**
 
-**Continuous Delivery (Entrega Continua): **
+**Continuous Delivery (Entrega Continua):**
+
 - Código **siempre listo**para producción
 - Despliegue **manual**con un click
 - **Validación humana**antes de producción
 - **Control total**sobre releases
 
-**Continuous Deployment (Despliegue Continuo): **
+**Continuous Deployment (Despliegue Continuo):**
+
 - Despliegue **totalmente automatizado**
 - **Sin intervención humana**
 - Cambios van **directo a producción**
@@ -56,18 +58,20 @@ graph LR
 
 ### **Blue-Green Deployment**
 
-**Concepto: **Mantener **dos entornos idénticos**(Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
+**Concepto:**Mantener **dos entornos idénticos**(Blue y Green). Uno sirve tráfico de producción mientras el otro recibe el nuevo despliegue.
 
-#### **Ventajas: **
--  **Cero downtime**- Cambio instantáneo
--  **Rollback rápido**- Solo cambiar el router
--  **Testing completo**- Validar en ambiente idéntico
--  **Baja complejidad**- Fácil de entender
+#### **Ventajas:**
 
-#### **Desventajas: **
--  **Costo alto**- Doble infraestructura
--  **Datos complejos**- Migrations pueden ser problemáticas
--  **Recursos intensivo**- Duplicar todo el stack
+- **Cero downtime**- Cambio instantáneo
+- **Rollback rápido**- Solo cambiar el router
+- **Testing completo**- Validar en ambiente idéntico
+- **Baja complejidad**- Fácil de entender
+
+#### **Desventajas:**
+
+- **Costo alto**- Doble infraestructura
+- **Datos complejos**- Migrations pueden ser problemáticas
+- **Recursos intensivo**- Duplicar todo el stack
 
 #### **Implementación con Docker y Nginx**
 
@@ -320,18 +324,20 @@ echo " Blue-Green deployment completed!"
 
 ### **Canary Deployment**
 
-**Concepto: **Desplegar nueva versión gradualmente a un **subconjunto pequeño**de usuarios/tráfico, monitoreando métricas antes de full rollout.
+**Concepto:**Desplegar nueva versión gradualmente a un **subconjunto pequeño**de usuarios/tráfico, monitoreando métricas antes de full rollout.
 
-#### **Ventajas: **
--  **Riesgo minimizado**- Solo afecta pequeño porcentaje
--  **Feedback temprano**- Detectar issues antes de full rollout
--  **A/B Testing**- Comparar versiones en producción
--  **Costo eficiente**- No necesita doble infraestructura
+#### **Ventajas:**
 
-#### **Desventajas: **
--  **Complejidad alta**- Requires traffic splitting
--  **Monitoring intensivo**- Necesita métricas detalladas
--  **Testing parcial**- No todo el flujo se prueba inicialmente
+- **Riesgo minimizado**- Solo afecta pequeño porcentaje
+- **Feedback temprano**- Detectar issues antes de full rollout
+- **A/B Testing**- Comparar versiones en producción
+- **Costo eficiente**- No necesita doble infraestructura
+
+#### **Desventajas:**
+
+- **Complejidad alta**- Requires traffic splitting
+- **Monitoring intensivo**- Necesita métricas detalladas
+- **Testing parcial**- No todo el flujo se prueba inicialmente
 
 #### **Implementación con Nginx y Docker**
 
@@ -596,18 +602,20 @@ spec:
 
 ### **Rolling Updates**
 
-**Concepto: **Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
+**Concepto:**Reemplazar instancias de la aplicación **gradualmente**, una por una, manteniendo la aplicación disponible durante todo el proceso.
 
-#### **Ventajas: **
--  **Cero downtime**- Siempre hay instancias disponibles
--  **Uso eficiente de recursos**- No duplica infraestructura
--  **Simple de implementar**- Estrategia por defecto en Kubernetes
--  **Rollback rápido**- Fácil revertir cambios
+#### **Ventajas:**
 
-#### **Desventajas: **
--  **Mixing versions**- Múltiples versiones corriendo simultáneamente
--  **Database migrations**- Pueden ser complicadas
--  **Slower rollout**- Toma más tiempo completar deployment
+- **Cero downtime**- Siempre hay instancias disponibles
+- **Uso eficiente de recursos**- No duplica infraestructura
+- **Simple de implementar**- Estrategia por defecto en Kubernetes
+- **Rollback rápido**- Fácil revertir cambios
+
+#### **Desventajas:**
+
+- **Mixing versions**- Múltiples versiones corriendo simultáneamente
+- **Database migrations**- Pueden ser complicadas
+- **Slower rollout**- Toma más tiempo completar deployment
 
 #### **Rolling Update con Docker Swarm**
 
@@ -806,7 +814,7 @@ echo " Rolling update to $NEW_VERSION completed successfully!"
 
 El entorno de staging debe **replicar fielmente**el entorno de producción para validar cambios antes del despliegue final.
 
-#### **Características del Staging ideal: **
+#### **Características del Staging ideal:**
 
 ```yaml
 # staging-environment.yml
@@ -974,7 +982,7 @@ jobs:
 
 ### **Production Environment**
 
-#### **Configuración de producción robusta: **
+#### **Configuración de producción robusta:**
 
 ```yaml
 # production-environment.yml
@@ -1130,7 +1138,7 @@ spec:
 
 ### **Estrategias de Rollback**
 
-#### **Rollback basado en métricas: **
+#### **Rollback basado en métricas:**
 
 ```bash
 #!/bin/bash
@@ -1232,7 +1240,7 @@ done
 echo " Monitoring period completed. Deployment is stable."
 ```
 
-#### **Rollback con feature flags: **
+#### **Rollback con feature flags:**
 
 ```javascript
 // feature-flag-rollback.js
@@ -1544,7 +1552,7 @@ jobs:
 
 ### **Métricas clave para CD**
 
-#### **Dashboard de métricas de deployment: **
+#### **Dashboard de métricas de deployment:**
 
 ```yaml
 # deployment-dashboard.yml
@@ -1595,7 +1603,7 @@ data:
     }
 ```
 
-#### **Alerting para deployments: **
+#### **Alerting para deployments:**
 
 ```yaml
 # deployment-alerts.yml
@@ -1661,11 +1669,13 @@ La **CD es la materialización**de todo el trabajo de DevOps: llevar código des
 ## **Recursos y Referencias**
 
 ### **Libros recomendados**
+
 - "Continuous Delivery" by Jez Humble & Dave Farley
 - "The DevOps Handbook" by Gene Kim
 - "Accelerate" by Nicole Forsgren, Jez Humble & Gene Kim
 
 ### **Herramientas de CD**
+
 - **Kubernetes**: Orquestación de contenedores
 - **Helm**: Package manager para Kubernetes
 - **ArgoCD**: GitOps continuous delivery
@@ -1673,6 +1683,7 @@ La **CD es la materialización**de todo el trabajo de DevOps: llevar código des
 - **Flagger**: Progressive delivery operator
 
 ### **Plataformas cloud**
+
 - **AWS CodeDeploy**: Servicio de deployment de AWS
 - **Azure DevOps**: Plataforma completa de Microsoft
 - **Google Cloud Deploy**: Servicio de CD de Google Cloud

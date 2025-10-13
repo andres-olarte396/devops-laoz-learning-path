@@ -56,11 +56,13 @@ La Integración Continua es la práctica de integrar cambios de código en un re
 Aunque ambos se abrevian como "CD", son conceptos diferentes:
 
 #### Entrega Continua (Continuous Delivery)
+
 - **Objetivo**: Mantener el código **siempre listo**para producción
 - **Proceso**: Despliegue a producción requiere **aprobación manual**
 - **Beneficio**: Reduce el riesgo y tiempo de despliegues
 
 #### Despliegue Continuo (Continuous Deployment)
+
 - **Objetivo**: **Automatizar completamente**el pipeline hasta producción
 - **Proceso**: Todo cambio que pase las pruebas se despliega **automáticamente**
 - **Beneficio**: Máxima velocidad de entrega de valor

@@ -34,24 +34,24 @@ Al completar esta fase serás capaz de:
 - Definición y origen de DevOps
 - Principios fundamentales (CALMS)
 - Cultura DevOps vs. herramientas
-- **Duración: **2-3 horas
-- **Tipo: **Conceptual + Reflexión
+- **Duración:**2-3 horas
+- **Tipo:**Conceptual + Reflexión
 
 #### [02. Beneficios de DevOps](02-beneficios-debops.md)
 
 - Ventajas técnicas y de negocio
 - Casos de éxito empresariales
 - Métricas y KPIs importantes
-- **Duración: **2-3 horas
-- **Tipo: **Análisis + Casos prácticos
+- **Duración:**2-3 horas
+- **Tipo:**Análisis + Casos prácticos
 
 #### [03. DevOps vs Agile vs Waterfall](03-devops-agile-waterfall.md)
 
 - Comparación detallada de metodologías
 - Cuándo usar cada una
 - Integración de DevOps con Agile
-- **Duración: **3-4 horas
-- **Tipo: **Comparativo + Ejercicios
+- **Duración:**3-4 horas
+- **Tipo:**Comparativo + Ejercicios
 
 ### Semana 2: Ciclo de Vida y Herramientas
 
@@ -60,16 +60,16 @@ Al completar esta fase serás capaz de:
 - Las 8 fases del ciclo DevOps
 - Flujo de trabajo completo
 - Herramientas por fase
-- **Duración: **4-5 horas
-- **Tipo: **Técnico + Diagrama de flujo
+- **Duración:**4-5 horas
+- **Tipo:**Técnico + Diagrama de flujo
 
 #### [05. Herramientas y Tecnologías Clave](05-herramientas-tecnologias-clave.md)
 
 - Stack tecnológico completo
 - Herramientas por categoría
 - Laboratorios de instalación
-- **Duración: **6-8 horas
-- **Tipo: **Hands-on + Configuración
+- **Duración:**6-8 horas
+- **Tipo:**Hands-on + Configuración
 
 ### Semana 3: Fundamentos Técnicos
 
@@ -78,16 +78,16 @@ Al completar esta fase serás capaz de:
 - Conceptos fundamentales de cloud
 - Proveedores principales (AWS, Azure, GCP)
 - Servicios básicos y casos de uso
-- **Duración: **4-5 horas
-- **Tipo: **Conceptual + Demos
+- **Duración:**4-5 horas
+- **Tipo:**Conceptual + Demos
 
 #### [07. Conceptos Clave: CI/CD, IaC y Observabilidad](07-conceptos-clave.md)
 
 - Continuous Integration/Continuous Deployment
 - Infrastructure as Code
 - Monitoreo y observabilidad
-- **Duración: **5-6 horas
-- **Tipo: **Técnico + Ejemplos prácticos
+- **Duración:**5-6 horas
+- **Tipo:**Técnico + Ejemplos prácticos
 
 ### Semana 4: Git Mastery
 
@@ -97,8 +97,8 @@ Al completar esta fase serás capaz de:
 - Workflows profesionales
 - Branching strategies
 - Colaboración en equipos
-- **Duración: **8-10 horas
-- **Tipo: **Intensivo hands-on + Proyectos
+- **Duración:**8-10 horas
+- **Tipo:**Intensivo hands-on + Proyectos
 
 ## Plan de Estudio Recomendado
 
@@ -111,7 +111,7 @@ Al completar esta fase serás capaz de:
 | 3 | 06-07 | Fundamentos técnicos | 9-11 horas |
 | 4 | 08 | Git mastery | 8-10 horas |
 
-**Total estimado: **35-44 horas de estudio
+**Total estimado:**35-44 horas de estudio
 
 ### **Modalidades de Estudio**
 
@@ -183,7 +183,7 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 
 ### **Proyecto Final de Fase**
 
-**Mini-proyecto integrador: **Configurar un repositorio Git con:
+**Mini-proyecto integrador:**Configurar un repositorio Git con:
 
 - Estructura DevOps profesional
 - README completo con roadmap
@@ -227,10 +227,10 @@ Para considerar la Fase 1 completada, deberías ser capaz de:
 
 ### **Celebra tus Logros**
 
--  Completar cada archivo
--  Resolver laboratorios exitosamente
--  Explicar conceptos a otros
--  Terminar la fase completa
+- Completar cada archivo
+- Resolver laboratorios exitosamente
+- Explicar conceptos a otros
+- Terminar la fase completa
 
 ## Soporte y Comunidad
 

@@ -22,11 +22,11 @@ La cultura es el pilar más importante y, a menudo, el más difícil de construi
 
 Implementar estos principios requiere un mindset específico:
 
--   **Seguridad Psicológica: **Los miembros del equipo deben sentirse seguros para experimentar, hacer preguntas, admitir errores y proponer ideas sin temor a ser culpados o ridiculizados. Sin seguridad psicológica, la colaboración y la mejora continua son imposibles.
+- **Seguridad Psicológica:**Los miembros del equipo deben sentirse seguros para experimentar, hacer preguntas, admitir errores y proponer ideas sin temor a ser culpados o ridiculizados. Sin seguridad psicológica, la colaboración y la mejora continua son imposibles.
 
--   **Post-Mortems Sin Culpa (Blameless Post-Mortems): **Cuando algo sale mal (y saldrá mal), el objetivo no es encontrar un culpable, sino entender la causa raíz del problema a nivel de sistema y proceso. La pregunta no es "¿Quién cometió el error?", sino "¿Qué podemos mejorar en nuestro sistema para que este error no vuelva a ocurrir?".
+- **Post-Mortems Sin Culpa (Blameless Post-Mortems):** Cuando algo sale mal (y saldrá mal), el objetivo no es encontrar un culpable, sino entender la causa raíz del problema a nivel de sistema y proceso. La pregunta no es "¿Quién cometió el error?", sino "¿Qué podemos mejorar en nuestro sistema para que este error no vuelva a ocurrir?".
 
--   **Empatía: **Los desarrolladores deben entender las presiones de mantener un sistema estable que sienten los de operaciones. Los de operaciones deben entender la necesidad de los desarrolladores de entregar nuevas funcionalidades rápidamente. La empatía es el pegamento que une a los equipos.
+- **Empatía:**Los desarrolladores deben entender las presiones de mantener un sistema estable que sienten los de operaciones. Los de operaciones deben entender la necesidad de los desarrolladores de entregar nuevas funcionalidades rápidamente. La empatía es el pegamento que une a los equipos.
 
 > Libros como **"The Phoenix Project"**(que se encuentra en los recursos recomendados) son una excelente manera de entender la dinámica cultural de DevOps a través de una novela.
 

@@ -145,6 +145,7 @@ Esta fase te preparará para fases más avanzadas donde exploraremos:
 Al final de esta fase, habrás construido:
 
  **Un pipeline CI/CD completo**que incluya:
+
 - [x] Automatización de build y testing
 - [x] Múltiples etapas de deployment
 - [x] Rollback automático en caso de fallas

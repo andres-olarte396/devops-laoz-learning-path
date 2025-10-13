@@ -71,6 +71,7 @@ terraform apply
 ### 1. **Terraform**
 
 **Características:**
+
 - Multi-cloud (AWS, Azure, GCP, etc.)
 - Lenguaje declarativo (HCL)
 - State management
@@ -116,6 +117,7 @@ resource "aws_security_group" "web_sg" {
 ### 2. **AWS CloudFormation**
 
 **Características:**
+
 - Nativo de AWS
 - Formato JSON/YAML
 - Rollback automático
@@ -193,6 +195,7 @@ Outputs:
 ### 4. **Pulumi**
 
 **Características:**
+
 - Uso de lenguajes de programación reales (TypeScript, Python, Go, etc.)
 - Mismo código para infraestructura y aplicación
 - State management integrado

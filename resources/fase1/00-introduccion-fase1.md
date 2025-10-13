@@ -66,19 +66,19 @@ Como parte de tu experiencia de aprendizaje, hemos incluido recursos adicionales
 - **[4 Lecciones Contraintuitivas que la Nube nos Enseñó sobre Administrar Servidores](../blog/4-lecciones-contraintuitivas-nube-administrar-servidores.md)**
 
     Este artículo complementa los conceptos de DevOps al explorar cómo el uso de servicios por internet (lo que llamamos **computación en la nube**) ha transformado la forma en que se administran los sistemas. Descubrirás conceptos clave como:
-   - La filosofía "**Cattle vs Pets**" para servidores: una forma de pensar en los servidores como ganado (intercambiables y desechables) en lugar de como mascotas (únicos y cuidados individualmente).
-   - **Infraestructura inmutable y autoconfigurable**: sistemas que, una vez creados, no se modifican, sino que se reemplazan por versiones nuevas. Esto hace que todo el proceso sea más predecible y automatizado.
-   - El impacto de las **herramientas orientadas a objetos**: herramientas que permiten modelar y gestionar la infraestructura de la misma forma en que se manejan los objetos en la programación.
-   - La evolución del rol del administrador hacia DevOps
+  - La filosofía "**Cattle vs Pets**" para servidores: una forma de pensar en los servidores como ganado (intercambiables y desechables) en lugar de como mascotas (únicos y cuidados individualmente).
+  - **Infraestructura inmutable y autoconfigurable**: sistemas que, una vez creados, no se modifican, sino que se reemplazan por versiones nuevas. Esto hace que todo el proceso sea más predecible y automatizado.
+  - El impacto de las **herramientas orientadas a objetos**: herramientas que permiten modelar y gestionar la infraestructura de la misma forma en que se manejan los objetos en la programación.
+  - La evolución del rol del administrador hacia DevOps
 
 - **[Más Allá de las Herramientas: 5 Ideas de DevOps que Transformarán tu Forma de Pensar](../blog/mas-alla-de-las-herramientas-5-ideas-devops.md)**
 
     Este artículo profundiza en los cambios de mentalidad fundamentales que representa DevOps, más allá de las herramientas específicas. Explora conceptos transformadores como:
-   - **Servidores como ganado vs. mascotas**: El cambio paradigmático en la gestión de infraestructura
-   - **Principio de inmutabilidad**: Por qué la infraestructura se reemplaza en lugar de repararse
-   - **Ciclo infinito de mejora**: El modelo operativo continuo de DevOps
-   - **Cultura antes que herramientas**: Por qué los procesos deben guiar la selección de tecnología
-   - **Evolución del rol de operaciones**: Hacia Platform Engineering y habilitación de equipos
+  - **Servidores como ganado vs. mascotas**: El cambio paradigmático en la gestión de infraestructura
+  - **Principio de inmutabilidad**: Por qué la infraestructura se reemplaza en lugar de repararse
+  - **Ciclo infinito de mejora**: El modelo operativo continuo de DevOps
+  - **Cultura antes que herramientas**: Por qué los procesos deben guiar la selección de tecnología
+  - **Evolución del rol de operaciones**: Hacia Platform Engineering y habilitación de equipos
 
 #### Contenido Multimedia
 

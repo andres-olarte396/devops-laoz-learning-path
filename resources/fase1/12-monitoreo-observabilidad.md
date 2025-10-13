@@ -11,6 +11,7 @@ El **monitoreo y observabilidad** son componentes críticos en DevOps que permit
 El **monitoreo** es la práctica de recopilar, procesar y actuar sobre métricas conocidas para entender el estado de un sistema.
 
 **Características:**
+
 - Se basa en métricas predefinidas
 - Responde preguntas conocidas
 - Detecta problemas conocidos
@@ -21,6 +22,7 @@ El **monitoreo** es la práctica de recopilar, procesar y actuar sobre métricas
 La **observabilidad** es la capacidad de entender el estado interno de un sistema basándose en sus salidas externas.
 
 **Características:**
+
 - Permite explorar datos no predefinidos
 - Responde preguntas desconocidas
 - Ayuda a descubrir problemas nuevos
@@ -946,18 +948,21 @@ print(f"Error budget restante: {remaining:.2f}%")
 ## Herramientas del Ecosistema
 
 ### Métricas
+
 - **Prometheus:** Recolección y almacenamiento
 - **Grafana:** Visualización y dashboards
 - **InfluxDB:** Base de datos de time series
 - **DataDog:** Monitoreo como servicio
 
 ### Logs
+
 - **ELK Stack:** Elasticsearch, Logstash, Kibana
 - **Fluentd:** Recolector de logs
 - **Splunk:** Análisis de logs empresarial
 - **Loki:** Sistema de logs de Grafana
 
 ### Traces
+
 - **Jaeger:** Distributed tracing
 - **Zipkin:** Distributed tracing
 - **OpenTelemetry:** Estándar de observabilidad
@@ -997,12 +1002,14 @@ print(f"Error budget restante: {remaining:.2f}%")
 ## Recursos Adicionales
 
 ### Documentación
+
 - [Prometheus Documentation](https://prometheus.io/docs/)
 - [Grafana Documentation](https://grafana.com/docs/)
 - [OpenTelemetry Documentation](https://opentelemetry.io/docs/)
 - [Jaeger Documentation](https://www.jaegertracing.io/docs/)
 
 ### Libros Recomendados
+
 - "Site Reliability Engineering" - Google
 - "Observability Engineering" - Honeycomb
 - "Monitoring and Observability" - O'Reilly

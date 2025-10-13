@@ -8,6 +8,8 @@ Este plan de estudio estructurado te guiará desde los fundamentos hasta un nive
 
 Antes de sumergirnos en DevOps, es crucial tener una base sólida en la línea de comandos. Esta fase te preparará con las habilidades esenciales para navegar y automatizar tareas en cualquier sistema operativo.
 
+- [**Guía de estudio de la Fase 0**](./resources/fase0/README.md)
+
 1. **Fundamentos de la Shell**
 
    - [Introducción a la Fase 0](./resources/fase0/00-introduccion-fase0.md)

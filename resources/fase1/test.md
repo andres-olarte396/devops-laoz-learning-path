@@ -11,7 +11,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 ## Temario Cubierto en el Test
 
-**Fase 1 Completada - 8 Temas: **
+**Fase 1 Completada - 8 Temas:**
 
 1. **[¿Qué es DevOps?](01-que-es-devops.md)**- Cultura, herramientas y prácticas
 2. **[Beneficios de DevOps](02-beneficios-debops.md)**- Ventajas técnicas y de negocio
@@ -26,7 +26,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 ## 1. ¿Qué es DevOps? (Cultura, herramientas y prácticas)
 
-> **Contenido de referencia: **[01-que-es-devops.md](01-que-es-devops.md)
+> **Contenido de referencia:**[01-que-es-devops.md](01-que-es-devops.md)
 
 **1. ¿Cuál es el objetivo principal de DevOps según el modelo CALMS?**
 
@@ -146,7 +146,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 ## 4. Ciclo de Vida de DevOps (8 Fases)
 
-> **Contenido de referencia: **[04-ciclo-de-vida-devops.md](04-ciclo-de-vida-devops.md)
+> **Contenido de referencia:**[04-ciclo-de-vida-devops.md](04-ciclo-de-vida-devops.md)
 
 **10. ¿Cuáles son las 8 fases del ciclo de vida DevOps en orden?**
 
@@ -188,7 +188,7 @@ Este test abarca todo el contenido de la Fase 1 completada, incluyendo los 8 tem
 
 ## 5. Herramientas y Tecnologías Clave
 
-> **Contenido de referencia: **[05-herramientas-tecnologias-clave.md](05-herramientas-tecnologias-clave.md)
+> **Contenido de referencia:**[05-herramientas-tecnologias-clave.md](05-herramientas-tecnologias-clave.md)
 
 13. **¿Cuál de las siguientes herramientas se utiliza para la Integración Continua?**
 
@@ -580,7 +580,7 @@ Si obtuviste <70%:
 
 ---
 
-**¡Felicitaciones por completar la evaluación de la Fase 1!** 
+**¡Felicitaciones por completar la evaluación de la Fase 1!**
 *Recuerda que el aprendizaje DevOps es un viaje continuo de mejora y práctica.*
 
 ---

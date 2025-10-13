@@ -38,6 +38,7 @@ Manual → Scripted → Automated → Orchestrated → Self-Healing
 ### **Principios de automatización efectiva**
 
 #### **1. Idempotencia**
+
 ```bash
 #  No idempotente - crea duplicados
 echo "export PATH=$PATH:/usr/local/bin" >> ~/.bashrc
@@ -49,6 +50,7 @@ fi
 ```
 
 #### **2. Atomicidad**
+
 ```bash
 #  Operación atómica - todo o nada
 deploy_application() {
@@ -68,6 +70,7 @@ deploy_application() {
 ```
 
 #### **3. Observabilidad**
+
 ```bash
 #  Log detallado para debugging
 log() {
@@ -536,79 +539,79 @@ DIST_DIR := dist
 
 # Target de ayuda
 help: ## Mostrar esta ayuda
-	@echo "Available targets:"
-	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
+ @echo "Available targets:"
+ @awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
 # Instalación de dependencias
 install: ## Instalar dependencias del proyecto
-	@echo " Installing dependencies..."
-	npm ci
-	@echo " Dependencies installed"
+ @echo " Installing dependencies..."
+ npm ci
+ @echo " Dependencies installed"
 
 # Build del proyecto
 build: install ## Compilar el proyecto
-	@echo " Building $(APP_NAME) version $(VERSION)..."
-	mkdir -p $(BUILD_DIR)
-	npm run build
-	@echo " Build completed"
+ @echo " Building $(APP_NAME) version $(VERSION)..."
+ mkdir -p $(BUILD_DIR)
+ npm run build
+ @echo " Build completed"
 
 # Ejecutar tests
 test: install ## Ejecutar suite de tests
-	@echo " Running tests..."
-	npm run test:unit
-	npm run test:integration
-	@echo " All tests passed"
+ @echo " Running tests..."
+ npm run test:unit
+ npm run test:integration
+ @echo " All tests passed"
 
 # Linting y formateo
 lint: install ## Ejecutar linting y formateo
-	@echo " Running linter..."
-	npm run lint
-	npm run format:check
-	@echo " Code style validated"
+ @echo " Running linter..."
+ npm run lint
+ npm run format:check
+ @echo " Code style validated"
 
 # Build de producción
 dist: test lint ## Crear distribución para producción
-	@echo " Creating production build..."
-	mkdir -p $(DIST_DIR)
-	npm run build:prod
-	tar -czf $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz -C $(BUILD_DIR) .
-	@echo " Distribution created: $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz"
+ @echo " Creating production build..."
+ mkdir -p $(DIST_DIR)
+ npm run build:prod
+ tar -czf $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz -C $(BUILD_DIR) .
+ @echo " Distribution created: $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz"
 
 # Deployment local
 deploy-local: dist ## Desplegar localmente
-	@echo " Deploying locally..."
-	docker build -t $(APP_NAME):$(VERSION) .
-	docker run -d --name $(APP_NAME) -p 8080:80 $(APP_NAME):$(VERSION)
-	@echo " Local deployment completed on http://localhost:8080"
+ @echo " Deploying locally..."
+ docker build -t $(APP_NAME):$(VERSION) .
+ docker run -d --name $(APP_NAME) -p 8080:80 $(APP_NAME):$(VERSION)
+ @echo " Local deployment completed on http://localhost:8080"
 
 # Deployment a staging
 deploy-staging: dist ## Desplegar a staging
-	@echo " Deploying to staging..."
-	scp $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz staging-server:/tmp/
-	ssh staging-server "cd /opt/$(APP_NAME) && tar -xzf /tmp/$(APP_NAME)-$(VERSION).tar.gz && sudo systemctl restart $(APP_NAME)"
-	@echo " Staging deployment completed"
+ @echo " Deploying to staging..."
+ scp $(DIST_DIR)/$(APP_NAME)-$(VERSION).tar.gz staging-server:/tmp/
+ ssh staging-server "cd /opt/$(APP_NAME) && tar -xzf /tmp/$(APP_NAME)-$(VERSION).tar.gz && sudo systemctl restart $(APP_NAME)"
+ @echo " Staging deployment completed"
 
 # Health check
 health-check: ## Verificar salud de la aplicación
-	@echo " Running health check..."
-	curl -f http://localhost:8080/health || (echo " Health check failed" && exit 1)
-	@echo " Application is healthy"
+ @echo " Running health check..."
+ curl -f http://localhost:8080/health || (echo " Health check failed" && exit 1)
+ @echo " Application is healthy"
 
 # Limpieza
 clean: ## Limpiar archivos generados
-	@echo " Cleaning up..."
-	rm -rf $(BUILD_DIR) $(DIST_DIR) node_modules/.cache
-	docker system prune -f
-	@echo " Cleanup completed"
+ @echo " Cleaning up..."
+ rm -rf $(BUILD_DIR) $(DIST_DIR) node_modules/.cache
+ docker system prune -f
+ @echo " Cleanup completed"
 
 # Target condicional para CI/CD
 ci: ## Target para CI/CD pipeline
 ifeq ($(CI),true)
-	@echo " Running in CI environment"
-	$(MAKE) test lint dist
+ @echo " Running in CI environment"
+ $(MAKE) test lint dist
 else
-	@echo "  Not in CI environment, running local build"
-	$(MAKE) build test
+ @echo "  Not in CI environment, running local build"
+ $(MAKE) build test
 endif
 ```
 
@@ -622,35 +625,35 @@ DOCKER_TAG := $(VERSION)
 
 # Targets de Docker
 docker-build: ## Construir imagen Docker
-	@echo " Building Docker image..."
-	docker build \
-		--build-arg VERSION=$(VERSION) \
-		--build-arg BUILD_DATE=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ') \
-		-t $(DOCKER_IMAGE):$(DOCKER_TAG) \
-		-t $(DOCKER_IMAGE):latest \
-		.
-	@echo " Docker image built: $(DOCKER_IMAGE):$(DOCKER_TAG)"
+ @echo " Building Docker image..."
+ docker build \
+  --build-arg VERSION=$(VERSION) \
+  --build-arg BUILD_DATE=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ') \
+  -t $(DOCKER_IMAGE):$(DOCKER_TAG) \
+  -t $(DOCKER_IMAGE):latest \
+  .
+ @echo " Docker image built: $(DOCKER_IMAGE):$(DOCKER_TAG)"
 
 docker-push: docker-build ## Subir imagen a registry
-	@echo " Pushing Docker image..."
-	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
-	docker push $(DOCKER_IMAGE):latest
-	@echo " Docker image pushed"
+ @echo " Pushing Docker image..."
+ docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
+ docker push $(DOCKER_IMAGE):latest
+ @echo " Docker image pushed"
 
 docker-run: docker-build ## Ejecutar contenedor localmente
-	@echo " Starting Docker container..."
-	docker run -d \
-		--name $(APP_NAME)-dev \
-		-p 8080:80 \
-		-e NODE_ENV=development \
-		$(DOCKER_IMAGE):$(DOCKER_TAG)
-	@echo " Container started on http://localhost:8080"
+ @echo " Starting Docker container..."
+ docker run -d \
+  --name $(APP_NAME)-dev \
+  -p 8080:80 \
+  -e NODE_ENV=development \
+  $(DOCKER_IMAGE):$(DOCKER_TAG)
+ @echo " Container started on http://localhost:8080"
 
 docker-stop: ## Detener y remover contenedor
-	@echo " Stopping Docker container..."
-	docker stop $(APP_NAME)-dev || true
-	docker rm $(APP_NAME)-dev || true
-	@echo " Container stopped"
+ @echo " Stopping Docker container..."
+ docker stop $(APP_NAME)-dev || true
+ docker rm $(APP_NAME)-dev || true
+ @echo " Container stopped"
 ```
 
 ---
@@ -1482,6 +1485,7 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 
 **Duración**: Aproximadamente 15-20 minutos
 **Contenido**: Comparación detallada entre las tres herramientas principales de gestión de configuración, incluyendo:
+
 - Arquitectura y filosofía de cada herramienta
 - Casos de uso recomendados
 - Ventajas y desventajas
@@ -1497,6 +1501,7 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 
 **Formato**: Podcast/Conferencia
 **Enfoque**: Análisis técnico comparativo que complementa el video con:
+
 - Experiencias reales de implementación
 - Consideraciones de adopción empresarial
 - Mejores prácticas específicas por herramienta
@@ -1505,6 +1510,7 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 > **Tip de aprendizaje**: Te recomendamos ver el video primero para obtener una comprensión visual de las herramientas, y luego escuchar el audio para profundizar en los aspectos técnicos y estratégicos.
 
 ### **Documentación oficial**
+
 - [GNU Bash Manual](https://www.gnu.org/software/bash/manual/)
 - [GNU Make Documentation](https://www.gnu.org/software/make/manual/)
 - [Ansible Documentation](https://docs.ansible.com/)
@@ -1512,11 +1518,13 @@ Para profundizar en las herramientas de Infrastructure as Code (IaC) y gestión 
 - [Chef Documentation](https://docs.chef.io/)
 
 ### **Herramientas de validación**
+
 - [ShellCheck](https://shellcheck.net/) - Linter para scripts bash
 - [Ansible Lint](https://ansible-lint.readthedocs.io/) - Linter para playbooks
 - [YAML Lint](https://yamllint.readthedocs.io/) - Validador de sintaxis YAML
 
 ### **Ejemplos y templates**
+
 - Scripts de ejemplo en el repositorio del curso
 - Templates de Ansible playbooks
 - Makefiles para diferentes tipos de proyecto

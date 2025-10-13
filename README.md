@@ -383,7 +383,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 La Fase 1 ha sido **completamente desarrollada**con todo el contenido necesario para comenzar tu viaje en DevOps:
 
-#### **Contenido Disponible (8 archivos completos): **
+#### **Contenido Disponible (8 archivos completos):** 
 
 - **[01-que-es-devops.md](resources/fase1/01-que-es-devops.md)**- Introducción y definición completa
 - **[02-beneficios-devops.md](resources/fase1/02-beneficios-debops.md)**- Ventajas y casos de éxito

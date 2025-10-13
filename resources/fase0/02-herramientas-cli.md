@@ -20,8 +20,9 @@ Estas herramientas son indispensables para encontrar información en archivos de
 | `-c` | **Count**. Cuenta el número de líneas que coinciden. | `grep -c "SUCCESS" app.log` |
 | `-A` / `-B` | **After/Before**. Muestra N líneas antes (`-B`) o después (`-A`) de la coincidencia. | `grep -A 5 -B 2 "FATAL" error.log` |
 
-**Expresiones Regulares (Regex): **
-`grep` soporta expresiones regulares, lo que lo hace extremadamente potente.
+**Expresiones Regulares (Regex):**
+
+- `grep` soporta expresiones regulares, lo que lo hace extremadamente potente.
 - `^patron`: Líneas que empiezan con "patron".
 - `patron$`: Líneas que terminan con "patron".
 - `[0-9]+`: Uno o más dígitos numéricos.
@@ -74,6 +75,7 @@ Son herramientas de procesamiento de texto más avanzadas.
 ---
 
 <a name="archivado"></a>
+
 ## 2. Archivado y Compresión
 
 Es fundamental saber cómo empaquetar y comprimir archivos para transferencias o copias de seguridad.
@@ -101,6 +103,7 @@ Es fundamental saber cómo empaquetar y comprimir archivos para transferencias o
   # Extraer un archivo tarball comprimido
   tar -xzvf mi_backup.tar.gz
   ```
+
   Los archivos resultantes suelen tener la extensión `.tar.gz` o `.tgz`.
 
 - **`zip`**: Es más común en Windows, pero también está disponible en Linux. Crea archivos `.zip`.
@@ -116,6 +119,7 @@ Es fundamental saber cómo empaquetar y comprimir archivos para transferencias o
 ---
 
 <a name="editores"></a>
+
 ## 3. Editores de Texto en Terminal
 
 Habrá momentos en los que necesites editar un archivo de configuración directamente en un servidor remoto, sin acceso a una interfaz gráfica.
@@ -123,8 +127,8 @@ Habrá momentos en los que necesites editar un archivo de configuración directa
 ### **`nano`**
 
 - **Ideal para principiantes.**
-- **Fácil de usar: **Muestra los atajos de teclado más importantes en la parte inferior de la pantalla.
-- **Uso básico: **
+- **Fácil de usar:**Muestra los atajos de teclado más importantes en la parte inferior de la pantalla.
+- **Uso básico:**
   1. Abrir un archivo: `nano mi_archivo.txt`
   2. Editar el texto.
   3. Guardar: `Ctrl + O` (y luego Enter).
@@ -133,8 +137,8 @@ Habrá momentos en los que necesites editar un archivo de configuración directa
 ### **`vim` (o `neovim`)**
 
 - **Extremadamente potente y eficiente, pero con una curva de aprendizaje pronunciada.**
-- **Modal: **Tiene diferentes modos (Normal, Inserción, Visual, Comando).
-- **Uso básico: **
+- **Modal:**Tiene diferentes modos (Normal, Inserción, Visual, Comando).
+- **Uso básico:**
   1. Abrir un archivo: `vim mi_archivo.txt`
   2. Entrar al **modo de Inserción**para escribir: presiona la tecla `i`.
   3. Salir del modo de Inserción al **modo Normal**: presiona la tecla `Esc`.
@@ -142,7 +146,8 @@ Habrá momentos en los que necesites editar un archivo de configuración directa
      - Escribe `:wq` y presiona Enter (Write & Quit).
      - Escribe `:q!` y presiona Enter (Quit sin guardar).
 
-**Comandos básicos en modo Normal: **
+**Comandos básicos en modo Normal:**
+
 - `dd`: Cortar (eliminar) una línea.
 - `yy`: Copiar una línea.
 - `p`: Pegar.

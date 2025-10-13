@@ -85,7 +85,7 @@ find /var/log -name "*.log" -mtime +7 -exec rm {} \;
   <p><a href="./01-scripts-automatizacion.md">Fuente: Scripts y Automatización Básica</a></p>
 </details>
 
-**7. Completa el código: Para hacer un backup automático con timestamp en Bash: **
+**7. Completa el código: Para hacer un backup automático con timestamp en Bash:**
 
 ```bash
 DATE=$(______)
@@ -168,7 +168,7 @@ cp database.sql "backup_${DATE}.sql"
   <p><a href="./02-herramientas-automatizacion.md">Fuente: Herramientas de Automatización</a></p>
 </details>
 
-**14. Completa el código de Ansible para instalar nginx: **
+**14. Completa el código de Ansible para instalar nginx:**
 
 ```yaml
 - name: Install nginx
@@ -241,7 +241,7 @@ cp database.sql "backup_${DATE}.sql"
   <p><a href="./03-jenkins-ci.md">Fuente: Jenkins y Pipelines</a></p>
 </details>
 
-**20. Completa el bloque de pipeline Jenkins: **
+**20. Completa el bloque de pipeline Jenkins:**
 
 ```groovy
 pipeline {
@@ -344,7 +344,7 @@ pipeline {
   <p><a href="./04-plataformas-ci-cd-modernas.md">Fuente: Plataformas CI/CD Modernas</a></p>
 </details>
 
-**28. Completa la configuración de GitHub Actions: **
+**28. Completa la configuración de GitHub Actions:**
 
 ```yaml
 jobs:
@@ -430,7 +430,7 @@ jobs:
   <p><a href="./05-testing-automation-quality-gates.md">Fuente: Testing y Quality Gates</a></p>
 </details>
 
-**35. Completa el comando para test de carga con Artillery: **
+**35. Completa el comando para test de carga con Artillery:**
 
 ```bash
 artillery quick --count 100 --num 10 http://localhost:3000
@@ -811,17 +811,20 @@ Si obtuviste <70%:
 ### **Recursos de Práctica Recomendados**
 
 #### **Para Scripting y Automatización**
+
 - Automatiza tareas cotidianas con scripts
 - Crea herramientas CLI personalizadas
 - Implementa monitoring y alerting básico
 
 #### **Para CI/CD Pipelines**
+
 - Configura Jenkins en Docker
 - Experimenta con GitHub Actions
 - Implementa pipelines multi-rama
 - Practica deployment strategies
 
 #### **Para Testing Automation**
+
 - Integra unit tests en pipelines
 - Configura code coverage reports
 - Implementa integration testing
@@ -829,5 +832,5 @@ Si obtuviste <70%:
 
 ---
 
-**¡Felicitaciones por completar la evaluación de la Fase 2!** 
+**¡Felicitaciones por completar la evaluación de la Fase 2!**
 *Este conocimiento en automatización y CI/CD te posiciona para implementar pipelines de nivel empresarial y liderar transformaciones DevOps.*
