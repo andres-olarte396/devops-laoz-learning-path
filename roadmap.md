@@ -663,11 +663,11 @@ Varía significativamente por ubicación, empresa y especialización.
 
 **Respuesta:** DevOps es ideal si:
 
-- ✅ Disfrutas automatizar tareas repetitivas
-- ✅ Te gusta resolver problemas complejos
-- ✅ Prefieres trabajo colaborativo entre equipos
-- ✅ Te interesa tanto código como infraestructura
-- ✅ Buscas impacto directo en velocidad de entrega
+- [x] Disfrutas automatizar tareas repetitivas
+- [x] Te gusta resolver problemas complejos
+- [x] Prefieres trabajo colaborativo entre equipos
+- [x] Te interesa tanto código como infraestructura
+- [x] Buscas impacto directo en velocidad de entrega
 
 **No es ideal si**:
 
