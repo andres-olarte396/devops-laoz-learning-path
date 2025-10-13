@@ -665,12 +665,12 @@ kubectl port-forward -n webapp-demo service/webapp-service 8080:80
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Arquitectura completa de Kubernetes
-- ✅ Componentes del Control Plane y Worker Nodes
-- ✅ Concepto y uso de Pods
-- ✅ Configuración de Services para comunicación
-- ✅ Organización con Namespaces
-- ✅ Comandos básicos de kubectl
+- [x] Arquitectura completa de Kubernetes
+- [x] Componentes del Control Plane y Worker Nodes
+- [x] Concepto y uso de Pods
+- [x] Configuración de Services para comunicación
+- [x] Organización con Namespaces
+- [x] Comandos básicos de kubectl
 
 ## 📚 Recursos Adicionales
 

@@ -696,12 +696,12 @@ CMD ["python", "app.py"]
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Fundamentos de optimización de imágenes Docker
-- ✅ Técnicas para reducir tamaño y mejorar seguridad
-- ✅ Uso de construcciones multi-stage avanzadas
-- ✅ Herramientas de análisis y optimización
-- ✅ Estrategias específicas por lenguaje de programación
-- ✅ Implementación de mejores prácticas de seguridad
+- [x] Fundamentos de optimización de imágenes Docker
+- [x] Técnicas para reducir tamaño y mejorar seguridad
+- [x] Uso de construcciones multi-stage avanzadas
+- [x] Herramientas de análisis y optimización
+- [x] Estrategias específicas por lenguaje de programación
+- [x] Implementación de mejores prácticas de seguridad
 
 ## 📚 Recursos Adicionales
 

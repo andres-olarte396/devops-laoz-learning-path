@@ -928,11 +928,11 @@ spec:
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Escalado automático horizontal y vertical
-- ✅ Configuración de balanceadores de carga
-- ✅ Implementación de Ingress Controllers
-- ✅ Gestión de Pod Disruption Budgets
-- ✅ Monitoreo y optimización de rendimiento
+- [x] Escalado automático horizontal y vertical
+- [x] Configuración de balanceadores de carga
+- [x] Implementación de Ingress Controllers
+- [x] Gestión de Pod Disruption Budgets
+- [x] Monitoreo y optimización de rendimiento
 
 ## 📚 Recursos Adicionales
 

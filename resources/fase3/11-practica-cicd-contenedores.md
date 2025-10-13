@@ -1614,12 +1614,12 @@ make emergency-rollback   # Automatic rollback based on metrics
 
 Al completar esta práctica habrás implementado:
 
-- ✅ Pipeline CI/CD completo y automatizado
-- ✅ Múltiples estrategias de despliegue (Blue/Green, Canary)
-- ✅ Security scanning integrado
-- ✅ Monitoreo y observabilidad completos
-- ✅ Rollback automático basado en métricas
-- ✅ Prácticas de seguridad y compliance
+- [x] Pipeline CI/CD completo y automatizado
+- [x] Múltiples estrategias de despliegue (Blue/Green, Canary)
+- [x] Security scanning integrado
+- [x] Monitoreo y observabilidad completos
+- [x] Rollback automático basado en métricas
+- [x] Prácticas de seguridad y compliance
 
 ## 📚 Recursos Adicionales
 

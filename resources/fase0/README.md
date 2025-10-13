@@ -6,13 +6,13 @@ Bienvenido a la **Fase 0** del roadmap DevOps. Esta fase fundamental te preparar
 
 Al completar esta fase, serás capaz de:
 
-- ✅ Navegar eficientemente por el sistema de archivos usando la terminal
-- ✅ Manipular archivos y directorios con comandos básicos
-- ✅ Entender y gestionar permisos de archivos
-- ✅ Utilizar redirección y pipes para procesar datos
-- ✅ Buscar y filtrar información usando herramientas de texto
-- ✅ Crear scripts básicos para automatizar tareas
-- ✅ Trabajar cómodamente tanto en sistemas Unix/Linux como Windows
+- [x] Navegar eficientemente por el sistema de archivos usando la terminal
+- [x] Manipular archivos y directorios con comandos básicos
+- [x] Entender y gestionar permisos de archivos
+- [x] Utilizar redirección y pipes para procesar datos
+- [x] Buscar y filtrar información usando herramientas de texto
+- [x] Crear scripts básicos para automatizar tareas
+- [x] Trabajar cómodamente tanto en sistemas Unix/Linux como Windows
 
 ## Contenido de la Fase
 

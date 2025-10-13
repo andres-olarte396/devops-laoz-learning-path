@@ -975,11 +975,11 @@ kubectl port-forward service/wordpress-service 8080:80
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Gestión de aplicaciones con Deployments
-- ✅ Uso de ReplicaSets y DaemonSets
-- ✅ Implementación de Jobs y CronJobs
-- ✅ Estrategias de despliegue avanzadas
-- ✅ Configuración y monitoreo de aplicaciones
+- [x] Gestión de aplicaciones con Deployments
+- [x] Uso de ReplicaSets y DaemonSets
+- [x] Implementación de Jobs y CronJobs
+- [x] Estrategias de despliegue avanzadas
+- [x] Configuración y monitoreo de aplicaciones
 
 ## 📚 Recursos Adicionales
 

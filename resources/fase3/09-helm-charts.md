@@ -1397,12 +1397,12 @@ spec:
 
 Has aprendido:
 
-- ✅ Instalación y configuración de Helm
-- ✅ Estructura y componentes de Charts
-- ✅ Creación de templates dinámicos
-- ✅ Gestión de valores y configuraciones
-- ✅ Implementación de hooks y tests
-- ✅ Mejores prácticas para Charts de producción
+- [x] Instalación y configuración de Helm
+- [x] Estructura y componentes de Charts
+- [x] Creación de templates dinámicos
+- [x] Gestión de valores y configuraciones
+- [x] Implementación de hooks y tests
+- [x] Mejores prácticas para Charts de producción
 
 ## 📚 Recursos Adicionales
 

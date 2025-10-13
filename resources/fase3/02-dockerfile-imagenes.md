@@ -569,12 +569,12 @@ docker run -d \
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Sintaxis y estructura de Dockerfiles
-- ✅ Instrucciones fundamentales y su uso
-- ✅ Técnicas de optimización de imágenes
-- ✅ Construcciones multi-stage
-- ✅ Mejores prácticas de seguridad
-- ✅ Debugging y troubleshooting
+- [x] Sintaxis y estructura de Dockerfiles
+- [x] Instrucciones fundamentales y su uso
+- [x] Técnicas de optimización de imágenes
+- [x] Construcciones multi-stage
+- [x] Mejores prácticas de seguridad
+- [x] Debugging y troubleshooting
 
 ## 📚 Recursos Adicionales
 

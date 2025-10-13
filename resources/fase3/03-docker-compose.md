@@ -927,12 +927,12 @@ networks:
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Conceptos fundamentales de Docker Compose
-- ✅ Sintaxis y estructura de archivos YAML
-- ✅ Configuración de servicios, redes y volúmenes
-- ✅ Gestión de dependencias entre servicios
-- ✅ Implementación de stacks completos
-- ✅ Comandos esenciales de Compose
+- [x] Conceptos fundamentales de Docker Compose
+- [x] Sintaxis y estructura de archivos YAML
+- [x] Configuración de servicios, redes y volúmenes
+- [x] Gestión de dependencias entre servicios
+- [x] Implementación de stacks completos
+- [x] Comandos esenciales de Compose
 
 ## 📚 Recursos Adicionales
 

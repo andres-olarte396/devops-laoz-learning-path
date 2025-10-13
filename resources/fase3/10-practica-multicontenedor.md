@@ -1722,13 +1722,13 @@ curl https://github.com/grafana/k6/releases/download/v0.45.0/k6-v0.45.0-linux-am
 
 Al completar esta práctica habrás implementado:
 
-- ✅ Arquitectura de microservicios completa y funcional
-- ✅ Comunicación entre servicios con API Gateway
-- ✅ Gestión de datos con múltiples bases de datos
-- ✅ Sistema de caching distribuido
-- ✅ Monitoreo y observabilidad completos
-- ✅ Prácticas de seguridad y performance
-- ✅ Scripts de automatización y despliegue
+- [x] Arquitectura de microservicios completa y funcional
+- [x] Comunicación entre servicios con API Gateway
+- [x] Gestión de datos con múltiples bases de datos
+- [x] Sistema de caching distribuido
+- [x] Monitoreo y observabilidad completos
+- [x] Prácticas de seguridad y performance
+- [x] Scripts de automatización y despliegue
 
 ## 📚 Recursos Adicionales
 

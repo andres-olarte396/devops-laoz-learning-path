@@ -84,22 +84,22 @@ certificate.html?tema=auto&nombre=Carlos%20López
 
 1. **`certificate.html`**
 
-   - ✅ Variables CSS agregadas en `:root`
-   - ✅ Clase `.dark-theme` implementada
-   - ✅ Funciones JavaScript de gestión de tema
-   - ✅ Botón de alternancia agregado
-   - ✅ Parámetros URL extendidos
+   - [x] Variables CSS agregadas en `:root`
+   - [x] Clase `.dark-theme` implementada
+   - [x] Funciones JavaScript de gestión de tema
+   - [x] Botón de alternancia agregado
+   - [x] Parámetros URL extendidos
 
 2. **`CERTIFICATE_GUIDE.md`**
 
-   - ✅ Documentación de nuevos parámetros
-   - ✅ Ejemplos de uso con tema oscuro
-   - ✅ Tabla de parámetros actualizada
+   - [x] Documentación de nuevos parámetros
+   - [x] Ejemplos de uso con tema oscuro
+   - [x] Tabla de parámetros actualizada
 
 3. **`test-theme.html`** (nuevo)
-   - ✅ Página de pruebas con múltiples ejemplos
-   - ✅ Enlaces directos para testing
-   - ✅ Documentación de funcionalidades
+   - [x] Página de pruebas con múltiples ejemplos
+   - [x] Enlaces directos para testing
+   - [x] Documentación de funcionalidades
 
 ### 🎯 Beneficios Obtenidos
 

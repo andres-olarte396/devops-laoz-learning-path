@@ -970,11 +970,11 @@ kubectl exec -it <pod-name> -- cat /app/config/application.yaml
 ## 🎯 Resumen
 
 Has aprendido:
-- ✅ Gestión de configuración con ConfigMaps
-- ✅ Almacenamiento seguro con Secrets
-- ✅ Técnicas de montaje de volúmenes
-- ✅ Herramientas avanzadas de gestión
-- ✅ Mejores prácticas de seguridad
+- [x] Gestión de configuración con ConfigMaps
+- [x] Almacenamiento seguro con Secrets
+- [x] Técnicas de montaje de volúmenes
+- [x] Herramientas avanzadas de gestión
+- [x] Mejores prácticas de seguridad
 
 ## 📚 Recursos Adicionales
 
