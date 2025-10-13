@@ -411,7 +411,7 @@ receivers:
 receivers:
   - name: 'slack-alerts'
     slack_configs:
-      - api_url: 'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX'
+      - api_url: 'https://hooks.slack.com/services/YOUR_TEAM_ID/YOUR_CHANNEL_ID/YOUR_WEBHOOK_TOKEN'
         channel: '#alerts'
         username: 'Alertmanager'
         icon_emoji: ':exclamation:'
