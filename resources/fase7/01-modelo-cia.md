@@ -1,7 +1,9 @@
 # Modelo CIA: Confidencialidad, Integridad, Disponibilidad
 
 ## Objetivos
+
 Al completar este módulo serás capaz de:
+
 - Comprender los tres pilares fundamentales de la seguridad de la información
 - Aplicar el modelo CIA en el diseño de aplicaciones
 - Identificar amenazas contra cada pilar
@@ -15,15 +17,17 @@ El modelo CIA es el fundamento de la seguridad de la información, compuesto por
 
 **Definición**: Asegurar que la información sea accesible solo a personas autorizadas.
 
-#### Amenazas comunes:
+#### Amenazas comunes
+
 - Acceso no autorizado a datos
 - Interceptación de comunicaciones
 - Exposición accidental de información
 - Ataques de ingeniería social
 
-#### Controles implementables:
+#### Controles implementables
 
 **1. Cifrado**
+
 ```csharp
 // Cifrado de datos sensibles en .NET
 public class EncryptionService
@@ -52,6 +56,7 @@ public class EncryptionService
 ```
 
 **2. Control de acceso**
+
 ```csharp
 // Autorización basada en roles
 [Authorize(Roles = "Admin,Manager")]
@@ -71,15 +76,17 @@ public class SensitiveDataController : ControllerBase
 
 **Definición**: Garantizar que la información no sea alterada de manera no autorizada.
 
-#### Amenazas comunes:
+#### Amenazas comunes
+
 - Modificación maliciosa de datos
 - Corrupción de datos
 - Ataques man-in-the-middle
 - Errores en la transmisión
 
-#### Controles implementables:
+#### Controles implementables
 
 **1. Hashing y checksums**
+
 ```csharp
 // Verificación de integridad con hash
 public class IntegrityService
@@ -102,6 +109,7 @@ public class IntegrityService
 ```
 
 **2. Firmas digitales**
+
 ```csharp
 // Firma digital para validar autenticidad
 public class DigitalSignatureService
@@ -122,15 +130,17 @@ public class DigitalSignatureService
 
 **Definición**: Asegurar que la información y servicios estén disponibles cuando se necesiten.
 
-#### Amenazas comunes:
+#### Amenazas comunes
+
 - Ataques de denegación de servicio (DoS/DDoS)
 - Fallos de hardware/software
 - Desastres naturales
 - Sobrecarga del sistema
 
-#### Controles implementables:
+#### Controles implementables
 
 **1. Redundancia y alta disponibilidad**
+
 ```yaml
 # Kubernetes Deployment con alta disponibilidad
 apiVersion: apps/v1
@@ -138,7 +148,7 @@ kind: Deployment
 metadata:
   name: mi-aplicacion
 spec:
-  replicas: 3  # Múltiples instancias
+  replicas: 3 # Múltiples instancias
   selector:
     matchLabels:
       app: mi-aplicacion
@@ -148,24 +158,25 @@ spec:
         app: mi-aplicacion
     spec:
       containers:
-      - name: app
-        image: mi-app:latest
-        resources:
-          requests:
-            memory: "256Mi"
-            cpu: "250m"
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 80
-          initialDelaySeconds: 30
-          periodSeconds: 10
+        - name: app
+          image: mi-app:latest
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 30
+            periodSeconds: 10
 ```
 
 **2. Rate limiting**
+
 ```csharp
 // Implementación de rate limiting
 public class RateLimitingMiddleware
@@ -251,17 +262,20 @@ public class DocumentService
 
 ### KPIs de Seguridad CIA
 
-**Confidencialidad: **
+**Confidencialidad:**
+
 - Número de intentos de acceso no autorizado
 - Tiempo de detección de brechas de datos
 - Porcentaje de datos cifrados
 
-**Integridad: **
+**Integridad:**
+
 - Número de modificaciones no autorizadas detectadas
 - Tiempo de detección de alteraciones
 - Frecuencia de verificaciones de integridad
 
-**Disponibilidad: **
+**Disponibilidad:**
+
 - Uptime del sistema (99.9% target)
 - Tiempo de respuesta promedio
 - Número de incidentes de DoS
@@ -301,19 +315,25 @@ public class SecurityMetrics
 ## Ejercicios Prácticos
 
 ### Ejercicio 1: Análisis CIA
+
 Analiza una aplicación web típica e identifica:
+
 1. Qué datos requieren confidencialidad
 2. Qué información necesita protección de integridad
 3. Qué servicios son críticos para la disponibilidad
 
 ### Ejercicio 2: Implementación de controles
+
 Implementa los siguientes controles en una aplicación .NET:
+
 1. Cifrado de datos personales
 2. Verificación de integridad de archivos subidos
 3. Rate limiting para prevenir DoS
 
 ### Ejercicio 3: Evaluación de riesgos
+
 Para cada pilar del CIA, identifica:
+
 1. Las principales amenazas
 2. El impacto potencial
 3. Controles de mitigación apropiados
@@ -321,6 +341,7 @@ Para cada pilar del CIA, identifica:
 ## Checklist de Implementación CIA
 
 ### Confidencialidad
+
 - [ ] Datos sensibles identificados y clasificados
 - [ ] Cifrado en tránsito (HTTPS/TLS)
 - [ ] Cifrado en reposo para datos críticos
@@ -329,6 +350,7 @@ Para cada pilar del CIA, identifica:
 - [ ] Logs de acceso configurados
 
 ### Integridad
+
 - [ ] Checksums implementados para datos críticos
 - [ ] Firmas digitales para documentos importantes
 - [ ] Validación de entrada robusta
@@ -337,6 +359,7 @@ Para cada pilar del CIA, identifica:
 - [ ] Detección de alteraciones automática
 
 ### Disponibilidad
+
 - [ ] Redundancia implementada
 - [ ] Load balancing configurado
 - [ ] Rate limiting implementado
@@ -345,9 +368,11 @@ Para cada pilar del CIA, identifica:
 - [ ] Alertas de disponibilidad configuradas
 
 ## Recursos Adicionales
+
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 - [ISO 27001 Information Security](https://www.iso.org/isoiec-27001-information-security.html)
 - [OWASP Security Guidelines](https://owasp.org/)
 
 ## Siguiente Paso
+
 [Autenticación y autorización](./02-autenticacion-autorizacion.md)

@@ -334,9 +334,11 @@ Este repositorio ha sido **completamente renovado**para proporcionar:
 | ✅ | Fase 3 - Contenedores & Orquestación | 13/13 | 140+ | 100% |
 | ✅ | Fase 4 - Infraestructura como Código | 13/13 | 130+ | 100% |
 | ✅ | Fase 5 - Monitoreo y Observabilidad | 15/15 | 150+ | 100% |
-|  | Fases 6-14 | Estructura | - | Preparado |
+| ✅ | Fase 6 - Nube y Arquitectura Moderna | 14/14 | 160+ | 100% |
+| ✅ | Fase 7 - Ciberseguridad en DevOps | 15/15 | 180+ | 100% |
+|  | Fases 8-14 | Estructura | - | Preparado |
 
-**Total disponible para estudiar:** 586+ páginas de contenido técnico empresarial
+**Total disponible para estudiar:** 926+ páginas de contenido técnico empresarial
 
 ### **Estadísticas del Contenido**
 
@@ -379,15 +381,15 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ## Estado Actual del Curso
 
-### **🎯 Fases Fundamentales (1-5) - COMPLETADAS AL 100%**
+### **🎯 Fases Fundamentales (1-7) - COMPLETADAS AL 100%**
 
-**¡Las 5 primeras fases fundamentales están completamente desarrolladas y listas para estudio!**
+**¡Las 7 primeras fases del curso están completamente desarrolladas y listas para estudio!**
 
 ---
 
 ### **Fase 1 - ✅ COMPLETADA (100%)**
 
-**Fundamentos de DevOps**
+#### Fundamentos de DevOps
 
 - **Archivos:** 8 completos | **Páginas:** 46+ | **Duración:** 3-4 semanas
 - **Nivel:** Básico | **[Acceder a Fase 1 →](resources/fase1/)**
@@ -398,7 +400,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 2 - ✅ COMPLETADA (100%)**
 
-**Automatización y CI/CD**
+#### Automatización y CI/CD
 
 - **Archivos:** 14 completos | **Páginas:** 120+ | **Duración:** 4-5 semanas  
 - **Nivel:** Intermedio | **[Acceder a Fase 2 →](resources/fase2/)**
@@ -409,7 +411,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 3 - ✅ COMPLETADA (100%)**
 
-**Contenedores y Orquestación**
+#### Contenedores y Orquestación
 
 - **Archivos:** 13 completos | **Páginas:** 140+ | **Duración:** 5-6 semanas
 - **Nivel:** Intermedio-Avanzado | **[Acceder a Fase 3 →](resources/fase3/)**
@@ -420,7 +422,7 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 4 - ✅ COMPLETADA (100%)**
 
-**Infraestructura como Código**
+#### Infraestructura como Código
 
 - **Archivos:** 13 completos | **Páginas:** 130+ | **Duración:** 4-5 semanas
 - **Nivel:** Avanzado | **[Acceder a Fase 4 →](resources/fase4/)**
@@ -431,12 +433,34 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 
 ### **Fase 5 - ✅ COMPLETADA (100%)**
 
-**Monitoreo, Observabilidad y Seguridad**
+#### Monitoreo, Observabilidad y Seguridad
 
 - **Archivos:** 15 completos | **Páginas:** 150+ | **Duración:** 6-8 semanas
 - **Nivel:** Experto | **[Acceder a Fase 5 →](resources/fase5/)**
 
 **Contenido:** Prometheus, Grafana, ELK Stack, DevSecOps, HashiCorp Vault, vulnerability scanning, distributed tracing, APM, circuit breakers
+
+---
+
+### **Fase 6 - ✅ COMPLETADA (100%)**
+
+#### Nube y Arquitectura Moderna
+
+- **Archivos:** 14 completos | **Páginas:** 160+ | **Duración:** 6-8 semanas
+- **Nivel:** Experto | **[Acceder a Fase 6 →](resources/fase6/)**
+
+**Contenido:** Multi-cloud (Azure, AWS, GCP), serverless, FinOps, cloud architecture patterns, disaster recovery, high availability.
+
+---
+
+### **Fase 7 - ✅ COMPLETADA (100%)**
+
+#### Ciberseguridad en DevOps (DevSecOps)
+
+- **Archivos:** 15 completos | **Páginas:** 180+ | **Duración:** 7 semanas
+- **Nivel:** Experto | **[Acceder a Fase 7 →](resources/fase7/)**
+
+**Contenido:** SAST, DAST, SCA, IaC Security, Threat Modeling, Compliance as Code, pipeline de DevSecOps.
 
 ---
 
@@ -449,13 +473,15 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 | **3** | ✅ | Contenedores & K8s | 13 | 140+ | 5-6 sem | Inter-Avanzado |
 | **4** | ✅ | Infraestructura como Código | 13 | 130+ | 4-5 sem | Avanzado |
 | **5** | ✅ | Monitoreo & Seguridad | 15 | 150+ | 6-8 sem | Experto |
+| **6** | ✅ | Nube & Arq. Moderna | 14 | 160+ | 6-8 sem | Experto |
+| **7** | ✅ | Ciberseguridad en DevOps | 15 | 180+ | 7 sem | Experto |
 
 ### **🎯 Totales Disponibles para Estudio**
 
-- **📁 63 archivos completos** con contenido técnico detallado
-- **📄 586+ páginas** de material profesional
-- **⏱️ 22-28 semanas** de contenido estructurado
-- **🎓 5 evaluaciones comprehensivas** incluidas
+- **📁 92 archivos completos** con contenido técnico detallado
+- **📄 926+ páginas** de material profesional
+- **⏱️ 35-43 semanas** de contenido estructurado
+- **🎓 7 evaluaciones comprehensivas** incluidas
 - **🛠️ Proyectos prácticos** en cada fase
 - **💼 Preparación para certificaciones** profesionales
 
@@ -465,7 +491,9 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 2. **[Continúa con Fase 2](resources/fase2/)** - Domina automatización y pipelines  
 3. **[Avanza a Fase 3](resources/fase3/)** - Contenedores y orquestación
 4. **[Profundiza en Fase 4](resources/fase4/)** - Infraestructura como código
-5. **[Culmina con Fase 5](resources/fase5/)** - Observabilidad y seguridad empresarial
+5. **[Especialízate en Fase 5](resources/fase5/)** - Observabilidad y seguridad empresarial
+6. **[Domina la Nube con Fase 6](resources/fase6/)** - Arquitectura multi-cloud y serverless
+7. **[Asegura tus Despliegues con Fase 7](resources/fase7/)** - Implementa un pipeline DevSecOps
 
 ### **🎪 Lo Que Obtienes en Cada Fase**
 
@@ -504,79 +532,80 @@ Este proyecto está bajo la licencia [MIT](LICENSE).
 - Distributed tracing con Jaeger
 - APM, circuit breakers y resilience patterns
 
+#### **Fase 6 - Arquitectura Cloud**
+
+- Arquitectura Multi-cloud (Azure, AWS, GCP)
+- Serverless, Funciones como Servicio (FaaS)
+- FinOps y optimización de costos en la nube
+- Patrones de resiliencia y alta disponibilidad
+
+#### **Fase 7 - Ciberseguridad**
+
+- Implementación de SAST, DAST, SCA en pipelines
+- Seguridad de IaC con Checkov y tfsec
+- Gestión de secretos con HashiCorp Vault
+- Monitoreo de seguridad con Falco y Wazuh
+
 ### **📈 Estado de Desarrollo**
 
-- **✅ Fases 1-5**: **COMPLETADAS** - Listas para estudio inmediato
-- **🚧 Fases 6-14**: Estructura preparada, contenido en desarrollo
+- **✅ Fases 1-7**: **COMPLETADAS** - Listas para estudio inmediato
+- **🚧 Fases 8-14**: Estructura preparada, contenido en desarrollo
 - **📚 Recursos**: Organizados y documentados por fase
 - **🤖 Scripts**: Automatización disponible para cada tecnología
 - **🧪 Labs**: Proyectos prácticos integrados en cada fase
 
 ---
 
-### **Última Actualización: 13 de Octubre 2025**
+### **Última Actualización: 14 de Octubre 2025**
 
-**🎉 Changelog v3.0 - Milestone: 5 Fases Fundamentales Completadas**
+#### **🎉 Changelog v3.2 - Milestone: Fase 7 Completada**
 
-### **🚀 GRAN LOGRO ALCANZADO**
+### **🚀 NUEVO LOGRO ALCANZADO**
 
-**¡Las 5 primeras fases fundamentales están 100% completadas!**
+**¡La Fase 7 - Ciberseguridad en DevOps (DevSecOps) está 100% completada!**
 
-- **✅ 63 archivos completos** con contenido técnico profesional
-- **📄 586+ páginas** de material DevOps empresarial
-- **⏱️ 22-28 semanas** de contenido estructurado y probado
-- **🎓 5 evaluaciones comprehensivas** con escenarios prácticos
-- **🛠️ Proyectos integradores** en cada fase
-- **💼 Preparación completa** para certificaciones profesionales
+- **✅ 15 archivos nuevos** con contenido técnico profesional
+- **📄 180+ páginas** de material sobre seguridad en todo el ciclo de vida
+- **⏱️ 7 semanas** de contenido estructurado y práctico
+- **🎓 Evaluación comprehensiva** con escenarios de seguridad real
+- **🛠️ Laboratorio final** con un pipeline DevSecOps completo en GitHub Actions
+- **💼 Preparación completa** para roles de DevSecOps Specialist
 
-### **📋 Detalle por Fase Completada**
+### **📋 Detalle de la Fase 7**
 
-#### **Fase 1 - Fundamentos DevOps (NUEVA)**
-- **8 archivos** | **46+ páginas** | DevOps culture, methodologies, Git mastery
+#### **Fase 7 - Ciberseguridad en DevOps (NUEVA)**
 
-#### **Fase 2 - Automatización CI/CD (NUEVA)**  
-- **14 archivos** | **120+ páginas** | Pipelines, Jenkins, GitHub Actions, quality gates
-
-#### **Fase 3 - Contenedores & Orquestación (NUEVA)**
-- **13 archivos** | **140+ páginas** | Docker optimization, Kubernetes, Helm charts
-
-#### **Fase 4 - Infraestructura como Código (NUEVA)**
-- **13 archivos** | **130+ páginas** | Terraform mastery, Ansible automation, security
-
-#### **Fase 5 - Monitoreo & Seguridad (RENOVADA)**
-- **15 archivos** | **150+ páginas** | Prometheus, Grafana, DevSecOps, observability
+- **15 archivos** | **180+ páginas** | SAST, DAST, SCA, IaC Security, Threat Modeling, Compliance as Code
 
 ### **🎯 Impacto del Milestone**
 
-- **Currículo completo** para roles DevOps junior a senior
-- **Stack tecnológico moderno** (2024-2025) completamente cubierto
-- **Metodología hands-on** con proyectos reales en cada módulo
-- **Evaluaciones profesionales** que simulan escenarios empresariales
-- **Preparación certificación** para AWS, Azure, Kubernetes, Docker
+- **Currículo especializado** para roles de DevSecOps y Security Engineer.
+- **Stack de seguridad moderno**: SonarQube, OWASP ZAP, Trivy, Checkov, Falco, HashiCorp Vault.
+- **Metodología "Security as Code"**: Automatización de la seguridad en pipelines.
+- **Evaluación profesional** que simula la resolución de vulnerabilidades.
+- **Preparación para certificaciones** de seguridad como Security+ y especializaciones cloud.
 
 ### **📈 Próximos Desarrollos**
 
-- **Fases 6-14**: Especializaciones avanzadas (Cloud, AI, Leadership)
-- **Laboratorios virtuales**: Entornos automatizados para práctica
-- **Video content**: Explicaciones visuales para conceptos complejos
-- **Assessment platform**: Sistema de tracking y evaluación automática
-- **Community features**: Foros, mentorías, networking
+- **Fases 8-14**: Especializaciones avanzadas (AI, Arquitectura Avanzada, Liderazgo).
+- **Laboratorios virtuales**: Entornos automatizados para práctica de seguridad.
+- **Video content**: Demostraciones de ataques y defensas.
+- **Assessment platform**: Sistema de tracking y evaluación automática.
 
 ### **🏆 Certificaciones Ahora Preparadas**
 
-Con las 5 fases completadas, estás preparado para:
-- **AWS Certified DevOps Engineer**
-- **Azure DevOps Engineer Expert** 
-- **Certified Kubernetes Administrator (CKA)**
-- **Docker Certified Associate**
-- **Terraform Associate**
-- **Prometheus Certified Associate**
-- **HashiCorp Vault Associate**
+Con las 7 fases completadas, ahora también estás preparado para:
+
+- **Certified DevSecOps Professional (CDP)**
+- **CompTIA Security+**
+- **Especializaciones de seguridad en Azure y AWS**
 
 ---
 
 **Changelogs Anteriores:**
 
+**v3.1:** Fase 6 - Nube y Arquitectura Moderna completada (160+ páginas)
+**v3.0:** 5 Fases Fundamentales Completadas (586+ páginas)  
 **v2.2:** Fase 5 - Monitoreo y seguridad empresarial completada  
 **v2.1:** Fase 1 - Fundamentos DevOps completada  
 **v2.0:** Reestructuración completa del curso con 14 fases

@@ -15,6 +15,7 @@ Al completar esta fase serás capaz de:
 ## Temas Principales
 
 ### 1. Principios de Seguridad de la Información
+
 **Duración: 2 semanas | Nivel: Intermedio**
 
 - [Modelo CIA (Confidencialidad, Integridad, Disponibilidad)](01-modelo-cia.md)
@@ -23,6 +24,7 @@ Al completar esta fase serás capaz de:
 - [Principios de defensa en profundidad](04-defensa-profundidad.md)
 
 ### 2. OWASP Top 10 para desarrolladores .NET
+
 **Duración: 2 semanas | Nivel: Intermedio**
 
 - [Injection attacks (SQL, NoSQL, LDAP)](05-injection-attacks.md)
@@ -32,6 +34,7 @@ Al completar esta fase serás capaz de:
 - [Security misconfiguration](09-security-misconfiguration.md)
 
 ### 3. Seguridad en la nube (Azure/AWS)
+
 **Duración: 2 semanas | Nivel: Intermedio**
 
 - [Identity and Access Management (IAM)](10-cloud-iam.md)
@@ -40,6 +43,7 @@ Al completar esta fase serás capaz de:
 - [Auditoría y compliance](13-auditoria-compliance.md)
 
 ### 4. Seguridad de APIs
+
 **Duración: 1 semana | Nivel: Avanzado**
 
 - [JWT tokens y OAuth2](14-jwt-oauth2.md)
@@ -70,7 +74,7 @@ Al completar esta fase serás capaz de:
 
 ## Duración Total Estimada
 
- **7 semanas**
+**7 semanas**
 
 ## Prerrequisitos
 

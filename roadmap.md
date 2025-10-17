@@ -189,34 +189,41 @@ El monitoreo y la seguridad son esenciales para garantizar la estabilidad y prot
 
 Profundiza en las plataformas en la nube y las arquitecturas modernas.
 
-1. **Servicios de Nube**
+1. **Principios Cloud**
+
+   - [Principios de arquitectura Cloud](./resources/fase6/01-arquitectura-cloud-principios.md)
+   - [Proveedores Cloud](./resources/fase6/02-proveedores-comparativa-azure-aws-gcp.md)
+   - [Networking Cloud VNet VPC](./resources/fase6/03-networking-cloud-vnet-vpc.md)
+   - [IAM Identidad y acceso](./resources/fase6/04-iam-identidad-accesos.md)
+
+2. **Servicios de Nube**
 
    - [AWS: Servicios principales (EC2, S3, RDS, Lambda)](./resources/fase6/01-aws-servicios.md)
    - [Azure: App Service, Blob Storage, SQL Database, Functions](./resources/fase6/02-azure-servicios.md)
    - [Google Cloud Platform: Compute Engine, Cloud Storage, Cloud SQL](./resources/fase6/03-gcp-servicios.md)
    - [Costos y optimización en la nube](./resources/fase6/04-costos-optimizacion.md)
 
-2. **Arquitectura Serverless**
+3. **Arquitectura Serverless**
 
    - [Conceptos de arquitectura serverless](./resources/fase6/05-serverless-conceptos.md)
    - [AWS Lambda: Funciones como servicio](./resources/fase6/06-aws-lambda.md)
    - [Azure Functions: Desarrollo y despliegue](./resources/fase6/07-azure-functions.md)
    - [API Gateway y event-driven architecture](./resources/fase6/08-api-gateway-events.md)
 
-3. **Microservicios**
+4. **Microservicios**
 
    - [Principios de diseño de microservicios](./resources/fase6/09-microservicios-principios.md)
    - [API Gateway y Service Mesh (Istio, Linkerd)](./resources/fase6/10-api-gateway-service-mesh.md)
    - [Comunicación entre servicios (REST, gRPC, messaging)](./resources/fase6/11-comunicacion-servicios.md)
    - [Patrones de datos en microservicios](./resources/fase6/12-patrones-datos.md)
 
-4. **Arquitectura de alta disponibilidad**
+5. **Arquitectura de alta disponibilidad**
 
    - [Diseño para resiliencia y fault tolerance](./resources/fase6/13-resiliencia.md)
    - [Load balancing y auto-scaling](./resources/fase6/14-load-balancing.md)
    - [Disaster recovery y backup strategies](./resources/fase6/15-disaster-recovery.md)
 
-5. **Práctica**
+6. **Práctica**
 
    - [Desplegar una aplicación serverless en AWS Lambda o Azure Functions](./resources/fase6/16-practica-serverless.md)
    - [Diseñar una arquitectura de microservicios](./resources/fase6/17-practica-microservicios.md)

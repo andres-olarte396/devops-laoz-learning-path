@@ -137,23 +137,23 @@ Al completar esta fase serás capaz de:
 
 ### Conocimientos Técnicos
 
-- [x]  **Fases 1-4 completadas** (Docker, Kubernetes, CI/CD, Infrastructure)
-- [x]  **Linux/Unix fundamentals** (comandos, shell scripting)
-- [x]  **Networking basics** (HTTP, DNS, TCP/IP)
-- [x]  **Programming basics** (Python, Java, o JavaScript)
+- [x] **Fases 1-4 completadas** (Docker, Kubernetes, CI/CD, Infrastructure)
+- [x] **Linux/Unix fundamentals** (comandos, shell scripting)
+- [x] **Networking basics** (HTTP, DNS, TCP/IP)
+- [x] **Programming basics** (Python, Java, o JavaScript)
 
 ### Herramientas Requeridas
 
-- [x]  **Docker & Docker Compose** (contenedores)
-- [x]  **Kubernetes cluster** (local o cloud)
-- [x]  **Git** (control de versiones)
-- [x]  **Cloud account** (AWS, Azure, o GCP - opcional)
+- [x] **Docker & Docker Compose** (contenedores)
+- [x] **Kubernetes cluster** (local o cloud)
+- [x] **Git** (control de versiones)
+- [x] **Cloud account** (AWS, Azure, o GCP - opcional)
 
 ### Hardware Mínimo
 
-- [x]  **8GB RAM** (16GB recomendado)
-- [x]  **4 CPU cores** (para laboratorios locales)
-- [x]  **50GB espacio libre** (para datos de monitoreo)
+- [x] **8GB RAM** (16GB recomendado)
+- [x] **4 CPU cores** (para laboratorios locales)
+- [x] **50GB espacio libre** (para datos de monitoreo)
 
 ## 🎓 Certificaciones Relacionadas
 
@@ -172,19 +172,19 @@ Al completar esta fase serás capaz de:
 
 ### Nivel Técnico
 
-- [x]  Diseñar arquitecturas de observabilidad escalables
-- [x]  Implementar monitoring proactivo con SLIs/SLOs
-- [x]  Configurar alerting inteligente y noise reduction
-- [x]  Gestionar secrets y compliance automation
-- [x]  Realizar incident response y root cause analysis
+- [x] Diseñar arquitecturas de observabilidad escalables
+- [x] Implementar monitoring proactivo con SLIs/SLOs
+- [x] Configurar alerting inteligente y noise reduction
+- [x] Gestionar secrets y compliance automation
+- [x] Realizar incident response y root cause analysis
 
 ### Nivel Estratégico
 
-- [x]  **Site Reliability Engineering** practices
-- [x]  **Platform Engineering** fundamentals
-- [x]  **DevSecOps** methodology implementation
-- [x]  **Cost optimization** para observability stacks
-- [x]  **Team leadership** en iniciativas de observabilidad
+- [x] **Site Reliability Engineering** practices
+- [x] **Platform Engineering** fundamentals
+- [x] **DevSecOps** methodology implementation
+- [x] **Cost optimization** para observability stacks
+- [x] **Team leadership** en iniciativas de observabilidad
 
 ---
 
