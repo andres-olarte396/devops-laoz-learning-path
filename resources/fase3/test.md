@@ -32,10 +32,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **1. ¿Cuál es la principal diferencia entre contenedores y máquinas virtuales?**
 
-- a) Los contenedores incluyen un sistema operativo completo
-- b) Los contenedores comparten el kernel del host, las VMs tienen su propio OS
-- c) Las VMs son más ligeras que los contenedores
-- d) No hay diferencias significativas
+- [ ] a) Los contenedores incluyen un sistema operativo completo
+- [ ] b) Los contenedores comparten el kernel del host, las VMs tienen su propio OS
+- [ ] c) Las VMs son más ligeras que los contenedores
+- [ ] d) No hay diferencias significativas
 
 <details>
   <summary>Ver Fuente</summary>
@@ -44,10 +44,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **2. ¿Qué es una imagen Docker?**
 
-- a) Un contenedor en ejecución
-- b) Una plantilla de solo lectura que contiene el sistema de archivos y configuración
-- c) Un archivo de configuración YAML
-- d) Una máquina virtual ligera
+- [ ] a) Un contenedor en ejecución
+- [ ] b) Una plantilla de solo lectura que contiene el sistema de archivos y configuración
+- [ ] c) Un archivo de configuración YAML
+- [ ] d) Una máquina virtual ligera
 
 <details>
   <summary>Ver Fuente</summary>
@@ -56,10 +56,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **3. ¿Cuál de los siguientes NO es un beneficio de la contenedorización?**
 
-- a) Portabilidad entre entornos
-- b) Aislamiento de aplicaciones
-- c) Mayor consumo de recursos que las VMs
-- d) Escalabilidad rápida
+- [ ] a) Portabilidad entre entornos
+- [ ] b) Aislamiento de aplicaciones
+- [ ] c) Mayor consumo de recursos que las VMs
+- [ ] d) Escalabilidad rápida
 
 <details>
   <summary>Ver Fuente</summary>
@@ -74,10 +74,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **4. ¿Cuál es el comando para verificar que Docker está correctamente instalado?**
 
-- a) `docker --help`
-- b) `docker version`
-- c) `docker status`
-- d) `docker check`
+- [ ] a) `docker --help`
+- [ ] b) `docker version`
+- [ ] c) `docker status`
+- [ ] d) `docker check`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -86,10 +86,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **5. ¿Qué es Docker Desktop?**
 
-- a) Un editor de código para Docker
-- b) Una interfaz gráfica que incluye Docker Engine, CLI y herramientas adicionales
-- c) Una versión de Docker solo para servidores
-- d) Un registro de imágenes Docker
+- [ ] a) Un editor de código para Docker
+- [ ] b) Una interfaz gráfica que incluye Docker Engine, CLI y herramientas adicionales
+- [ ] c) Una versión de Docker solo para servidores
+- [ ] d) Un registro de imágenes Docker
 
 <details>
   <summary>Ver Fuente</summary>
@@ -98,10 +98,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **6. ¿Por qué es importante configurar Docker para ejecutar sin sudo en Linux?**
 
-- a) Para mayor seguridad
-- b) Para evitar problemas de permisos en desarrollo y CI/CD
-- c) Docker no funciona con sudo
-- d) No es necesario configurarlo
+- [ ] a) Para mayor seguridad
+- [ ] b) Para evitar problemas de permisos en desarrollo y CI/CD
+- [ ] c) Docker no funciona con sudo
+- [ ] d) No es necesario configurarlo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -116,10 +116,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **7. ¿Cuál es el comando para ejecutar un contenedor en modo interactivo?**
 
-- a) `docker run -d nginx`
-- b) `docker run -it ubuntu bash`
-- c) `docker start ubuntu`
-- d) `docker exec ubuntu`
+- [ ] a) `docker run -d nginx`
+- [ ] b) `docker run -it ubuntu bash`
+- [ ] c) `docker start ubuntu`
+- [ ] d) `docker exec ubuntu`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -128,10 +128,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **8. ¿Qué hace el flag `-d` en el comando `docker run`?**
 
-- a) Ejecuta el contenedor en modo debug
-- b) Ejecuta el contenedor en segundo plano (detached)
-- c) Elimina el contenedor automáticamente
-- d) Establece el directorio de trabajo
+- [ ] a) Ejecuta el contenedor en modo debug
+- [ ] b) Ejecuta el contenedor en segundo plano (detached)
+- [ ] c) Elimina el contenedor automáticamente
+- [ ] d) Establece el directorio de trabajo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -140,10 +140,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **9. ¿Cuál es el comando para mapear un puerto del host al contenedor?**
 
-- a) `docker run -p 8080:80 nginx`
-- b) `docker run --port 8080:80 nginx`
-- c) `docker run -map 8080:80 nginx`
-- d) `docker run --connect 8080:80 nginx`
+- [ ] a) `docker run -p 8080:80 nginx`
+- [ ] b) `docker run --port 8080:80 nginx`
+- [ ] c) `docker run -map 8080:80 nginx`
+- [ ] d) `docker run --connect 8080:80 nginx`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -152,10 +152,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **10. ¿Qué comando se usa para ver los contenedores en ejecución?**
 
-- a) `docker list`
-- b) `docker containers`
-- c) `docker ps`
-- d) `docker show`
+- [ ] a) `docker list`
+- [ ] b) `docker containers`
+- [ ] c) `docker ps`
+- [ ] d) `docker show`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -170,10 +170,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **11. ¿Cuál es la instrucción correcta para especificar la imagen base en un Dockerfile?**
 
-- a) `BASE ubuntu:20.04`
-- b) `FROM ubuntu:20.04`
-- c) `IMAGE ubuntu:20.04`
-- d) `USE ubuntu:20.04`
+- [ ] a) `BASE ubuntu:20.04`
+- [ ] b) `FROM ubuntu:20.04`
+- [ ] c) `IMAGE ubuntu:20.04`
+- [ ] d) `USE ubuntu:20.04`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -182,10 +182,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **12. ¿Qué hace la instrucción `WORKDIR` en un Dockerfile?**
 
-- a) Crea un nuevo directorio
-- b) Establece el directorio de trabajo para las siguientes instrucciones
-- c) Copia archivos al directorio especificado
-- d) Elimina un directorio
+- [ ] a) Crea un nuevo directorio
+- [ ] b) Establece el directorio de trabajo para las siguientes instrucciones
+- [ ] c) Copia archivos al directorio especificado
+- [ ] d) Elimina un directorio
 
 <details>
   <summary>Ver Fuente</summary>
@@ -194,10 +194,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **13. ¿Cuál es una buena práctica para optimizar las capas de Docker?**
 
-- a) Usar una instrucción RUN por cada comando
-- b) Combinar comandos relacionados en una sola instrucción RUN
-- c) No usar cache de Docker
-- d) Instalar todos los paquetes al final
+- [ ] a) Usar una instrucción RUN por cada comando
+- [ ] b) Combinar comandos relacionados en una sola instrucción RUN
+- [ ] c) No usar cache de Docker
+- [ ] d) Instalar todos los paquetes al final
 
 <details>
   <summary>Ver Fuente</summary>
@@ -206,10 +206,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **14. ¿Para qué sirve el archivo `.dockerignore`?**
 
-- a) Para ignorar errores durante el build
-- b) Para excluir archivos del contexto de build
-- c) Para configurar Docker
-- d) Para documentar la imagen
+- [ ] a) Para ignorar errores durante el build
+- [ ] b) Para excluir archivos del contexto de build
+- [ ] c) Para configurar Docker
+- [ ] d) Para documentar la imagen
 
 <details>
   <summary>Ver Fuente</summary>
@@ -224,10 +224,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **15. ¿Qué formato utiliza Docker Compose para definir servicios?**
 
-- a) JSON
-- b) XML
-- c) YAML
-- d) TOML
+- [ ] a) JSON
+- [ ] b) XML
+- [ ] c) YAML
+- [ ] d) TOML
 
 <details>
   <summary>Ver Fuente</summary>
@@ -236,10 +236,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **16. ¿Cuál es el comando para iniciar todos los servicios definidos en docker-compose.yml?**
 
-- a) `docker-compose start`
-- b) `docker-compose run`
-- c) `docker-compose up`
-- d) `docker-compose deploy`
+- [ ] a) `docker-compose start`
+- [ ] b) `docker-compose run`
+- [ ] c) `docker-compose up`
+- [ ] d) `docker-compose deploy`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -248,10 +248,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **17. ¿Qué ventaja ofrece Docker Compose sobre ejecutar contenedores individuales?**
 
-- a) Mayor rendimiento
-- b) Gestión simplificada de aplicaciones multi-contenedor
-- c) Menor uso de memoria
-- d) Mayor seguridad automática
+- [ ] a) Mayor rendimiento
+- [ ] b) Gestión simplificada de aplicaciones multi-contenedor
+- [ ] c) Menor uso de memoria
+- [ ] d) Mayor seguridad automática
 
 <details>
   <summary>Ver Fuente</summary>
@@ -260,10 +260,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **18. ¿Cómo se define una dependencia entre servicios en Docker Compose?**
 
-- a) Con la clave `requires`
-- b) Con la clave `depends_on`
-- c) Con la clave `needs`
-- d) Con la clave `after`
+- [ ] a) Con la clave `requires`
+- [ ] b) Con la clave `depends_on`
+- [ ] c) Con la clave `needs`
+- [ ] d) Con la clave `after`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -278,10 +278,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **19. ¿Cuál es el driver de red por defecto en Docker?**
 
-- a) host
-- b) bridge
-- c) overlay
-- d) none
+- [ ] a) host
+- [ ] b) bridge
+- [ ] c) overlay
+- [ ] d) none
 
 <details>
   <summary>Ver Fuente</summary>
@@ -290,10 +290,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **20. ¿Qué tipo de red permite que los contenedores se comuniquen entre diferentes hosts Docker?**
 
-- a) bridge
-- b) host
-- c) overlay
-- d) macvlan
+- [ ] a) bridge
+- [ ] b) host
+- [ ] c) overlay
+- [ ] d) macvlan
 
 <details>
   <summary>Ver Fuente</summary>
@@ -302,10 +302,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **21. ¿Cómo pueden comunicarse dos contenedores en la misma red personalizada?**
 
-- a) Solo por dirección IP
-- b) Por nombre del contenedor como hostname
-- c) Solo por mapeo de puertos
-- d) No pueden comunicarse
+- [ ] a) Solo por dirección IP
+- [ ] b) Por nombre del contenedor como hostname
+- [ ] c) Solo por mapeo de puertos
+- [ ] d) No pueden comunicarse
 
 <details>
   <summary>Ver Fuente</summary>
@@ -320,10 +320,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **22. ¿Cuál es la unidad más pequeña de despliegue en Kubernetes?**
 
-- a) Container
-- b) Pod
-- c) Service
-- d) Deployment
+- [ ] a) Container
+- [ ] b) Pod
+- [ ] c) Service
+- [ ] d) Deployment
 
 <details>
   <summary>Ver Fuente</summary>
@@ -332,10 +332,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **23. ¿Qué componente de Kubernetes es responsable de la programación de pods?**
 
-- a) kubelet
-- b) kube-proxy
-- c) kube-scheduler
-- d) etcd
+- [ ] a) kubelet
+- [ ] b) kube-proxy
+- [ ] c) kube-scheduler
+- [ ] d) etcd
 
 <details>
   <summary>Ver Fuente</summary>
@@ -344,10 +344,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **24. ¿Qué es un Service en Kubernetes?**
 
-- a) Un contenedor en ejecución
-- b) Una abstracción que expone un conjunto de pods como un servicio de red
-- c) Un archivo de configuración
-- d) Un tipo de almacenamiento
+- [ ] a) Un contenedor en ejecución
+- [ ] b) Una abstracción que expone un conjunto de pods como un servicio de red
+- [ ] c) Un archivo de configuración
+- [ ] d) Un tipo de almacenamiento
 
 <details>
   <summary>Ver Fuente</summary>
@@ -356,10 +356,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **25. ¿Cuál es el comando principal para interactuar con un cluster de Kubernetes?**
 
-- a) `kube`
-- b) `kubectl`
-- c) `kubernetes`
-- d) `k8s`
+- [ ] a) `kube`
+- [ ] b) `kubectl`
+- [ ] c) `kubernetes`
+- [ ] d) `k8s`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -374,10 +374,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **26. ¿Qué es el Horizontal Pod Autoscaler (HPA)?**
 
-- a) Un componente que escala verticalmente los pods
-- b) Un componente que escala horizontalmente el número de pods
-- c) Un balanceador de carga
-- d) Un monitor de recursos
+- [ ] a) Un componente que escala verticalmente los pods
+- [ ] b) Un componente que escala horizontalmente el número de pods
+- [ ] c) Un balanceador de carga
+- [ ] d) Un monitor de recursos
 
 <details>
   <summary>Ver Fuente</summary>
@@ -386,10 +386,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **27. ¿Cuál es la diferencia entre escalado horizontal y vertical?**
 
-- a) No hay diferencia
-- b) Horizontal añade más instancias, vertical aumenta recursos de instancias existentes
-- c) Vertical añade más instancias, horizontal aumenta recursos
-- d) Solo se puede usar uno a la vez
+- [ ] a) No hay diferencia
+- [ ] b) Horizontal añade más instancias, vertical aumenta recursos de instancias existentes
+- [ ] c) Vertical añade más instancias, horizontal aumenta recursos
+- [ ] d) Solo se puede usar uno a la vez
 
 <details>
   <summary>Ver Fuente</summary>
@@ -398,10 +398,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **28. ¿Qué métrica es comúnmente usada para el escalado automático?**
 
-- a) Uso de CPU
-- b) Uso de memoria
-- c) Número de peticiones HTTP
-- d) Todas las anteriores
+- [ ] a) Uso de CPU
+- [ ] b) Uso de memoria
+- [ ] c) Número de peticiones HTTP
+- [ ] d) Todas las anteriores
 
 <details>
   <summary>Ver Fuente</summary>
@@ -416,10 +416,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **29. ¿Qué es Helm en el contexto de Kubernetes?**
 
-- a) Un contenedor especializado
-- b) Un gestor de paquetes para Kubernetes
-- c) Una alternativa a Docker
-- d) Un tipo de Service
+- [ ] a) Un contenedor especializado
+- [ ] b) Un gestor de paquetes para Kubernetes
+- [ ] c) Una alternativa a Docker
+- [ ] d) Un tipo de Service
 
 <details>
   <summary>Ver Fuente</summary>
@@ -428,10 +428,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **30. ¿Cómo se llama un paquete de Helm?**
 
-- a) Package
-- b) Chart
-- c) Template
-- d) Bundle
+- [ ] a) Package
+- [ ] b) Chart
+- [ ] c) Template
+- [ ] d) Bundle
 
 <details>
   <summary>Ver Fuente</summary>
@@ -440,10 +440,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **31. ¿Cuál es el comando para instalar un chart de Helm?**
 
-- a) `helm deploy`
-- b) `helm install`
-- c) `helm create`
-- d) `helm apply`
+- [ ] a) `helm deploy`
+- [ ] b) `helm install`
+- [ ] c) `helm create`
+- [ ] d) `helm apply`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -452,10 +452,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **32. ¿Qué permite el archivo `values.yaml` en Helm?**
 
-- a) Definir la estructura del chart
-- b) Configurar valores por defecto y personalizables
-- c) Listar dependencias
-- d) Documentar el chart
+- [ ] a) Definir la estructura del chart
+- [ ] b) Configurar valores por defecto y personalizables
+- [ ] c) Listar dependencias
+- [ ] d) Documentar el chart
 
 <details>
   <summary>Ver Fuente</summary>
@@ -470,10 +470,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **33. ¿Cuál es una ventaja de usar una arquitectura multi-contenedor?**
 
-- a) Mayor complejidad
-- b) Separación de responsabilidades y escalabilidad independiente
-- c) Menor rendimiento
-- d) Más difícil de mantener
+- [ ] a) Mayor complejidad
+- [ ] b) Separación de responsabilidades y escalabilidad independiente
+- [ ] c) Menor rendimiento
+- [ ] d) Más difícil de mantener
 
 <details>
   <summary>Ver Fuente</summary>
@@ -482,10 +482,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **34. ¿Cómo se comunican típicamente los contenedores en una aplicación multi-contenedor?**
 
-- a) Solo por archivos compartidos
-- b) A través de redes Docker y APIs REST/bases de datos
-- c) No pueden comunicarse
-- d) Solo por variables de entorno
+- [ ] a) Solo por archivos compartidos
+- [ ] b) A través de redes Docker y APIs REST/bases de datos
+- [ ] c) No pueden comunicarse
+- [ ] d) Solo por variables de entorno
 
 <details>
   <summary>Ver Fuente</summary>
@@ -494,10 +494,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **35. ¿Qué patrón es recomendado para manejar datos persistentes en aplicaciones multi-contenedor?**
 
-- a) Almacenar datos en el contenedor de aplicación
-- b) Usar volúmenes Docker y contenedores especializados para bases de datos
-- c) No usar persistencia
-- d) Guardar todo en variables de entorno
+- [ ] a) Almacenar datos en el contenedor de aplicación
+- [ ] b) Usar volúmenes Docker y contenedores especializados para bases de datos
+- [ ] c) No usar persistencia
+- [ ] d) Guardar todo en variables de entorno
 
 <details>
   <summary>Ver Fuente</summary>
@@ -512,10 +512,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **36. ¿Cuáles son las fases típicas de un pipeline CI/CD para contenedores?**
 
-- a) Build → Test → Deploy
-- b) Build → Test → Security Scan → Push → Deploy
-- c) Code → Build → Deploy
-- d) Test → Build → Push
+- [ ] a) Build → Test → Deploy
+- [ ] b) Build → Test → Security Scan → Push → Deploy
+- [ ] c) Code → Build → Deploy
+- [ ] d) Test → Build → Push
 
 <details>
   <summary>Ver Fuente</summary>
@@ -524,10 +524,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **37. ¿Qué es un registro de contenedores (Container Registry)?**
 
-- a) Un archivo de configuración
-- b) Un servicio para almacenar y distribuir imágenes Docker
-- c) Un tipo de contenedor
-- d) Una herramienta de monitoring
+- [ ] a) Un archivo de configuración
+- [ ] b) Un servicio para almacenar y distribuir imágenes Docker
+- [ ] c) Un tipo de contenedor
+- [ ] d) Una herramienta de monitoring
 
 <details>
   <summary>Ver Fuente</summary>
@@ -536,10 +536,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **38. ¿Qué estrategia de despliegue minimiza el downtime?**
 
-- a) Recreate
-- b) Blue-Green deployment
-- c) Rolling update
-- d) Todas las anteriores excepto Recreate
+- [ ] a) Recreate
+- [ ] b) Blue-Green deployment
+- [ ] c) Rolling update
+- [ ] d) Todas las anteriores excepto Recreate
 
 <details>
   <summary>Ver Fuente</summary>
@@ -548,10 +548,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **39. ¿Por qué es importante el escaneo de seguridad en pipelines de contenedores?**
 
-- a) Para mejorar el rendimiento
-- b) Para detectar vulnerabilidades en las imágenes antes del despliegue
-- c) Para reducir el tamaño de las imágenes
-- d) No es importante
+- [ ] a) Para mejorar el rendimiento
+- [ ] b) Para detectar vulnerabilidades en las imágenes antes del despliegue
+- [ ] c) Para reducir el tamaño de las imágenes
+- [ ] d) No es importante
 
 <details>
   <summary>Ver Fuente</summary>
@@ -560,10 +560,10 @@ Este test abarca todo el contenido de la Fase 3 completada, incluyendo los 11 te
 
 **40. ¿Qué herramienta es comúnmente usada para Continuous Deployment en Kubernetes?**
 
-- a) Docker
-- b) Jenkins
-- c) ArgoCD
-- d) Git
+- [ ] a) Docker
+- [ ] b) Jenkins
+- [ ] c) ArgoCD
+- [ ] d) Git
 
 <details>
   <summary>Ver Fuente</summary>
@@ -692,19 +692,16 @@ Si obtuviste <70%:
 #### **Laboratorios Prácticos Recomendados**
 
 1. **Docker Básico**
-
    - Crear y ejecutar contenedores básicos
    - Construir imágenes personalizadas
    - Trabajar con volúmenes y redes
 
 2. **Docker Compose**
-
    - Aplicación web con base de datos
    - Configuración de múltiples servicios
    - Manejo de variables de entorno
 
 3. **Kubernetes**
-
    - Instalación de minikube o kind
    - Despliegue de aplicaciones básicas
    - Configuración de Services y Ingress
@@ -783,7 +780,6 @@ Si obtuviste <70%:
 ### **Plan de Práctica Intensiva**
 
 #### **Semana 1-2: Docker Fundamentals**
-
 ```bash
 # Práctica diaria recomendada
 docker run hello-world
@@ -793,7 +789,6 @@ docker-compose up -d
 ```
 
 #### **Semana 3-4: Kubernetes Basics**
-
 ```bash
 # Comandos esenciales para practicar
 kubectl create deployment nginx --image=nginx
@@ -803,7 +798,6 @@ kubectl get pods,services,deployments
 ```
 
 #### **Semana 5-6: Proyectos Integradores**
-
 - Aplicación web con base de datos
 - Pipeline CI/CD completo
 - Monitoreo y logging
@@ -816,46 +810,46 @@ kubectl get pods,services,deployments
 <details>
   <summary>Ver Respuestas</summary>
 
-**1. b) Los contenedores comparten el kernel del host, las VMs tienen su propio OS**
-**2. b) Una plantilla de solo lectura que contiene el sistema de archivos y configuración**
-**3. c) Mayor consumo de recursos que las VMs**
-**4. b) `docker version`**
-**5. b) Una interfaz gráfica que incluye Docker Engine, CLI y herramientas adicionales**
-**6. b) Para evitar problemas de permisos en desarrollo y CI/CD**
-**7. b) `docker run -it ubuntu bash`**
-**8. b) Ejecuta el contenedor en segundo plano (detached)**
-**9. a) `docker run -p 8080:80 nginx`**
-**10. c) `docker ps`**
-**11. b) `FROM ubuntu:20.04`**
-**12. b) Establece el directorio de trabajo para las siguientes instrucciones**
-**13. b) Combinar comandos relacionados en una sola instrucción RUN**
-**14. b) Para excluir archivos del contexto de build**
-**15. c) YAML**
-**16. c) `docker-compose up`**
-**17. b) Gestión simplificada de aplicaciones multi-contenedor**
-**18. b) Con la clave `depends_on`**
-**19. b) bridge**
-**20. c) overlay**
-**21. b) Por nombre del contenedor como hostname**
-**22. b) Pod**
-**23. c) kube-scheduler**
-**24. b) Una abstracción que expone un conjunto de pods como un servicio de red**
-**25. b) `kubectl`**
-**26. b) Un componente que escala horizontalmente el número de pods**
-**27. b) Horizontal añade más instancias, vertical aumenta recursos de instancias existentes**
-**28. d) Todas las anteriores**
-**29. b) Un gestor de paquetes para Kubernetes**
-**30. b) Chart**
-**31. b) `helm install`**
-**32. b) Configurar valores por defecto y personalizables**
-**33. b) Separación de responsabilidades y escalabilidad independiente**
-**34. b) A través de redes Docker y APIs REST/bases de datos**
-**35. b) Usar volúmenes Docker y contenedores especializados para bases de datos**
-**36. b) Build → Test → Security Scan → Push → Deploy**
-**37. b) Un servicio para almacenar y distribuir imágenes Docker**
-**38. d) Todas las anteriores excepto Recreate**
-**39. b) Para detectar vulnerabilidades en las imágenes antes del despliegue**
-**40. c) ArgoCD**
+  **1. b) Los contenedores comparten el kernel del host, las VMs tienen su propio OS**
+  **2. b) Una plantilla de solo lectura que contiene el sistema de archivos y configuración**
+  **3. c) Mayor consumo de recursos que las VMs**
+  **4. b) `docker version`**
+  **5. b) Una interfaz gráfica que incluye Docker Engine, CLI y herramientas adicionales**
+  **6. b) Para evitar problemas de permisos en desarrollo y CI/CD**
+  **7. b) `docker run -it ubuntu bash`**
+  **8. b) Ejecuta el contenedor en segundo plano (detached)**
+  **9. a) `docker run -p 8080:80 nginx`**
+  **10. c) `docker ps`**
+  **11. b) `FROM ubuntu:20.04`**
+  **12. b) Establece el directorio de trabajo para las siguientes instrucciones**
+  **13. b) Combinar comandos relacionados en una sola instrucción RUN**
+  **14. b) Para excluir archivos del contexto de build**
+  **15. c) YAML**
+  **16. c) `docker-compose up`**
+  **17. b) Gestión simplificada de aplicaciones multi-contenedor**
+  **18. b) Con la clave `depends_on`**
+  **19. b) bridge**
+  **20. c) overlay**
+  **21. b) Por nombre del contenedor como hostname**
+  **22. b) Pod**
+  **23. c) kube-scheduler**
+  **24. b) Una abstracción que expone un conjunto de pods como un servicio de red**
+  **25. b) `kubectl`**
+  **26. b) Un componente que escala horizontalmente el número de pods**
+  **27. b) Horizontal añade más instancias, vertical aumenta recursos de instancias existentes**
+  **28. d) Todas las anteriores**
+  **29. b) Un gestor de paquetes para Kubernetes**
+  **30. b) Chart**
+  **31. b) `helm install`**
+  **32. b) Configurar valores por defecto y personalizables**
+  **33. b) Separación de responsabilidades y escalabilidad independiente**
+  **34. b) A través de redes Docker y APIs REST/bases de datos**
+  **35. b) Usar volúmenes Docker y contenedores especializados para bases de datos**
+  **36. b) Build → Test → Security Scan → Push → Deploy**
+  **37. b) Un servicio para almacenar y distribuir imágenes Docker**
+  **38. d) Todas las anteriores excepto Recreate**
+  **39. b) Para detectar vulnerabilidades en las imágenes antes del despliegue**
+  **40. c) ArgoCD**
 
 </details>
 
@@ -863,6 +857,6 @@ kubectl get pods,services,deployments
 
 **¡Felicitaciones por completar la evaluación de la Fase 3!**
 
-_El dominio de contenedores y orquestación es fundamental para DevOps moderno. Has dado un gran paso hacia la maestría en estas tecnologías clave._
+*El dominio de contenedores y orquestación es fundamental para DevOps moderno. Has dado un gran paso hacia la maestría en estas tecnologías clave.*
 
 **Próxima fase:** [Fase 4: Infraestructura como Código](../fase4/README.md)

@@ -16,10 +16,10 @@
 
 **1. ¿Cuál es la diferencia principal entre `$@` y `$*` en un script de Bash?**
 
-- a) No hay diferencia, ambos representan todos los argumentos
-- b) `$@` trata cada argumento como elemento separado, `$*` como string único
-- c) `$*` es para arrays, `$@` para strings
-- d) `$@` incluye el nombre del script, `$*` no
+- [ ] a) No hay diferencia, ambos representan todos los argumentos
+- [ ] b) `$@` trata cada argumento como elemento separado, `$*` como string único
+- [ ] c) `$*` es para arrays, `$@` para strings
+- [ ] d) `$@` incluye el nombre del script, `$*` no
 
 <details>
   <summary>Ver Fuente</summary>
@@ -28,10 +28,10 @@
 
 **2. En PowerShell, ¿cuál es la forma correcta de manejar errores en un script?**
 
-- a) `try { } catch { } finally { }`
-- b) `if ($Error) { }`
-- c) `ErrorAction = "Stop"`
-- d) Todas las anteriores
+- [ ] a) `try { } catch { } finally { }`
+- [ ] b) `if ($Error) { }`
+- [ ] c) `ErrorAction = "Stop"`
+- [ ] d) Todas las anteriores
 
 <details>
   <summary>Ver Fuente</summary>
@@ -51,10 +51,10 @@
 find /var/log -name "*.log" -mtime +7 -exec rm {} \;
 ```
 
-- a) Busca archivos .log modificados en los últimos 7 días
-- b) Elimina archivos .log más antiguos que 7 días
-- c) Comprime archivos .log de más de 7 días
-- d) Mueve archivos .log antiguos a backup
+- [ ] a) Busca archivos .log modificados en los últimos 7 días
+- [ ] b) Elimina archivos .log más antiguos que 7 días
+- [ ] c) Comprime archivos .log de más de 7 días
+- [ ] d) Mueve archivos .log antiguos a backup
 
 <details>
   <summary>Ver Fuente</summary>
@@ -63,10 +63,10 @@ find /var/log -name "*.log" -mtime +7 -exec rm {} \;
 
 **5. En un script de automatización, ¿cuál es la mejor práctica para manejar credenciales?**
 
-- a) Hardcodearlas en el script
-- b) Usar variables de entorno
-- c) Almacenarlas en un archivo de configuración
-- d) Pedirlas por input cada vez
+- [ ] a) Hardcodearlas en el script
+- [ ] b) Usar variables de entorno
+- [ ] c) Almacenarlas en un archivo de configuración
+- [ ] d) Pedirlas por input cada vez
 
 <details>
   <summary>Ver Fuente</summary>
@@ -75,10 +75,10 @@ find /var/log -name "*.log" -mtime +7 -exec rm {} \;
 
 **6. ¿Qué significa el código de salida `0` en un script?**
 
-- a) Error crítico
-- b) Ejecución exitosa
-- c) Warning
-- d) Proceso cancelado
+- [ ] a) Error crítico
+- [ ] b) Ejecución exitosa
+- [ ] c) Warning
+- [ ] d) Proceso cancelado
 
 <details>
   <summary>Ver Fuente</summary>
@@ -99,10 +99,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **8. En PowerShell, ¿cómo obtienes el directorio actual del script?**
 
-- a) `$PWD`
-- b) `$PSScriptRoot`
-- c) `Get-Location`
-- d) `$MyInvocation.MyCommand.Path`
+- [ ] a) `$PWD`
+- [ ] b) `$PSScriptRoot`
+- [ ] c) `Get-Location`
+- [ ] d) `$MyInvocation.MyCommand.Path`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -111,10 +111,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **9. ¿Cuál es el propósito del comando `set -e` en Bash?**
 
-- a) Activar el modo debug
-- b) Salir inmediatamente si un comando falla
-- c) Mostrar cada comando antes de ejecutarlo
-- d) Ignorar errores
+- [ ] a) Activar el modo debug
+- [ ] b) Salir inmediatamente si un comando falla
+- [ ] c) Mostrar cada comando antes de ejecutarlo
+- [ ] d) Ignorar errores
 
 <details>
   <summary>Ver Fuente</summary>
@@ -134,10 +134,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **11. En un Makefile, ¿qué indica una línea que comienza con TAB?**
 
-- a) Un comentario
-- b) Una variable
-- c) Un comando
-- d) Una dependencia
+- [ ] a) Un comentario
+- [ ] b) Una variable
+- [ ] c) Un comando
+- [ ] d) Una dependencia
 
 <details>
   <summary>Ver Fuente</summary>
@@ -146,10 +146,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **12. ¿Cuál es la estructura básica de un playbook de Ansible?**
 
-- a) tasks, handlers, vars
-- b) hosts, tasks, roles
-- c) name, hosts, tasks
-- d) inventory, playbook, modules
+- [ ] a) tasks, handlers, vars
+- [ ] b) hosts, tasks, roles
+- [ ] c) name, hosts, tasks
+- [ ] d) inventory, playbook, modules
 
 <details>
   <summary>Ver Fuente</summary>
@@ -158,10 +158,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **13. En Puppet, ¿qué es un "manifest"?**
 
-- a) Un archivo de configuración de red
-- b) Un archivo con definiciones de recursos
-- c) Un log de cambios
-- d) Un certificado de seguridad
+- [ ] a) Un archivo de configuración de red
+- [ ] b) Un archivo con definiciones de recursos
+- [ ] c) Un log de cambios
+- [ ] d) Un certificado de seguridad
 
 <details>
   <summary>Ver Fuente</summary>
@@ -184,10 +184,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **15. ¿Cuál es la principal diferencia entre Chef y Ansible?**
 
-- a) Chef es para Windows, Ansible para Linux
-- b) Chef requiere agente, Ansible no
-- c) No hay diferencias significativas
-- d) Chef es más rápido
+- [ ] a) Chef es para Windows, Ansible para Linux
+- [ ] b) Chef requiere agente, Ansible no
+- [ ] c) No hay diferencias significativas
+- [ ] d) Chef es más rápido
 
 <details>
   <summary>Ver Fuente</summary>
@@ -196,10 +196,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **16. En un Makefile, ¿qué indica `.PHONY:`?**
 
-- a) Una variable especial
-- b) Indica targets que no son archivos
-- c) Un comentario
-- d) Una dependencia circular
+- [ ] a) Una variable especial
+- [ ] b) Indica targets que no son archivos
+- [ ] c) Un comentario
+- [ ] d) Una dependencia circular
 
 <details>
   <summary>Ver Fuente</summary>
@@ -215,10 +215,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **18. ¿Cuál es el archivo principal de configuración de Puppet?**
 
-- a) `puppet.conf`
-- b) `manifest.pp`
-- c) `site.pp`
-- d) `puppet.yaml`
+- [ ] a) `puppet.conf`
+- [ ] b) `manifest.pp`
+- [ ] c) `site.pp`
+- [ ] d) `puppet.yaml`
 
 <details>
   <summary>Ver Fuente</summary>
@@ -231,10 +231,10 @@ cp database.sql "backup_${DATE}.sql"
 
 **19. ¿Cuál es la diferencia entre pipeline declarativo e imperativo en Jenkins?**
 
-- a) No hay diferencia
-- b) Declarativo es más estructurado, imperativo más flexible
-- c) Imperativo es más nuevo
-- d) Declarativo solo funciona en Windows
+- [ ] a) No hay diferencia
+- [ ] b) Declarativo es más estructurado, imperativo más flexible
+- [ ] c) Imperativo es más nuevo
+- [ ] d) Declarativo solo funciona en Windows
 
 <details>
   <summary>Ver Fuente</summary>
@@ -263,10 +263,10 @@ pipeline {
 
 **21. ¿Para qué sirve la directiva `when` en un pipeline Jenkins?**
 
-- a) Para definir variables
-- b) Establece condiciones para ejecutar un stage
-- c) Para manejar errores
-- d) Para configurar notificaciones
+- [ ] a) Para definir variables
+- [ ] b) Establece condiciones para ejecutar un stage
+- [ ] c) Para manejar errores
+- [ ] d) Para configurar notificaciones
 
 <details>
   <summary>Ver Fuente</summary>
@@ -275,10 +275,10 @@ pipeline {
 
 **22. En Jenkins, ¿qué es un "node"?**
 
-- a) Una dependencia del proyecto
-- b) Un nodo donde se ejecutan los trabajos
-- c) Un archivo de configuración
-- d) Un plugin específico
+- [ ] a) Una dependencia del proyecto
+- [ ] b) Un nodo donde se ejecutan los trabajos
+- [ ] c) Un archivo de configuración
+- [ ] d) Un plugin específico
 
 <details>
   <summary>Ver Fuente</summary>
@@ -294,10 +294,10 @@ pipeline {
 
 **24. ¿Qué es un "artifact" en Jenkins?**
 
-- a) Un error en el pipeline
-- b) Archivos generados por el build
-- c) Una configuración del sistema
-- d) Un plugin de terceros
+- [ ] a) Un error en el pipeline
+- [ ] b) Archivos generados por el build
+- [ ] c) Una configuración del sistema
+- [ ] d) Un plugin de terceros
 
 <details>
   <summary>Ver Fuente</summary>
@@ -306,10 +306,10 @@ pipeline {
 
 **25. ¿Qué significa "Pipeline as Code"?**
 
-- a) Escribir código dentro del pipeline
-- b) Definición del pipeline como código
-- c) Ejecutar solo código compilado
-- d) Usar solo lenguajes de programación
+- [ ] a) Escribir código dentro del pipeline
+- [ ] b) Definición del pipeline como código
+- [ ] c) Ejecutar solo código compilado
+- [ ] d) Usar solo lenguajes de programación
 
 <details>
   <summary>Ver Fuente</summary>
@@ -318,10 +318,10 @@ pipeline {
 
 **26. ¿Dónde se almacenan de forma segura las credenciales en Jenkins?**
 
-- a) En el código del pipeline
-- b) En variables de entorno del sistema
-- c) Jenkins Credential Store
-- d) En archivos de configuración
+- [ ] a) En el código del pipeline
+- [ ] b) En variables de entorno del sistema
+- [ ] c) Jenkins Credential Store
+- [ ] d) En archivos de configuración
 
 <details>
   <summary>Ver Fuente</summary>
@@ -334,10 +334,10 @@ pipeline {
 
 **27. ¿Qué es un "workflow" en GitHub Actions?**
 
-- a) Un script de bash
-- b) Un conjunto de jobs automatizados
-- c) Una configuración de red
-- d) Un tipo de repositorio
+- [ ] a) Un script de bash
+- [ ] b) Un conjunto de jobs automatizados
+- [ ] c) Una configuración de red
+- [ ] d) Un tipo de repositorio
 
 <details>
   <summary>Ver Fuente</summary>
@@ -361,10 +361,10 @@ jobs:
 
 **29. ¿Cuál es una ventaja principal de GitLab CI/CD?**
 
-- a) Solo funciona con GitLab
-- b) Integración nativa con Git
-- c) Es más lento que otras opciones
-- d) Requiere instalación separada
+- [ ] a) Solo funciona con GitLab
+- [ ] b) Integración nativa con Git
+- [ ] c) Es más lento que otras opciones
+- [ ] d) Requiere instalación separada
 
 <details>
   <summary>Ver Fuente</summary>
@@ -373,10 +373,10 @@ jobs:
 
 **30. En CircleCI, ¿qué son los "artifacts"?**
 
-- a) Errores de configuración
-- b) Archivos generados por el build
-- c) Variables de entorno
-- d) Scripts de deployment
+- [ ] a) Errores de configuración
+- [ ] b) Archivos generados por el build
+- [ ] c) Variables de entorno
+- [ ] d) Scripts de deployment
 
 <details>
   <summary>Ver Fuente</summary>
@@ -392,10 +392,10 @@ jobs:
 
 **32. ¿Para qué sirve una "matrix strategy" en GitHub Actions?**
 
-- a) Para definir variables
-- b) Build en paralelo con diferentes configuraciones
-- c) Para manejar errores
-- d) Para configurar notificaciones
+- [ ] a) Para definir variables
+- [ ] b) Build en paralelo con diferentes configuraciones
+- [ ] c) Para manejar errores
+- [ ] d) Para configurar notificaciones
 
 <details>
   <summary>Ver Fuente</summary>
@@ -404,10 +404,10 @@ jobs:
 
 **33. ¿Qué hace la directiva `artifacts:` en GitLab CI?**
 
-- a) Define variables del proyecto
-- b) Especifica archivos a preservar entre jobs
-- c) Configura notificaciones
-- d) Establece dependencias
+- [ ] a) Define variables del proyecto
+- [ ] b) Especifica archivos a preservar entre jobs
+- [ ] c) Configura notificaciones
+- [ ] d) Establece dependencias
 
 <details>
   <summary>Ver Fuente</summary>
@@ -420,10 +420,10 @@ jobs:
 
 **34. ¿Cuál es el orden correcto de ejecución de tests en un pipeline?**
 
-- a) E2E → Integration → Unit
-- b) Unit → Integration → E2E
-- c) Integration → Unit → E2E
-- d) No importa el orden
+- [ ] a) E2E → Integration → Unit
+- [ ] b) Unit → Integration → E2E
+- [ ] c) Integration → Unit → E2E
+- [ ] d) No importa el orden
 
 <details>
   <summary>Ver Fuente</summary>
@@ -445,10 +445,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **36. ¿Qué significa SAST en el contexto de testing?**
 
-- a) Static Application Security Testing
-- b) Scalable Application System Testing
-- c) Simple Automated Software Testing
-- d) Secure Application Standard Testing
+- [ ] a) Static Application Security Testing
+- [ ] b) Scalable Application System Testing
+- [ ] c) Simple Automated Software Testing
+- [ ] d) Secure Application Standard Testing
 
 <details>
   <summary>Ver Fuente</summary>
@@ -457,10 +457,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **37. ¿Qué son los "quality gates"?**
 
-- a) Herramientas de testing específicas
-- b) Criterios mínimos de calidad de código
-- c) Tipos de tests automatizados
-- d) Configuraciones de CI/CD
+- [ ] a) Herramientas de testing específicas
+- [ ] b) Criterios mínimos de calidad de código
+- [ ] c) Tipos de tests automatizados
+- [ ] d) Configuraciones de CI/CD
 
 <details>
   <summary>Ver Fuente</summary>
@@ -476,10 +476,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **39. ¿Qué es un "smoke test"?**
 
-- a) Test de rendimiento
-- b) Test básico para verificar funcionalidad crítica
-- c) Test de seguridad
-- d) Test de interfaz
+- [ ] a) Test de rendimiento
+- [ ] b) Test básico para verificar funcionalidad crítica
+- [ ] c) Test de seguridad
+- [ ] d) Test de interfaz
 
 <details>
   <summary>Ver Fuente</summary>
@@ -488,10 +488,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **40. ¿Cuál de estas es una herramienta moderna de testing de carga?**
 
-- a) JMeter
-- b) K6
-- c) Artillery
-- d) Todas las anteriores
+- [ ] a) JMeter
+- [ ] b) K6
+- [ ] c) Artillery
+- [ ] d) Todas las anteriores
 
 <details>
   <summary>Ver Fuente</summary>
@@ -504,10 +504,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **41. ¿Qué es un deployment "Blue-Green"?**
 
-- a) Usar dos colores en la interfaz
-- b) Mantener dos entornos idénticos para switch instantáneo
-- c) Desplegar solo en horarios específicos
-- d) Una estrategia de backup
+- [ ] a) Usar dos colores en la interfaz
+- [ ] b) Mantener dos entornos idénticos para switch instantáneo
+- [ ] c) Desplegar solo en horarios específicos
+- [ ] d) Una estrategia de backup
 
 <details>
   <summary>Ver Fuente</summary>
@@ -523,10 +523,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **43. ¿Cuál es la principal ventaja del deployment "Canary"?**
 
-- a) Es más rápido
-- b) No requiere downtime
-- c) Permite probar con un subconjunto de usuarios
-- d) Usa menos recursos
+- [ ] a) Es más rápido
+- [ ] b) No requiere downtime
+- [ ] c) Permite probar con un subconjunto de usuarios
+- [ ] d) Usa menos recursos
 
 <details>
   <summary>Ver Fuente</summary>
@@ -535,10 +535,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **44. ¿Qué son los "feature flags"?**
 
-- a) Errores en el código
-- b) Configuraciones para habilitar/deshabilitar funcionalidades
-- c) Tipos de tests
-- d) Herramientas de monitoreo
+- [ ] a) Errores en el código
+- [ ] b) Configuraciones para habilitar/deshabilitar funcionalidades
+- [ ] c) Tipos de tests
+- [ ] d) Herramientas de monitoreo
 
 <details>
   <summary>Ver Fuente</summary>
@@ -547,10 +547,10 @@ artillery quick --count 100 --num 10 http://localhost:3000
 
 **45. ¿Dónde es recomendable almacenar las configuraciones de deployment?**
 
-- a) En la base de datos
-- b) En un repositorio Git
-- c) En archivos locales
-- d) En variables de sistema
+- [ ] a) En la base de datos
+- [ ] b) En un repositorio Git
+- [ ] c) En archivos locales
+- [ ] d) En variables de sistema
 
 <details>
   <summary>Ver Fuente</summary>
@@ -564,51 +564,51 @@ artillery quick --count 100 --num 10 http://localhost:3000
 <details>
   <summary>Ver Respuestas</summary>
 
-**1. b) `$@` trata cada argumento como elemento separado, `$*` como string único**
-**2. d) Todas las anteriores**
-**3. Verdadero**
-**4. b) Elimina archivos .log más antiguos que 7 días**
-**5. b) Usar variables de entorno**
-**6. b) Ejecución exitosa**
-**7. `date +%Y%m%d_%H%M%S`**
-**8. b) `$PSScriptRoot`**
-**9. b) Salir inmediatamente si un comando falla**
-**10. Falso**
-**11. c) Un comando**
-**12. c) name, hosts, tasks**
-**13. b) Un archivo con definiciones de recursos**
-**14. `package` o `apt` o `yum`**
-**15. b) Chef requiere agente, Ansible no**
-**16. b) Indica targets que no son archivos**
-**17. Verdadero**
-**18. a) `puppet.conf`**
-**19. b) Declarativo es más estructurado, imperativo más flexible**
-**20. `steps`**
-**21. b) Establece condiciones para ejecutar un stage**
-**22. b) Un nodo donde se ejecutan los trabajos**
-**23. Verdadero**
-**24. b) Archivos generados por el build**
-**25. b) Definición del pipeline como código**
-**26. c) Jenkins Credential Store**
-**27. b) Un conjunto de jobs automatizados**
-**28. `runs-on`**
-**29. b) Integración nativa con Git**
-**30. b) Archivos generados por el build**
-**31. Verdadero**
-**32. b) Build en paralelo con diferentes configuraciones**
-**33. b) Especifica archivos a preservar entre jobs**
-**34. b) Unit → Integration → E2E**
-**35. `K6`**
-**36. a) Static Application Security Testing**
-**37. b) Criterios mínimos de calidad de código**
-**38. Falso**
-**39. b) Test básico para verificar funcionalidad crítica**
-**40. d) Todas las anteriores**
-**41. b) Mantener dos entornos idénticos para switch instantáneo**
-**42. Verdadero**
-**43. c) Permite probar con un subconjunto de usuarios**
-**44. b) Configuraciones para habilitar/deshabilitar funcionalidades**
-**45. b) En un repositorio Git**
+  **1. b) `$@` trata cada argumento como elemento separado, `$*` como string único**
+  **2. d) Todas las anteriores**
+  **3. Verdadero**
+  **4. b) Elimina archivos .log más antiguos que 7 días**
+  **5. b) Usar variables de entorno**
+  **6. b) Ejecución exitosa**
+  **7. `date +%Y%m%d_%H%M%S`**
+  **8. b) `$PSScriptRoot`**
+  **9. b) Salir inmediatamente si un comando falla**
+  **10. Falso**
+  **11. c) Un comando**
+  **12. c) name, hosts, tasks**
+  **13. b) Un archivo con definiciones de recursos**
+  **14. `package` o `apt` o `yum`**
+  **15. b) Chef requiere agente, Ansible no**
+  **16. b) Indica targets que no son archivos**
+  **17. Verdadero**
+  **18. a) `puppet.conf`**
+  **19. b) Declarativo es más estructurado, imperativo más flexible**
+  **20. `steps`**
+  **21. b) Establece condiciones para ejecutar un stage**
+  **22. b) Un nodo donde se ejecutan los trabajos**
+  **23. Verdadero**
+  **24. b) Archivos generados por el build**
+  **25. b) Definición del pipeline como código**
+  **26. c) Jenkins Credential Store**
+  **27. b) Un conjunto de jobs automatizados**
+  **28. `runs-on`**
+  **29. b) Integración nativa con Git**
+  **30. b) Archivos generados por el build**
+  **31. Verdadero**
+  **32. b) Build en paralelo con diferentes configuraciones**
+  **33. b) Especifica archivos a preservar entre jobs**
+  **34. b) Unit → Integration → E2E**
+  **35. `K6`**
+  **36. a) Static Application Security Testing**
+  **37. b) Criterios mínimos de calidad de código**
+  **38. Falso**
+  **39. b) Test básico para verificar funcionalidad crítica**
+  **40. d) Todas las anteriores**
+  **41. b) Mantener dos entornos idénticos para switch instantáneo**
+  **42. Verdadero**
+  **43. c) Permite probar con un subconjunto de usuarios**
+  **44. b) Configuraciones para habilitar/deshabilitar funcionalidades**
+  **45. b) En un repositorio Git**
 
 </details>
 
@@ -833,4 +833,4 @@ Si obtuviste <70%:
 ---
 
 **¡Felicitaciones por completar la evaluación de la Fase 2!**
-_Este conocimiento en automatización y CI/CD te posiciona para implementar pipelines de nivel empresarial y liderar transformaciones DevOps._
+*Este conocimiento en automatización y CI/CD te posiciona para implementar pipelines de nivel empresarial y liderar transformaciones DevOps.*
