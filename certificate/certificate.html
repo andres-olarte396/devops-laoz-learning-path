@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificado de Participación</title>
+
+    <!-- Librerías necesarias para descarga -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        :root {
+            /* Colores por defecto (tema claro) */
+            --bg-color: #fff;
+            --text-color: #333;
+            --primary-color: #007bff;
+            --overlay-color: rgba(255, 255, 255, 0.85);
+            --shadow-color: rgba(0, 0, 0, 0.2);
+            --body-bg: #e5e5e5;
+            --marca-color: #0099ff22;
+        }
+
+        /* Tema oscuro */
+        .dark-theme {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --primary-color: #4dabf7;
+            --overlay-color: rgba(26, 26, 26, 0.85);
+            --shadow-color: rgba(0, 0, 0, 0.5);
+            --body-bg: #121212;
+            --marca-color: #4dabf722;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: var(--body-bg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .certificado {
+            position: relative;
+            background: var(--bg-color);
+            background-image: url("./images/certificate.webp");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            max-width: 1100px;
+            padding: 60px;
+            box-shadow: 0 0 15px var(--shadow-color);
+            border-radius: 12px;
+            text-align: center;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .certificado::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--overlay-color);
+            pointer-events: none;
+            z-index: 1;
+            transition: background 0.3s ease;
+        }
+
+        .certificado>* {
+            position: relative;
+            z-index: 2;
+        }
+
+        .marca {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(135deg,
+                    var(--marca-color) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    var(--marca-color) 50%,
+                    var(--marca-color) 75%,
+                    transparent 75%,
+                    transparent);
+            background-size: 40px 40px;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            height: 60px;
+        }
+
+        .sello {
+            position: absolute;
+            top: 40px;
+            right: 60px;
+            height: 70px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-top: 100px;
+            font-size: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        h2 {
+            margin-top: 10px;
+            color: var(--text-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        h3 {
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        #nombre {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 25px 0;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        #curso {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        p.descripcion {
+            text-align: justify;
+            font-size: 1rem;
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+        }
+
+        .firmas {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .firma {
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .firma img {
+            height: 60px;
+        }
+
+        .firma p {
+            margin: 5px 0 0 0;
+            font-weight: bold;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .firma small {
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 50px;
+            flex-wrap: wrap;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .botones {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        button {
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: var(--primary-color);
+            filter: brightness(0.9);
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 700px) {
+            .certificado {
+                padding: 30px;
+            }
+
+            #nombre {
+                font-size: 1.6rem;
+            }
+
+            #curso {
+                font-size: 1.3rem;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="certificado" class="certificado">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cloud_icon.svg/1024px-Cloud_icon.svg.png"
+            class="logo" alt="Logo" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Gold_medal_icon.svg" class="sello" alt="Sello" />
+        <div class="marca"></div>
+
+        <h1 id="titulo">[Título del Certificado]</h1>
+        <h2 id="subtitulo">[Organización] concede el presente a:</h2>
+
+        <div id="nombre">[Nombre del participante]</div>
+        <h3 id="texto-completar">
+            Por completar con éxito el programa de estudios denominado:
+        </h3>
+        <div id="curso">[Nombre del curso]</div>
+
+        <p class="descripcion" id="descripcion">
+            [Descripción del curso y logros obtenidos]
+        </p>
+
+        <div class="firmas">
+            <div class="firma">
+                <img id="firma1-img" src="" alt="Firma 1" />
+                <p id="firma1-nombre">[Nombre Firmante 1]</p>
+                <small id="firma1-cargo">[Cargo 1]</small>
+            </div>
+            <div class="firma">
+                <img id="firma2-img" src="" alt="Firma 2" />
+                <p id="firma2-nombre">[Nombre Firmante 2]</p>
+                <small id="firma2-cargo">[Cargo 2]</small>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div id="fecha">[Fecha y lugar]</div>
+            <div id="codigo">
+                Código:
+                <span style="color: #007bff; font-weight: bold" id="codigo-valor">[Código]</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="botones">
+        <button onclick="toggleTheme()">🌓 Cambiar Tema</button>
+        <button onclick="descargarImagen()">Descargar como Imagen</button>
+        <button onclick="descargarPDF()">Descargar como PDF</button>
+    </div>
+
+    <script>
+        // === Lectura de parámetros desde la URL ===
+        const params = new URLSearchParams(window.location.search);
+
+        // Parámetros principales
+        const nombre = params.get("nombre");
+        const curso = params.get("curso");
+        const fecha =
+            params.get("fecha") || new Date().toLocaleDateString("es-ES");
+        const codigo = params.get("codigo") || "CERT-" + Date.now();
+
+        // Parámetros de contenido
+        const titulo = params.get("titulo") || "Certificado de Participación";
+        const organizacion = params.get("organizacion");
+        const subtitulo =
+            params.get("subtitulo") || organizacion + " concede el presente a:";
+        const textoCompletar =
+            params.get("textoCompletar") ||
+            "Por completar con éxito el programa de estudios denominado:";
+        const descripcion = params.get("descripcion");
+
+        // Parámetros de firmas
+        const firma1Nombre = params.get("firma1Nombre");
+        const firma1Cargo = params.get("firma1Cargo");
+        const firma1Img = params.get("firma1Img");
+
+        const firma2Nombre = params.get("firma2Nombre");
+        const firma2Cargo = params.get("firma2Cargo");
+        const firma2Img = params.get("firma2Img");
+
+        // Parámetros de imágenes
+        const logoUrl =
+            params.get("logo") ||
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Cloud_icon.svg/1024px-Cloud_icon.svg.png";
+        const selloUrl =
+            params.get("sello") ||
+            "https://upload.wikimedia.org/wikipedia/commons/3/3a/Gold_medal_icon.svg";
+        const fondoUrl = params.get("fondo") || "./images/certificatel.webp";
+        const overlayOpacity = params.get("overlayOpacity") || "0.85";
+
+        // Parámetros de tema
+        const tema = params.get("tema") || "light"; // light, dark, auto
+        const primaryColor = params.get("primaryColor") || null;
+        const bgColor = params.get("bgColor") || null;
+        const textColor = params.get("textColor") || null;
+
+        // Variable global para tema actual
+        let currentTheme = tema;
+
+        // === Función para aplicar tema ===
+        function aplicarTema(temaSeleccionado) {
+            const body = document.body;
+
+            // Remover clases de tema existentes
+            body.classList.remove("dark-theme");
+
+            // Aplicar tema
+            if (temaSeleccionado === "dark") {
+                body.classList.add("dark-theme");
+            } else if (temaSeleccionado === "auto") {
+                // Detectar preferencia del sistema
+                const prefersDark = window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+                if (prefersDark) {
+                    body.classList.add("dark-theme");
+                }
+            }
+
+            // Aplicar colores personalizados si se especifican
+            const root = document.documentElement;
+            if (primaryColor) {
+                root.style.setProperty("--primary-color", primaryColor);
+            }
+            if (bgColor) {
+                root.style.setProperty("--bg-color", bgColor);
+            }
+            if (textColor) {
+                root.style.setProperty("--text-color", textColor);
+            }
+
+            currentTheme = temaSeleccionado;
+        }
+
+        // === Función para alternar tema ===
+        function toggleTheme() {
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            aplicarTema(newTheme);
+
+            // Actualizar URL con nuevo tema
+            const newParams = new URLSearchParams(window.location.search);
+            newParams.set("tema", newTheme);
+
+            // Actualizar URL sin recargar página
+            const newUrl = `${window.location.pathname}?${newParams.toString()}`;
+            window.history.replaceState({}, "", newUrl);
+        }
+        // === Función para aplicar todos los parámetros ===
+        function aplicarParametros() {
+            // Aplicar tema primero
+            aplicarTema(tema);
+
+            // Contenido principal
+            document.getElementById("titulo").textContent = titulo;
+            document.getElementById("subtitulo").textContent = subtitulo;
+            document.getElementById("nombre").textContent = nombre;
+            document.getElementById("texto-completar").textContent = textoCompletar;
+            document.getElementById("curso").textContent = curso;
+            document.getElementById("descripcion").textContent = descripcion;
+            document.getElementById("fecha").textContent = fecha;
+            document.getElementById("codigo-valor").textContent = codigo;
+
+            // Firmas
+            document.getElementById("firma1-nombre").textContent = firma1Nombre;
+            document.getElementById("firma1-cargo").textContent = firma1Cargo;
+            document.getElementById("firma1-img").src = firma1Img;
+
+            document.getElementById("firma2-nombre").textContent = firma2Nombre;
+            document.getElementById("firma2-cargo").textContent = firma2Cargo;
+            document.getElementById("firma2-img").src = firma2Img;
+
+            // Imágenes de logo y sello
+            const logoElement = document.querySelector(".logo");
+            const selloElement = document.querySelector(".sello");
+            if (logoElement) logoElement.src = logoUrl;
+            if (selloElement) selloElement.src = selloUrl;
+
+            // Imagen de fondo
+            const certificadoElement = document.getElementById("certificado");
+            if (certificadoElement) {
+                certificadoElement.style.backgroundImage = `url('${fondoUrl}')`;
+
+                // Actualizar opacidad del overlay si se especifica
+                if (overlayOpacity !== "0.85") {
+                    const style = document.createElement("style");
+                    style.textContent = `
+                    .certificado::before {
+                        background: rgba(255, 255, 255, ${overlayOpacity}) !important;
+                    }
+                `;
+                    document.head.appendChild(style);
+                }
+            }
+
+            // Actualizar título de la página
+            document.title = `Certificado - ${nombre}`;
+        }
+
+        // Aplicar parámetros cuando se carga la página
+        document.addEventListener("DOMContentLoaded", aplicarParametros);
+
+        // === Descarga como Imagen ===
+        async function descargarImagen() {
+            const certificado = document.getElementById("certificado");
+            const canvas = await html2canvas(certificado, { scale: 2 });
+            const enlace = document.createElement("a");
+            enlace.download = `Certificado-${nombre.replace(/\s+/g, "_")}.png`;
+            enlace.href = canvas.toDataURL("image/png");
+            enlace.click();
+        }
+
+        // === Descarga como PDF ===
+        async function descargarPDF() {
+            const certificado = document.getElementById("certificado");
+            const canvas = await html2canvas(certificado, { scale: 2 });
+            const imgData = canvas.toDataURL("image/png");
+
+            const { jsPDF } = window.jspdf;
+            const pdf = new jsPDF("landscape", "pt", "a4");
+            const pageWidth = pdf.internal.pageSize.getWidth();
+            const pageHeight = pdf.internal.pageSize.getHeight();
+
+            const imgWidth = pageWidth;
+            const imgHeight = canvas.height * (imgWidth / canvas.width);
+
+            const yPos = (pageHeight - imgHeight) / 2;
+            pdf.addImage(imgData, "PNG", 0, yPos, imgWidth, imgHeight);
+            pdf.save(`Certificado-${nombre.replace(/\s+/g, "_")}.pdf`);
+        }
+        console.log("Parámetros disponibles:", {
+            Básicos: ["nombre", "curso", "fecha", "codigo"],
+            Contenido: [
+                "titulo",
+                "organizacion",
+                "subtitulo",
+                "textoCompletar",
+                "descripcion",
+            ],
+            Firmas: [
+                "firma1Nombre",
+                "firma1Cargo",
+                "firma1Img",
+                "firma2Nombre",
+                "firma2Cargo",
+                "firma2Img",
+            ],
+            Imágenes: ["logo", "sello", "fondo", "overlayOpacity"],
+            Tema: ["tema", "primaryColor", "bgColor", "textColor"],
+        });
+    </script>
+</body>
+
+</html>
