@@ -1,0 +1,17 @@
+.env
+*.env
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Large media files
+*.mp4
+*.m4a
+*.mp3
+*.wav
+*.avi
+*.mov
+*.mkv
+*.pdf
+*.zip
+*.tar.gz
